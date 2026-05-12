@@ -1,45 +1,41 @@
 ---
-title: User management
-description: Invite, deactivate, and bulk-manage team members.
+title: "How It All Fits Together"
+description: "LiftAuth is built around a clear structure. Understanding how each piece connects will help you navigate the system with confidence."
+sidebarTitle: "How It All Fits Together"
 ---
 
-Admins can manage the full member lifecycle from **Settings → Users**: invite new members, adjust roles, deactivate accounts, and bulk-import users via CSV.
+## Your company (Tenant)
 
-## Invite by email
+Your company is the **Tenant** — the top-level account that contains everything in LiftAuth. All lifts, jobs, invoices, and team members belong to your Tenant.
 
-1. Go to **Settings → Users → Invite members**.
-2. Enter one or more email addresses, separated by commas.
-3. Select the workspace role to assign (Admin, Member, or Viewer).
-4. Click **Send invitations**.
+Inside your Tenant, there are three types of people:
 
-Invitees receive an email with a time-limited link. Links expire after 72 hours—resend from the pending invites list if needed.
+<CardGroup cols={3}>
+  <Card title="Owner" icon="crown">
+    Full control over the account. Manages billing, team members, and all settings. Every company has one Owner.\
+    \
+  </Card>
 
-<Info>
-  You can override the workspace-level role on a per-project basis after the member accepts their invitation.
-</Info>
+  <Card title="Admin" icon="briefcase">
+    Manages day-to-day operations — scheduling jobs, reviewing jobsheets, approving and sending invoices. Cannot change ownership settings.
+  </Card>
 
-## Deactivating accounts
+  <Card title="Technician" icon="wrench">
+    Receives jobs on their phone and carries out the work on-site. Cannot access invoices or team settings.\
+    \
+    \
+  </Card>
+</CardGroup>
 
-Deactivating a member revokes their access immediately without deleting their data. Any content they created remains intact and accessible to other members.
+## \
+Building Managers
 
-To deactivate a member:
+A **Building Manager** is the company or person responsible for a building you service. They are external to your company and do not need a LiftAuth account.
 
-1. Find the member in **Settings → Users**.
-2. Open their profile and select **Deactivate account**.
-3. Confirm the action.
+<Card title=" " icon="building">
+  Each Building Manager is linked to one or more **lifts**. When a job is completed on one of their lifts, they receive a jobsheet to sign and an invoice to pay — both delivered by email.
+</Card>
 
-Deactivated accounts can be reactivated at any time by an Admin. Reactivating restores the member's original role and project memberships.
-
-## Bulk CSV import
-
-For larger teams, use CSV import to invite multiple members at once.
-
-**Required columns:** `email`, `role`
-
-**Optional columns:** `first_name`, `last_name`
-
-Download the CSV template from the Users page, fill it in, and upload. The system validates each row before sending invitations—rows with errors are skipped and listed in the import summary.
-
-<Warning>
-  CSV import sends invitations immediately. Review the file carefully before uploading, especially role assignments.
-</Warning>
+<Tip>
+  One Building Manager can be responsible for multiple buildings, each with multiple lifts.
+</Tip>

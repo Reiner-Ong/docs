@@ -1,46 +1,77 @@
 ---
-title: General settings
-description: Configure workspace name, timezone, and display preferences.
+title: "Glossary of Terms"
+description: "Definitions for every term used in LiftAuth, in plain English.  "
+sidebarTitle: "Glossary of Terms"
 ---
 
-General settings control how your workspace is identified, how dates and times are displayed, and which notification behaviors apply by default to all members.
+Use this page as a reference whenever you come across an unfamiliar word in LiftAuth.
 
-Navigate to **Settings → General** to access these options.
+<AccordionGroup>
+  <Accordion title="Lift">
+    The physical elevator unit at a building. Each lift has its own record in LiftAuth with details like location, type, manufacturer, and serial number.
+  </Accordion>
 
-## General
+  <Accordion title="Building Manager">
+    The company or person responsible for the building where the lift is located. They receive invoices and sign off on completed work.
+  </Accordion>
 
-| Setting | Description |
-|---------|-------------|
-| **Workspace name** | The display name used in the UI, email notifications, and shared links. |
-| **Workspace slug** | The URL-safe identifier used in API calls. Changing this updates all URLs—notify your team before doing so. |
-| **Timezone** | The default timezone for date displays and scheduled jobs. Members can override this in their personal preferences. |
-| **Language** | The default display language for new members. |
+  <Accordion title="Tenant / Team">
+    The company or team that uses LiftAuth to manage and maintain lifts. Everything in LiftAuth — lifts, jobs, invoices, and team members — belongs to a Tenant. If you work for one company, you will only ever see one Tenant.
+  </Accordion>
 
-## Security
+  <Accordion title="Job">
+    A service visit to a lift. Every time a technician goes to a site, it is recorded as a job. Jobs can be Maintenance, Breakdown, or Repair.
+  </Accordion>
 
-<Tabs>
-  <Tab title="Session settings">
-    Control how long authenticated sessions remain active. Shorter session durations reduce risk if a device is lost, but require more frequent logins.
+  <Accordion title="Maintenance Job">
+    A planned, routine service — for example, a monthly or quarterly inspection. Usually created automatically by a Maintenance Plan.
+  </Accordion>
 
-    - **Session timeout** — Idle sessions are signed out after this period. Default is 7 days.
-    - **Force re-authentication** — Require password or SSO confirmation before accessing sensitive settings.
-  </Tab>
-  <Tab title="IP allowlist">
-    Restrict access to specific IP ranges. When enabled, users outside the allowlist cannot authenticate, even with valid credentials.
+  <Accordion title="Breakdown Job">
+    An emergency call-out when the lift has stopped working or is unsafe to use.
+  </Accordion>
 
-    <Warning>
-      Verify your own IP is included before enabling the allowlist—you can lock yourself out.
-    </Warning>
-  </Tab>
-  <Tab title="SSO">
-    Connect a SAML 2.0 or OIDC identity provider to centralize authentication. Once SSO is enforced, password-based login is disabled for all non-admin members.
-  </Tab>
-</Tabs>
+  <Accordion title="Repair Job">
+    A visit to fix a specific, known fault that was previously reported.
+  </Accordion>
 
-## Notification defaults
+  <Accordion title="Checklist">
+    A list of items the technician must inspect during a maintenance visit. Each item is marked as Pass or Fail.
+  </Accordion>
 
-These settings apply to all new members. Existing members retain their personal notification preferences unless you reset them.
+  <Accordion title="Record / Jobsheet">
+    The written report created when a technician completes a job. It includes checklist results, photos, notes, and signatures. It can be downloaded as a PDF.
+  </Accordion>
 
-- **Email digests** — Daily or weekly summaries of activity in projects the member belongs to.
-- **Mention alerts** — Immediate email when a member is @-mentioned in a comment or task.
-- **Project updates** — Notify members when a project they belong to changes status.
+  <Accordion title="Signature">
+    The sign-off that confirms a job was completed. Both the technician and the building manager must sign each jobsheet.
+  </Accordion>
+
+  <Accordion title="Issue / Fault">
+    A problem found on a lift. Issues are given a severity level — Critical, Major, or Minor — and tracked until they are resolved.
+  </Accordion>
+
+  <Accordion title="Invoice">
+    The bill sent to the building manager after work is completed. Invoices are created automatically and must be reviewed by an admin before they are sent.
+  </Accordion>
+
+  <Accordion title="Maintenance Plan">
+    A schedule that tells LiftAuth how often a lift needs a service (e.g. every month). Once set up, LiftAuth automatically creates jobs and invoices each cycle.
+  </Accordion>
+
+  <Accordion title="BCA Equipment ID">
+    A unique code assigned to a lift under Australian building compliance regulations. LiftAuth can look up lift details automatically using this code.
+  </Accordion>
+
+  <Accordion title="OTP (One-Time Password)">
+    A 6-digit code sent to your phone by SMS or to your email. You use it to log in instead of a traditional password. It expires after a few minutes.
+  </Accordion>
+
+  <Accordion title="Draft Invoice">
+    An invoice that has been automatically generated but not yet sent. An admin must review and approve it before it goes to the building manager.
+  </Accordion>
+
+  <Accordion title="PDF">
+    A downloadable document version of a completed jobsheet, including all checklist results, photos, and signatures.
+  </Accordion>
+</AccordionGroup>

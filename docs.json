@@ -29,13 +29,12 @@
           "gettingstarted/whatisliftauth",
           "gettingstarted/whousesliftauth",
           "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions"
+          "platform/configuration/user-management"
         ]
       },
       {
-        "group": "Analytics",
-        "icon": "chart-bar",
+        "group": "For Admins (Web Dashboard)",
+        "icon": "app-window-mac",
         "expanded": true,
         "pages": [
           "analytics/quickstart",
