@@ -44,19 +44,22 @@
           "analytics/scheduling-and-tracking-work",
           "analytics/maintenance-records",
           "analytics/faults-and-issues",
-          "analytics/invoices-and-payments"
+          "analytics/invoices-and-payments",
+          "analytics/managing-your-team",
+          "analytics/maintenance-plans-putting-it-all-together"
         ]
       },
       {
-        "group": "Integrations",
-        "icon": "plug",
-        "expanded": true,
+        "group": "For Technician (Mobile App)",
+        "icon": "smartphone",
         "pages": [
-          "integrations/quickstart",
-          "integrations/authentication",
-          "integrations/connectors/crm",
-          "integrations/webhooks/configure"
+          "technician/download-and-logging-in"
         ]
+      },
+      {
+        "group": "Frequently Asked Questions",
+        "icon": "message-circle-question-mark",
+        "pages": []
       }
     ]
   },
