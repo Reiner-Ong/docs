@@ -41,7 +41,10 @@
           "analytics/connect-data",
           "analytics/dashboards/create-dashboard",
           "analytics/reports/scheduled-reports",
-          "analytics/scheduling-and-tracking-work"
+          "analytics/scheduling-and-tracking-work",
+          "analytics/maintenance-records",
+          "analytics/faults-and-issues",
+          "analytics/invoices-and-payments"
         ]
       },
       {

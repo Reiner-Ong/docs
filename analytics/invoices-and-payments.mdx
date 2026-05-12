@@ -1,0 +1,93 @@
+---
+title: "Invoices & Payments"
+description: "How to review, approve, send, and track invoices and payments."
+---
+
+## How invoices are created
+
+There are two ways an invoice can be created:
+
+<CardGroup cols={2}>
+  <Card icon="newspaper">
+    ## Automatically
+
+    When a job linked to a [Maintenance Plan](/admin/maintenance-plans) is closed and the plan has a billing template attached, LiftAuth generates a draft invoice automatically.\
+  </Card>
+
+  <Card icon="plus">
+    ## Manually
+
+    If there is no maintenance plan, you can create an invoice yourself. Go to **Invoices** in the sidebar → **New invoice**. Fill in the building manager, invoice date, due date, and line items.
+  </Card>
+</CardGroup>
+
+## Draft invoices — review before sending
+
+Auto-generated invoices start as a **draft** and appear in your Inbox. Nothing is sent to the building manager until you approve it.
+
+**Draft statuses:**
+
+| Status | Meaning |
+| --- | --- |
+| **Pending** | Waiting for your review in the Inbox |
+| **Finalized** | You approved it — an invoice has been created and is ready to send |
+| **Rejected** | You rejected it — it will not be sent |
+
+### Approving or rejecting a draft
+
+<Steps>
+  <Step title="Open the draft from your Inbox">
+    Click the draft invoice card to open it.
+  </Step>
+  <Step title="Check the details">
+    Review the building manager, line items, total amount, and due date.
+  </Step>
+  <Step title="Approve or reject">
+    Click **Approve** to finalize it and create the invoice. Click **Reject** if something is incorrect — the draft will be marked as rejected and will not be sent.
+  </Step>
+</Steps>
+
+<Warning>
+  Rejected drafts are kept on record but cannot be edited or resent. A new invoice would need to be created manually if needed.
+</Warning>
+
+## Sending a finalized invoice
+
+<Steps>
+  <Step title="Open the invoice">
+    Go to **Invoices** in the sidebar and click on the invoice.
+  </Step>
+  <Step title="Click Send invoice">
+    Click **Send invoice** and confirm the recipient's email address.
+  </Step>
+  <Step title="Confirm">
+    The building manager will receive the invoice by email.
+  </Step>
+</Steps>
+
+<Tip>
+  The invoice is sent to the building manager's primary contact email. Make sure this is up to date in their [Building Manager record](/admin/building-managers).
+</Tip>
+
+## Recording a payment
+
+When the building manager pays, record it in LiftAuth to keep your records up to date.
+
+<Steps>
+  <Step title="Open the invoice">
+    Find it in the **Invoices** list and click on it.
+  </Step>
+  <Step title="Click Record payment">
+    Click **Record payment**, enter the amount and date received, and save.
+  </Step>
+</Steps>
+
+<Tip>
+  The **Payments** section in the sidebar gives you a full list of all recorded payments.
+</Tip>
+
+## Deleting invoices
+
+<Warning>
+  Invoices cannot be deleted. Once an invoice is created it is kept permanently on record. This is to ensure your billing history remains complete and accurate for compliance and auditing purposes.
+</Warning>
