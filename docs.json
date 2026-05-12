@@ -19,34 +19,15 @@
     "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
   },
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Home",
-          "icon": "house",
-          "href": "/"
-        },
-        {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
-        },
-        {
-          "anchor": "Help",
-          "icon": "life-buoy",
-          "href": "https://www.mintlify.com/docs/contact-support"
-        }
-      ]
-    },
     "directory": "card",
     "groups": [
       {
-        "group": "Platform",
+        "group": "Getting Started",
         "icon": "layers",
         "expanded": true,
         "pages": [
-          "platform/quickstart",
-          "platform/key-concepts",
+          "gettingstarted/whatisliftauth",
+          "gettingstarted/whousesliftauth",
           "platform/configuration/settings",
           "platform/configuration/user-management",
           "platform/administration/roles-permissions"
