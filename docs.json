@@ -53,7 +53,13 @@
         "group": "For Technician (Mobile App)",
         "icon": "smartphone",
         "pages": [
-          "technician/download-and-logging-in"
+          "technician/download-and-logging-in",
+          "technician/your-home-screen-todays-jobs",
+          "technician/starting-a-j",
+          "technician/completing-a-job",
+          "technician/getting-a-signature",
+          "technician/scanning-a-qr-code",
+          "technician/reporting-a-fault"
         ]
       },
       {
