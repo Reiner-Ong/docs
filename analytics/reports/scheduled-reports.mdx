@@ -1,47 +1,69 @@
 ---
-title: Scheduled reports
-description: Deliver reports to inboxes on a recurring schedule.
+title: "Managing Lifts"
+description: "How to register, find, and manage the lifts in your system."
 ---
 
-Scheduled reports run automatically on a defined cadence and deliver results to one or more recipients via email or Slack. Use them to eliminate manual report pulls and keep stakeholders informed without extra effort.
+A **lift** in LiftAuth represents one physical elevator unit at a building. Every lift must be registered through the **BCA LEAP portal** — this is how LiftAuth pulls the lift's official equipment\
+details automatically.
 
-## Create a schedule
+## What is the BCA LEAP portal?
 
-1. Open a saved report and click **Schedule delivery**.
-2. Set the frequency: daily, weekly, or monthly.
-3. Choose the day and time (all times are in the workspace timezone).
-4. Click **Next** to configure recipients.
+The BCA (Building and Construction Authority) LEAP portal is the Singapore government's database of all registered lifts. Every lift has its own page on this portal with its equipment ID, address, and maintenance details.
 
-## Choose recipients
+To register a lift in LiftAuth, you need the URL of that lift's page on the BCA LEAP portal. It looks like this:
 
-<Tabs>
-  <Tab title="Email">
-    Enter one or more email addresses. Recipients do not need to be workspace members—any valid email address works.
+[https://www2.bca.gov.sg/leap/ptoenquiry/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx](https://www2.bca.gov.sg/leap/ptoenquiry/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
 
-    The delivery includes:
-    - A summary header with the report name and run time
-    - An inline preview of the first 10 rows
-    - A link to view or download the full report
-    - An attached CSV (optional—toggle in delivery settings)
-  </Tab>
-  <Tab title="Slack">
-    Connect your workspace's Slack integration (if not already connected), then select a channel or enter a direct message recipient.
+## Adding a new lift
 
-    The Slack message includes a summary card with row count and key metrics, plus a link to view the full report in the browser.
+<Steps>
+  <Step title="Find the lift on BCA LEAP">
+    Go to the [BCA LEAP portal](https://www2.bca.gov.sg/leap/PTOEnquiry/Search), search for the lift, and open its PTO Enquiry page. Copy the full URL from your browser's address bar.
+  </Step>
+  <Step title="Go to Lifts in LiftAuth">
+    Click **Lifts** in the left sidebar, then click **Add lift**.
+  </Step>
+  <Step title="Paste the BCA URL">
+    Paste the URL you copied into the BCA PTO Enquiry URL field and click **Look up & continue**. LiftAuth will automatically pull the equipment ID, address, and other details.
+  </Step>
+  <Step title="Fill in the remaining details">
+    Confirm or correct the pre-filled details, select the lift type, and assign a building manager if you have one ready.
+  </Step>
+  <Step title="Register the lift">
+    Click **Register lift**. The lift is now in your system.
+  </Step>
+</Steps>
 
-    <Info>
-      Slack delivery requires the Slack integration to be connected. See [Messaging connectors](/integrations/connectors/messaging) for setup steps.
-    </Info>
-  </Tab>
-</Tabs>
+<Tip>
+  You can also add a lift by scanning the QR code on the lift's equipment plate using the LiftAuth mobile app — this retrieves the same BCA URL automatically.
+</Tip>
 
-## Manage subscriptions
+<Warning>
+  If a lift is already registered in your account, LiftAuth will notify you and prevent a duplicate from being created.
+</Warning>
 
-Scheduled deliveries are listed under **Analytics → Reports → Schedules**. From there you can:
+## Lift types
 
-- **Pause** a schedule without deleting it.
-- **Edit** the frequency, time, or recipient list.
-- **Run now** to trigger an immediate delivery outside the regular cadence.
-- **Delete** to permanently remove the schedule.
+| Type | Description |
+| --- | --- |
+| **Passenger** | Standard elevator for people |
+| **Goods** | Freight elevator for cargo |
+| **Dumbwaiter** | Small service lift for food, laundry, or documents |
+| **Stairlift** | Chair lift fitted to a staircase |
+| **Handicap** | Accessibility platform lift |
 
-Recipients can unsubscribe from scheduled emails using the unsubscribe link in the footer of each delivery. Admins can also remove recipients from the schedule management page.
+## Viewing a lift's history
+
+Click on any lift to open its detail page. From here you can see all past service records, open faults, and the assigned maintenance plan.\
+
+## Assigning a building manager to a lift
+
+If you did not assign a building manager when registering the lift, you can do it later:
+
+1. Open the lift's detail page.
+2. Click **Edit**.
+3. Select the building manager and click **Save**.
+
+<Warning>
+  A building manager must be assigned to a lift before you can create jobs or maintenance plans for it.
+</Warning>

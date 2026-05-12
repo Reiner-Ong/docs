@@ -40,7 +40,8 @@
           "analytics/quickstart",
           "analytics/connect-data",
           "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports"
+          "analytics/reports/scheduled-reports",
+          "analytics/scheduling-and-tracking-work"
         ]
       },
       {

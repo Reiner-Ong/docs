@@ -1,0 +1,111 @@
+---
+title: "Scheduling & Tracking Work"
+description: "How to create, assign, schedule, and track service jobs."
+---
+
+A **job** represents a service visit to a lift. Every time a technician goes to a site, there should be a job in LiftAuth to record it.
+
+## The three job types
+
+<CardGroup cols={3}>
+  <Card icon="calendar-check">
+    ## Maintenance
+
+    A planned, routine inspection. Usually created automatically by a Maintenance Plan. Use this for regular scheduled services.
+  </Card>
+
+  <Card icon="badge-x">
+    ## Breakdown
+
+    An emergency call-out. Use this when a lift has failed or is unsafe and needs immediate attention.\
+  </Card>
+
+  <Card icon="badge-alert">
+    ## Repair
+
+    A visit to fix a specific known fault. Use this when you are following up on a reported issue.\
+    \
+  </Card>
+</CardGroup>
+
+## How a job moves through the system
+
+| Status | Meaning |
+| --- | --- |
+| **Open** | Job created, no technician assigned yet |
+| **Scheduled** | Technician assigned and date/time confirmed |
+| **Work Done** | Technician completed the job on-site |
+| **Signed** | Building manager has signed the jobsheet |
+| **Closed** | Admin has reviewed and closed the job |
+
+## Creating a new job
+
+<Steps>
+  <Step title="Go to Jobs">
+    Click **Jobs** in the left sidebar.
+  </Step>
+  <Step title="Click New job">
+    Click the **Schedule Job** button and select the job type — Maintenance, Breakdown, or Repair.
+  </Step>
+  <Step title="Select the lift">
+    Choose the lift that needs servicing.
+  </Step>
+  <Step title="Assign a technician">
+    Select the technician who will carry out the work.
+  </Step>
+  <Step title="Set the date and time">
+    Enter the scheduled date and expected time window.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The technician will see this job in their mobile app.
+  </Step>
+</Steps>
+
+<Tip>
+  If you have set up a [Maintenance Plan](/admin/maintenance-plans) for a lift, maintenance jobs are created automatically each cycle — you only need to assign the technician and confirm the time.
+</Tip>
+
+## Viewing all jobs
+
+Click **Jobs** in the sidebar to see all jobs. You can switch between a **table view** and a **kanban board** grouped by status. Use the filters at the top to narrow by job type, status, technician, or date range.
+
+## Rescheduling a job
+
+1. Open the job.
+2. Click **Reschedule**.
+3. Set the new date and time and save.
+
+## Cancelling a job
+
+1. Open the job.
+2. Click **Cancel job** and confirm.
+
+<Warning>
+  Cancelled jobs cannot be reopened. Create a new job if the visit still needs to happen.
+</Warning>
+
+## Closing a completed job {#closing-a-job}
+
+Once the technician has finished and the building manager has signed, the job will appear in your Inbox ready to close.
+
+<Steps>
+  <Step title="Open the job">
+    Find it in the Inbox or in the Jobs list with status **Signed**.
+  </Step>
+  <Step title="Review the jobsheet">
+    Check the checklist results, photos, and signatures.
+  </Step>
+  <Step title="Close the job">
+    Click **Close job** and confirm. The job status changes to **Closed**.
+  </Step>
+</Steps>
+
+<Tip>
+  If the building manager was not on-site to sign, the technician can send them a signing link by email. The job will move to **Signed** instead once they complete it. Learn how to resend a signing link in [Maintenance Records](/admin/records#sending-a-signing-link).
+</Tip>
+
+## Rescheduling a job {#rescheduling-a-job}
+
+1. Open the job from the Jobs list.
+2. Click **Reschedule**.
+3. Set the new date and time and save.
