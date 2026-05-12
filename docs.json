@@ -26,10 +26,10 @@
         "icon": "layers",
         "expanded": true,
         "pages": [
-          "gettingstarted/whatisliftauth",
-          "gettingstarted/whousesliftauth",
-          "platform/configuration/settings",
-          "platform/configuration/user-management"
+          "start/what-is-la",
+          "start/who-uses-la",
+          "start/glossary",
+          "start/how-it-fits"
         ]
       },
       {
@@ -37,25 +37,25 @@
         "icon": "app-window-mac",
         "expanded": true,
         "pages": [
-          "analytics/quickstart",
-          "analytics/connect-data",
-          "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports",
-          "analytics/scheduling-and-tracking-work",
-          "analytics/maintenance-records",
-          "analytics/faults-and-issues",
-          "analytics/invoices-and-payments",
-          "analytics/managing-your-team",
-          "analytics/maintenance-plans-putting-it-all-together"
+          "admin/logging-in",
+          "admin/inbox",
+          "admin/building-managers",
+          "admin/lifts",
+          "admin/jobs",
+          "admin/records",
+          "admin/issues",
+          "admin/invoices-and-payments",
+          "admin/managing-your-team",
+          "admin/maintenance-plans"
         ]
       },
       {
         "group": "For Technician (Mobile App)",
         "icon": "smartphone",
         "pages": [
-          "technician/download-and-logging-in",
+          "technician/download",
           "technician/your-home-screen-todays-jobs",
-          "technician/starting-a-j",
+          "technician/starting-a-job",
           "technician/completing-a-job",
           "technician/getting-a-signature",
           "technician/scanning-a-qr-code",
