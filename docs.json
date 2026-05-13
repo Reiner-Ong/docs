@@ -38,7 +38,7 @@
         "pages": [
           "admin/logging-in",
           {
-            "group": "Creating Your First Job",
+            "group": "Getting Started",
             "icon": "workflow",
             "pages": [
               "admin/building-managers",
@@ -60,15 +60,15 @@
         "pages": [
           "technician/download",
           {
-            "group": "Getting Starting on Your First Job",
+            "group": "Getting Starting",
             "icon": "workflow",
             "pages": [
               "technician/starting-a-job",
               "technician/completing-a-job",
-              "technician/getting-a-signature"
+              "technician/getting-a-signature",
+              "technician/create-an-adhoc-job"
             ]
           },
-          "technician/create-an-adhoc-job",
           "technician/scanning-a-qr-code",
           "technician/reporting-a-fault"
         ]

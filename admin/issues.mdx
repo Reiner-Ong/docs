@@ -1,5 +1,5 @@
 ---
-title: "Faults & Issues"
+title: "Raising An Issue"
 description: "How to track, manage, and resolve faults reported on lifts.  "
 ---
 
@@ -11,7 +11,7 @@ An **issue** is a fault or problem logged against a specific lift. Issues can be
   <Card icon="badge-x">
     ## Critical
 
-    A safety risk that is preventing the lift from functioning right now.\
+    A safety risk that is preventing the lift from functioning right now.
   </Card>
 
   <Card icon="badge-info">
@@ -37,7 +37,7 @@ An **issue** is a fault or problem logged against a specific lift. Issues can be
     Choose the lift the fault was found on. The issue will be linked to that lift's record.
   </Step>
   <Step title="Fill in the details">
-    Enter a title, description, and severity level. You can also attach photos.
+    Enter a title, description, and severity level. You can also attach photos. 
   </Step>
   <Step title="Save">
     Click **Save**. The issue is now open and linked to the lift.
@@ -48,7 +48,7 @@ An **issue** is a fault or problem logged against a specific lift. Issues can be
   You can also create an issue directly from a lift's detail page — open the lift, go to the Issues tab, and click **New issue**.
 </Tip>
 
-## How technicians see issues
+## How do Technicians sees issues
 
 When a technician starts a job on a lift, any open issues linked to that lift are shown to them automatically. This gives them visibility of known faults before they begin work, so nothing is missed on-site.
 
@@ -66,21 +66,27 @@ When a technician starts a job on a lift, any open issues linked to that lift ar
 
 Issues can be closed in two ways:
 
-**By a Job** — when a technician completes a repair job and marks an issue as **Resolved**, LiftAuth closes it automatically. If the technician marks it as **Not resolved** (could not fix it this visit), the issue stays open.
+<CardGroup cols={1}>
+  <Card title="By a Job" icon="wrench">
+    When a technician completes a repair job and marks an issue as **Resolved**, LiftAuth closes it automatically. If the technician marks it as **Not Resolved** (could not fix it this visit), the issue stays open.
+  </Card>
 
-**Manually** — an admin can close an issue at any time from the dashboard.
+  <Card title="Manually" icon="user">
+    An admin can close an issue at any time from the dashboard.
 
-<Steps>
-  <Step title="Open the issue">
-    Find it in the Issues list and click it.
-  </Step>
-  <Step title="Click Close issue">
-    Click the **Close issue** button on the right side of the page.
-  </Step>
-  <Step title="Select a close reason">
-    - **Resolved** — the fault has been fixed
-    - **Won't fix** — acknowledged but no action will be taken
-    - **Duplicate** — already recorded under another issue
-    - **Decommissioned** — the lift has been taken out of service
-  </Step>
-</Steps>
+    <Steps>
+      <Step title="Open the issue">
+        Find it in the Issues list and click it.
+      </Step>
+      <Step title="Click Close issue">
+        Click the **Close issue** button on the right side of the page.
+      </Step>
+      <Step title="Select a close reason">
+        - **Resolved** — the fault has been fixed
+        - **Won't fix** — acknowledged but no action will be taken
+        - **Duplicate** — already recorded under another issue
+        - **Decommissioned** — the lift has been taken out of service
+      </Step>
+    </Steps>
+  </Card>
+</CardGroup>
