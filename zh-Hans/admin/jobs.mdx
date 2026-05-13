@@ -1,0 +1,93 @@
+---
+title: "创建工作"
+description: "如何创建、分配、安排和跟踪服务工作。"
+---
+
+**工作**代表对电梯的服务访问。每当技术员到达现场时,LiftAuth 中应有一项工作来记录它。每项工作都与一部电梯关联。
+
+## 三种工作类型
+
+<CardGroup cols={1}>
+  <Card icon="calendar-check">
+    ## Maintenance
+
+    计划的、例行的检查。通常由维护计划自动创建。用于定期预定的服务。
+  </Card>
+
+  <Card icon="badge-x">
+    ## Breakdown
+
+    紧急呼叫。当电梯发生故障或不安全且需要立即关注时使用此项。
+  </Card>
+
+  <Card icon="badge-alert">
+    ## Repair
+
+    访问以修复特定的已知故障。当您正在跟进报告的问题时使用此项。
+  </Card>
+</CardGroup>
+
+## 工作状态
+
+| 状态 | 含义 |
+| --- | --- |
+| **Scheduled** | 技术员已分配,日期/时间已确认 |
+| **Work Done** | 技术员已在现场完成工作。已创建[记录](/admin/records) |
+| **Signed** | 建筑经理已在记录上签字 |
+| **Closed** | 管理员已审核并关闭工作 |
+
+## 创建新工作
+
+<Steps>
+  <Step title="转到 Jobs">
+    点击左侧边栏中的 **Jobs**。
+  </Step>
+  <Step title="点击 Schedule Job">
+    点击 **Schedule Job** 按钮并选择工作类型 — Maintenance、Breakdown 或 Repair。
+  </Step>
+  <Step title="选择电梯">
+    选择需要服务的电梯。每项工作仅涵盖一部电梯。
+  </Step>
+  <Step title="分配技术员">
+    选择将执行工作的技术员。
+  </Step>
+  <Step title="设置日期和时间">
+    输入预定的日期和预期时间窗口。如果您输入错误也不用担心,您可以[稍后修复](/admin/jobs#rescheduling)。
+  </Step>
+  <Step title="保存">
+    点击 **Save**。技术员将在其移动应用程序中看到此工作。
+  </Step>
+</Steps>
+
+<Tip>
+  如果您已为电梯设置了[维护计划](/admin/maintenance-plans),则每个周期都会自动创建维护工作 — 您只需分配技术员并确认时间。
+</Tip>
+
+## 关闭已完成的工作 {#closing-a-job}
+
+技术员完成后,建筑经理签字后,工作将出现在您的 Inbox 中,准备关闭。
+
+<Steps>
+  <Step title="打开工作">
+    在 Inbox 中或 Jobs 列表中找到状态为 **Signed** 的工作。
+  </Step>
+  <Step title="审核记录">
+    检查检查表结果、照片和签名。
+  </Step>
+  <Step title="关闭工作">
+    点击 **Close job** 并确认。工作状态变为 **Closed**。
+  </Step>
+</Steps>
+
+<Tip>
+  如果建筑经理不在现场签字,技术员可以通过电子邮件向他们发送签字链接。一旦他们完成,工作将变为 **Signed**。在 [Records](/admin/records#sending-a-signing-link) 中了解如何操作。
+</Tip>
+
+## 重新安排或取消工作 {#rescheduling}
+
+<Warning>
+  工作可以重新安排或取消,但取消的工作无法重新打开。如果仍需进行访问,请创建新工作。
+</Warning>
+
+1. 从 Jobs 列表打开工作。
+2. 点击 **Reschedule** 或 **Cancel job** 并确认。

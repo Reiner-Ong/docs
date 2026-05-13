@@ -1,0 +1,93 @@
+---
+title: "发票和付款"
+description: "如何审核、批准、发送和跟踪发票和付款。"
+---
+
+## 发票的创建方式
+
+发票可以通过两种方式创建:
+
+<CardGroup cols={2}>
+  <Card icon="newspaper">
+    ## 通过维护计划
+
+    [维护计划](https://liftauth.mintlify.app/admin/maintenance-plans)可以生成草稿发票,需要先**批准**才能转换为电梯的实际发票。\
+  </Card>
+
+  <Card icon="plus">
+    ## 手动
+
+    如果没有维护计划,您可以自己创建发票。转到侧边栏中的 **Invoices** → **New invoice**。填写建筑经理、发票日期、到期日期和明细项目。
+  </Card>
+</CardGroup>
+
+## 草稿发票 — 发送前审核
+
+从[维护计划](https://liftauth.mintlify.app/admin/maintenance-plans)完成工作生成的发票以**草稿**开始,并出现在您的 Inbox 中。在您批准之前,不会向建筑经理发送任何内容。
+
+**草稿状态:**
+
+| 状态 | 含义 |
+| --- | --- |
+| **Pending** | 在 Inbox 中等待您的审核 |
+| **Finalized** | 您已批准 — 已创建发票并准备发送 |
+| **Rejected** | 您已拒绝 — 不会发送 |
+
+### 批准或拒绝草稿
+
+<Steps>
+  <Step title="从您的 Inbox 打开草稿">
+    点击草稿发票卡片以打开它。
+  </Step>
+  <Step title="检查详细信息">
+    审核建筑经理、明细项目、总金额和到期日期。
+  </Step>
+  <Step title="批准或拒绝">
+    点击 **Approve** 完成它并创建发票。如果有错误,请点击 **Reject** — 草稿将被标记为拒绝且不会发送。
+  </Step>
+</Steps>
+
+<Warning>
+  被拒绝的草稿会保留在记录中,但无法编辑或重新发送。如果需要,需要手动创建新发票。
+</Warning>
+
+## 发送已完成的发票
+
+<Steps>
+  <Step title="打开发票">
+    转到侧边栏中的 **Invoices** 并点击发票。
+  </Step>
+  <Step title="点击 Send invoice">
+    点击 **Send invoice** 并确认收件人的电子邮件地址。
+  </Step>
+  <Step title="确认">
+    建筑经理将通过电子邮件收到发票。
+  </Step>
+</Steps>
+
+<Tip>
+  发票将发送到建筑经理的主要联系电子邮件。确保这在他们的[建筑经理记录](/admin/building-managers)中是最新的。
+</Tip>
+
+## 记录付款
+
+当建筑经理付款时,在 LiftAuth 中记录它以保持您的记录最新。
+
+<Steps>
+  <Step title="打开发票">
+    在 **Invoices** 列表中找到它并点击它。
+  </Step>
+  <Step title="点击 Record payment">
+    点击 **Record payment**,输入金额和收到日期,然后保存。
+  </Step>
+</Steps>
+
+<Tip>
+  侧边栏中的 **Payments** 部分为您提供所有记录付款的完整列表。
+</Tip>
+
+## 删除发票
+
+<Warning>
+  发票无法删除。一旦创建发票,它将永久保存在记录中。这是为了确保您的计费历史记录在合规和审计目的方面保持完整和准确。
+</Warning>

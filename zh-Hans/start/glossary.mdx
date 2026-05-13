@@ -1,0 +1,69 @@
+---
+title: "术语表"
+description: "用通俗易懂的语言定义 LiftAuth 中使用的每个术语。  "
+sidebarTitle: "术语表"
+---
+
+每当您在 LiftAuth 中遇到不熟悉的词时,请将此页面用作参考。
+
+<AccordionGroup>
+  <Accordion title="Lift">
+    建筑中的实际电梯单元。每部电梯在 LiftAuth 中都有自己的记录,包括位置、类型、制造商和序列号等详细信息。
+  </Accordion>
+
+  <Accordion title="Building Manager">
+    负责电梯所在建筑的公司或所有者。他们接收发票并对完成的工作进行签字确认。
+  </Accordion>
+
+  <Accordion title="Tenant / Team">
+    使用 LiftAuth 管理和维护电梯的公司或团队。LiftAuth 中的所有内容 — 电梯、工作、发票和团队成员 — 都属于一个 Tenant。如果您为一家公司工作,您只会看到一个 Tenant。
+  </Accordion>
+
+  <Accordion title="Job">
+    对电梯的服务访问。每次技术员到现场,都会被记录为一项工作。有 3 种工作:
+
+    - **Maintenance** — 计划的、例行的服务(例如每月或每季度的检查)。
+    - **Breakdown** — 当电梯停止工作或使用不安全时的紧急呼叫。
+    - **Repair** — 访问以修复先前报告的特定已知故障。
+  </Accordion>
+
+  <Accordion title="Checklist">
+    技术员在维护访问期间必须检查的项目列表。每个项目都标记为通过或失败。
+  </Accordion>
+
+  <Accordion title="Record">
+    技术员完成工作时创建的书面报告。它包括检查表结果、照片、备注和签名。它可以下载为 PDF。
+  </Accordion>
+
+  <Accordion title="Signature">
+    确认工作已完成的签字。技术员和建筑经理都必须在每张工作单上签字。
+  </Accordion>
+
+  <Accordion title="Issue / Fault">
+    在电梯上发现的问题。问题被赋予严重性级别 — Critical、Major 或 Minor — 并被跟踪直至解决。
+  </Accordion>
+
+  <Accordion title="Invoice">
+    工作完成后发送给建筑经理的账单。发票自动创建,必须由管理员审核才能发送。
+  </Accordion>
+
+  <Accordion title="Maintenance Plan">
+    告诉 LiftAuth 电梯需要服务的频率(例如每月)的计划。一旦设置好,LiftAuth 将在每个周期自动创建工作和发票。
+  </Accordion>
+
+  <Accordion title="BCA Equipment ID">
+    根据新加坡建筑合规法规分配给电梯的唯一代码。LiftAuth 可以使用此代码自动查找电梯详细信息。
+  </Accordion>
+
+  <Accordion title="OTP (One-Time Password)">
+    通过短信发送到您的手机或电子邮件的 6 位数字代码。您使用它代替传统密码登录。它在几分钟后过期。
+  </Accordion>
+
+  <Accordion title="Draft Invoice">
+    已自动生成但尚未发送的发票。管理员必须在发送给建筑经理之前对其进行审核和批准。
+  </Accordion>
+
+  <Accordion title="PDF">
+    已完成工作单的可下载文档版本,包括所有检查表结果、照片和签名。
+  </Accordion>
+</AccordionGroup>

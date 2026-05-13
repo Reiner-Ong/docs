@@ -1,0 +1,92 @@
+---
+title: "提出问题"
+description: "如何跟踪、管理和解决电梯上报告的故障。  "
+---
+
+**问题**是针对特定电梯记录的故障或问题。问题可以由仪表板上的管理员或现场移动应用程序上的技术员创建。一旦创建,它们将保持开放和可见,直到被手动关闭。
+
+## 严重性级别
+
+<CardGroup cols={3}>
+  <Card icon="badge-x">
+    ## Critical
+
+    一个安全风险,目前正在阻止电梯运行。
+  </Card>
+
+  <Card icon="badge-info">
+    ## Major
+
+    影响电梯的运行,并有可能很快停止服务。
+  </Card>
+
+  <Card icon="badge-minus">
+    ## Minor
+
+    外观或低影响。可以在下次预定的访问时解决。
+  </Card>
+</CardGroup>
+
+## 创建问题
+
+<Steps>
+  <Step title="转到 Issues">
+    点击左侧边栏中的 **Issues**,然后点击 **New issue**。
+  </Step>
+  <Step title="选择电梯">
+    选择发现故障的电梯。问题将链接到该电梯的记录。
+  </Step>
+  <Step title="填写详细信息">
+    输入标题、描述和严重性级别。您还可以附加照片。 
+  </Step>
+  <Step title="保存">
+    点击 **Save**。问题现已开放并链接到电梯。
+  </Step>
+</Steps>
+
+<Tip>
+  您也可以直接从电梯的详细信息页面创建问题 — 打开电梯,转到 Issues 选项卡,然后点击 **New issue**。
+</Tip>
+
+## 技术员如何查看问题
+
+当技术员对电梯开始工作时,与该电梯相关的任何未解决问题都会自动显示给他们。这让他们在开始工作之前了解已知的故障,这样在现场就不会遗漏任何东西。
+
+## 编辑问题
+
+1. 打开问题。
+2. 点击 **Edit**。
+3. 更新标题、描述或严重性,然后保存。
+
+<Warning>
+  已关闭的问题无法编辑。
+</Warning>
+
+## 关闭问题
+
+问题可以通过两种方式关闭:
+
+<CardGroup cols={1}>
+  <Card title="通过工作" icon="wrench">
+    当技术员完成维修工作并将问题标记为 **Resolved** 时,LiftAuth 会自动关闭它。如果技术员将其标记为 **Not Resolved**(本次访问无法修复),则问题保持开放。
+  </Card>
+
+  <Card title="手动" icon="user">
+    管理员可以随时从仪表板关闭问题。
+
+    <Steps>
+      <Step title="打开问题">
+        在 Issues 列表中找到它并点击它。
+      </Step>
+      <Step title="点击 Close issue">
+        点击页面右侧的 **Close issue** 按钮。
+      </Step>
+      <Step title="选择关闭原因">
+        - **Resolved** — 故障已修复
+        - **Won't fix** — 已确认但不会采取任何行动
+        - **Duplicate** — 已记录在另一个问题下
+        - **Decommissioned** — 电梯已停止使用
+      </Step>
+    </Steps>
+  </Card>
+</CardGroup>
