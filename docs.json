@@ -92,6 +92,14 @@
         "language": "hi",
         "pages": [
           {
+            "group": "परिचय",
+            "icon": "layers",
+            "expanded": true,
+            "pages": [
+              "hi/start/glossary"
+            ]
+          },
+          {
             "group": "एडमिन के लिए (वेब डैशबोर्ड)",
             "icon": "app-window-mac",
             "expanded": true,
@@ -115,6 +123,14 @@
       {
         "language": "zh-Hans",
         "pages": [
+          {
+            "group": "简介",
+            "icon": "layers",
+            "expanded": true,
+            "pages": [
+              "zh-Hans/start/glossary"
+            ]
+          },
           {
             "group": "管理员(网页控制台)",
             "icon": "app-window-mac",
