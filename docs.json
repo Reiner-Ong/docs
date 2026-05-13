@@ -26,10 +26,9 @@
         "icon": "layers",
         "expanded": true,
         "pages": [
-          "start/what-is-la",
-          "start/who-uses-la",
+          "start/getting-started",
           "start/glossary",
-          "start/how-it-fits"
+          "start/concepts"
         ]
       },
       {
@@ -38,15 +37,21 @@
         "expanded": true,
         "pages": [
           "admin/logging-in",
+          {
+            "group": "Creating Your First Job",
+            "icon": "workflow",
+            "pages": [
+              "admin/building-managers",
+              "admin/lifts",
+              "admin/issues",
+              "admin/jobs",
+              "admin/records",
+              "admin/invoices-and-payments",
+              "admin/maintenance-plans"
+            ]
+          },
           "admin/inbox",
-          "admin/building-managers",
-          "admin/lifts",
-          "admin/jobs",
-          "admin/records",
-          "admin/issues",
-          "admin/invoices-and-payments",
-          "admin/managing-your-team",
-          "admin/maintenance-plans"
+          "admin/managing-your-team"
         ]
       },
       {

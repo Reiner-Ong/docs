@@ -3,11 +3,11 @@ title: "Scheduling & Tracking Work"
 description: "How to create, assign, schedule, and track service jobs."
 ---
 
-A **job** represents a service visit to a lift. Every time a technician goes to a site, there should be a job in LiftAuth to record it.
+A **job** represents a service visit to a lift. Every time a technician goes to a site, there should be a job in LiftAuth to record it. Each job is tied to exactly one lift.
 
 ## The three job types
 
-<CardGroup cols={3}>
+<CardGroup cols={1}>
   <Card icon="calendar-check">
     ## Maintenance
 
@@ -17,25 +17,23 @@ A **job** represents a service visit to a lift. Every time a technician goes to 
   <Card icon="badge-x">
     ## Breakdown
 
-    An emergency call-out. Use this when a lift has failed or is unsafe and needs immediate attention\\
+    An emergency call-out. Use this when a lift has failed or is unsafe and needs immediate attention.
   </Card>
 
   <Card icon="badge-alert">
     ## Repair
 
-    A visit to fix a specific known fault. Use this when you are following up on a reported issue.\
-    \\
+    A visit to fix a specific known fault. Use this when you are following up on a reported issue.
   </Card>
 </CardGroup>
 
-## How a job moves through the system
+## Job statuses
 
 | Status | Meaning |
 | --- | --- |
-| **Open** | Job created, no technician assigned yet |
 | **Scheduled** | Technician assigned and date/time confirmed |
 | **Work Done** | Technician completed the job on-site |
-| **Signed** | Building manager has signed the jobsheet |
+| **Signed** | Building Manager has signed the record |
 | **Closed** | Admin has reviewed and closed the job |
 
 ## Creating a new job
@@ -44,17 +42,17 @@ A **job** represents a service visit to a lift. Every time a technician goes to 
   <Step title="Go to Jobs">
     Click **Jobs** in the left sidebar.
   </Step>
-  <Step title="Click New job">
+  <Step title="Click Schedule Job">
     Click the **Schedule Job** button and select the job type — Maintenance, Breakdown, or Repair.
   </Step>
   <Step title="Select the lift">
-    Choose the lift that needs servicing.
+    Choose the lift that needs servicing. Each job covers one lift only.
   </Step>
   <Step title="Assign a technician">
     Select the technician who will carry out the work.
   </Step>
   <Step title="Set the date and time">
-    Enter the scheduled date and expected time window.
+    Enter the scheduled date and expected time window. Don't worry if you input this wrongly, you can [fix this after](/admin/jobs#rescheduling).
   </Step>
   <Step title="Save">
     Click **Save**. The technician will see this job in their mobile app.
@@ -67,13 +65,13 @@ A **job** represents a service visit to a lift. Every time a technician goes to 
 
 ## Closing a completed job {#closing-a-job}
 
-Once the technician has finished and the building manager has signed, the job will appear in your Inbox ready to close.
+Once the technician has finished and the Building Manager has signed, the job will appear in your Inbox ready to close.
 
 <Steps>
   <Step title="Open the job">
     Find it in the Inbox or in the Jobs list with status **Signed**.
   </Step>
-  <Step title="Review the jobsheet">
+  <Step title="Review the record">
     Check the checklist results, photos, and signatures.
   </Step>
   <Step title="Close the job">
@@ -82,11 +80,14 @@ Once the technician has finished and the building manager has signed, the job wi
 </Steps>
 
 <Tip>
-  If the building manager was not on-site to sign, the technician can send them a signing link by email. The job will move to **Signed** instead once they complete it. Learn how to resend a signing link in [Maintenance Records](/admin/records#sending-a-signing-link).
+  If the Building Manager was not on-site to sign, the technician can send them a signing link by email. The job will move to **Signed** once they complete it. Learn how in [Records](/admin/records#sending-a-signing-link).
 </Tip>
 
-## Rescheduling a job {#rescheduling-a-job}
+## Rescheduling or cancelling a job {#rescheduling}
+
+<Warning>
+  Jobs can be rescheduled or cancelled, but cancelled jobs cannot be reopened. Create a new job if the visit still needs to happen.
+</Warning>
 
 1. Open the job from the Jobs list.
-2. Click **Reschedule**.
-3. Set the new date and time and save.
+2. Click **Reschedule** or **Cancel job** and confirm.

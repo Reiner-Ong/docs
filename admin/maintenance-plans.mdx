@@ -4,18 +4,14 @@ description: "How to automate your maintenance schedule so LiftAuth handles job 
 sidebarTitle: "Maintenance Plans"
 ---
 
-A **maintenance plan** is the automation layer of LiftAuth. Once set up for a lift, it automatically creates a maintenance job and a draft invoice each cycle — you just review and close them.
+A **maintenance plan** is the automation layer of LiftAuth. Once set up for a lift, it automatically creates a maintenance job and a draft invoice on a fixed basis — you just review and close them.
 
-## What a maintenance plan connects
+## What a maintenance plan does
 
 Before setting up a plan, make sure you have already:
 
 - [Registered the lift](/admin/lifts)
-- [Added the building manager](/admin/building-managers) and assigned them to the lift
-
-Once a plan is active, the full cycle runs automatically:
-
-**Lift \+ Building Manager → Maintenance Plan → Job (auto-created) → Jobsheet \+ Signatures → Draft Invoice (auto-generated) → You review and send**
+- [Added the building manager](/admin/building-managers) and assigned them to the lift\\
 
 ## Creating a maintenance plan
 
@@ -36,10 +32,23 @@ Once a plan is active, the full cycle runs automatically:
     - **Quarterly** — once every 3 months
   </Step>
   <Step title="Set the preferred schedule">
-    Choose the preferred day of the month and time window for visits — for example, the first Monday of each month between 9am and 11am.
+    Pick a date and LiftAuth will schedule the closest working day
   </Step>
   <Step title="Set up the invoice template">
-    Add the line items and amounts that will appear on the automatically generated invoice each cycle.
+    Add the line items and amounts that will appear on each automatically generated invoice.
+
+    Set **Jobs per invoice** based on how often you want to invoice the Building Manager:
+
+    | Maintenance frequency | Invoice frequency | Jobs per invoice |
+    | --- | --- | --- |
+    | Monthly | Monthly | 1 |
+    | Monthly | Quarterly | 3 |
+    | Monthly | Annually | 12 |
+    | Quarterly | Quarterly | 1 |
+    | Quarterly | Half-yearly | 2 |
+    | Quarterly | Annually | 4 |
+
+    An invoice draft is automatically generated once the required number of jobs in a cycle have been closed.
   </Step>
   <Step title="Save">
     Click **Save**. The plan is now active and LiftAuth will create the first job based on your schedule.
@@ -50,9 +59,9 @@ Once a plan is active, the full cycle runs automatically:
 
 | LiftAuth handles automatically | You still need to do |
 | --- | --- |
-| Creating the maintenance job each cycle | Assigning the job to a technician |
+| Creating the maintenance job each cycle | Closing the completed job after it is signed |
 | Generating a draft invoice after the job closes | Reviewing and approving the draft invoice |
-| Sending the jobsheet signing link | Closing the completed job after it is signed |
+| Sending the jobsheet signing link |  |
 
 <Tip>
   Auto-created jobs will appear in the **Jobs** list. Just assign a technician and confirm the scheduled time — everything else flows automatically.
@@ -67,14 +76,3 @@ Once a plan is active, the full cycle runs automatically:
 <Tip>
   Changes to a plan take effect from the next cycle — they will not affect jobs that have already been created.
 </Tip>
-
-## Pausing a plan (WIP)
-
-If a lift is temporarily out of service or does not need servicing for a period, you can pause the plan to stop new jobs from being created.
-
-1. Open the plan.
-2. Click **Pause plan** and confirm.
-
-<Warning>
-  Pausing a plan does not affect jobs that have already been created. Those will need to be cancelled manually if they are no longer needed.
-</Warning>
