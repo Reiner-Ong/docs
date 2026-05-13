@@ -115,9 +115,10 @@
           },
           {
             "group": "अवधारणाएं",
-            "pages": []
-          },
-          "hi/what-is-a-job"
+            "pages": [
+              "hi/what-is-a-job"
+            ]
+          }
         ]
       },
       {
@@ -147,9 +148,10 @@
           },
           {
             "group": "概念",
-            "pages": []
-          },
-          "zh-Hans/what-is-a-job"
+            "pages": [
+              "zh-Hans/what-is-a-job"
+            ]
+          }
         ]
       }
     ]
