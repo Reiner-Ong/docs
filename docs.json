@@ -50,8 +50,8 @@
               "admin/maintenance-plans"
             ]
           },
-          "admin/inbox",
-          "admin/managing-your-team"
+          "admin/managing-your-team",
+          "admin/inbox"
         ]
       },
       {
@@ -59,9 +59,16 @@
         "icon": "smartphone",
         "pages": [
           "technician/download",
-          "technician/starting-a-job",
-          "technician/completing-a-job",
-          "technician/getting-a-signature",
+          {
+            "group": "Getting Starting on Your First Job",
+            "icon": "workflow",
+            "pages": [
+              "technician/starting-a-job",
+              "technician/completing-a-job",
+              "technician/getting-a-signature"
+            ]
+          },
+          "technician/create-an-adhoc-job",
           "technician/scanning-a-qr-code",
           "technician/reporting-a-fault"
         ]
