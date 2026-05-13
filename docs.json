@@ -82,9 +82,10 @@
           },
           {
             "group": "Concepts",
-            "pages": []
-          },
-          "what-is-a-job"
+            "pages": [
+              "what-is-a-job"
+            ]
+          }
         ]
       },
       {
