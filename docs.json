@@ -20,69 +20,122 @@
   },
   "navigation": {
     "directory": "card",
-    "pages": [
+    "languages": [
       {
-        "group": "Introduction",
-        "icon": "layers",
-        "expanded": true,
+        "language": "en",
         "pages": [
-          "start/getting-started",
-          "start/glossary",
-          "start/concepts"
-        ]
-      },
-      {
-        "group": "For Admins (Web Dashboard)",
-        "icon": "app-window-mac",
-        "expanded": true,
-        "pages": [
-          "admin/logging-in",
           {
-            "group": "Getting Started",
-            "icon": "workflow",
+            "group": "Introduction",
+            "icon": "layers",
+            "expanded": true,
             "pages": [
-              "admin/building-managers",
-              "admin/lifts",
-              "admin/issues",
-              "admin/jobs",
-              "admin/records",
-              "admin/invoices-and-payments",
-              "admin/maintenance-plans"
+              "start/getting-started",
+              "start/glossary",
+              "start/concepts"
             ]
           },
-          "admin/managing-your-team",
-          "admin/inbox"
-        ]
-      },
-      {
-        "group": "For Technician (Mobile App)",
-        "icon": "smartphone",
-        "pages": [
-          "technician/download",
           {
-            "group": "Getting Starting",
-            "icon": "workflow",
+            "group": "For Admins (Web Dashboard)",
+            "icon": "app-window-mac",
+            "expanded": true,
             "pages": [
-              "technician/starting-a-job",
-              "technician/completing-a-job",
-              "technician/getting-a-signature",
-              "technician/create-an-adhoc-job"
+              "admin/logging-in",
+              {
+                "group": "Getting Started",
+                "icon": "workflow",
+                "pages": [
+                  "admin/building-managers",
+                  "admin/lifts",
+                  "admin/issues",
+                  "admin/jobs",
+                  "admin/records",
+                  "admin/invoices-and-payments",
+                  "admin/maintenance-plans"
+                ]
+              },
+              "admin/managing-your-team",
+              "admin/inbox"
             ]
           },
-          "technician/scanning-a-qr-code",
-          "technician/reporting-a-fault"
+          {
+            "group": "For Technician (Mobile App)",
+            "icon": "smartphone",
+            "pages": [
+              "technician/download",
+              {
+                "group": "Getting Starting",
+                "icon": "workflow",
+                "pages": [
+                  "technician/starting-a-job",
+                  "technician/completing-a-job",
+                  "technician/getting-a-signature",
+                  "technician/create-an-adhoc-job"
+                ]
+              },
+              "technician/scanning-a-qr-code",
+              "technician/reporting-a-fault"
+            ]
+          },
+          {
+            "group": "Frequently Asked Questions",
+            "icon": "message-circle-question-mark",
+            "pages": []
+          },
+          {
+            "group": "Concepts",
+            "pages": []
+          },
+          "what-is-a-job"
         ]
       },
       {
-        "group": "Frequently Asked Questions",
-        "icon": "message-circle-question-mark",
-        "pages": []
+        "language": "hi",
+        "pages": [
+          {
+            "group": "एडमिन के लिए (वेब डैशबोर्ड)",
+            "icon": "app-window-mac",
+            "expanded": true,
+            "pages": [
+              {
+                "group": "शुरू करें",
+                "icon": "workflow",
+                "pages": [
+                  "hi/admin/maintenance-plans"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "अवधारणाएं",
+            "pages": []
+          },
+          "hi/what-is-a-job"
+        ]
       },
       {
-        "group": "Concepts",
-        "pages": []
-      },
-      "what-is-a-job"
+        "language": "zh-Hans",
+        "pages": [
+          {
+            "group": "管理员(网页控制台)",
+            "icon": "app-window-mac",
+            "expanded": true,
+            "pages": [
+              {
+                "group": "入门",
+                "icon": "workflow",
+                "pages": [
+                  "zh-Hans/admin/maintenance-plans"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "概念",
+            "pages": []
+          },
+          "zh-Hans/what-is-a-job"
+        ]
+      }
     ]
   },
   "logo": {
