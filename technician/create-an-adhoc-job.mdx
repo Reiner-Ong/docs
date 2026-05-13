@@ -1,27 +1,52 @@
 ---
 title: "Create an Adhoc Job"
-description: "How to create a new job from the mobile app."
+description: "How to create an unscheduled job from the mobile app."
 ---
 
-If you need to log a visit that was not already scheduled, or perhaps a last minute emergency job, you can create a job directly from the app.
+If you need to log a visit that was not already scheduled — such as a last-minute emergency — you can create a job directly from the app.
 
-## How to create a job
+## Finding the lift {#finding-a-lift}
 
-<Steps>
-  <Step title="Find the lift">
-    Go to the **Lifts** tab and tap the lift that needs a visit.
-  </Step>
-  <Step title="Tap Create Job">
-    On the lift's detail page, tap **Create Job** and select the job type — Maintenance, Breakdown, or Repair.
-  </Step>
-  <Step title="Fill in the details">
-    Enter any required details for the job, such as linked issues for a Repair job.
-  </Step>
-  <Step title="Save">
-    Tap **Save**. The job is now created and you can start work immediately.
-  </Step>
-</Steps>
+You can get to a lift's page in two ways: 
+
+<CardGroup cols={1}>
+  <Card title="Browse the Lifts tab" icon="list">
+    Tap the **Lifts** tab at the bottom of the screen and tap the lift from the list.
+  </Card>
+
+  <Card title="Scan the QR code" icon="qr-code">
+    Tap the **Scan** tab and point your camera at the BCA PTO QR code on the lift's compliance plate.
+
+    - If the lift is already registered, it opens the lift's detail page directly.
+    - If the lift is not yet registered, you will be prompted to add it to LiftAuth before creating the job.
+  </Card>
+</CardGroup>
 
 <Tip>
-  If the lift you need is not in your list, contact your admin — you may not have access to it yet.
+  Scanning the QR code is the fastest way to find the right lift when you are already on-site.
 </Tip>
+
+<Warning>
+  The scanner only works with BCA PTO QR codes. If the code won't scan, tap **Enter URL** at the top right to paste the BCA PTO URL manually.
+</Warning>
+
+## Creating the job
+
+<Steps>
+  <Step title="Open the lift detail page">
+    Find the lift using either method above and tap it to open its detail page.
+  </Step>
+  <Step title="Select the job type">
+    Tap **Create Job** and choose the type:
+
+    - **Maintenance job** — routine scheduled visit
+    - **Breakdown job** — lift is out of service
+    - **Repair job** — specific component work
+  </Step>
+  <Step title="Fill in the details">
+    Enter any required details, such as linked issues for a Repair job.
+  </Step>
+  <Step title="Save">
+    Tap **Save**. The job is created and you can start work immediately.
+  </Step>
+</Steps>

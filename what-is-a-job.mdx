@@ -4,76 +4,62 @@ title: "What is a Job"
 
 # Jobs
 
-A job is one piece of work on one lift. Every job belongs to a specific lift, has a type, and goes through the same steps from start to finish. Once it's closed, it becomes part of the lift's permanent history.
+A job is one piece of work on one lift. Every time a technician goes out to a lift — for routine service, a breakdown, or a repair — that visit is a job.
 
-## What a job is
+## What you'll do
 
-A job is a unit of work on a specific lift. Each job:
+Most of the time, your day looks like this:
 
-- Belongs to one lift.
-- Has a type — **Maintenance**, **Breakdown**, or **Repair**.
-- Goes through the same steps as every other job.
-- Is assigned to a technician once it's scheduled.
-- Becomes part of the lift's history when it's closed.
+- Create jobs and send technicians to lifts.
+- Watch jobs come in as technicians finish them.
+- Check the work and close the job once the customer has signed.
 
-A cancelled job is not saved to the lift's history.
+That's the whole flow. The rest of this page explains how each part works.
 
-## How a job moves
+## The life of a job
 
-A job moves through five steps:
+Every job goes through the same four stages. You'll see these words on the screen, so it helps to know what each one means.
 
-**Open → Scheduled → Work Done → Signed → Closed**
+| # | Stage | What it means |
+| --- | --- | --- |
+| 1 | **Scheduled** | A Technician is assigned and a date is set. |
+| 2 | **Work Done** | The Technician has finished on-site. The Job is now waiting for the Building Manager to sign. |
+| 3 | **Signed** | The Building Manager has signed the jobsheet on the technician's phone. |
+| 4 | **Closed** | You've checked the job and closed it. It's now saved to the lift's history. |
 
-| Step | What it means |
-| --- | --- |
-| Open | Created, but no technician or date yet. |
-| Scheduled | A technician and time are set. Ready to be worked. |
-| Work Done | The technician has finished on-site. Waiting for the customer to sign. |
-| Signed | The building rep has signed the jobsheet. |
-| Closed | Admin has reviewed and closed the job. It's now part of the lift's history. |
-| Cancelled | The job won't happen. Not saved to history. |
+## The three kinds of job
 
-Most jobs barely sit in **Open**. A maintenance job from the plan is opened and scheduled in one step. A breakdown job created on-site is opened and scheduled on the technician immediately. **Open** is what you see when admin has created a job but hasn't picked a technician or date yet.
+There are three kinds of job. They all follow the same stages above. The difference is what the Technician does and what kind of Record is produced.
 
-A job can be **cancelled** at any point before it's closed — even after the customer has signed, if admin needs to void it. **Closed** and **Cancelled** are final.
+## Maintenance Job
 
-Signing always requires a signature from the building rep. Admin can't sign on the customer's behalf.
+Routine service visits — the regular check-ups you do on every lift. This is often scheduled by a Maintenance Plan. A Maintenance Record is created.
 
-If something needs redoing, admin can step a job back one stage — for example from **Signed** back to **Work Done**.
+<img
+  src="/images/01_maintenance_job_flow.png"
+  alt="01 Maintenance Job Flow"
+  title="01 Maintenance Job Flow"
+  className="mr-auto"
+/>
 
-## The five-step workflow
+## Breakdown Job
 
-Every job type follows the same five steps:
+The Building Manager reports a breakdown. A Technician is dispatched immediately, diagnoses the issue, and creates the breakdown job on-site. A Breakdown Record is created.
 
-1. The job is created and assigned to a technician — it shows as **Scheduled**.
-2. The technician attends on-site and does the work.
-3. The technician marks the job **Work Done**.
-4. The building rep signs the jobsheet — the job becomes **Signed**.
-5. Admin reviews and closes the job — it becomes **Closed** and is saved to the lift's history.
+<Frame>
+  ![02 Breakdown Job Flow](/images/02_breakdown_job_flow.png)
+</Frame>
 
-What changes between types is **how the job is created** and **what the technician captures on-site**.
+## Repair Job
 
-## Types of job
+Once parts are procured, admin schedules a repair job. The technician visits the site, does the repair, and resolves any outstanding issues. a Repair Job is created.
 
-### Maintenance
+<Frame>
+  ![03 Repair Job Flow](/images/03_repair_job_flow.png)
+</Frame>
 
-Routine recurring service. The technician works through a checklist on-site — each item passed or failed, with notes and photos where needed.
+## A few important things
 
-Maintenance jobs are usually created automatically by the lift's maintenance plan. The plan sets the cadence — **monthly** or **quarterly** — plus a preferred day and time window. Admin can also create one manually for ad-hoc service.
+**Only the Building Manager can sign for themselves.** You can't sign for them from the dashboard. The signature has to be done on the technician's phone, on-site, or signed remotely by them.
 
-### Breakdown
-
-An unplanned visit to a faulty lift, triggered when a building manager or occupant reports a fault. Free-form notes and photos rather than a checklist.
-
-There are two ways a breakdown job gets created:
-
-- **Technician on-site** — the technician arrives at the lift and creates the job on themselves. They don't wait for admin.
-- **Admin dispatch** — admin creates the job in the dashboard and sends a technician.
-
-If the fault can't be fixed on the spot, admin usually creates a separate repair job as a follow-up. That's a manual step — breakdowns don't auto-create repairs.
-
-### Repair
-
-A scheduled visit to fix something found earlier, usually during a breakdown, sometimes during maintenance. Notes and photos describe the work done.
-
-Repair jobs are usually scheduled by admin, especially when parts need to be ordered. A technician can also create one from the app.
+**Closed jobs become part of the lift's history.** Once you close a job, it's saved against that lift forever. A cancelled job isn't saved.

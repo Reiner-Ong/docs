@@ -68,12 +68,11 @@
                 "pages": [
                   "technician/starting-a-job",
                   "technician/completing-a-job",
+                  "technician/reporting-a-fault",
                   "technician/getting-a-signature",
                   "technician/create-an-adhoc-job"
                 ]
-              },
-              "technician/scanning-a-qr-code",
-              "technician/reporting-a-fault"
+              }
             ]
           },
           {

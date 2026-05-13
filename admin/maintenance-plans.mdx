@@ -29,11 +29,18 @@ Before setting up a plan, make sure you have already:
 
 ## What is automated vs. what you still do manually
 
-| LiftAuth handles automatically | You still need to do |
-| --- | --- |
-| Creating the maintenance job each cycle | Closing the completed job after it is signed |
-| Generating a draft invoice after the job closes | Reviewing and approving the draft invoice |
-| Sending the jobsheet signing link |  |
+<CardGroup cols={2}>
+  <Card title="LiftAuth handles automatically" icon="circle-check">
+    - Creating the maintenance job each cycle
+    - Generating a draft invoice after the cycle closes
+    - Sending the signing link to the Building Manager
+  </Card>
+
+  <Card title="You still need to do" icon="user">
+    - Closing the completed job after it is signed
+    - Reviewing and approving the draft invoice\
+  </Card>
+</CardGroup>
 
 <Tip>
   Auto-created jobs will appear in the **Jobs** list. Just assign a technician and confirm the scheduled time — everything else flows automatically.
