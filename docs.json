@@ -20,9 +20,9 @@
   },
   "navigation": {
     "directory": "card",
-    "groups": [
+    "pages": [
       {
-        "group": "Getting Started",
+        "group": "Introduction",
         "icon": "layers",
         "expanded": true,
         "pages": [
@@ -77,7 +77,12 @@
         "group": "Frequently Asked Questions",
         "icon": "message-circle-question-mark",
         "pages": []
-      }
+      },
+      {
+        "group": "Concepts",
+        "pages": []
+      },
+      "what-is-a-job"
     ]
   },
   "logo": {
