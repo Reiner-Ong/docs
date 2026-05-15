@@ -172,5 +172,11 @@
     "socials": {
       "website": "https://liftauth.com"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/start/getting-started"
+    }
+  ]
 }
