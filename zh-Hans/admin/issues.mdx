@@ -1,0 +1,92 @@
+---
+title: "提出 Issue"
+description: "如何跟踪、管理和解决在电梯上报告的故障。  "
+---
+
+**issue** 是针对特定电梯记录的故障或问题。Issues 可以由 admin 在控制台上创建,也可以由技术员在移动应用上的现场创建。一旦创建,它们将保持开放和可见状态,直到手动关闭。
+
+## 严重性级别
+
+<CardGroup cols={3}>
+  <Card icon="badge-x">
+    ## Critical
+
+    一种安全风险,目前正在阻止电梯运行。
+  </Card>
+
+  <Card icon="badge-info">
+    ## Major
+
+    影响电梯的运行,且有可能很快停止服务。
+  </Card>
+
+  <Card icon="badge-minus">
+    ## Minor
+
+    外观或低影响。可在下次预定访问时解决。
+  </Card>
+</CardGroup>
+
+## 创建 issue
+
+<Steps>
+  <Step title="前往 Issues">
+    点击左侧栏中的 **Issues**,然后点击 **New issue**。
+  </Step>
+  <Step title="选择电梯">
+    选择发现故障的电梯。issue 将链接到该电梯的记录。
+  </Step>
+  <Step title="填写详细信息">
+    输入标题、描述和严重性级别。您还可以附加照片。 
+  </Step>
+  <Step title="保存">
+    点击 **Save**。issue 现在已开放并链接到电梯。
+  </Step>
+</Steps>
+
+<Tip>
+  您也可以直接从电梯的详细信息页面创建 issue——打开电梯,前往 Issues 选项卡,然后点击 **New issue**。
+</Tip>
+
+## Technicians 如何查看 issues
+
+当技术员在电梯上开始任务时,与该电梯关联的任何开放 issues 都会自动显示给他们。这让他们在开始工作之前可以看到已知故障,从而避免现场遗漏任何内容。
+
+## 编辑 issue
+
+1. 打开 issue。
+2. 点击 **Edit**。
+3. 更新标题、描述或严重性,然后保存。
+
+<Warning>
+  已关闭的 issues 无法编辑。
+</Warning>
+
+## 关闭 issue
+
+Issues 可以通过两种方式关闭:
+
+<CardGroup cols={1}>
+  <Card title="通过任务" icon="wrench">
+    当技术员完成 repair 任务并将 issue 标记为 **Resolved** 时,LiftAuth 会自动关闭它。如果技术员将其标记为 **Not Resolved**(本次访问无法修复),则 issue 保持开放。
+  </Card>
+
+  <Card title="手动" icon="user">
+    admin 可以随时从控制台关闭 issue。
+
+    <Steps>
+      <Step title="打开 issue">
+        在 Issues 列表中找到并点击它。
+      </Step>
+      <Step title="点击 Close issue">
+        点击页面右侧的 **Close issue** 按钮。
+      </Step>
+      <Step title="选择关闭原因">
+        - **Resolved** — 故障已修复
+        - **Won't fix** — 已确认但不会采取行动
+        - **Duplicate** — 已记录在另一个 issue 下
+        - **Decommissioned** — 电梯已停止服务
+      </Step>
+    </Steps>
+  </Card>
+</CardGroup>
