@@ -1,0 +1,93 @@
+---
+title: "创建工单"
+description: "如何创建、分配、安排和跟踪服务工单。"
+---
+
+**工单**代表对电梯的一次服务访问。每当技术员前往现场时,LiftAuth 中都应该有一个工单来记录它。每个工单都与一部电梯绑定。
+
+## 三种工单类型
+
+<CardGroup cols={1}>
+  <Card icon="calendar-check">
+    ## Maintenance
+
+    计划内的常规检查。通常由 Maintenance Plan 自动创建。用于定期预定的服务。
+  </Card>
+
+  <Card icon="badge-x">
+    ## Breakdown
+
+    紧急出动。当电梯出现故障或不安全且需要立即关注时使用。
+  </Card>
+
+  <Card icon="badge-alert">
+    ## Repair
+
+    用于修复特定已知故障的访问。当您在跟进已报告的 issue 时使用。
+  </Card>
+</CardGroup>
+
+## 工单状态
+
+| 状态 | 含义 |
+| --- | --- |
+| **Scheduled** | 已分配技术员并确认日期/时间 |
+| **Work Done** | 技术员已在现场完成工单。已创建 [Record](/zh-Hans/admin/records) |
+| **Signed** | Building Manager 已对记录签字 |
+| **Closed** | Admin 已审核并关闭工单 |
+
+## 创建新工单
+
+<Steps>
+  <Step title="进入 Jobs">
+    点击左侧边栏中的 **Jobs**。
+  </Step>
+  <Step title="点击 Schedule Job">
+    点击 **Schedule Job** 按钮并选择工单类型 — Maintenance、Breakdown 或 Repair。
+  </Step>
+  <Step title="选择电梯">
+    选择需要维修的电梯。每个工单仅涵盖一部电梯。
+  </Step>
+  <Step title="分配技术员">
+    选择将执行工作的技术员。
+  </Step>
+  <Step title="设置日期和时间">
+    输入预定日期和预期的时间窗口。如果输入错误也不用担心,您可以[之后修复此问题](/zh-Hans/admin/jobs#rescheduling)。
+  </Step>
+  <Step title="保存">
+    点击 **Save**。技术员将在其移动应用中看到此工单。
+  </Step>
+</Steps>
+
+<Tip>
+  如果您已为电梯设置了 [Maintenance Plan](/zh-Hans/admin/maintenance-plans),则每个周期会自动创建 maintenance 工单 — 您只需分配技术员并确认时间。
+</Tip>
+
+## 关闭已完成的工单 {#closing-a-job}
+
+技术员完成工作且 Building Manager 签字后,该工单将出现在您的 Inbox 中,等待关闭。
+
+<Steps>
+  <Step title="打开工单">
+    在 Inbox 中或在 Jobs 列表中以 **Signed** 状态找到它。
+  </Step>
+  <Step title="审核记录">
+    检查检查清单结果、照片和签名。
+  </Step>
+  <Step title="关闭工单">
+    点击 **Close job** 并确认。工单状态变更为 **Closed**。
+  </Step>
+</Steps>
+
+<Tip>
+  如果 Building Manager 不在现场签字,技术员可以通过电子邮件向他们发送签字链接。完成后工单将进入 **Signed** 状态。了解更多请见 [Records](/zh-Hans/admin/records#sending-a-signing-link)。
+</Tip>
+
+## 重新安排或取消工单 {#rescheduling}
+
+<Warning>
+  工单可以重新安排或取消,但已取消的工单无法重新打开。如果仍需进行访问,请创建新工单。
+</Warning>
+
+1. 从 Jobs 列表打开工单。
+2. 点击 **Reschedule** 或 **Cancel job** 并确认。

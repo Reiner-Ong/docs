@@ -96,7 +96,9 @@
             "icon": "layers",
             "expanded": true,
             "pages": [
-              "hi/start/glossary"
+              "hi/start/getting-started",
+              "hi/start/glossary",
+              "hi/start/concepts"
             ]
           },
           {
@@ -104,14 +106,46 @@
             "icon": "app-window-mac",
             "expanded": true,
             "pages": [
+              "hi/admin/logging-in",
               {
                 "group": "शुरू करें",
                 "icon": "workflow",
                 "pages": [
+                  "hi/admin/building-managers",
+                  "hi/admin/lifts",
+                  "hi/admin/issues",
+                  "hi/admin/jobs",
+                  "hi/admin/records",
+                  "hi/admin/invoices-and-payments",
                   "hi/admin/maintenance-plans"
+                ]
+              },
+              "hi/admin/managing-your-team",
+              "hi/admin/inbox"
+            ]
+          },
+          {
+            "group": "तकनीशियन के लिए (मोबाइल ऐप)",
+            "icon": "smartphone",
+            "pages": [
+              "hi/technician/download",
+              {
+                "group": "शुरू करें",
+                "icon": "workflow",
+                "pages": [
+                  "hi/technician/starting-a-job",
+                  "hi/technician/completing-a-job",
+                  "hi/technician/reporting-a-fault",
+                  "hi/technician/getting-a-signature",
+                  "hi/technician/create-an-adhoc-job"
                 ]
               }
             ]
+          },
+          {
+            "group": "अक्सर पूछे जाने वाले प्रश्न",
+            "icon": "message-circle-question-mark",
+            "pages": []
           },
           {
             "group": "अवधारणाएं",
@@ -129,7 +163,9 @@
             "icon": "layers",
             "expanded": true,
             "pages": [
-              "zh-Hans/start/glossary"
+              "zh-Hans/start/getting-started",
+              "zh-Hans/start/glossary",
+              "zh-Hans/start/concepts"
             ]
           },
           {
@@ -137,14 +173,46 @@
             "icon": "app-window-mac",
             "expanded": true,
             "pages": [
+              "zh-Hans/admin/logging-in",
               {
                 "group": "入门",
                 "icon": "workflow",
                 "pages": [
+                  "zh-Hans/admin/building-managers",
+                  "zh-Hans/admin/lifts",
+                  "zh-Hans/admin/issues",
+                  "zh-Hans/admin/jobs",
+                  "zh-Hans/admin/records",
+                  "zh-Hans/admin/invoices-and-payments",
                   "zh-Hans/admin/maintenance-plans"
+                ]
+              },
+              "zh-Hans/admin/managing-your-team",
+              "zh-Hans/admin/inbox"
+            ]
+          },
+          {
+            "group": "技术员(移动应用)",
+            "icon": "smartphone",
+            "pages": [
+              "zh-Hans/technician/download",
+              {
+                "group": "入门",
+                "icon": "workflow",
+                "pages": [
+                  "zh-Hans/technician/starting-a-job",
+                  "zh-Hans/technician/completing-a-job",
+                  "zh-Hans/technician/reporting-a-fault",
+                  "zh-Hans/technician/getting-a-signature",
+                  "zh-Hans/technician/create-an-adhoc-job"
                 ]
               }
             ]
+          },
+          {
+            "group": "常见问题",
+            "icon": "message-circle-question-mark",
+            "pages": []
           },
           {
             "group": "概念",

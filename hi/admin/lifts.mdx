@@ -1,0 +1,46 @@
+---
+title: "Lifts जोड़ना"
+description: "अपने सिस्टम में लिफ्ट्स को कैसे रजिस्टर, खोजें, और प्रबंधित करें।"
+---
+
+LiftAuth में एक **lift** एक भवन में एक भौतिक एलिवेटर इकाई का प्रतिनिधित्व करता है। प्रत्येक लिफ्ट को **BCA LEAP portal** के माध्यम से रजिस्टर किया जाना चाहिए — इस तरह LiftAuth स्वचालित रूप से लिफ्ट के आधिकारिक उपकरण विवरण खींचता है।
+
+## BCA LEAP portal क्या है?
+
+[BCA (Building and Construction Authority) LEAP portal](https://www2.bca.gov.sg/leap/PTOEnquiry/Search) सभी रजिस्टर्ड लिफ्ट्स का सिंगापुर सरकार का डेटाबेस है। प्रत्येक लिफ्ट का इस पोर्टल पर अपने उपकरण ID, पते, और रखरखाव विवरण के साथ अपना पेज होता है।
+
+LiftAuth में एक लिफ्ट को रजिस्टर करने के लिए, आपको BCA LEAP पोर्टल पर उस लिफ्ट के पेज के URL की आवश्यकता है। यह इस तरह दिखता है:
+
+[https://www2.bca.gov.sg/leap/ptoenquiry/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx](https://www2.bca.gov.sg/leap/ptoenquiry/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
+
+<Tip>
+  आप LiftAuth मोबाइल ऐप का उपयोग करके लिफ्ट की उपकरण प्लेट पर QR कोड स्कैन करके भी एक लिफ्ट को रजिस्टर कर सकते हैं — यह स्वचालित रूप से वही BCA URL प्राप्त करता है।
+</Tip>
+
+## एक नया लिफ्ट जोड़ना
+
+<Steps>
+  <Step title="BCA LEAP पर लिफ्ट खोजें">
+    [BCA LEAP portal](https://www2.bca.gov.sg/leap/PTOEnquiry/Search) पर जाएं, लिफ्ट खोजें, और इसका PTO Enquiry पेज खोलें। अपने ब्राउज़र के एड्रेस बार से पूरा URL कॉपी करें।
+  </Step>
+  <Step title="LiftAuth में Lifts पर जाएं">
+    बाएँ साइडबार में **Lifts** पर क्लिक करें, फिर **Add lift** पर क्लिक करें।
+  </Step>
+  <Step title="BCA URL पेस्ट करें">
+    आपने जो URL कॉपी किया था उसे BCA PTO Enquiry URL फ़ील्ड में पेस्ट करें और **Look up** पर क्लिक करें। LiftAuth स्वचालित रूप से उपकरण ID, पता, और अन्य विवरण खींच लेगा।
+  </Step>
+  <Step title="शेष विवरण भरें">
+    पहले से भरे विवरणों की पुष्टि करें या सही करें, लिफ्ट प्रकार का चयन करें, और ड्रॉपडाउन से एक **Building Manager** असाइन करें।
+
+    <Tip>
+      आप अभी के लिए Building Manager को छोड़ सकते हैं और बाद में लिफ्ट के विवरण पृष्ठ से एक असाइन कर सकते हैं — लेकिन ध्यान दें कि लिफ्ट के लिए जॉब्स या maintenance plans बनाने से पहले एक Building Manager को असाइन किया जाना चाहिए।
+    </Tip>
+  </Step>
+  <Step title="लिफ्ट रजिस्टर करें">
+    **Register lift** पर क्लिक करें। लिफ्ट अब आपके सिस्टम में है।
+  </Step>
+</Steps>
+
+<Warning>
+  यदि एक लिफ्ट पहले से ही आपके खाते में रजिस्टर्ड है, तो LiftAuth आपको सूचित करेगा और एक डुप्लिकेट को बनने से रोकेगा।
+</Warning>
