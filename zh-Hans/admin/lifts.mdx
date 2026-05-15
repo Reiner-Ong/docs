@@ -1,0 +1,46 @@
+---
+title: "添加电梯"
+description: "如何注册、查找和管理系统中的电梯。"
+---
+
+LiftAuth 中的**电梯**代表楼宇中的一台物理电梯单元。每部电梯必须通过 **BCA LEAP 门户**注册 — 这是 LiftAuth 自动获取电梯官方设备详情的方式。
+
+## 什么是 BCA LEAP 门户?
+
+[BCA (Building and Construction Authority) LEAP 门户](https://www2.bca.gov.sg/leap/PTOEnquiry/Search) 是新加坡政府所有注册电梯的数据库。每部电梯在此门户上都有自己的页面,包含其设备 ID、地址和维护详情。
+
+要在 LiftAuth 中注册电梯,您需要该电梯在 BCA LEAP 门户上的页面 URL。它的格式如下:
+
+[https://www2.bca.gov.sg/leap/ptoenquiry/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx](https://www2.bca.gov.sg/leap/ptoenquiry/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
+
+<Tip>
+  您也可以使用 LiftAuth 移动应用扫描电梯设备铭牌上的二维码来注册电梯 — 这会自动获取相同的 BCA URL。
+</Tip>
+
+## 添加新电梯
+
+<Steps>
+  <Step title="在 BCA LEAP 上查找电梯">
+    进入 [BCA LEAP 门户](https://www2.bca.gov.sg/leap/PTOEnquiry/Search),搜索该电梯,并打开其 PTO Enquiry 页面。从浏览器地址栏复制完整 URL。
+  </Step>
+  <Step title="在 LiftAuth 中进入 Lifts">
+    在左侧边栏点击 **Lifts**,然后点击 **Add lift**。
+  </Step>
+  <Step title="粘贴 BCA URL">
+    将您复制的 URL 粘贴到 BCA PTO Enquiry URL 字段并点击 **Look up**。LiftAuth 将自动获取设备 ID、地址和其他详情。
+  </Step>
+  <Step title="填写其余详情">
+    确认或修正预填详情,选择电梯类型,并从下拉菜单中分配 **Building Manager**。
+
+    <Tip>
+      您现在可以暂时跳过 Building Manager,稍后从电梯的详情页面分配 — 但请注意,在为该电梯创建工单或 maintenance plans 之前必须分配 Building Manager。
+    </Tip>
+  </Step>
+  <Step title="注册电梯">
+    点击 **Register lift**。该电梯现已在您的系统中。
+  </Step>
+</Steps>
+
+<Warning>
+  如果电梯已在您的账户中注册,LiftAuth 将通知您并防止创建重复项。
+</Warning>
