@@ -4,7 +4,7 @@
   "name": "LiftAuth Product Guide",
   "description": "Step-by-step guide on how to use LiftAuth",
   "colors": {
-    "primary": "#44c596",
+    "primary": "#13a871",
     "light": "#727272",
     "dark": "#000000"
   },
@@ -224,7 +224,10 @@
       }
     ]
   },
-  "logo": "/images/unnamed.png",
+  "logo": {
+    "light": "/images/LOGOS(64).png",
+    "dark": "/images/LOGOS(65).png"
+  },
   "navbar": {
     "links": [],
     "primary": {
