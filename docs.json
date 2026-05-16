@@ -224,10 +224,7 @@
       }
     ]
   },
-  "logo": {
-    "light": "/images/LOGOS(64).png",
-    "dark": "/images/LOGOS(65).png"
-  },
+  "logo": "/images/LOGOS(64).png",
   "navbar": {
     "links": [],
     "primary": {
