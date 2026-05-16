@@ -1,0 +1,90 @@
+---
+title: "What is an Issue"
+description: "What an Issue is, how it gets opened and closed, and what severity means."
+---
+
+# Issues
+
+An issue is one fault on one lift. Every time something isn't working right — a sticky door, a strange noise, a lift gone offline — that's an issue.
+
+## What you'll do
+
+Most of the time, your day looks like this:
+
+- Log issues when Building Managers call or email to report problems.
+- Watch new issues come in from Technicians on-site.
+- Close issues as they get fixed — automatically by a Job, or manually from the dashboard.
+
+That's the whole flow. The rest of this page explains how each part works.
+
+## The life of an issue
+
+Every issue is either Open or Closed. You'll see these words on the screen.
+
+| # | State | What it means |
+| --- | --- | --- |
+| 1 | **Open** | The issue has been raised and is still outstanding. It stays visible to your team and shows up automatically to any Technician who visits this lift. |
+| 2 | **Closed** | The issue has been resolved or ruled out. It's saved to the lift's history with a reason. Closed issues can't be edited. |
+
+## The three severity levels
+
+Every issue carries one of three severity levels. Everyone on your team uses the same words for the same kind of problem, so triage stays consistent.
+
+<Columns cols={3}>
+  <Column>
+    <Card title="Critical" color="#ff1616" icon="circle-alert">
+      A safety risk. The lift is not safe to run right now — or it's already offline. Dispatch a Technician immediately.
+    </Card>
+  </Column>
+  <Column>
+    <Card title="Major" color="#ff961a" icon="traffic-cone">
+      The lift still works, but it's degraded. It will get worse if you don't act. Schedule a repair within a few days.
+    </Card>
+
+    ## 
+  </Column>
+  <Column>
+    <Card title="Minor" color="#05a39d" icon="bug">
+      Cosmetic or low-impact. Won't affect operation. Bundle it into the next scheduled Maintenance Job.
+    </Card>
+
+    ## 
+  </Column>
+</Columns>
+
+## How issues get opened
+
+Issues can be raised in two ways. Both end up in the same place.
+
+### By a Job
+
+A Technician finds a fault on-site during a visit and logs it on the mobile app, against the lift they're standing in front of.
+
+### By an Admin
+
+You log it from the dashboard when a Building Manager calls or emails to report a problem.
+
+## How issues get closed
+
+Issues can be closed in two ways.
+
+### By a Job (auto)
+
+During a repair, the Technician marks the issue as **Resolved**. LiftAuth closes it automatically. If they mark it **Not Resolved**, the issue stays Open and rolls forward.
+
+### By an Admin (manual)
+
+From the dashboard, you can close any Open issue with a reason:
+
+- **Resolved** — the fault is fixed.
+- **Won't fix** — acknowledged, but no action will be taken.
+- **Duplicate** — already tracked under another issue.
+- **Decommissioned** — the lift has been taken out of service.
+
+## A few important things
+
+**Open issues follow the lift, not the person.** When a Technician starts a Job on a lift, every Open issue on that lift surfaces in their app — so known faults are addressed in the same visit, not forgotten.
+
+**Severity is a triage signal, not a guarantee.** Severity tells your team what to do next. It doesn't change how the issue behaves in LiftAuth — a Critical issue and a Minor issue close the same way.
+
+**Closed issues become part of the lift's history.** Once closed, an issue is saved against that lift forever, along with the close reason. If the same fault comes back, raise a new issue.
