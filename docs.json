@@ -1,10 +1,10 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
+  "theme": "maple",
   "name": "LiftAuth Product Guide",
   "description": "Step-by-step guide on how to use LiftAuth",
   "colors": {
-    "primary": "#212121",
+    "primary": "#44c596",
     "light": "#727272",
     "dark": "#000000"
   },
@@ -224,10 +224,7 @@
       }
     ]
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
+  "logo": "/images/unnamed.png",
   "navbar": {
     "links": [],
     "primary": {
