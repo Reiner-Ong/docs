@@ -1,0 +1,92 @@
+---
+title: "Manage your portfolio"
+description: "Understand how buildings, building managers, lifts, and issues fit together in the LiftAuth dashboard."
+sidebarTitle: "Portfolio"
+---
+
+# Manage your portfolio
+
+Use **Portfolio** to keep the places you maintain organised. It is the starting point for finding a building, seeing the lifts at that building, and following reported problems.
+
+<Note>
+  Portfolio is for your service company's records. Adding a building manager record does not send anyone an email or create an account for them.
+</Note>
+
+## How the records fit together
+
+Start with the physical place, then add the equipment and the person or company responsible for it.
+
+<Steps>
+  <Step title="Building">
+    A building is one property or site. It stores the address and groups the lifts at that site. A building can be active or archived.
+  </Step>
+  <Step title="Building Manager">
+    A <Tooltip tip="The company or owner responsible for a building. They receive invoices and sign completed work." cta="Read the glossary" href="/start/glossary">Building Manager</Tooltip> is the customer record for the property company or owner. Assign the record to a building when you know who is responsible for it.
+  </Step>
+  <Step title="Lift">
+    A <Tooltip tip="One physical elevator unit at a building." cta="Read the glossary" href="/start/glossary">Lift</Tooltip> belongs to one building. A building can have more than one lift.
+  </Step>
+  <Step title="Issue">
+    An <Tooltip tip="A fault or problem reported against one lift and tracked until it is closed." cta="Read the glossary" href="/start/glossary">Issue</Tooltip> belongs to one lift. Open issues are also visible from that lift and its building.
+  </Step>
+</Steps>
+
+For example, if a customer reports that Lift A's door is sticking, open the building to confirm the location, open Lift A, and raise an issue against that lift. The issue stays with Lift A's history even when different technicians visit it.
+
+## Use the Portfolio tabs
+
+Open **Portfolio** from the left sidebar. It has three tabs.
+
+### Buildings
+
+The **Buildings** tab is the main list of properties you maintain.
+
+- Use **List** to see each building's address, assigned building manager, number of lifts, and maintenance-plan status.
+- Use **Map** to see buildings by location. Search for a building in this view to move the map to it.
+- Search by building name. Turn on **Show archived** only when you need to find a building that is no longer active.
+- Select a building row to open its details. There you can view its lifts, open issues, assigned building manager, and plan information.
+
+To add a property, select **Add building**. Enter its name, choose a confirmed address, and optionally assign a building manager. You can assign or change the building manager later from the building details.
+
+### Building Managers
+
+The **Building Managers** tab is your private list of property-company or owner records.
+
+- Select **Add building manager** to create a record with its name and billing address.
+- Use the **Buildings** column to see how many of your buildings are assigned to that record.
+- Select a row to open the record and see the buildings under its care.
+- A **Connection** status only tells you whether the customer has been asked to connect their own LiftAuth organisation to this record. To ask them, select **Send request** and enter their email address. This is separate from creating the record.
+
+A connection request lets the customer choose or create their own organisation and accept the request. It does not add them to your team.
+
+See [how to add a building manager](/admin/building-managers) for the task-by-task guide.
+
+### Issues
+
+The **Issues** tab shows reported faults and defects across the lifts in your portfolio.
+
+- Select an issue to read its details and current status.
+- Create an issue from this tab, or open a lift and use its **Issues** tab.
+- An issue is always linked to a lift, so technicians can see known open issues when they visit that lift.
+- When a repair resolves an issue, it can be closed automatically. You can also close an issue yourself and choose a close reason.
+
+See [how to raise and manage an issue](/admin/issues) for severity levels and the full close process.
+
+## Add a lift to a building
+
+Lifts are added from a building's details, not from the Portfolio tab itself. Open the building, then select **Add lift**.
+
+LiftAuth looks up a lift using its BCA LEAP PTO Enquiry URL, the URL for the lift's official BCA equipment record. Review the returned details, choose the building, and select **Register lift**. If the building is not in LiftAuth yet, you can add it while registering the lift.
+
+See [how to add a lift](/admin/lifts) for the complete step-by-step guide.
+
+## A simple setup order
+
+If you are setting up a new property, use this order:
+
+1. Add the building.
+2. Add the building manager record, then assign it to the building.
+3. Add each lift to that building.
+4. Raise issues against the individual lift when a problem is reported.
+
+This order keeps the address, customer record, equipment, and fault history connected from the start.
