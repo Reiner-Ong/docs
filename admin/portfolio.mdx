@@ -12,48 +12,45 @@ Portfolio is where you manage the <Tooltip tip="One property or site where lifts
 
 Start with the building. It is the shared home for everything at one site. A <Tooltip tip="A building-level service schedule that covers one or more lifts." cta="Read the glossary" href="/start/glossary">Maintenance Plan</Tooltip> is the building's service schedule. It can include one or more lifts at that building.
 
-<div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '24px', margin: '24px 0' }}>
-  <div style={{ maxWidth: '560px', margin: '0 auto', textAlign: 'center' }}>
-    <div style={{ background: '#E8F1FB', border: '1px solid #BFDBFE', borderRadius: '12px', padding: '14px 18px' }}>
-      <strong>Building Manager</strong><br />
-      <span style={{ color: '#475569' }}>The customer responsible for the building</span>
+<div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '20px', margin: '24px 0' }}>
+  <div style={{ maxWidth: '620px', margin: '0 auto' }}>
+    <div style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: '12px', padding: '14px 16px', textAlign: 'center' }}>
+      <div style={{ color: '#0F172A', fontSize: '16px', fontWeight: 700, lineHeight: 1.3 }}>Building Manager</div>
+      <div style={{ color: '#475569', fontSize: '14px', marginTop: '4px' }}>The customer responsible for the building</div>
     </div>
 
-    <div style={{ color: '#64748B', padding: '8px 0' }}>↓ is responsible for</div>
+    <div style={{ color: '#64748B', fontSize: '13px', fontWeight: 600, padding: '8px 0', textAlign: 'center' }}>↓ is responsible for</div>
 
-    <div style={{ background: '#F0FDF4', border: '2px solid #86EFAC', borderRadius: '16px', padding: '16px', textAlign: 'left' }}>
-      <div style={{ background: '#DCFCE7', borderRadius: '10px', padding: '14px 16px', textAlign: 'center' }}>
-        <strong>Building</strong><br />
-        <span style={{ color: '#475569' }}>The address and site where the lifts are installed</span>
+    <div style={{ background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: '14px', padding: '16px' }}>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ color: '#0F172A', fontSize: '17px', fontWeight: 700, lineHeight: 1.3 }}>Building</div>
+        <div style={{ color: '#475569', fontSize: '14px', marginTop: '4px' }}>The site and address where the lifts are installed</div>
       </div>
 
-      <div style={{ color: '#64748B', padding: '12px 0 8px', textAlign: 'center' }}>This building contains lift records</div>
-
-      <div style={{ background: 'white', border: '1px solid #CBD5E1', borderRadius: '12px', padding: '14px' }}>
-        <strong>Lift A</strong><br />
-        <span style={{ color: '#475569' }}>Its own equipment history</span>
+      <div style={{ background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: '10px', padding: '12px 14px', marginTop: '14px', textAlign: 'center' }}>
+        <div style={{ color: '#0F172A', fontSize: '15px', fontWeight: 700 }}>Maintenance Plan</div>
+        <div style={{ color: '#475569', fontSize: '13px', marginTop: '3px' }}>The building's service schedule</div>
       </div>
 
-      <div style={{ color: '#B45309', padding: '8px 0', textAlign: 'center' }}>↓ an Issue is reported on Lift A</div>
+      <div style={{ color: '#64748B', fontSize: '13px', fontWeight: 600, padding: '8px 0', textAlign: 'center' }}>↓ can cover one or more lifts</div>
 
-      <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: '12px', padding: '14px' }}>
-        <strong>Issue</strong><br />
-        <span style={{ color: '#475569' }}>A reported fault stays with the lift where it happened</span>
-      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '12px' }}>
+        <div style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', borderRadius: '10px', padding: '14px' }}>
+          <div style={{ color: '#0F172A', fontSize: '15px', fontWeight: 700 }}>Lift A</div>
+          <div style={{ color: '#475569', fontSize: '13px', marginTop: '3px' }}>Keeps its own equipment history</div>
 
-      <div style={{ color: '#64748B', padding: '12px 0 8px', textAlign: 'center' }}>The same building can also contain</div>
+          <div style={{ color: '#B45309', fontSize: '12px', fontWeight: 600, padding: '10px 0 6px' }}>↓ fault reported on this lift</div>
 
-      <div style={{ background: 'white', border: '1px solid #CBD5E1', borderRadius: '12px', padding: '14px' }}>
-        <strong>Lift B</strong><br />
-        <span style={{ color: '#475569' }}>Its own equipment history</span>
-      </div>
+          <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: '8px', padding: '10px 12px' }}>
+            <div style={{ color: '#991B1B', fontSize: '14px', fontWeight: 700 }}>Issue</div>
+            <div style={{ color: '#475569', fontSize: '12px', marginTop: '3px' }}>Stays with Lift A until it is closed</div>
+          </div>
+        </div>
 
-      <div style={{ borderTop: '1px dashed #D6A918', margin: '16px 0' }} />
-
-      <div style={{ background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: '12px', padding: '14px' }}>
-        <strong>Maintenance Plan</strong><br />
-        <span style={{ color: '#475569' }}>This Building's plan.</span><br />
-        <span style={{ color: '#92400E' }}>Covers → Lift A and/or Lift B</span>
+        <div style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', borderRadius: '10px', padding: '14px' }}>
+          <div style={{ color: '#0F172A', fontSize: '15px', fontWeight: 700 }}>Lift B</div>
+          <div style={{ color: '#475569', fontSize: '13px', marginTop: '3px' }}>Keeps its own equipment history</div>
+        </div>
       </div>
     </div>
   </div>
