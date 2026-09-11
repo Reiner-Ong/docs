@@ -84,4 +84,21 @@ For a fleet-wide view, use **Lifts** in the left sidebar. See [how to add a lift
 
 A building supplies the location. The Building Manager identifies the responsible customer. Each lift belongs to that building, and each issue belongs to one lift.
 
-That structure means your team can find a reported fault by building, while the fault still stays with the exact lift that needs attention. It also keeps the customer and address connected to the jobs, plans, and records that follow.
+```mermaid
+flowchart TB
+  manager["Building Manager<br/>responsible customer"] -->|"assigned to"| building["Building<br/>site and address"]
+
+  subgraph buildingGroup["One building"]
+    building -->|"contains"| liftA["Lift A"]
+    building -->|"contains"| liftB["Lift B"]
+    plan["Maintenance Plan<br/>building-level schedule"] -->|"belongs to"| building
+    plan -->|"can cover"| liftA
+    plan -->|"can cover"| liftB
+  end
+
+  issue["Issue<br/>reported fault"] -->|"belongs to"| liftA
+```
+
+A Maintenance Plan can cover one lift or several lifts at the same building. It does not have to cover every lift shown in the diagram.
+
+That structure means your team can find a reported fault by building, while the fault still stays with the exact lift that needs attention. The diagram also shows why a Maintenance Plan is set up for a building, not for one lift: it can cover one or more lifts at that site. It keeps the customer and address connected to the jobs, plans, and records that follow.
