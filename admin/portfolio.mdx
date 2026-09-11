@@ -1,7 +1,7 @@
 ---
-title: "Manage your portfolio"
-description: "Understand how buildings, building managers, lifts, and issues fit together in the LiftAuth dashboard."
-sidebarTitle: "Portfolio"
+title: "Portfolio"
+description: "Understand how buildings, Building Managers, lifts, and issues fit together."
+sidebarTitle: "Overview"
 ---
 
 # Portfolio
@@ -64,82 +64,37 @@ If you are not sure where to start, open the building. It shows the customer, th
 ## What do you want to do?
 
 <CardGroup cols={2}>
-  <Card title="Add or find a building" icon="building-2" href="#add-or-find-a-building">
+  <Card title="Add or find a building" icon="building-2" href="#find-or-add-a-building">
     Create a site, search for one you already maintain, or open it to see everything at that address.
   </Card>
 
-  <Card title="Add a Building Manager" icon="users" href="#add-a-building-manager">
+  <Card title="Add a Building Manager" icon="users" href="/admin/building-managers">
     Create the customer record, assign it to a building, or ask the customer to connect their organisation.
   </Card>
 
-  <Card title="Add a lift" icon="plus" href="#add-a-lift">
-    Open the building first, then add the lift installed at that site.
+  <Card title="Add a lift" icon="plus" href="/admin/lifts">
+    Register a lift and place it in the building where it is installed.
   </Card>
 
-  <Card title="Raise or manage an issue" icon="triangle-alert" href="#raise-or-manage-an-issue">
-    View faults across your Portfolio, then keep each issue on the lift where it happened.
+  <Card title="Raise or manage an issue" icon="triangle-alert" href="/admin/issues">
+    Report a fault on the right lift, or follow an existing issue through to closure.
   </Card>
 </CardGroup>
 
-## Add or find a building
+## Find or add a building
 
 <Steps>
   <Step title="Open Buildings">
     Select **Portfolio** from the left sidebar. The **Buildings** tab opens your list of buildings.
   </Step>
   <Step title="Find the site">
-    Search by building name, browse the list, or switch to **Map** to find a building by location.
+    Search by building name, browse the list, or switch to **Map** to browse buildings by location.
   </Step>
   <Step title="Open or add the building">
-    Select a building row to see its details. To add a new site, select **Add building**, enter its name and confirmed address, then save.
+    Select a building row to see its details. To add a new site, select **Add building**, enter its name and address, then save.
   </Step>
 </Steps>
 
 <Tip>
   Turn on **Show archived** when you need to find a building that is no longer active.
 </Tip>
-
-## Add a Building Manager
-
-<Steps>
-  <Step title="Open Building Managers">
-    In Portfolio, select the **Building Managers** tab.
-  </Step>
-  <Step title="Create the record">
-    Select **Add building manager**, then enter the company or owner's name and, if available, billing address.
-  </Step>
-  <Step title="Assign it to a building">
-    Open the building, then find its **Building Manager** section and assign the record. You can also choose a Building Manager while creating a new building.
-  </Step>
-  <Step title="Connect the customer when needed">
-    To connect the customer to their own LiftAuth organisation, select **Send request** and enter their email address.
-  </Step>
-</Steps>
-
-Creating a Building Manager record does not send an email or create an account. A <Tooltip tip="An email request that lets a customer connect their own LiftAuth organisation to your private Building Manager record." cta="Read the glossary" href="/start/glossary">connection request</Tooltip> is the separate step that does that. The customer does not become a member of your team.
-
-See [how to add a building manager](/admin/building-managers) for the full guide.
-
-## Add a lift
-
-<Steps>
-  <Step title="Open the building">
-    From the **Buildings** tab, select the building where the lift is installed.
-  </Step>
-  <Step title="Select Add Lift">
-    In the **Lifts** section, select **Add Lift**.
-  </Step>
-  <Step title="Save the lift">
-    Add the lift's details and save. It now has its own history, jobs, and issues.
-  </Step>
-</Steps>
-
-See [how to add a lift](/admin/lifts) for the full guide.
-
-## Raise or manage an issue
-
-Select the **Issues** tab to see reported faults across every lift in your Portfolio. Use the status and severity filters to narrow the list, then select an issue to see its details.
-
-To report a new fault, select **Raise Issue** and choose the lift first. This lets technicians see known faults when they arrive for a job.
-
-See [how to raise and manage an issue](/admin/issues) for severity levels, photos, and closing an issue.
