@@ -4,85 +4,13 @@ description: "Understand how buildings, building managers, lifts, and issues fit
 sidebarTitle: "Portfolio"
 ---
 
-# Manage your portfolio
+# Portfolio
 
-Use <Tooltip tip="The dashboard area where your LiftAuth company keeps its buildings, Building Manager records, lifts, and issues together." cta="Read the glossary" href="/start/glossary">Portfolio</Tooltip> to keep the places you maintain organised. It is the starting point for finding a building, seeing the lifts at that building, and following reported problems.
-
-<Note>
-  Portfolio is for your LiftAuth company's records. Adding a <Tooltip tip="The company or owner responsible for a building. They receive invoices and sign completed work." cta="Read the glossary" href="/start/glossary">Building Manager</Tooltip> record does not send anyone an email or create an account for them.
-</Note>
+Portfolio is where you manage the <Tooltip tip="One property or site where lifts are installed." cta="Read the glossary" href="/start/glossary">Buildings</Tooltip> your company maintains, the <Tooltip tip="The company or owner responsible for a building. They receive invoices and sign completed work." cta="Read the glossary" href="/start/glossary">Building Managers</Tooltip> responsible for them, their lifts, and reported <Tooltip tip="A fault or problem reported against one lift and tracked until it is closed." cta="Read the glossary" href="/start/glossary">Issues</Tooltip>.
 
 ## How the records fit together
 
-Start with the physical place, then add the equipment and the person or company responsible for it.
-
-<Steps>
-  <Step title="Building">
-    A <Tooltip tip="One property or site where lifts are installed." cta="Read the glossary" href="/start/glossary">Building</Tooltip> is one property or site. It stores the address and groups the lifts at that site. An archived building is hidden from the usual list until you turn on **Show archived**.
-  </Step>
-  <Step title="Building Manager">
-    A Building Manager is the customer record for the property company or owner. Assign the record to a building when you know who is responsible for it.
-  </Step>
-  <Step title="Lift">
-    A <Tooltip tip="One physical elevator unit at a building." cta="Read the glossary" href="/start/glossary">Lift</Tooltip> belongs to one building. A building can have more than one lift.
-  </Step>
-  <Step title="Issue">
-    An <Tooltip tip="A fault or problem reported against one lift and tracked until it is closed." cta="Read the glossary" href="/start/glossary">Issue</Tooltip> belongs to one lift. Open issues are also visible from that lift and its building.
-  </Step>
-</Steps>
-
-For example, if a customer reports that Lift A's door is sticking, open the building to confirm the location, open Lift A, and raise an issue against that lift. The issue stays with Lift A's history even when different technicians visit it.
-
-## Use the Portfolio tabs
-
-Open **Portfolio** from the left sidebar. It has three tabs.
-
-### Buildings
-
-The **Buildings** tab is the main list of properties you maintain.
-
-- Use **List** to see each building's address, assigned Building Manager, number of lifts, and <Tooltip tip="A building-level service schedule that covers one or more lifts." cta="Read the glossary" href="/start/glossary">Maintenance Plan</Tooltip> status.
-- Use **Map** to see buildings by location. Where a building has a Maintenance Plan, the map also shows that plan's assigned technician or team.
-- Search by building name. Turn on **Show archived** when you need to find a building that is no longer active.
-- Select a building row to open its details. There you can view its lifts, open issues, assigned Building Manager, and plan information.
-
-To create a building, select **Add building**. Enter its name and choose a confirmed address. You can assign a Building Manager when you create the building or later from its details.
-
-### Building Managers
-
-The **Building Managers** tab is your private list of property-company or owner records.
-
-- Select **Add building manager** to create a record with its name and billing address.
-- Use the **Buildings** column to see how many of your buildings are assigned to that record.
-- Select a row to open the record and see the buildings under its care.
-- The **Connection** column shows the state of a <Tooltip tip="An email request that lets a customer connect their own LiftAuth organisation to your private Building Manager record." cta="Read the glossary" href="/start/glossary">connection request</Tooltip>. To ask them, select **Send request** and enter their email address. This is separate from creating the record.
-
-A connection request lets the customer choose or create their own organisation and accept the request. It does not add them to your team.
-
-See [how to add a building manager](/admin/building-managers) for the task-by-task guide.
-
-### Issues
-
-The **Issues** tab shows reported faults and defects across the lifts in your Portfolio.
-
-- Select an issue to read its details and current status.
-- Create an issue from this tab, or open a lift and use its **Issues** tab.
-- An issue is always linked to a lift, so technicians can see known open issues when they visit that lift.
-- When a repair resolves an issue, it can be closed automatically. You can also close an issue yourself and choose a close reason.
-
-See [how to raise and manage an issue](/admin/issues) for severity levels and the full close process.
-
-## Manage lifts from a building
-
-From Portfolio, open a building and select **Add lift** to register a lift at that site. A building must exist before you add a lift through Portfolio.
-
-Each lift has its own history, jobs, and issues. A Maintenance Plan belongs to the building and can cover one or more of its lifts. Keep a fault attached to the individual lift where it occurred, even when the building has several lifts.
-
-For a fleet-wide view, use **Lifts** in the left sidebar. See [how to add a lift](/admin/lifts) for the complete step-by-step guide.
-
-## Why the relationship matters
-
-A building supplies the location. The Building Manager identifies the responsible customer. Each lift belongs to that building, and each issue belongs to one lift.
+Start with the building. It is the shared home for everything at one site. A <Tooltip tip="A building-level service schedule that covers one or more lifts." cta="Read the glossary" href="/start/glossary">Maintenance Plan</Tooltip> is the building's service schedule. It can include one or more lifts at that building.
 
 <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '24px', margin: '24px 0' }}>
   <div style={{ maxWidth: '560px', margin: '0 auto', textAlign: 'center' }}>
@@ -131,6 +59,87 @@ A building supplies the location. The Building Manager identifies the responsibl
   </div>
 </div>
 
-A Maintenance Plan can cover one lift or several lifts at the same building. It does not have to cover every lift shown above.
+If you are not sure where to start, open the building. It shows the customer, the lifts, open issues, and maintenance information together.
 
-That structure means your team can find a reported fault by building, while the fault still stays with the exact lift that needs attention. The diagram also shows why a Maintenance Plan is set up for a building, not for one lift: it can cover one or more lifts at that site. It keeps the customer and address connected to the jobs, plans, and records that follow.
+## What do you want to do?
+
+<CardGroup cols={2}>
+  <Card title="Add or find a building" icon="building-2" href="#add-or-find-a-building">
+    Create a site, search for one you already maintain, or open it to see everything at that address.
+  </Card>
+
+  <Card title="Add a Building Manager" icon="users" href="#add-a-building-manager">
+    Create the customer record, assign it to a building, or ask the customer to connect their organisation.
+  </Card>
+
+  <Card title="Add a lift" icon="plus" href="#add-a-lift">
+    Open the building first, then add the lift installed at that site.
+  </Card>
+
+  <Card title="Raise or manage an issue" icon="triangle-alert" href="#raise-or-manage-an-issue">
+    View faults across your Portfolio, then keep each issue on the lift where it happened.
+  </Card>
+</CardGroup>
+
+## Add or find a building
+
+<Steps>
+  <Step title="Open Buildings">
+    Select **Portfolio** from the left sidebar. The **Buildings** tab opens your list of buildings.
+  </Step>
+  <Step title="Find the site">
+    Search by building name, browse the list, or switch to **Map** to find a building by location.
+  </Step>
+  <Step title="Open or add the building">
+    Select a building row to see its details. To add a new site, select **Add building**, enter its name and confirmed address, then save.
+  </Step>
+</Steps>
+
+<Tip>
+  Turn on **Show archived** when you need to find a building that is no longer active.
+</Tip>
+
+## Add a Building Manager
+
+<Steps>
+  <Step title="Open Building Managers">
+    In Portfolio, select the **Building Managers** tab.
+  </Step>
+  <Step title="Create the record">
+    Select **Add building manager**, then enter the company or owner's name and, if available, billing address.
+  </Step>
+  <Step title="Assign it to a building">
+    Open the building, then find its **Building Manager** section and assign the record. You can also choose a Building Manager while creating a new building.
+  </Step>
+  <Step title="Connect the customer when needed">
+    To connect the customer to their own LiftAuth organisation, select **Send request** and enter their email address.
+  </Step>
+</Steps>
+
+Creating a Building Manager record does not send an email or create an account. A <Tooltip tip="An email request that lets a customer connect their own LiftAuth organisation to your private Building Manager record." cta="Read the glossary" href="/start/glossary">connection request</Tooltip> is the separate step that does that. The customer does not become a member of your team.
+
+See [how to add a building manager](/admin/building-managers) for the full guide.
+
+## Add a lift
+
+<Steps>
+  <Step title="Open the building">
+    From the **Buildings** tab, select the building where the lift is installed.
+  </Step>
+  <Step title="Select Add Lift">
+    In the **Lifts** section, select **Add Lift**.
+  </Step>
+  <Step title="Save the lift">
+    Add the lift's details and save. It now has its own history, jobs, and issues.
+  </Step>
+</Steps>
+
+See [how to add a lift](/admin/lifts) for the full guide.
+
+## Raise or manage an issue
+
+Select the **Issues** tab to see reported faults across every lift in your Portfolio. Use the status and severity filters to narrow the list, then select an issue to see its details.
+
+To report a new fault, select **Raise Issue** and choose the lift first. This lets technicians see known faults when they arrive for a job.
+
+See [how to raise and manage an issue](/admin/issues) for severity levels, photos, and closing an issue.
