@@ -1,96 +1,104 @@
 ---
-title: "Raising An Issue"
-description: "How to track, manage, and resolve faults reported on lifts.  "
+title: "Raise and manage an issue"
+description: "Report a lift fault, update it, and close it from the admin dashboard."
+sidebarTitle: "Raising an Issue"
+hideFooterPagination: true
 ---
 
-An **issue** is a fault or problem logged against a specific lift. Issues can be created by admins on the dashboard or by technicians on the mobile app while on-site. Once created, they stay open and visible until they are manually closed.
+An <Tooltip tip="A fault or problem reported against one lift and tracked until it is closed." cta="Read the glossary" href="/start/glossary#issue-fault">issue</Tooltip> records one problem against one <Tooltip tip="The physical elevator unit at a building." cta="Read the glossary" href="/start/glossary#lift">lift</Tooltip>. It stays **Open** until your team resolves or closes it.
 
-## Severity levels
+<Note>
+  Before you start, sign in to the admin dashboard and make sure the lift exists in Portfolio. If it does not, [add the lift](/admin/lifts) first. These steps are for the web dashboard; the mobile app uses a different flow.
+</Note>
 
-<CardGroup cols={3}>
-  <Card icon="badge-x">
-    ## Critical
+<Note>
+  Owners, Admins, and Technicians can raise, edit, and close issues in the web dashboard. Call Centre users can view issues but cannot change them.
+</Note>
 
-    A safety risk that is preventing the lift from functioning right now.
-  </Card>
-
-  <Card icon="badge-info">
-    ## Major
-
-    Affects the lift's operation and is at risk of being out of service soon.
-  </Card>
-
-  <Card icon="badge-minus">
-    ## Minor
-
-    Cosmetic or low-impact. Can be addressed at the next scheduled visit.
-  </Card>
-</CardGroup>
-
-## Creating an issue
+## Raise an issue
 
 <Steps>
-  <Step title="Go to Issues">
-    Click **Issues** in the left sidebar, then click **New issue.**
+  <Step title="Open the Issues tab">
+    In the left sidebar, select <Tooltip tip="The dashboard area where your LiftAuth company keeps its buildings, Building Manager records, lifts, and issues together." cta="Read the glossary" href="/start/glossary#portfolio">Portfolio</Tooltip>. Then select **Issues**.
   </Step>
-  <Step title="Select the lift">
-    Choose the lift the fault was found on. The issue will be linked to that lift's record.
+  <Step title="Select Raise Issue">
+    Select **Raise Issue** in the top-right corner.
   </Step>
-  <Step title="Fill in the details">
-    Enter a title, description, and severity level. You can also attach photos. 
+  <Step title="Choose the lift and severity">
+    Select the lift with the problem. Then choose how urgently it needs attention:
+
+    - **Critical** — there is an immediate safety risk, or the lift cannot be used now.
+    - **Major** — the lift can still be used, but the problem affects normal operation and could take it out of service soon.
+    - **Minor** — the problem is cosmetic or has little immediate impact and can wait for a planned visit.
   </Step>
-  <Step title="Save">
-    Click **Save**. The issue is now open and linked to the lift.
+  <Step title="Describe the problem">
+    Enter a short, specific **Title**. The lift and title are required. The **Description** is optional, but it helps the next person understand what happened, where it happened, and anything already tried.
+  </Step>
+  <Step title="Add photos or videos">
+    Add clear photos or videos when they will help someone understand the problem. This is optional.
+
+    <Tip>
+      You can add up to 10 files. Photos can be JPEG, PNG, or WEBP files up to 10 MB each. Videos can be MP4 or MOV files up to 64 MB each, with no more than 5 videos.
+    </Tip>
+  </Step>
+  <Step title="Raise the issue">
+    Select **Raise Issue**. The issue appears in the **Open** list with its own reference, such as **ISS-2026-0001**. The reference is the unique number you can use when discussing that issue.
   </Step>
 </Steps>
 
 <Tip>
-  You can also create an issue directly from a lift's detail page — open the lift, go to the Issues tab, and click **New issue**.
+  If you are already viewing a lift, open its **Issues** tab and select **Raise Issue**. LiftAuth fills in the lift for you.
 </Tip>
 
-## How do Technicians sees issues
+## Find an issue
 
-When a technician starts a job on a lift, any open issues linked to that lift are shown to them automatically. This gives them visibility of known faults before they begin work, so nothing is missed on-site.
+Open **Portfolio**, then select **Issues**. The page shows open issues first.
 
-## Editing an issue
+There is no search box on this page. Use the controls above the list to narrow it down:
 
-1. Open the issue.
-2. Click **Edit**.
-3. Update the title, description, or severity and save.
+- show **All**, **Open**, or **Closed** issues;
+- filter by **Critical**, **Major**, or **Minor** severity; and
+- sort by the date the issue was raised.
+
+Each row shows the issue reference, title, lift, and building. Select an issue to open it. If the list has more than one page, use the page controls at the bottom.
+
+## Update an open issue
+
+1. Open the issue from the **Issues** list.
+2. Select **Edit Issue**.
+3. Change the title, description, or severity. You can also add new photos or videos, or remove existing ones.
+4. Select **Save Changes**.
 
 <Warning>
-  Closed issues cannot be edited.
+  You cannot edit an issue after it is closed.
 </Warning>
 
-## Closing an issue
+## Close an issue
 
-Issues can be closed in two ways:
+Close an issue when no more work needs to be tracked against it.
 
-<CardGroup cols={1}>
-  <Card title="By a Job" icon="wrench">
-    When a technician completes a repair job and marks an issue as **Resolved**, LiftAuth closes it automatically. If the technician marks it as **Not Resolved** (could not fix it this visit), the issue stays open.
-  </Card>
+<Steps>
+  <Step title="Open the issue">
+    Find the issue in **Portfolio** → **Issues**, then select it.
+  </Step>
+  <Step title="Select Close Issue">
+    Select **Close Issue** on the right side of the page.
+  </Step>
+  <Step title="Choose a reason">
+    Choose the reason that best describes what happened:
 
-  <Card title="Manually" icon="user">
-    An admin can close an issue at any time from the dashboard.
+    - **Resolved** — the problem was fixed.
+    - **Won't Fix** — the problem is known, but no work will be done.
+    - **Duplicate** — the same problem is already recorded as another issue.
+    - **Decommissioned** — the lift was taken out of service.
+  </Step>
+  <Step title="Confirm">
+    Select **Close Issue**. The issue moves to the **Closed** list and can no longer be edited.
+  </Step>
+</Steps>
 
-    <Steps>
-      <Step title="Open the issue">
-        Find it in the Issues list and click it.
-      </Step>
-      <Step title="Click Close issue">
-        Click the **Close issue** button on the right side of the page.
+Closing an issue does not change the lift's status. A closed issue cannot be reopened. If the same problem returns, raise a new issue.
 
-        <Frame>
-          ![4809fb0c 6326 47b8 A698 7a5e66899683](/images/4809fb0c-6326-47b8-a698-7a5e66899683.jpg)
-        </Frame>
-      </Step>
-      <Step title="Select a close reason">
-        - **Resolved** — the fault has been fixed
-        - **Won't fix** — acknowledged but no action will be taken
-        - **Duplicate** — already recorded under another issue
-        - **Decommissioned** — the lift has been taken out of service
-      </Step>
-    </Steps>
-  </Card>
-</CardGroup>
+<Note title="Issues resolved during a job">
+  A technician can link an open issue to a <Tooltip tip="A service visit to a lift." cta="Read the glossary" href="/start/glossary#job">job</Tooltip> in the mobile app. Submitting the linked issue as **Resolved** closes it automatically. Submitting it as **Not Resolved** leaves it open.
+</Note>

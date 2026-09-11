@@ -44,9 +44,6 @@
                 "group": "Getting Started",
                 "icon": "workflow",
                 "pages": [
-                  "admin/building-managers",
-                  "admin/lifts",
-                  "admin/issues",
                   "admin/jobs",
                   "admin/records",
                   "admin/invoices-and-payments",
@@ -54,7 +51,17 @@
                 ]
               },
               "admin/managing-your-team",
-              "admin/inbox"
+              "admin/inbox",
+              {
+                "group": "Portfolio",
+                "icon": "building-2",
+                "pages": [
+                  "admin/portfolio",
+                  "admin/building-managers",
+                  "admin/lifts",
+                  "admin/issues"
+                ]
+              }
             ]
           },
           {

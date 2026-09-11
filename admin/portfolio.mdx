@@ -1,0 +1,81 @@
+---
+title: "Portfolio"
+description: "Understand how buildings, Building Managers, lifts, and issues fit together."
+sidebarTitle: "Overview"
+---
+
+Portfolio is where you manage the <Tooltip tip="One property or site where lifts are installed." cta="Read the glossary" href="/start/glossary">Buildings</Tooltip> your company maintains, the <Tooltip tip="The company or owner responsible for a building. They receive invoices and sign completed work." cta="Read the glossary" href="/start/glossary">Building Managers</Tooltip> responsible for them, their lifts, and reported <Tooltip tip="A fault or problem reported against one lift and tracked until it is closed." cta="Read the glossary" href="/start/glossary">Issues</Tooltip>.
+
+## How the records fit together
+
+Start with the building. It is the shared home for everything at one site. A <Tooltip tip="A building-level service schedule that covers one or more lifts." cta="Read the glossary" href="/start/glossary">Maintenance Plan</Tooltip> is the building's service schedule. It can include one or more lifts at that building.
+
+<div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '20px', margin: '24px 0' }}>
+  <div style={{ maxWidth: '640px', margin: '0 auto' }}>
+    <div style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: '12px', color: '#1E3A5F', fontSize: '15px', fontWeight: 650, padding: '14px 16px', textAlign: 'center' }}>Building Manager — the customer responsible for the building</div>
+
+    <div style={{ color: '#64748B', fontSize: '13px', fontWeight: 600, padding: '8px 0', textAlign: 'center' }}>↓ is responsible for</div>
+
+    <div style={{ background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: '14px', padding: '16px' }}>
+      <div style={{ background: '#DCFCE7', borderRadius: '10px', color: '#14532D', fontSize: '15px', fontWeight: 650, padding: '13px 15px', textAlign: 'center' }}>Building — the site and address where the lifts are installed</div>
+
+      <div style={{ background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: '10px', color: '#713F12', fontSize: '14px', fontWeight: 600, marginTop: '12px', padding: '12px 14px', textAlign: 'center' }}>Maintenance Plan — the building's service schedule</div>
+
+      <div style={{ color: '#64748B', fontSize: '13px', fontWeight: 600, padding: '8px 0', textAlign: 'center' }}>↓ can cover one or more lifts in this building</div>
+
+      <div style={{ color: '#166534', fontSize: '12px', fontWeight: 700, letterSpacing: '0.04em', paddingBottom: '7px', textAlign: 'center', textTransform: 'uppercase' }}>Lifts covered by this plan</div>
+
+      <div style={{ alignItems: 'stretch', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '12px' }}>
+        <div style={{ background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: '12px', padding: '10px' }}>
+          <div style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', borderRadius: '9px', color: '#1E293B', fontSize: '14px', fontWeight: 600, padding: '12px', textAlign: 'center' }}>Lift A — keeps its own equipment history</div>
+          <div style={{ color: '#B45309', fontSize: '12px', fontWeight: 600, padding: '7px 0', textAlign: 'center' }}>↓ a fault is reported on Lift A</div>
+          <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: '9px', color: '#7F1D1D', fontSize: '13px', fontWeight: 600, padding: '11px 12px', textAlign: 'center' }}>Issue — stays with Lift A until it is closed</div>
+        </div>
+
+        <div style={{ background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: '12px', padding: '10px' }}>
+          <div style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', borderRadius: '9px', color: '#1E293B', fontSize: '14px', fontWeight: 600, padding: '12px', textAlign: 'center' }}>Lift B — keeps its own equipment history</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+If you are not sure where to start, open the building. It shows the customer, the lifts, open issues, and maintenance information together.
+
+## What do you want to do?
+
+<CardGroup cols={2}>
+  <Card title="Add or find a building" icon="building-2" href="#find-or-add-a-building">
+    Create a site, search for one you already maintain, or open it to see everything at that address.
+  </Card>
+
+  <Card title="Add a Building Manager" icon="users" href="/admin/building-managers">
+    Create the customer record, assign it to a building, or ask the customer to connect their organisation.
+  </Card>
+
+  <Card title="Add a lift" icon="plus" href="/admin/lifts">
+    Register a lift and place it in the building where it is installed.
+  </Card>
+
+  <Card title="Raise or manage an issue" icon="triangle-alert" href="/admin/issues">
+    Report a fault on the right lift, or follow an existing issue through to closure.
+  </Card>
+</CardGroup>
+
+## Find or add a building
+
+<Steps>
+  <Step title="Open Buildings">
+    Select **Portfolio** from the left sidebar. The **Buildings** tab opens your list of buildings.
+  </Step>
+  <Step title="Find the site">
+    Search by building name, browse the list, or switch to **Map** to browse buildings by location.
+  </Step>
+  <Step title="Open or add the building">
+    Select a building row to see its details. To add a new site, select **Add building**, enter its name and address, then save.
+  </Step>
+</Steps>
+
+<Tip>
+  Turn on **Show archived** when you need to find a building that is no longer active.
+</Tip>

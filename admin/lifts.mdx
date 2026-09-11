@@ -1,48 +1,48 @@
 ---
-title: "Adding Lifts"
-description: "How to register, find, and manage the lifts in your system."
+title: "Add a Lift"
+description: "Register a lift, place it in a building, and keep its official equipment details together."
+sidebarTitle: "Add a Lift"
 ---
 
-A **lift** in LiftAuth represents one physical elevator unit at a building. Every lift must be registered through the **BCA LEAP portal** — this is how LiftAuth pulls the lift's official equipment details automatically.
+# Add a Lift
 
-## What is the BCA LEAP portal?
+A <Tooltip tip="One physical elevator unit at a building." cta="Read the glossary" href="/start/glossary">Lift</Tooltip> must be registered with [BCA LEAP](https://www2.bca.gov.sg/leap/PTOEnquiry/Search), Singapore's government lift-register service, before you add it to LiftAuth. LiftAuth uses the lift's BCA PTO Enquiry URL—the link to its BCA equipment record—to look up official equipment details.
 
-The [BCA (Building and Construction Authority) LEAP portal](https://www2.bca.gov.sg/leap/PTOEnquiry/Search) is the Singapore government's database of all registered lifts. Every lift has its own page on this portal with its equipment ID, address, and maintenance details.
+## Before you start
 
-To register a lift in LiftAuth, you need the URL of that lift's page on the BCA LEAP portal. It looks like this:
+You need either:
 
-[https://www2.bca.gov.sg/leap/ptoenquiry/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx](https://www2.bca.gov.sg/leap/ptoenquiry/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
+- the URL of the lift's BCA PTO Enquiry page; or
+- a clear photo of the QR code on the lift's PTO sticker.
 
-<Tip>
-  You can also register a lift by scanning the QR code on the lift's equipment plate using the LiftAuth mobile app — this retrieves the same BCA URL automatically.
-</Tip>
+You also need a <Tooltip tip="One property or site where lifts are installed." cta="Read the glossary" href="/start/glossary">Building</Tooltip> in LiftAuth. The building owns the address and the assigned <Tooltip tip="The company or owner responsible for a building. They receive invoices and sign completed work." cta="Read the glossary" href="/start/glossary">Building Manager</Tooltip> for the lift.
 
-## Adding a new lift
-
-<iframe src="https://www.youtube.com/embed/UbzopCCRvLg" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+## Add the lift
 
 <Steps>
-  <Step title="Find the lift on BCA LEAP">
-    Go to the [BCA LEAP portal](https://www2.bca.gov.sg/leap/PTOEnquiry/Search), search for the lift, and open its PTO Enquiry page. Copy the full URL from your browser's address bar.
+  <Step title="Open the registration form">
+    From **Lifts** in the left sidebar, select **Add lift**. If you are already viewing a building in **Portfolio**, select **Add lift** from that building instead.
   </Step>
-  <Step title="Go to Lifts in LiftAuth">
-    Click **Lifts** in the left sidebar, then click **Add lift**.
+  <Step title="Look up the BCA record">
+    Paste the BCA PTO Enquiry URL, scan the QR code, or upload a clear photo of the QR code. LiftAuth looks up the registered equipment.
   </Step>
-  <Step title="Paste the BCA URL">
-    Paste the URL you copied into the BCA PTO Enquiry URL field and click **Look up**. LiftAuth will automatically pull the equipment ID, address, and other details.
+  <Step title="Review the details">
+    Check the BCA equipment ID and expiry information, then select the lift type.
   </Step>
-  <Step title="Fill in the remaining details">
-    Confirm or correct the pre-filled details, select the lift type, and assign a **Building Manager** from the dropdown.
-
-    <Tip>
-      You can skip the Building Manager for now and assign one later from the lift's detail page — but note that a Building Manager must be assigned before you can create jobs or maintenance plans for the lift.
-    </Tip>
+  <Step title="Choose the building">
+    Select the building where the lift is installed. If you started from a building in Portfolio, it is already selected. If you started from the Lifts page and the building is missing, select **Add building** to create it first.
   </Step>
-  <Step title="Register the lift">
-    Click **Register lift**. The lift is now in your system.
+  <Step title="Finish the registration">
+    Add the manufacturer and any other details you have, then select **Register lift**.
   </Step>
 </Steps>
 
 <Warning>
-  If a lift is already registered in your account, LiftAuth will notify you and prevent a duplicate from being created.
+  LiftAuth prevents duplicate registrations when the lift is already registered in your company.
 </Warning>
+
+## What happens next
+
+The lift now has its own jobs and <Tooltip tip="A fault or problem reported against one lift and tracked until it is closed." cta="Read the glossary" href="/start/glossary">issues</Tooltip>. A <Tooltip tip="A building-level service schedule that covers one or more lifts." cta="Read the glossary" href="/start/glossary">Maintenance Plan</Tooltip> can cover the lift with other lifts at the same building.
+
+For the wider relationship between buildings, Building Managers, lifts, and issues, see [manage your portfolio](/admin/portfolio).
