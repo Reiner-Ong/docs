@@ -84,21 +84,53 @@ For a fleet-wide view, use **Lifts** in the left sidebar. See [how to add a lift
 
 A building supplies the location. The Building Manager identifies the responsible customer. Each lift belongs to that building, and each issue belongs to one lift.
 
-```mermaid
-flowchart TB
-  manager["Building Manager<br/>responsible customer"] -->|"assigned to"| building["Building<br/>site and address"]
+<div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '24px', margin: '24px 0' }}>
+  <div style={{ maxWidth: '560px', margin: '0 auto', textAlign: 'center' }}>
+    <div style={{ background: '#E8F1FB', border: '1px solid #BFDBFE', borderRadius: '12px', padding: '14px 18px' }}>
+      <strong>Building Manager</strong><br />
+      <span style={{ color: '#475569' }}>The customer responsible for the building</span>
+    </div>
 
-  subgraph buildingGroup["One building"]
-    building -->|"contains"| liftA["Lift A"]
-    building -->|"contains"| liftB["Lift B"]
-    plan["Maintenance Plan<br/>building-level schedule"] -->|"belongs to"| building
-    plan -->|"can cover"| liftA
-    plan -->|"can cover"| liftB
-  end
+    <div style={{ color: '#64748B', padding: '8px 0' }}>↓ is responsible for</div>
 
-  issue["Issue<br/>reported fault"] -->|"belongs to"| liftA
-```
+    <div style={{ background: '#F0FDF4', border: '2px solid #86EFAC', borderRadius: '16px', padding: '16px', textAlign: 'left' }}>
+      <div style={{ background: '#DCFCE7', borderRadius: '10px', padding: '14px 16px', textAlign: 'center' }}>
+        <strong>Building</strong><br />
+        <span style={{ color: '#475569' }}>The address and site where the lifts are installed</span>
+      </div>
 
-A Maintenance Plan can cover one lift or several lifts at the same building. It does not have to cover every lift shown in the diagram.
+      <div style={{ color: '#64748B', padding: '12px 0 8px', textAlign: 'center' }}>This building contains lift records</div>
+
+      <div style={{ background: 'white', border: '1px solid #CBD5E1', borderRadius: '12px', padding: '14px' }}>
+        <strong>Lift A</strong><br />
+        <span style={{ color: '#475569' }}>Its own equipment history</span>
+      </div>
+
+      <div style={{ color: '#B45309', padding: '8px 0', textAlign: 'center' }}>↓ an Issue is reported on Lift A</div>
+
+      <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: '12px', padding: '14px' }}>
+        <strong>Issue</strong><br />
+        <span style={{ color: '#475569' }}>A reported fault stays with the lift where it happened</span>
+      </div>
+
+      <div style={{ color: '#64748B', padding: '12px 0 8px', textAlign: 'center' }}>The same building can also contain</div>
+
+      <div style={{ background: 'white', border: '1px solid #CBD5E1', borderRadius: '12px', padding: '14px' }}>
+        <strong>Lift B</strong><br />
+        <span style={{ color: '#475569' }}>Its own equipment history</span>
+      </div>
+
+      <div style={{ borderTop: '1px dashed #D6A918', margin: '16px 0' }} />
+
+      <div style={{ background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: '12px', padding: '14px' }}>
+        <strong>Maintenance Plan</strong><br />
+        <span style={{ color: '#475569' }}>This Building's plan.</span><br />
+        <span style={{ color: '#92400E' }}>Covers → Lift A and/or Lift B</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+A Maintenance Plan can cover one lift or several lifts at the same building. It does not have to cover every lift shown above.
 
 That structure means your team can find a reported fault by building, while the fault still stays with the exact lift that needs attention. The diagram also shows why a Maintenance Plan is set up for a building, not for one lift: it can cover one or more lifts at that site. It keeps the customer and address connected to the jobs, plans, and records that follow.
