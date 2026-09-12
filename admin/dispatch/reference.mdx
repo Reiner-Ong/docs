@@ -44,7 +44,7 @@ Shown against each name in the **Technicians** section of the detail panel.
 | Field | Required | Notes |
 | --- | --- | --- |
 | **Building** | Yes | Searchable. A dispatch is raised against a building, never a single lift. |
-| **People trapped inside?** | Yes | **Yes — entrapment** or **No one trapped**. Entrapment adds a count of people inside. |
+| **People trapped inside?** | See notes | **Yes — entrapment** or **No one trapped**. Entrapment adds a count of people inside. Answer it on every call-out — it is the first thing the technician reads. |
 | **Caller name** | No | Free text. |
 | **Caller phone** | No | Becomes a tap-to-call link in the console and on the technician's phone. |
 | **Situation** | No | The caller's own description. The technician reads it before setting off. |
@@ -71,9 +71,9 @@ Shown against each name in the **Technicians** section of the detail panel.
 
 ## Who can do what
 
-| | Owner | Admin | Call Centre | Technician |
+|  | Owner | Admin | Call Center | Technician |
 | --- | --- | --- | --- | --- |
-| See the Dispatch queue | Yes | Yes | Yes | On their phone only |
+| See the Dispatch queue | Yes | Yes | Yes | In their app. In the dashboard, **Dispatch** appears for a technician only where the area is switched on for the workspace |
 | Raise a dispatch | Yes | Yes | Yes | No |
 | Add technicians, stand down, close | Yes | Yes | Yes | No |
 | Be rung by a dispatch | No | No | No | Yes |
@@ -82,7 +82,7 @@ Shown against each name in the **Technicians** section of the detail panel.
 | Add or delete on-call shifts | Yes | Yes | No | No |
 | Switch their own on-call state | — | — | — | Yes, in the app |
 
-A **Call Centre** operator is a read-only persona: they see only Portfolio and Dispatch, and cannot create or change anything elsewhere in the dashboard. Assign the role from [Manage your team](/admin/managing-your-team).
+**Call Center** is the role's name on screen. A Call Center operator's sidebar shows only Portfolio and Dispatch: they raise and manage dispatches and can read the on-call rota, but they have no calendar of their own — `/calendar` opens on an empty state reading "No calendar". Assign the role from [Manage your team](/admin/managing-your-team).
 
 <Note>
   Dispatch is optional per workspace. If **Dispatch** is missing from the sidebar it has not been switched on for your team, and the **On call** tab is hidden with it.
@@ -102,6 +102,6 @@ Live sharing stops automatically when the technician marks themselves arrived or
 
 ## Things a dispatch does not do
 
-* It does not create a [job](/start/glossary), a [record](/admin/records) or an [invoice](/admin/billing/overview). Raise a separate job with a breakdown record template if there is billable work — see [Jobs](/admin/jobs/overview).
+* A dispatch is how a technician is found for one emergency attendance — a **call-out**. A call-out is not a [job](/start/glossary), and the dispatch creates no job, no [record](/admin/records) and no [invoice](/admin/billing/overview). Billable work is recorded afterwards as a separate breakdown job with a breakdown record template — see [Jobs](/admin/jobs/overview).
 * It is not attached to a specific lift, only to a building.
 * It does not ring anyone automatically from the rota. An operator always picks the phones.

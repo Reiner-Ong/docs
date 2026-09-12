@@ -17,13 +17,16 @@ You find them under **Record Templates** in the left sidebar, in the
 
 <Steps>
   <Step title="You build the template">
-    You add sections and items — things like *Machine room clean*, *Door
-    operation*, *Rope tension reading*. Each item has a type that decides how
-    the technician answers it.
+    You add sections and [items](/start/glossary#work-on-site) — things like _Machine room clean_, _Door operation_, _Rope tension reading_. Each item has a type that decides how the technician answers it.
   </Step>
 
   <Step title="A job uses the template">
-    LiftAuth never picks a template for you. Whoever schedules the job chooses which template each form on it uses. On a maintenance visit that choice comes from the records set up on the building's maintenance contract; on any other job the person creating it names the template on each form. A job converted from an accepted quote starts with no template at all — the technician gets a plain notes-only jobsheet until someone puts a form on it.
+    LiftAuth never picks a template for you — a person always names it, but not always on the job itself.
+
+    - On **recurring maintenance**, someone names the template once per [coverage group](/start/glossary#work-on-site) in the maintenance contract builder. Each visit the contract generates inherits that choice as a snapshot stamped when the job is generated, so editing the contract afterwards does not re-point jobs that already exist.
+    - On **any other job**, whoever creates or schedules it names the template on each form the job carries.
+
+    A form with no template named for it is a notes-only form — free text and photos, with no items.
   </Step>
 
   <Step title="The technician fills it in">
@@ -46,7 +49,7 @@ template.
 
 <CardGroup cols={2}>
   <Card title="Build a template from scratch" icon="pencil" href="/admin/record-templates/creating-a-record-template">
-    Create a maintenance template — or a repair or breakdown one, if the dialog still offers it — and add the items your
+    Create a maintenance, repair or breakdown template and add the items your
     technicians answer.
   </Card>
 
@@ -85,34 +88,21 @@ template.
   <Card title="Breakdown — one, in practice" icon="badge-x">
     The dialog stops offering **Breakdown** the same way. Again, nothing selects it for you — the person raising the call-out picks it on the job.
   </Card>
-
-  <Card title="Custom job types" icon="tag">
-    A record template's job type is not limited to the three above — a custom type is also possible. What the **New record template** dialog offers you is the standard three.
-  </Card>
 </CardGroup>
 
-When your workspace was created, LiftAuth gave you a starter set — a Singapore
-maintenance checklist plus a blank repair and a blank breakdown template. They
-are yours: edit them freely.
+The one-per-type limit lives in the **New record template** dialog only, and only for Repair and Breakdown. Nothing underneath enforces it, so a restore can leave you with two active templates of the same type. See [How to archive or restore a record template](/admin/record-templates/archiving-a-record-template).
+
+When your workspace was created, LiftAuth gave you a starter set — a Singapore maintenance template plus a blank repair and a blank breakdown template. They are yours: edit them freely.
 
 ***
 
 ## Getting started quickly
 
-If you have never opened this page before, the shortest useful path is:
+If you have never opened this page before, start from the maintenance template your workspace was given: open **Record Templates**, click into it, and rename and adjust it to match how you actually service a lift.
 
-1. Open **Record Templates** and click into the maintenance template you were
-   given.
-2. Rename it to something your team recognises, and adjust the items to match
-   how you actually service a lift.
-3. Set **Estimated time** at the bottom to how long one of these takes — it is
-   what LiftAuth uses to work out how long a site visit should be.
-4. Click **Save changes**.
-
-Full instructions are in
-[How to create a record template](/admin/record-templates/creating-a-record-template).
+[How to create a record template](/admin/record-templates/creating-a-record-template) walks through every field, including the job type — which **cannot be changed once the template is created** — and the estimated time per form, which is what LiftAuth uses to work out how long a site visit should be.
 
 <Note>
   Only **Owners** and **Admins** can create or change record templates.
-  Technicians fill them in but never see this page.
+  Record Templates is one of the areas hidden from a technician-only account: technicians fill the forms in from the mobile app instead.
 </Note>

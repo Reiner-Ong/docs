@@ -1,5 +1,5 @@
 ---
-title: "Inventory Reference"
+title: "Inventory reference"
 description: "Every field, filter, movement type, badge, and permission in Inventory."
 icon: "table-list"
 ---
@@ -13,14 +13,20 @@ Look-up page for Inventory. For the how-to steps, start at the [Inventory overvi
 | **Name** | Yes | Yes | What your team searches for. |
 | **Family** | Yes | Yes | The category. See [Part families](#part-families). |
 | **Brand** | Yes | Yes | Manufacturer, or **Generic**. Defaults to Generic. |
-| **Cost price** | No | Yes | What the part costs you to buy, in S$. `0` means unpriced. |
-| **Unit price** | No | Yes | Your catalogue list price, in S$. Fills in quote and invoice **Part** lines. `0` means unpriced. |
+| **Cost price** | No | Yes | What the part costs you to buy, in S\$. A price left out is stored as `0`, never as blank; `0` means unpriced. |
+| **Unit price** | No | Yes | Your catalogue list price, in S\$. Fills in quote and invoice **Part** lines. A price left out is stored as `0`, never as blank; `0` means unpriced. |
 | **Part code** | No | Yes | The manufacturer's printed code, up to 64 characters. Not matched by the search box. |
 | **Photos** | Yes — at least one | Yes | JPEG, PNG or WebP. Up to 5 files, each up to 10 MB. |
-| **Initial warehouse** | No | n/a | Only offered when creating the part, and only when a warehouse exists. |
-| **Initial quantity** | No | n/a | Disabled until an initial warehouse is chosen. Recorded as the part's first movement. |
-| **Part No.** | Assigned by LiftAuth | No | Format `PRT-<year>-<six characters>`. Matched by the search box. |
+| **Initial warehouse** | No | n/a | Only on the **Add Part** dialog. Always shown, but disabled until at least one warehouse exists — its placeholder reads _No warehouses yet_. |
+| **Initial quantity** | No | n/a | Only on the **Add Part** dialog. Shown but disabled until an initial warehouse is chosen. Recorded as the part's first movement. |
+| **Part No.** | Assigned by LiftAuth | No | Format `PRT-<year>-<six characters>`. LiftAuth's own reference, not yours — it cannot be supplied on create. Matched by the search box, along with the name. |
 | **Total on hand** | Calculated | No | The sum of the part's stock across every warehouse. |
+
+A part has no field for your firm's own existing internal part numbers — no dedicated column and no notes field on the part.
+
+<Note>
+  Part prices and [standard billing item](/admin/billing/standard-items) prices follow opposite conventions. An unpriced part is `0`; an unpriced standard billing item has no price at all.
+</Note>
 
 <h2 id="part-families">
   Part families
@@ -75,7 +81,8 @@ Rules that apply to all three:
 
 | Badge | Where | Meaning |
 | --- | --- | --- |
-| **Active** | Part, warehouse | Normal, in use. |
+| **Active** | Part | Not archived. |
+| **Active** | Warehouse | Carries no information. A warehouse cannot be made inactive, so every warehouse shows it, always. |
 | **Archived** | Part | Hidden from the default list. Stock can no longer be moved. Reversible with **Unarchive**. |
 | **Located** | Warehouse row | The warehouse has map coordinates. |
 | **Pending** | A job's **Parts required** row | The job needs this part. It is *not* a claim that stock has been deducted. |
@@ -83,16 +90,20 @@ Rules that apply to all three:
 
 ## Who can do what
 
-| Action | Account Owner | Admin | Technician |
-| --- | --- | --- | --- |
-| View parts, stock, and warehouses | Yes | Yes | Yes |
-| Add or edit a part | Yes | Yes | Yes |
-| Record a stock movement | Yes | Yes | Yes |
-| Add or edit a warehouse | Yes | Yes | Yes |
-| Archive or unarchive a part | Yes | Yes | No |
+The **Surface** column says where the action exists. A **Yes** is a Yes on the surfaces named, and nowhere else.
+
+| Action | Surface | Owner | Admin | Technician |
+| --- | --- | --- | --- | --- |
+| View parts, stock, and warehouses | Web and mobile | Yes | Yes | Yes |
+| Add or edit a part | Web and mobile | Yes | Yes | Yes |
+| Record a stock movement | Web and mobile | Yes | Yes | Yes |
+| Add or edit a warehouse | Web | Yes | Yes | Yes |
+| Archive or unarchive a part | Web | Yes | Yes | No |
 
 <Note>
-  Technicians do this work in the mobile app, at **Profile → Tools → Inventory**. The Inventory pages in the web dashboard are for office staff; a member whose only role is Technician is sent to their Jobs list instead.
+  A technician signing in to the web dashboard does get Inventory — it is in their sidebar, and the parts, stock and warehouse pages work for them there, not only in the mobile app. Most technicians still work from **Profile → Tools → Inventory** on the phone, because that is where they are when the stock moves.
+
+  **Archive** and **Unarchive** are the exception: they are not offered to a technician.
 </Note>
 
 ## Limits and things that cannot be undone
@@ -102,7 +113,7 @@ Rules that apply to all three:
 | Photos per part | 5, each up to 10 MB, JPEG / PNG / WebP |
 | Part code length | 64 characters |
 | Deleting a part | Not possible — archive it instead |
-| Deleting or archiving a warehouse | Not possible from the dashboard — rename it and transfer its stock away |
+| Deleting or archiving a warehouse | Not possible anywhere in LiftAuth — rename it and transfer its stock away |
 | Editing or deleting a movement | Not possible — record an opposing movement |
 | Editing a Part No. | Not possible — it is assigned by LiftAuth |
 

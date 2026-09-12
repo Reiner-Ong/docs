@@ -24,7 +24,7 @@ The job itself has no type. The kind of work is decided by the **form** attached
 | Kind of visit | When |
 | --- | --- |
 | **Maintenance** | A planned, routine inspection — monthly, quarterly, and so on. |
-| **Breakdown** | An emergency call-out when a lift has stopped working or is unsafe. |
+| **Breakdown** | A visit to a lift that has stopped working or is unsafe. It often follows an emergency call-out raised in Dispatch — the call-out itself is not a job, but the work you record for it is. |
 | **Repair** | A visit to fix a specific, previously reported fault. |
 
 <Note>
@@ -75,7 +75,7 @@ A record is the written report of what happened during a job. It is created when
 - the technician's signature
 - the Building Manager's signature, if one was given
 
-Records are permanent — they cannot be edited after signing. Every record is filed automatically in [Drive](/admin/drive/overview) under the building it belongs to.
+Records are permanent. Once a record exists nobody can edit it — there is no amend and no resubmit, before or after signing. A signed record cannot even be deleted; an unsigned one can be deleted by an owner or admin, but not corrected. Every record is filed automatically in [Drive](/admin/drive/overview) under the building it belongs to.
 
 ---
 
@@ -89,7 +89,7 @@ The Building Manager signs for themselves; nobody can sign on their behalf from 
 
 Every link is a single-use token that expires after 7 days, and generating a new one does **not** cancel the earlier ones. Whoever opens the link can sign without a LiftAuth account — an account is only needed to _receive_ the email.
 
-If neither is possible, the technician can **skip signing**. The job still reaches Signed, but the PDF carries no Building Manager signature.
+If none of those three is possible, the technician can **skip signing**. That is not a fourth way of signing — it is an ending without a signature. The job still reaches Signed, but the PDF carries no Building Manager signature.
 
 ---
 
@@ -113,7 +113,7 @@ A draft invoice is not yet real. An admin must **issue** it to finalise it and g
 
 ## Maintenance Contracts {#maintenance-contracts}
 
-A maintenance contract ties everything together. Set one up for a building and LiftAuth creates the visits on a recurring schedule and generates draft invoices each cycle, with no manual input.
+A maintenance contract ties everything together. Set one up for a building and LiftAuth creates the visits on a recurring schedule with no manual input. Whether it also drafts the invoices depends on the contract's billing cadence — per job, annually, or not at all, in which case you raise them by hand.
 
 Contracts are set per **building**, and cover the lifts in it. Older guidance called this a "maintenance plan".
 

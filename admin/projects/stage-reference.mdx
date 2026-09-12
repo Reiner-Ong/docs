@@ -20,6 +20,8 @@ to, removed, renamed or reordered.
 
 **Internal** stages are never included in an emailed package.
 
+The six are fixed in the product: no workspace can add a stage, rename one, or reorder them. **Procurement** is the purchase order you place with your supplier — the [glossary](/start/glossary) lists the same stage under **Purchase order**.
+
 ## Stage states
 
 | State | Meaning |
@@ -55,7 +57,7 @@ Done and Skipped both count as *settled*: the project can close over either.
 
   <Accordion title="Invoice">
     Automatic. A draft invoice makes it In progress; **issued**, **part paid** or
-    **paid** makes it Done. Void and rejected invoices are ignored entirely. There is
+    **paid** makes it Done. A rejected invoice is ignored entirely. There is
     no Mark complete on this stage.
   </Accordion>
 
@@ -78,6 +80,8 @@ can always fill a stage early or out of order.
 | Work | Customer quote is done or skipped |
 | Invoice | Work is **done** |
 | Closed | Every other stage is done or skipped |
+
+Procurement is the one stage whose prompt can never arrive: if you **skip** Customer quote, Procurement never turns Ready. That blocks nothing — Ready is a prompt, not a lock, so attach the order to Procurement and click **Mark complete**, or skip Procurement as well.
 
 When a stage turns ready, LiftAuth puts an item in the [Inbox](/admin/inbox) of that
 stage's assignees; if it has none, everyone assigned anywhere on the project; if

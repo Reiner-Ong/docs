@@ -35,12 +35,12 @@ A **quote** is a price you offer a building manager before the work is agreed. I
 </Steps>
 
 <Tip>
-  If you quote for the same kind of job repeatedly, save the finished draft as a template. Next time, apply the template and the lines, tax rate, terms and notes are filled in for you.
+  If you quote for the same kind of job repeatedly, save the finished draft as a **template** — a stored set of lines, tax rate, terms and notes you can apply to a new quote. Templates have no page of their own: you create and manage them from inside the quote and invoice builders, with **Save as template** and **Manage templates**. (A quote template is unrelated to a [record template](/admin/record-templates/overview), which is the form a technician fills in on site.)
 </Tip>
 
 ### Asking for a deposit
 
-A quote can carry a deposit — either a percentage of the total or a fixed amount. Set it in the **Deposit** section of the builder. A deposit you later collect is recorded as a payment against the quote rather than against an invoice, and shows on the ledger as a **Deposit** row.
+A quote can carry a deposit — either a percentage of the total or a fixed amount. Set it in the **Deposit** section of the builder. A deposit you later collect is recorded as a payment against the quote rather than against an invoice, and shows on the ledger labelled **Deposit**. It is still a payment underneath, so the ledger's **Payments** filter finds it — only the label differs.
 
 ## Send the quotation
 
@@ -83,8 +83,19 @@ If the building manager accepts or declines in their own app, LiftAuth records i
 </Steps>
 
 <Warning>
-  You cannot record a decision after the **Valid until** date has passed. The quote shows a **Validity lapsed** badge and the two decision actions disappear. Use **Revise** to issue a fresh revision at a current price.
+  You cannot record a decision after the **Valid until** date has passed. The quote shows an amber **Validity lapsed** badge and the two decision actions disappear. Use **Revise** to issue a fresh revision at a current price.
 </Warning>
+
+### Validity lapsed and Expired are two different things
+
+Nothing sweeps quotes to expired when their date passes, so a quote past its **Valid until** date is not the same as a quote whose status is **Expired**.
+
+| What you see | What it is |
+| --- | --- |
+| Amber **Validity lapsed** badge | The **Valid until** date has passed. The quote's status is still **Sent**. Nothing has changed about the document; it is simply too old to accept. |
+| **Expired** status badge | The status was actually written to Expired — which only happens the moment somebody tries to **accept** the quote after its date, and is refused. |
+
+So a quote can sit at **Sent** with a **Validity lapsed** badge indefinitely and never become **Expired**.
 
 ## What happens after acceptance
 
@@ -94,7 +105,7 @@ An accepted quote offers two next steps, and you can use either or both.
 
 Creates one [job](/admin/jobs/overview) from the quote, with the quoted parts already listed against it. You must name exactly one technician **or** one team and a scheduled window, so the job is scheduled in the same operation and arrives **Scheduled**.
 
-It is a repair job because of the record template you put on it; the job itself carries no type. A job converted from a quote starts with no record template, so add the form the technician needs before the visit.
+A job carries no type of its own — the job type lives on the [record template](/admin/record-templates/overview) you put on it. A job converted from a quote starts with no record template at all, so it is not yet a repair job in any sense: add the record template the technician needs before the visit, and the job type comes with it.
 
 A draft invoice is seeded from the quote when the job is closed — no invoice is created at conversion.
 
@@ -106,7 +117,7 @@ Opens the invoice builder with the quote's line items already copied across. Use
 
 You cannot edit a sent quotation — the customer is holding that document. Instead, click **Revise**. LiftAuth creates a new quote carrying the same lines, opens it in the editor, and marks the old one **Superseded** once the revision is sent. The revision number appears on the document and on the PDF filename.
 
-Revise is available on a quote that is **Sent**, **Declined** or **Expired**. Only an owner or admin can revise.
+Revise is available on a quote that is **Sent**, **Declined** or **Expired**.
 
 ## Filing a quote away
 
@@ -129,10 +140,10 @@ Revise is available on a quote that is **Sent**, **Declined** or **Expired**. On
 | Status | Meaning |
 | --- | --- |
 | **Draft** | Being written. Not numbered, not on the ledger. |
-| **Sent** | Issued and with the customer. Awaiting their decision. |
+| **Sent** | Issued and with the customer. Awaiting their decision. Stays **Sent** even after **Valid until** passes, where it picks up a **Validity lapsed** badge. |
 | **Accepted** | The customer committed to the price. |
 | **Declined** | The customer said no. |
-| **Expired** | The **Valid until** date passed with no decision. |
+| **Expired** | Written only when someone tries to accept the quote after **Valid until** has passed. Not set by the date passing on its own. |
 | **Superseded** | A later revision replaced it. |
 | **Converted** | A job was raised from it. |
 | **Archived** | Filed away. Shown on the ledger only when **Show archived** is on. |

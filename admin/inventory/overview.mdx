@@ -22,7 +22,7 @@ These three are easy to mix up, so it is worth separating them before you start.
   </Card>
 
   <Card title="Stock on hand" icon="hashtag">
-    The number of units of one part sitting in one warehouse. LiftAuth works this number out for you from the stock movements you record — you never type the number in directly after the first time.
+    The number of units of one part sitting in one warehouse. LiftAuth works this number out for you from the stock movements you record — the opening quantity you set when you create a part is itself a movement.
   </Card>
 </CardGroup>
 
@@ -40,7 +40,7 @@ So a part called *Door Operator Motor* might have **4 on hand** in total: 3 in t
   </Card>
 
   <Card title="Find a part" icon="magnifying-glass" href="/admin/inventory/finding-a-part">
-    Search the catalogue by name or part number, or narrow it down by family and brand.
+    Search the catalogue by name or Part No., or narrow it down by family and brand.
   </Card>
 
   <Card title="Set up your warehouses" icon="warehouse" href="/admin/inventory/setting-up-warehouses">
@@ -66,20 +66,25 @@ If Inventory is new to your company, do it in this order — a part cannot hold 
 
 <Steps>
   <Step title="Add your warehouses first">
-    **Inventory → Warehouses → + Add Warehouse**. Even one, called something like "Main Store", is enough to begin. See [Setting up warehouses](/admin/inventory/setting-up-warehouses).
+    [How to set up warehouses](/admin/inventory/setting-up-warehouses)
   </Step>
 
-  <Step title="Add your parts">
-    **Inventory → Parts → + Add Part**. You can set each part's opening stock while you create it. See [Adding a part](/admin/inventory/adding-a-part).
+  <Step title="Add your parts, with their opening stock">
+    [How to add a part](/admin/inventory/adding-a-part)
   </Step>
 
-  <Step title="Keep the counts honest from then on">
-    Every time parts arrive, get used, or get shifted, record a movement. See [Moving stock](/admin/inventory/moving-stock).
+  <Step title="Record a movement every time stock arrives, gets used, or is shifted">
+    [How to move stock](/admin/inventory/moving-stock)
   </Step>
 </Steps>
 
 ## How Inventory connects to the rest of LiftAuth
 
 * **Quotes and invoices.** A part's **unit price** is its catalogue list price. When you add a _Part_ line to a quote or an invoice, LiftAuth fills in the description and the price from the catalogue, so you are not retyping them. See [Billing](/admin/billing/overview).
-* **Jobs.** When an accepted quote that contains part lines is converted into a repair <Tooltip tip="One visit's worth of work at one building, which can cover several lifts." cta="Glossary" href="/start/glossary">job</Tooltip>, the job carries a **Parts required** list. That list is a reminder, not a deduction — see [Using parts on a job](/admin/inventory/using-parts-on-a-job).
+* **Jobs.** When an accepted quote that contains part lines is converted into a repair <Tooltip tip="One visit's worth of work at one building, which can cover several lifts." cta="Glossary" href="/start/glossary">job</Tooltip>, the job carries a **Parts required** list. That list is a reminder, not a deduction — see [how to use a part on a job](/admin/inventory/using-parts-on-a-job).
+* **Projects.** A purchase order — the order you place with a supplier — is not part of Inventory and is not a Billing document: it is a stage on a [project](/admin/projects/overview). Inventory only records the stock once it arrives, as a **Deposit** movement.
 * **The technician mobile app.** Technicians reach the same catalogue from **Profile → Tools → Inventory** on their phone, where they can search parts, add a part, and record a stock movement.
+
+<Note>
+  **Deposit** means two different things in LiftAuth. In Inventory it is stock arriving into a warehouse. In [Billing](/admin/billing/overview) it is an up-front part-payment from a customer. Nothing connects the two.
+</Note>

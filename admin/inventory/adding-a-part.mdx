@@ -1,5 +1,5 @@
 ---
-title: "Adding a Part"
+title: "How to add a part"
 description: "How to create a catalogue entry for a spare part, with photos, prices, and opening stock."
 icon: "plus"
 ---
@@ -7,7 +7,7 @@ icon: "plus"
 A **part** is one kind of spare component in your catalogue — "Door Operator Motor", not the four of them sitting on a shelf. You create it once, and from then on you record stock against it.
 
 <Note>
-  Add your [warehouses](/admin/inventory/setting-up-warehouses) before your parts. The **Initial warehouse** field below is greyed out until at least one warehouse exists, and without it the new part starts at zero on hand.
+  Add your [warehouses](/admin/inventory/setting-up-warehouses) before your parts. The **Initial warehouse** field below is always on the dialog, but it is disabled until at least one warehouse exists — its placeholder reads _No warehouses yet_ — and without it the new part starts at zero on hand.
 </Note>
 
 ## Create the part
@@ -30,7 +30,11 @@ A **part** is one kind of spare component in your catalogue — "Door Operator M
   </Step>
 
   <Step title="Enter the prices (optional)">
-    **Cost price** is what the part costs you to buy. **Unit price** is your catalogue list price — the figure that fills in automatically when you add this part to a quote or an invoice. Leave either blank to mark it unpriced; you can set them later.
+    **Cost price** is what the part costs you to buy. **Unit price** is your catalogue list price — the figure that fills in automatically when you add this part to a quote or an invoice. A price you leave out is stored as **0**, not as blank, so an unpriced part reads as `0` afterwards. You can set a real figure later.
+
+    <Note>
+      Parts and [standard billing items](/admin/billing/standard-items) do not work the same way here. A standard billing item really can have no price at all; a part always has a number, and for an unpriced part that number is `0`.
+    </Note>
   </Step>
 
   <Step title="Enter the part code (optional)">
@@ -38,7 +42,7 @@ A **part** is one kind of spare component in your catalogue — "Door Operator M
   </Step>
 
   <Step title="Set the opening stock (optional)">
-    Pick an **Initial warehouse**, then type the **Initial quantity** you already hold there. The quantity box stays disabled until you have chosen a warehouse. LiftAuth records this as the part's first stock movement.
+    Pick an **Initial warehouse**, then type the **Initial quantity** you already hold there. Both boxes are always shown; the warehouse picker is disabled until a warehouse exists, and the quantity box stays disabled until you have chosen one. LiftAuth records this as the part's first stock movement.
   </Step>
 
   <Step title="Add at least one photo">
@@ -66,6 +70,8 @@ Each part carries two identifiers, and they are not interchangeable.
 | **Part code** | You, optionally | `DOA-200` | The code the manufacturer printed on the component. Use it when ordering from a supplier. |
 
 The search box on the Parts list matches the **name** and the **Part No.** — it does not match the part code, so search for a part by its name.
+
+There is nowhere to keep your firm's own existing internal part numbers: there is no dedicated field for them and no notes or custom-field column on a part. If you are coming from another system, its numbers cannot be carried over — plan on the LiftAuth Part No. becoming the reference your team uses.
 
 ## Changing a part later
 

@@ -11,8 +11,8 @@ For how to use them, start at [The Calendar](/admin/calendar/overview).
 
 | Surface | How to reach it | Who can open it |
 | --- | --- | --- |
-| Calendar | **Calendar** in the sidebar, under *Operations* | Anyone signed in to the dashboard |
-| On-call schedule | **Dispatch** in the sidebar → **On call** tab | Anyone signed in to the dashboard |
+| Calendar | **Calendar** in the sidebar, under _Operations_ | Owners, admins and technicians. A technician sees their own calendar only. A **Call Center** account gets an empty state reading "No calendar" |
+| On-call schedule | **Dispatch** in the sidebar → **On call** tab | Owners, admins, technicians and **Call Center** accounts can all read it |
 
 The older `/on-call` link still works and lands on the On call tab.
 
@@ -20,7 +20,7 @@ The older `/on-call` link still works and lands on the On call tab.
 
 | Item | Badge on its card | Colour | Editable here |
 | --- | --- | --- | --- |
-| Job | Its job status — Open, Scheduled, Work Done, Signed, Closed, Cancelled | The owner's colour | Drag to reschedule only |
+| Job | Its job status — Scheduled, Work Done, Signed, Closed, Cancelled | The owner's colour | Drag to reschedule only |
 | Planned job | **Planned** | The owner's colour, dimmed | No |
 | Event | **Event** | The owner's colour | Create, edit, delete, drag |
 
@@ -99,16 +99,18 @@ day.
 
 ## Who can do what
 
-| Action | Owner | Admin | Technician | Call centre |
+**Call Center** is the role's name on screen. The Calendar page is not admin-only — a technician gets a working calendar, just their own.
+
+| Action | Owner | Admin | Technician | Call Center |
 | --- | --- | --- | --- | --- |
-| See their own calendar | Yes | Yes | Yes | — |
-| See a colleague's calendar | Yes | Yes | No | — |
-| Add, edit, delete their own events | Yes | Yes | Yes | — |
-| Add, edit, delete someone else's events | Yes | Yes | No | — |
-| Drag a scheduled job to a new date | Yes | Yes | Yes — but only their own jobs are on their calendar | — |
+| Open the Calendar page | Yes | Yes | Yes — their own calendar only | No — empty state reading "No calendar" |
+| See a colleague's calendar | Yes | Yes | No | No |
+| Add, edit, delete their own events | Yes | Yes | Yes | No |
+| Add, edit, delete someone else's events | Yes | Yes | No | No |
+| Drag a scheduled job to a new date | Yes | Yes | Yes — but only their own jobs are on their calendar | No |
 | Read the on-call rota | Yes | Yes | Yes | Yes |
 | Add or delete an on-call shift | Yes | Yes | No | No |
-| Turn their own on-call toggle on or off | Yes | Yes | Yes | — |
+| Turn an on-call state on or off | No — there is no on-call toggle in the web dashboard | No — there is no on-call toggle in the web dashboard | In the technician app only | No |
 
 <Warning>
   If you hold only the technician role, ticking a colleague in the People list

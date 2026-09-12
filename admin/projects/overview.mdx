@@ -4,23 +4,21 @@ description: "What a project is, when to use one instead of a plain job, and whe
 icon: "diagram-project"
 ---
 
-A **project** is a folder for one piece of customer work that involves more than a
-single visit — it holds the supplier's quote, your quote to the customer, the
+A **project** is a larger piece of work that runs over several visits and documents — a modernisation, an installation, a major repair. It holds the supplier's quote, your quote to the customer, the
 purchase order, the jobs, the invoice, and every document in between, in one place.
 
 ## When to use a project instead of a job
 
 A [job](/admin/jobs/overview) is a single visit to a building. That is all it is meant to be, and for routine maintenance it is enough.
 
-Use a project when the work is a small piece of commerce rather than a visit:
+**Use a project when one job is not enough to hold the work.** The work runs over several visits, or several jobs, or is partly done by a subcontractor, and the paperwork piles up around it:
 
 * You have to get a price from a supplier before you can quote the customer.
 * The customer has to accept a quote before anything is scheduled.
 * You raise a purchase order to your supplier.
-* The work takes several jobs, or is partly done by a subcontractor.
 * You want one bundle of paperwork to send the customer at the end.
 
-A door operator replacement is a project. A monthly service is not.
+A door operator replacement across several visits is a project. A monthly service is not — and neither is a single-visit repair you happen to quote for first, which is a job with a quote against it.
 
 <Note>
   Projects is switched on per workspace. If you cannot see **Projects** in the
@@ -30,29 +28,28 @@ A door operator replacement is a project. A monthly service is not.
 
 ## The mental model: six stages
 
-Every project has the same six stages, in the same order, for every customer. You
-cannot add, remove or rename them.
+Every project has the same six stages, in the same order, for every customer. They cannot be added to, renamed or reordered.
 
 | Stage | What it holds |
 | --- | --- |
 | **Supplier quote** | What your supplier is charging you. Internal. |
 | **Customer quote** | What you are charging the customer. |
 | **Procurement** | The order you place with your supplier. Internal. |
-| **Work** | The jobs and the service records. |
+| **Work** | The jobs and their records. |
 | **Invoice** | The bill to the customer. |
 | **Closed** | The project is finished and frozen. |
 
 Two of them — **Supplier quote** and **Procurement** — are marked **Internal** in
 the app. Nothing on an internal stage is ever sent to the building manager.
 
+<Note>
+  The stage the app calls **Procurement** is the purchase order you place with your supplier. The [glossary](/start/glossary) lists it under **Purchase order**; they are the same stage.
+</Note>
+
 LiftAuth works out how far a project has got by itself, from the documents on it.
 You do not drag a card between columns: accept a quote, sign a job, issue an
 invoice, and the project moves. Where you *do* have to say so — a supplier quote
 that only exists as a PDF, for example — the stage has a **Mark complete** button.
-
-The board column a project sits in is the **leftmost stage that is not yet done or
-skipped**. A project can be filled in out of order; the column tells you the
-earliest thing still outstanding.
 
 ## What do you want to do?
 
@@ -80,20 +77,4 @@ earliest thing still outstanding.
 
 ## Finding your projects
 
-Click **Projects** in the sidebar. You get two readings of the same set of
-projects:
-
-* **Board** — six columns, one per stage, with a card per project. This is the default.
-* **List** — one table across all six stages, with customer, building, stage,
-  assignees and last update. Typing in the search box moves you here, because a
-  search is a question the six columns cannot answer.
-
-Filter by customer, by person, or with **Assigned to me**. The **Show closed** chip
-is on by default; turn it off to hide closed projects. Filters and the chosen view live in the page address, so a
-link you paste to a colleague opens exactly what you were looking at.
-
-<Tip>
-  A card can carry one badge. **Ready** means this stage's turn has come and it is
-  waiting on somebody — the same prompt appears in your [Inbox](/admin/inbox). A
-  review badge outranks it, because the review is what the project is waiting on.
-</Tip>
+Click **Projects** in the sidebar. The board, the list, the filters and the card badges are all set out in the [Projects reference](/admin/projects/stage-reference).

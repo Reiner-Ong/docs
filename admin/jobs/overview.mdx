@@ -1,11 +1,11 @@
 ---
 title: "Jobs"
-description: "Schedule service visits, track them while technicians are on-site, and close them once the customer has signed."
+description: "Schedule service visits, track them while technicians are on-site, and close them once the building manager has signed."
 icon: "clipboard-list"
 ---
 
 Jobs are how LiftAuth tracks service visits. One job is one visit, to one
-building, by one technician or one team.
+building, by one technician or one team. The building manager signs it off; some screens call them the customer, and it is the same party.
 
 ## The shape of it
 
@@ -15,7 +15,7 @@ assignee. It moves through six statuses, and each status belongs to somebody:
 **Open → Scheduled → Work Done → Signed → Closed**, with **Cancelled** as the way
 out at any point before Closed.
 
-You schedule it. The technician moves it to **Work Done**. The building manager's signature moves it to **Signed**. You close it. Nothing ever moves backwards — but a job can skip **Open** entirely: the **Schedule Job** button creates a job that is already **Scheduled**.
+You schedule it. The technician moves it to **Work Done**. The building manager's signature moves it to **Signed**. You close it. Nothing ever moves backwards — but a job can skip **Open** entirely: the **Schedule Job** button on the Jobs page creates a job that is already **Scheduled**.
 
 [Read how jobs work →](/admin/jobs/how-jobs-work)
 
@@ -57,28 +57,9 @@ You schedule it. The technician moves it to **Work Done**. The building manager'
 
 ## Getting started
 
-<Steps>
-  <Step title="Check you have what a job needs">
-    A building with lifts and a building manager, at least one record template, and
-    an active technician. Missing any of these and the scheduling dialog will stop
-    you.
-  </Step>
+A job needs a building with lifts and a building manager, at least one record template, and an active technician — miss any of those and the scheduling dialog stops you. [Schedule a job](/admin/jobs/how-to-schedule-a-job) walks the dialog step by step.
 
-  <Step title="Schedule the visit">
-    **Jobs** in the sidebar, then **Schedule Job**. Pick the building and the
-    records, then the person and the time.
-    [Full steps →](/admin/jobs/how-to-schedule-a-job)
-  </Step>
-
-  <Step title="Watch it come back">
-    The board's **Work Done** and **Signed** columns fill up as technicians finish.
-    Your Inbox lists everything waiting on you.
-  </Step>
-
-  <Step title="Close it">
-    Review the record and click **Close job**. Closing a job raises a draft invoice only when the job belongs to an active maintenance contract billed per job, or — with no contract — was created by converting a quote. [Full steps →](/admin/jobs/how-to-close-a-job)
-  </Step>
-</Steps>
+While the visit is out, the board's **Work Done** and **Signed** columns fill up as technicians finish, and your Inbox lists everything waiting on you. When a job reaches **Signed** it is yours to review and close: [Close a job](/admin/jobs/how-to-close-a-job) covers what closing does, including which jobs raise a draft invoice.
 
 <Tip>
   If the same building needs servicing on a regular cycle, do not schedule each visit by hand. Set up a [Maintenance Contract](/admin/maintenance-contracts/overview) and LiftAuth creates and assigns the jobs for you.

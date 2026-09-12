@@ -4,22 +4,28 @@ description: "See which accounts are late, read a customer's statement of accoun
 icon: "clock"
 ---
 
-The **Statements** tab in Billing answers two questions: *which customers are behind?* and *what exactly does this customer owe, and why?*
+The **Statements** tab in Billing answers two questions: _which customers are behind?_ and _what exactly does this customer owe, and why?_
 
 ## Find the accounts that are late
 
 Open **Billing → Statements**. The list of accounts down the left is sorted worst-first, so the ones that need chasing are already at the top. Each late account carries a badge naming how old its oldest unpaid money is.
 
-| Badge | Meaning |
-| --- | --- |
-| *(no badge)* | Nothing owed, or everything owed is still within terms |
-| **31–60 days** | Oldest unpaid money is 31 to 60 days past its due date |
-| **61–90 days** | 61 to 90 days past due |
-| **90+ days** | More than 90 days past due |
+There are four ageing bands, and only three of them are badged.
+
+| Band | Meaning | Badge |
+| --- | --- | --- |
+| **Current** | Not yet due, **or** up to 30 days past its due date | None |
+| **31–60 days** | Oldest unpaid money is 31 to 60 days past its due date | **31–60 days** |
+| **61–90 days** | 61 to 90 days past due | **61–90 days** |
+| **90+ days** | More than 90 days past due | **90+ days** |
 
 <Note>
-  An account with money owed but nothing yet overdue gets no badge. That is the normal state of a working account — badging it would make the badge meaningless. The sort order still surfaces it.
+  **Current** covers more than you might expect: money up to 30 days late is still Current and gets no badge. That is deliberate — the first month of lateness is the normal rhythm of a working account, and badging it would make the badge meaningless. The sort order still surfaces it.
 </Note>
+
+<Warning>
+  The ledger and the ageing report disagree on purpose, and it is not a bug. An invoice one day past its due date gets a red **Overdue** badge on the [ledger](/admin/billing/overview#finding-a-document), while the ageing report here still counts it as **Current** with no badge. The ledger badge answers "is this invoice late?"; the ageing band answers "how late, and should I chase it?" The same invoice can therefore read **Overdue** in one place and **Current** in the other for its first 30 days.
+</Warning>
 
 An account's badge names its **oldest** money. A customer with both a fresh invoice and one from four months ago reads as **90+ days**, because that is the problem to deal with.
 
@@ -29,11 +35,9 @@ An account's badge names its **oldest** money. A customer with both a fresh invo
   <Step title="Open Billing → Statements">
     The view starts on **By account**.
   </Step>
-
   <Step title="Pick the account">
     Use the search box above the list if you have many customers.
   </Step>
-
   <Step title="Set the period">
     Two date pickers, **From** and **To**. Anything before the start date is rolled into the opening balance rather than dropped.
   </Step>
@@ -70,24 +74,23 @@ Switch the view from **By account** to **All accounts**. Every customer is stack
   <Step title="Set the period and, if you want one account only, select it">
     The export contains exactly what is on screen.
   </Step>
-
   <Step title="Click Download PDF or Download CSV">
     PDF for something to send or file; CSV for your accounting software.
   </Step>
 </Steps>
 
 <Warning>
-  LiftAuth does not email statements. Download the PDF and attach it to your own email. (Quotes and invoices *can* be emailed from LiftAuth — see [How to email a quote or invoice](/admin/billing/emailing-documents).)
+  LiftAuth does not email statements. Download the PDF and attach it to your own email. (Quotes and invoices _can_ be emailed from LiftAuth — see [How to email a quote or invoice](/admin/billing/emailing-documents).)
 </Warning>
 
 If the start date is after the end date, LiftAuth says so and both export buttons stay disabled.
 
 ## What counts as overdue
 
-An invoice is overdue when it is **Issued** or **Part paid**, still has a balance, and today is past its due date. An invoice with no due date is never overdue. Voided invoices and invoices with a zero balance are excluded from the ageing report entirely.
+An invoice is overdue when it is **Issued** or **Part paid**, still has a balance, and today is past its due date. Every invoice has a due date — it is required — so there is no invoice that can never fall overdue. Invoices with a zero balance are excluded from the ageing report entirely, as are void invoices (a status nothing in LiftAuth sets).
 
-The ageing report is as-of *right now*; a statement is as-of the end date you chose. If the two disagree, that is why.
+The ageing report is as-of _right now_; a statement is as-of the end date you chose. If the two disagree, that is why.
 
-<Note>
-  Statements and the ageing report are owner and admin only.
-</Note>
+<Tip>
+  A statement of account is the surface to use when you need a customer's complete history. The [ledger](/admin/billing/overview#finding-a-document) loads at most 500 documents of each type and its totals describe only what is loaded; a statement reads the whole account.
+</Tip>

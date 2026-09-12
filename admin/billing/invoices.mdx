@@ -8,19 +8,23 @@ An **invoice** is the bill you send a building manager for work done. Every invo
 
 ## Where drafts come from
 
-<CardGroup cols={3}>
-  <Card title="A maintenance contract" icon="newspaper" href="/admin/maintenance-contracts/overview">
-    When a plan's cycle closes, LiftAuth drafts the invoice for it automatically. It waits in your [Inbox](/admin/inbox).
-  </Card>
+A draft can arrive four ways, and which one applies depends on the job's [maintenance contract](/admin/maintenance-contracts/overview) and its billing cadence.
 
-  <Card title="A closed job" icon="wrench" href="/admin/jobs/how-to-close-a-job">
-    A job raised from an accepted quote seeds a draft from the quote's line items when the job is closed.
-  </Card>
+| Where the draft comes from | When it appears | What the lines are |
+| --- | --- | --- |
+| A job on an **active contract billed per job** | The moment the job is closed | Taken from the contract's own invoice template |
+| A job with **no contract** that came from a converted quote | The moment the job is closed | Taken from the originating quote's line items |
+| A contract billed **annually** | The daily cron, once the contract's anniversary has passed — not by closing a job | From the contract |
+| **You** | Whenever you choose | Whatever you enter |
 
-  <Card title="You" icon="plus" href="#write-the-draft">
-    **Billing → + New billing → Invoice**, or **Create invoice** on an accepted quote.
-  </Card>
-</CardGroup>
+Two cases produce nothing at all, and both are normal:
+
+- A job with no contract **and** no originating quote drafts nothing.
+- A contract whose cadence is **None** never drafts anything. Raise those invoices by hand.
+
+A **quote or invoice template** is a saved set of lines, tax rate, terms and notes that you can apply to a new document. Templates have no page of their own: you create and manage them from inside the quote and invoice builders — **Save as template** and **Manage templates** — and from the maintenance-contract wizard, which is where a contract's invoice template is chosen. (This is a different thing from a [record template](/admin/record-templates/overview), which describes the form a technician fills in on site.)
+
+Automatic drafts always carry a due date, defaulting to 30 days out, and wait in your [Inbox](/admin/inbox). To raise one yourself, use **Billing → + New billing → Invoice**, or **Create invoice** on an accepted quote.
 
 ## Write the draft
 
@@ -90,12 +94,17 @@ Once an invoice is issued, the first three statuses below follow the money by th
 | **Part paid** | Some of the balance has been settled |
 | **Paid** | The balance has reached zero |
 | **Rejected** | A draft that was discarded. You set this by discarding. |
-| **Void** | Cancelled. Nothing in LiftAuth sets this status, so you will not see it in practice — reverse an issued invoice with a credit note instead. |
-| **Archived** | Filed away. Only a draft or rejected invoice can be archived. |
+| **Archived** | Filed away. Only a draft or a rejected invoice can be archived. |
+
+An **archived invoice never appears on the ledger** — the ledger leaves out drafts and rejected invoices to begin with, so turning on **Show archived** does not bring one back into view. That toggle is there for quotes.
+
+To reverse an issued invoice, [raise a credit note](/admin/billing/credit-notes). Nothing in LiftAuth marks an invoice void.
 
 The balance is the invoice total, less every settled payment allocated to it, less every credit note applied to it.
 
 **Overdue** is not a status. It is worked out live: an issued or part-paid invoice with money still owed, past its due date. LiftAuth shows it as a red **Overdue** badge in place of the ordinary status badge, and counts it under [Outstanding](/admin/billing/reference#the-figures-above-the-ledger).
+
+The ledger badge is stricter than the ageing report. An invoice one day past due already reads **Overdue** on the ledger, while the [ageing report](/admin/billing/statements) still counts it as **Current** until it is more than 30 days late. Both are correct; they answer different questions.
 
 ## Getting paid
 

@@ -26,7 +26,7 @@ A contract becomes **Expired** on its own, on the nightly run, once the expiry d
 
 | Column | What it shows |
 | --- | --- |
-| **Contract** | The contract reference, in the form `BP-2026-4F91C2`. |
+| **Contract** | The contract reference, in the form `BP-2026-4F91C2` — `BP-`, the year, six characters. The contract page labels it **Contract No.**, and **Search contracts…** matches it. The `BP` is inherited from "Building Plan", the term this feature used before it was renamed to Maintenance Contracts. |
 | **Building** | The building the contract covers. One contract, one building. |
 | **Frequency** | **Monthly**, **Quarterly**, or **Mixed** when its coverage groups do not all share a frequency. |
 | **Lifts** | How many lifts the contract covers in total, across all its coverage groups. |
@@ -50,7 +50,7 @@ A contract becomes **Expired** on its own, on the nightly run, once the expiry d
 | --- | --- |
 | **Overview** | The coverage groups, the schedule, the billing setup, certificate renewals, a year-by-year service-activity grid, and a short list of recent and upcoming visits. |
 | **Upcoming Visits** | Every future visit the contract will produce, with **Reschedule** on the ones that are not jobs yet. |
-| **Visit History** | Every [job](/admin/jobs/overview) this contract has produced, with its status. |
+| **Visit History** | Every [record](/admin/records) held for this contract's **building** — job-produced and hand-backfilled alike. It is not a list of jobs, and it is not scoped to this contract, so records from another of the building's contracts and visits you logged with **Record past visits** both appear. |
 | **Invoices** | Every [invoice](/admin/billing/overview) raised off this contract. |
 
 ### The summary strip
@@ -60,7 +60,7 @@ A contract becomes **Expired** on its own, on the nightly run, once the expiry d
 | **Lifts covered** | Total lifts, and how many coverage groups the contract is built from. |
 | **Contract Period** | Start and expiry months, plus how many months of the term have elapsed. |
 | **Annual cost** / **Cost per invoice** | The total of the contract's invoice lines. Only shown when the contract invoices automatically. Reads **TBC** when the lines are priced from the catalogue at the time of invoicing rather than fixed now. |
-| **Next certificate expiry** | The earliest operating-certificate expiry among the covered lifts. Only shown when annual inspection is switched on. Turns amber inside the renewal window and red once lapsed. |
+| **Next certificate expiry** | The earliest [operating-certificate](/start/glossary) expiry among the covered lifts. Only shown when annual inspection is switched on. Turns amber inside the renewal window and red once lapsed. |
 | **Next invoice** | The month the next annual invoice will be drafted. Annual billing only. |
 
 ## Billing cadences
@@ -90,6 +90,7 @@ All dates and times are **Singapore time**.
 | Quarterly coverage groups | Due every third month, counted from the contract's start month. |
 | Preferred day | The day of the month you chose. Weekends and public holidays shift to the nearest workday. |
 | Job creation | 14 days before the visit date. The job arrives already assigned and time-slotted. |
+| Who is told | Creating a job notifies nobody. Scheduling it notifies every active user of the building manager's firm — the firm, not one named contact — by push and by email, and pushes to the assigned technician or team. Moving a job later runs the same path, and the message still reads "scheduled". The nightly contract run sends one digest email per firm instead of one per job. |
 | Long visits | A visit that does not fit one working day continues on the following workdays. Each day can be moved separately. |
 | Backdated contracts | Scheduling runs from the current month forward. Months before today never generate jobs. |
 | Certificate renewals | One grouped draft quote per building, raised 1–12 months (3 by default) before the earliest covered lift's certificate expiry. Needs annual inspection switched on, and a building manager on the contract. |
@@ -97,8 +98,9 @@ All dates and times are **Singapore time**.
 
 ## Rules the builder enforces
 
-- A lift can belong to only one coverage group on a contract. (The builder's own label for these groups on screen is "records".)
-- Every coverage group needs a record template and at least one lift.
+- A lift can belong to only one [coverage group](/start/glossary) on a contract. (The builder labels these groups "Record 1", "Record 2" on screen.)
+- Every coverage group needs a [record template](/start/glossary) and at least one lift. Nothing selects a template for you, and the builder refuses to save a group without one.
+- Each coverage group carries its own frequency. The contract's **Frequency** reads **Mixed** when they do not all match.
 - A record template written for a single lift must be given exactly one lift.
 - Every lift in a coverage group must belong to the contract's building.
 - The contract end must be after the contract start.
@@ -109,7 +111,7 @@ All dates and times are **Singapore time**.
 
 | Action | Owner | Admin | Technician only | Call Center only |
 | --- | --- | --- | --- | --- |
-| View contracts, open a contract | Yes | Yes | No | No |
+| View contracts, open a contract | Yes | Yes | Yes | No |
 | Create a contract | Yes | Yes | No | No |
 | Edit a contract | Yes | Yes | No | No |
 | Reschedule an upcoming visit | Yes | Yes | No | No |
@@ -117,10 +119,12 @@ All dates and times are **Singapore time**.
 | Record past visits | Yes | Yes | No | No |
 
 <Note>
-  The **No** answers are not per-action restrictions: someone whose only role is Technician, or only Call Center, does not get the web dashboard's admin pages at all — Maintenance Contracts included. Somebody who holds one of those roles _alongside_ Owner or Admin gets the Owner or Admin answer.
+  **Call Center** is the role's name exactly as the product spells it. A technician-only account is not shut out of the web dashboard: it signs in normally and **Maintenance Contracts** is in its sidebar, so a technician can look a contract up. The **No** answers above are restrictions on those individual actions, not on reaching the area. Somebody who also holds Owner or Admin gets the Owner or Admin answer.
 </Note>
 
 ## Rescheduling limits
+
+An upcoming visit is moved from the contract's **Upcoming Visits** tab. It cannot be dragged on the calendar, where it appears as a [planned job](/start/glossary): the calendar refuses with "This job hasn't been generated yet — it'll be scheduled automatically closer to the date."
 
 A visit cannot be moved when:
 

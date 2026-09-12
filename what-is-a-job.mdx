@@ -1,5 +1,6 @@
 ---
 title: "What is a Job"
+description: "What a job holds, the six statuses it moves through, and the three kinds of visit."
 ---
 
 A job is one visit's worth of work at one building. Every time a technician goes out — for routine service, a breakdown, or a repair — that visit is a job.
@@ -75,10 +76,12 @@ Once any parts are in hand, the office schedules a repair visit. The technician 
 
 ## A few important things
 
-**The building manager signs for themselves.** You cannot sign on their behalf from the dashboard. They sign on the technician's phone on site, or through a signing link sent to them afterwards.
+**The building manager signs for themselves.** You cannot sign on their behalf from the dashboard. There are three ways it happens: on the technician's phone on site, through a signing link the technician shares afterwards, or by an owner or admin emailing the request from the record in [Drive](/admin/drive/sending-for-sign-off).
 
-**A technician can finish without a signature.** If nobody is available to sign, the technician can skip signing. The job still reaches **Signed**, but the PDF carries no building-manager signature.
+**A technician can finish without a signature.** If nobody is available to sign, the technician can skip signing. The job still reaches **Signed**, but the PDF carries no building-manager signature. Skipping is final — the record can never be sent for signature afterwards. Note the dashboard shows it as **Signed**, the same as a record the building manager really signed; only the PDF shows the difference.
 
 **Closed jobs become part of the lift's history.** Once closed, a job is saved against that lift permanently. A cancelled job is not.
 
-**A crew can split the work.** When a job is assigned to a team, each member can submit their own part. If two people record the same lift, an admin is asked which record counts — and the other one is deleted.
+**A crew can split the work.** When a job is assigned to a team, each member can submit their own part. If two people record the same lift, that lift is **contested** and the job cannot be submitted until somebody settles it.
+
+Settling it happens in the technician app, at submit time — a crew member picks the record that counts. There is no chooser in the dashboard, so this is not something the office can sort out later. **The records not picked are deleted permanently, along with their photos.** Any faults they logged are kept.

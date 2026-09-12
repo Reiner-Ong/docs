@@ -35,6 +35,8 @@ Because it is a per-person view, a job only appears on the calendar of the
 person (or the team) it is assigned to. An unassigned or unscheduled job appears
 on nobody's calendar.
 
+Owners, admins and technicians all get a calendar. A technician sees **their own calendar only** — ticking a colleague shows an error rather than that colleague's events. A **Call Center** account has no calendar: the page opens on an empty state reading "No calendar".
+
 ## What do you want to do?
 
 <CardGroup cols={2}>
@@ -53,8 +55,7 @@ on nobody's calendar.
   </Card>
 
   <Card title="Set the on-call rota" icon="phone-volume" href="/admin/calendar/on-call-schedule">
-    Say which technician is on standby out of hours, so emergency call-outs go
-    to the right person.
+    Say which technician is on standby out of hours. The rota ranks the technician list when an operator raises a call-out — it never rings anyone by itself.
   </Card>
 </CardGroup>
 

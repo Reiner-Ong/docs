@@ -34,11 +34,11 @@ Setting up a contract is a five-step builder. At the end, LiftAuth writes out ev
 
 This step decides **which lifts are serviced and how often**.
 
-A contract is built from **coverage groups** — the builder labels these "records" on screen, but they are not the signed report a technician submits. One coverage group is a set of lifts, serviced together, against one record template, at one frequency. Most contracts need only one; you add more when different lifts need a different checklist or a different frequency.
+A contract is built from [**coverage groups**](/start/glossary) — the builder labels these "Record 1", "Record 2" on screen, but they are not the signed [record](/admin/records) a technician submits. One coverage group is a set of lifts, serviced together, against one [record template](/start/glossary), at one frequency. Most contracts need only one; you add more when different lifts need a different checklist or a different frequency.
 
 <Steps>
   <Step title="Pick the record template">
-    Choose the maintenance checklist this group of lifts is inspected against. Nothing picks it for you — a job has no type that a template is resolved from.
+    Choose the maintenance checklist this group of lifts is inspected against. Nothing picks it for you, and the builder will not save a group without one. There is nothing for LiftAuth to guess from: a job carries no type of its own — the record template is what makes a visit maintenance, a repair or a breakdown — so there is no job type to resolve a template from, no default template, and nothing derived from the lift.
   </Step>
 
   <Step title="Choose Monthly or Quarterly">
@@ -50,9 +50,15 @@ A contract is built from **coverage groups** — the builder labels these "recor
   </Step>
 
   <Step title="Add another group if you need one">
-    Click **+ Add record** and repeat. Any lift you leave out is flagged, which is fine if it is serviced under a different contract.
+    Click **+ Add record** and repeat. Any lift you leave out is flagged, which is fine if it is serviced under a different contract — the flag is a reminder and does not stop you saving. What does stop you is a group with no record template, or a group with no lifts.
   </Step>
 </Steps>
+
+<Note>
+  Each generated job inherits its group's record template as a **snapshot taken when the job is generated**. Editing the contract later — swapping a group's template, for instance — does not re-point jobs that already exist; they keep the template they were stamped with. Only visits generated after the edit pick the new one up.
+
+  The template itself is never chosen automatically, but individual form **items** can be: compliance capture items are added to scheduled jobs on their own.
+</Note>
 
 <Warning>
   Some templates are written for a single lift and some for a whole set. If you assign several lifts to a single-lift template, the step will tell you and you cannot continue until you split them.
@@ -64,6 +70,8 @@ This step decides **how the building is invoiced, and for how long the contract 
 
 <Steps>
   <Step title="Choose a billing cadence">
+    The [billing cadence](/admin/maintenance-contracts/reference#billing-cadences) is how often LiftAuth drafts an invoice for this contract:
+
     * **Per-job** — one draft invoice per visit, raised when you close the job.
     * **Annual** — one draft invoice per year.
     * **None** — no automatic invoicing at all; you raise invoices by hand from Billing.
@@ -88,7 +96,7 @@ This step decides **how the building is invoiced, and for how long the contract 
 
 ## Step 3 — Annual inspection
 
-This step is about the **operating certificate** each lift renews yearly after its statutory inspection. It is switched off by default — leave it off if this contract does not cover renewals.
+This step is about the [**operating certificate**](/start/glossary) each lift renews yearly after its statutory inspection. It is switched off by default — leave it off if this contract does not cover renewals.
 
 Turn on **Cover annual inspection & certificate renewal** and you get:
 
@@ -130,7 +138,7 @@ The last step lays out everything you have chosen — coverage, billing, term, s
 
 ## What happens next
 
-- The contract appears in **Maintenance Contracts** with the status **Active** and a reference like `BP-2026-4F91C2`.
-- Its **Upcoming Visits** tab lists every visit for the whole term.
-- Fourteen days before each visit, LiftAuth creates the [job](/admin/jobs/overview), assigns it, and books the time slot.
+- The contract appears in **Maintenance Contracts** with the status **Active** and a reference like `BP-2026-4F91C2`. That reference is shown as **Contract No.**, listed in the contracts table, and searchable, so it is worth noting the form: `BP-`, the year, then six characters. The `BP` is left over from the retired term "Building Plan" — it is not an abbreviation of "Maintenance Contract".
+- Its **Upcoming Visits** tab lists every visit for the whole term. The calendar shows the same rows as **planned jobs**, which cannot be dragged.
+- Fourteen days before each visit, LiftAuth creates the [job](/admin/jobs/overview), assigns it, and books the time slot. Creating a job notifies nobody on its own; scheduling it notifies the building manager's whole firm — every active user of that firm, not one named contact — by push and email, and pushes to the assigned technician or team.
 - Depending on the cadence you chose, draft [invoices](/admin/billing/overview) appear for you to review and send. A contract billed **Per-job** drafts one when you close each job; an **Annual** contract is invoiced on its own yearly schedule instead; **None** never drafts anything.

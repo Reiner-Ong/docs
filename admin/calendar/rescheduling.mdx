@@ -4,9 +4,7 @@ description: "Drag an item to a new day or time slot on the calendar and confirm
 icon: "arrows-up-down-left-right"
 ---
 
-The quickest way to move a visit is to drag it. This is the same reschedule that
-the job page performs — the technician's app and the people who need to know are
-updated either way.
+The quickest way to move a visit is to drag it. Dragging a job runs the same reschedule as the **Reschedule** action on the job page, so the outcome is identical either way.
 
 ## Drag it
 
@@ -36,15 +34,21 @@ updated either way.
 
 Click **Cancel** at any point and nothing is changed.
 
+## Who is notified
+
+The same confirmation appears whichever kind of item you moved, but only a job move notifies anybody:
+
+- **You moved a job.** Everyone at the building manager's firm is notified, by push and by email — it is firm-wide, not a single named contact. A reschedule goes out through the same path as first scheduling, so the wording the firm receives still reads "scheduled" rather than saying the visit moved. The assigned technician is notified separately; the person doing the rescheduling is not notified.
+- **You moved an event.** Nobody is notified. Events are personal calendar entries and moving one sends no push and no email, despite what the confirmation says.
+
 ## When a job will not move
 
-Events always move. A job only moves while it is still **Scheduled**. If it
+Events always move. A job only moves while it is still **Scheduled**. A job with no schedule never reaches the calendar in the first place — schedule it from the job page — so every refusal below is about an item that is already on the grid. Where a job
 cannot be moved, LiftAuth says why as soon as you drop it, and the job stays
 where it was:
 
 | What you dragged | What LiftAuth tells you |
 | --- | --- |
-| A job that has not been scheduled yet | This job isn't scheduled yet — schedule it from the job first. |
 | A job the technician has already finished | Work is already done on this job, so it can't be rescheduled. |
 | A job the building manager has signed | This job is signed off, so it can't be rescheduled. |
 | A closed job | This job is closed, so it can't be rescheduled. |

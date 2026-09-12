@@ -23,9 +23,12 @@ Billing a project works the same way as billing anything else in LiftAuth — th
     project.
   </Step>
 
-  <Step title="Send it to the customer">
-    Send, and then record their answer — accepted or declined — as you normally
-    would. A draft carries no number yet; the quote reference is drawn when you send.
+  <Step title="Send it, then email it">
+    **Send** finalises the quotation and draws its reference number — a draft carries no number yet. It does **not** email anything: the customer only receives the quote when you email it to them, which is a separate step. See [how to quote for work](/admin/billing/quotes) and [how to email a quote or invoice](/admin/billing/emailing-documents).
+  </Step>
+
+  <Step title="Record their answer">
+    Accepted or declined, recorded on the quote as you normally would.
   </Step>
 </Steps>
 
@@ -58,8 +61,7 @@ exactly as an accepted quote would.
 
 ## Raise the invoice
 
-The **Invoice** stage sits below Work. When the work is settled, the band at the top
-of the project offers **Create invoice**.
+The **Invoice** stage sits below Work. Once Work is **done**, the band at the top of the project offers **Create invoice**. Skipping Work does not do this — but readiness is only a prompt, so you can raise the invoice from the Invoice row whenever you need to.
 
 <Steps>
   <Step title="Choose what to bill from">
@@ -73,8 +75,11 @@ of the project offers **Create invoice**.
   </Step>
 
   <Step title="Save the draft, then issue it">
-    Every invoice is created as a draft. Issuing it renders the PDF, assigns the
-    invoice number and notifies the customer — do that from the document itself.
+    Every invoice is created as a draft. Issuing it renders the PDF and assigns the invoice number — do that from the document itself. See [how to raise and issue an invoice](/admin/billing/invoices).
+  </Step>
+
+  <Step title="Email it to the customer">
+    Issuing does **not** notify anybody. Until you email the invoice, the customer has not been billed as far as they know. See [how to email a quote or invoice](/admin/billing/emailing-documents).
   </Step>
 </Steps>
 
@@ -84,7 +89,7 @@ The stage follows the invoice:
 | --- | --- |
 | Draft | In progress |
 | **Issued**, part paid or paid | **Done** |
-| Void or rejected | Ignored — as if it were not there |
+| Rejected | Ignored — as if it were not there |
 
 <Note>
   There is no **Mark complete** on the Invoice stage. The stage settles when the invoice is genuinely issued, so the project and your billing records can never disagree. Payment does not hold a project open: an issued invoice is enough to close the project, and the money is tracked in [Billing](/admin/billing/overview).

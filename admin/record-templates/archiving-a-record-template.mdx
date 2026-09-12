@@ -43,6 +43,8 @@ dialog shows:
 > A building plan still schedules this record template. Re-point those plans
 > before archiving.
 
+**Building plan** is the retired name for a maintenance contract, and this dialog's wording has not caught up: the "plans" it means are the contracts listed under **Maintenance Contracts**.
+
 To clear it:
 
 1. Find the maintenance contracts that use the template. Open **Maintenance
@@ -71,7 +73,9 @@ read it.
 Restoring fails only on a name clash: if an active template of the **same name** and the **same job type** was created while this one was archived, LiftAuth refuses the restore. Rename one of them and try again.
 
 <Tip>
-  This is how you swap your Repair or Breakdown template for a new one: archive the old one, then create the replacement. The dialog stops offering "Repair" or "Breakdown" once you have an active template of that type, so archiving the old one first is what makes the option reappear.
+  This is how you swap your Repair or Breakdown template for a new one: archive the old one, then create the replacement. The dialog stops offering "Repair" or "Breakdown" once you have an active template of that type, so archiving the old one first is what makes the dialog offer the type again. Maintenance is never limited this way.
+
+  That limit is in the create dialog only. If you later restore the old one, the restore succeeds and you end up with two active templates of the same job type — nothing underneath prevents it.
 </Tip>
 
 ***

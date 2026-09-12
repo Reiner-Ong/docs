@@ -33,7 +33,7 @@ It is a separate area from [Jobs](/admin/jobs/overview) because it works differe
 </Steps>
 
 <Note>
-  A dispatch is raised against a **building**, not against a specific lift, and it does **not** create a [job](/start/glossary). If the call-out turns into real work that needs a [record](/admin/records) and an invoice, someone creates a job for it in the normal way.
+  A **call-out** is one emergency attendance; a **dispatch** is how LiftAuth finds a technician for it. A call-out is not a [job](/start/glossary), and the dispatch itself creates no job, no [record](/admin/records) and no invoice. If the attendance turns into billable work, someone raises a **separate breakdown job** for it in the normal way — the call-out and that job stay two different things. A dispatch is also raised against a **building**, never against a specific lift.
 </Note>
 
 Dispatch has two tabs:
@@ -75,7 +75,7 @@ Each row in the queue carries a coloured status badge and a timer, so you can se
 
 | Badge | What it means |
 | --- | --- |
-| **Ringing** | Phones are ringing and nobody has accepted yet. |
+| **Ringing** | Phones are ringing and nobody has accepted yet. A call-out also comes back to this badge if the technician who accepted releases it. |
 | **Unanswered** | Still ringing after three minutes. Nobody has picked it up. |
 | **On the way** | A technician accepted and is travelling. |
 | **Arrived** | The technician has marked themselves on site. |

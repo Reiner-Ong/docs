@@ -59,6 +59,10 @@ Some of this can legitimately be missing. **No ETA** means LiftAuth could not wo
 
 When they tap **I've arrived**, the badge turns green and the timer freezes on the total response time — from the moment you raised the call-out to the moment they were on site.
 
+### An accepted call-out can go back to ringing
+
+A blue **On the way** is not a guarantee. The technician who accepted can release the call-out, and releasing it **re-rings everyone else** — the status returns to **Ringing** and the red timer starts again. So a badge flipping from blue back to red means the person who had it has dropped out, not that anything has gone wrong with the system. Watch the **Technicians** list to see who is ringing now, and add more people if the new ring goes unanswered.
+
 ## Close it, or stand it down
 
 Two different endings, and they are not interchangeable:
@@ -69,7 +73,7 @@ Two different endings, and they are not interchangeable:
   </Accordion>
 
   <Accordion title="Stand down — the call-out is off">
-    Available at any point before it ends. Click **Stand down** when the emergency has resolved itself, the caller rang back, or it was a false alarm. Every ringing phone stops, and any technician who had accepted is told the call centre closed it. The status becomes **Stood down**.
+    Available at any point before it ends. Click **Stand down** when the emergency has resolved itself, the caller rang back, or it was a false alarm. Every ringing phone stops, and a technician who had accepted sees "Callout stood down — nothing more to do." on their phone. The status becomes **Stood down**.
   </Accordion>
 </AccordionGroup>
 
@@ -83,4 +87,4 @@ Every detail panel ends with a timeline of what happened and when: who raised it
 
 ## Turning a call-out into work
 
-A dispatch never creates a [job](/start/glossary) by itself, and closing one does not raise an invoice. If the technician did billable work, create the job in the normal way — see [Jobs](/admin/jobs/overview) and choose a breakdown record template on it.
+A call-out is one emergency attendance, and it is not a job. A dispatch never creates a [job](/start/glossary), a record or an invoice, and closing one raises nothing. If the technician did billable work, the attendance is recorded afterwards as a **separate breakdown job**, created in the normal way — see [Jobs](/admin/jobs/overview) — with a breakdown record template on it. The call-out and that job remain two different records of the same night.

@@ -15,7 +15,7 @@ editor. If you are building your first template, start with
 | Field | Where you set it | Rules |
 | --- | --- | --- |
 | **Name** | The **New record template** dialog, or the name box in the page header | Required. Must be unique among active templates of the same job type. |
-| **Job type** | The **New record template** dialog only | Required. The dialog offers **Maintenance**, **Repair** and **Breakdown**; a custom type is also possible. It is the type of the template, not of any job. Cannot be changed after the template is created. |
+| **Job type** | The **New record template** dialog only | Required. The dialog offers **Maintenance**, **Repair** and **Breakdown**. It is the type of the template, not of any job. Cannot be changed after the template is created. |
 | **Estimated time per form** | **Settings → Estimated time**, below the form | Required, and must be greater than zero. Minutes it takes one technician to fill in one record from this template. |
 | **Form** | The **Content** tab | Sections of items. A template can be saved with no items, but then it produces an empty record. |
 | **PDF output** | The **PDF** tab | Either the auto-generated layout or a flat PDF form you upload. |
@@ -29,18 +29,24 @@ editor. If you are building your first template, start with
 
 ## Job types
 
-The job type says what kind of visit a template is for — it is the template, not the job, that carries a kind — and it decides how many templates of that type the **New record template** dialog lets you create.
+A job type belongs to the **template**, and **a job has no type of its own**. Both halves matter: what makes a visit maintenance, a repair or a breakdown is the template behind each form on it, so a job whose forms mix templates has no single kind.
 
-| Job type | How many you can have | How a job gets it |
+A template gets its job type in the **New record template** dialog, once, and it cannot be changed afterwards. The type also decides how many templates of that type the dialog lets you create.
+
+| Job type | How many the dialog lets you create | How a template of this type reaches a job |
 | --- | --- | --- |
-| **Maintenance** | As many as you like | You pick one per form group on the building's **maintenance contract** — the contract builder labels those groups **Record 1**, **Record 2** on screen |
-| **Repair** | The dialog offers the type only while you have no active repair template | Chosen by hand, on each form of the job |
-| **Breakdown** | Same as Repair | Chosen by hand, on each form of the job |
-| A custom type | — | Chosen by hand, on each form of the job |
+| **Maintenance** | As many as you like — never limited | A person names one per coverage group in the building's **maintenance contract** builder (the builder labels those groups **Record 1**, **Record 2** on screen); each generated visit inherits that choice as a snapshot stamped at generation time |
+| **Repair** | The dialog offers the type only while you have no active repair template | Named by hand, on each form of the job |
+| **Breakdown** | Same as Repair | Named by hand, on each form of the job |
 
-The **New record template** dialog stops offering **Repair** and **Breakdown** once you have an active template of that type, and archiving the existing one frees the slot again. That is a restriction in the dialog, not a limit the system enforces underneath.
+The **New record template** dialog stops offering **Repair** or **Breakdown** once you have an active template of that type; archive the existing one and the dialog offers the type again. **Maintenance** is never limited this way. And the limit lives in the dialog only — nothing in the backend or the database enforces one template per job type, so restoring an archived template can leave you with two active templates of the same type.
 
-Nothing in LiftAuth resolves a template from a job type, so **no template is ever applied to a job automatically**. Whoever schedules the job names the template on every form it carries, and each submitted form becomes its own record.
+Nothing in LiftAuth resolves a template from a job type, so **no template is ever applied to a job automatically** — a person always names it:
+
+- On recurring maintenance, a person names it once per coverage group in the maintenance contract builder, and the admin UI refuses to save a group without one. Jobs the contract generates inherit that choice as a snapshot stamped at generation time, so editing the contract afterwards does not re-point jobs that already exist.
+- On any other job, whoever creates or schedules the job names the template on each form it carries.
+
+Each submitted form becomes its own record. Note that form _items_ are a separate matter: compliance capture items are injected onto scheduled jobs automatically, even though the template never is.
 
 ***
 
@@ -236,17 +242,17 @@ pre-printed choice instead of writing text.
 
 ## Who can do what
 
-Roles are [Owner, Admin, Technician and Call centre](/start/glossary#who-does-what).
+Roles are [Owner, Admin, Technician and Call Center](/start/glossary#who-does-what) — **Call Center** is the role name as the product spells it.
 
-| Action | Owner | Admin | Technician | Call centre |
+| Action | Owner | Admin | Technician | Call Center |
 | --- | --- | --- | --- | --- |
 | See the Record Templates page | Yes | Yes | No | No |
 | Create, edit, duplicate a template | Yes | Yes | No | No |
 | Archive / restore a template | Yes | Yes | No | No |
 | Add or remove a library form | Yes | Yes | No | No |
 | Upload or remove an overlay PDF | Yes | Yes | No | No |
-| Fill in a record from a template | Yes | Yes | Yes | No |
+| Fill in a record from a template | No web screen exists | No web screen exists | Mobile app | No |
 
-People whose only role is Technician or Call Centre do not get the web dashboard
-navigation for Record Templates at all. See
-[Manage your team](/admin/managing-your-team) for how roles are assigned.
+**Filling in a record happens in the mobile app.** There is no record-filling screen in the web dashboard for anybody, owners and admins included. What the web dashboard can do is create a _backdated_ record — date, lifts, technician, notes and an optional PDF, with no item entries and no signatures.
+
+Record Templates is one of the areas hidden from a technician-only account, so someone whose only role is Technician or Call Center does not get it in the web dashboard navigation. See [Manage your team](/admin/managing-your-team) for how roles are assigned.

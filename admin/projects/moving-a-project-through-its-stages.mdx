@@ -76,7 +76,7 @@ The **Work** stage holds two kinds of thing, and you can mix them:
   </Card>
 
   <Card title="A subcontractor's work" icon="file-lines">
-    Attach the supplier's service record to the stage as a PDF or photo.
+    Attach the supplier's own record of the work to the stage as a PDF or photo.
   </Card>
 </CardGroup>
 
@@ -88,9 +88,9 @@ such, so you can see what you are about to link.
 How Work settles:
 
 * Every linked job must be **Signed** or **Closed**.
-* If nothing is attached to the stage, it turns **Done** on its own the moment the
+* If no documents have been uploaded to the stage, it turns **Done** on its own the moment the
   last job is signed.
-* If there is an attached record as well, click **Mark complete** once the jobs are
+* If you have uploaded a document to the stage as well, click **Mark complete** once the jobs are
   signed.
 
 <Warning>
@@ -116,6 +116,10 @@ Not every project has a supplier or a purchase order.
 A skipped stage reads **Skipped** and counts as settled — the project can close over
 it. Click **Unskip** to bring it back. A skipped stage stays skipped even if a
 document later lands on it.
+
+<Note>
+  Skipping **Customer quote** means **Procurement** never turns Ready, because Procurement waits on an accepted customer quote and a skip is not one. Nothing is stuck: readiness is only a prompt, so you can still attach the order to Procurement and click **Mark complete**, or skip Procurement too.
+</Note>
 
 **Closed** cannot be skipped. **Invoice** can — skip it for a warranty callback or a
 goodwill repair you are not billing for.

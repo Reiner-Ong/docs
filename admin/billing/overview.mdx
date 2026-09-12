@@ -23,13 +23,13 @@ The usual sequence is **quote → invoice → payment**, but none of the steps a
 flowchart LR
     Q["Quote"] -->|accepted| I["Invoice"]
     Job["Job"] --> I
-    Plan["Maintenance Contract"] -->|draft invoice| I
+    Contract["Maintenance Contract"] -->|draft invoice| I
     I --> P["Payment"]
     I --> CN["Credit note"]
 ```
 
 <Note>
-  Billing is for the office. Owners and admins can open it; a team member whose only role is Technician cannot. Some parts are narrower still — see [Billing reference](/admin/billing/reference#who-can-do-what).
+  Billing is for the office. Owners and admins have identical access to all of it. A team member whose only role is Technician does not get the Billing area — following a billing link lands them on Jobs instead. They can still raise a quote, from the quote builder on an **Issue** page or a **building manager** page; everything else about a quote is out of reach from the web app. See [Billing reference](/admin/billing/reference#who-can-do-what).
 </Note>
 
 ## What do you want to do?
@@ -82,8 +82,8 @@ The **Ledger** tab is the way in. Every issued document is a row; clicking a row
 
 Three controls narrow it:
 
-- **Type** — All, Quotes, Invoices, Payments or Credit notes. Each carries a count.
-- **Show archived** — off by default, so filed-away quotes and invoices stay out of the way.
+- **Type** — All, Quotes, Invoices, Payments or Credit notes. Each carries a count. A deposit taken against a quote is labelled **Deposit** on its row but is a payment underneath, so **Payments** (and **All**) returns it.
+- **Show archived** — off by default. It affects quotes: only a draft or rejected invoice can be archived, and the ledger never shows drafts or rejected invoices, so an archived invoice does not appear on the ledger either way.
 - **Customer** — pick one building manager, or leave it on **All customers**.
 
 <Tip>
@@ -92,16 +92,20 @@ Three controls narrow it:
 
 ## The four figures at the top
 
-A band of four totals sits above the ledger. They describe the rows currently loaded, for the customer you have filtered to.
+A band of four totals sits above the ledger. Every one of them is computed over the rows currently loaded, for the customer you have filtered to — not over the whole account.
 
 | Figure | What it counts |
 | --- | --- |
 | **Open pipeline** | Quotes sent and still waiting on a decision |
 | **Outstanding** | Money owed on issued invoices, with the number that are overdue |
-| **Collected · 30d** | Payments that settled in the last 30 days, net of refunds |
+| **Collected · 30d** | Payments that settled in the last 30 days |
 | **Credit outstanding** | Credit notes raised but not yet applied to an invoice |
 
 Exact definitions are in [Billing reference](/admin/billing/reference#the-figures-above-the-ledger).
+
+<Warning>
+  The ledger is not a complete financial history. It loads at most 500 documents of each type, and the four figures above it describe only what is loaded. For the full history of one customer's account, read their [statement of account](/admin/billing/statements), which covers the whole active set.
+</Warning>
 
 ## Before you start billing
 

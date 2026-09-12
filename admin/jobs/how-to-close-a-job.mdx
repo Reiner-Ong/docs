@@ -1,15 +1,14 @@
 ---
 title: "How to close a job"
-description: "Review a signed job and close it, so the record is finalised and the invoice draft is raised."
+description: "Review a signed job and close it, so the records are finalised and any invoice draft is raised."
 icon: "circle-check"
 ---
 
-Closing is the last step of a job and the only one the office owns. Until a job
-is closed, its PDFs are not generated and no invoice draft exists for it.
+Closing is the last step of a job and the only one the office owns. It is what finalises the visit and raises the invoice draft, if the job is one that gets an invoice.
 
-You can only close a job that is **Signed**. If the job is still at **Work Done**,
-sign-off has not happened yet — see
-[Getting a signature](/technician/signing-off-a-job).
+The PDFs are already there before you close: a record's PDF is generated in the background when it is **signed**, and **Download PDF** on a record has no status gate at all — it works before signing too, where the page renders a live preview of the document the building manager will see. Closing only runs a catch-up generation for records that reached close without a real signature, such as a skipped one.
+
+You can only close a job that is **Signed**. If the job is still at **Work Done**, sign-off has not happened yet — see [How to send a record for sign-off from Drive](/admin/drive/sending-for-sign-off).
 
 ## Close from the Inbox
 
@@ -54,7 +53,7 @@ This is the quickest way, and it is where signed jobs queue up for you.
 
 Two things always happen, and a third sometimes does:
 
-* **The records are finalised.** The PDF of every record on the job is generated and attached. The record is now part of the lift's permanent history.
+* **The records are finalised.** Any record that reached close without a real signature gets its PDF generated now; the rest already had one from signing. The record is now part of the lift's permanent history.
 * **Linked issues are closed.** Any <Tooltip tip="A problem found on a lift, given a severity — Critical, Major or Minor — and tracked until it is resolved." cta="issue" href="/start/glossary">issue</Tooltip> attached to the job is closed. See [Issues](/admin/issues).
 * **A draft invoice is sometimes raised.** Closing a job raises a draft invoice only when the job belongs to an active maintenance contract billed per job, or — with no contract — was created by converting a quote. Contracts billed annually are invoiced on their own schedule instead, and a contract set to bill nothing never drafts. Nothing goes to the customer until you issue it — see [Billing](/admin/billing/overview).
 
@@ -68,5 +67,5 @@ Two things always happen, and a third sometimes does:
 Do not close it. There is no way back out of **Closed**, and no way to edit a
 record once it is signed. Your options are:
 
-* **Cancel the job** and schedule a fresh visit. Cancelling asks for a reason and is also permanent, but it leaves no record on the lift.
+* **Cancel the job** and schedule a fresh visit. Cancelling asks for a reason and is also permanent. It destroys nothing: the records the technician already submitted are not deleted, archived or detached, and stay fully visible in each lift's record history.
 * **Raise an issue** on the lift for whatever the technician missed, and let the next visit pick it up. See [Raising an issue](/admin/issues).

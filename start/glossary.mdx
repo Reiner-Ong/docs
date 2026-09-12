@@ -13,12 +13,16 @@ Use this page as a reference whenever you come across an unfamiliar word in Lift
     The physical elevator unit at a building. Each lift has its own entry in LiftAuth with details like location, type, manufacturer, and serial number.
   </Accordion>
 
+  <Accordion title="Building">
+    A site with one or more lifts in it. Buildings organise most of LiftAuth: a job visits one building, a maintenance contract covers one building, and Drive files records under the building they belong to. A building has one **Building Manager** — the company responsible for it, which is not the same thing as the building itself.
+  </Accordion>
+
   <Accordion title="Building Manager">
     The company or owner responsible for a building. They receive the paperwork for work done on their lifts, sign off completed visits, and are billed for them. Some screens call them the **customer** — it is the same thing.
   </Accordion>
 
   <Accordion title="Tenant">
-    The company that uses LiftAuth to manage and maintain lifts. Everything in LiftAuth — lifts, jobs, invoices, team members — belongs to one Tenant. If you work for one company, you will only ever see one Tenant.
+    The company that uses LiftAuth to manage and maintain lifts. Everything in LiftAuth — lifts, jobs, invoices, team members — belongs to one Tenant. If you work for one company, you will only ever see one Tenant. Some screens say **workspace** instead; it is the same thing.
   </Accordion>
 
   <Accordion title="Team">
@@ -44,15 +48,11 @@ Permission tables throughout these guides use these role names. You can see your
   </Accordion>
 
   <Accordion title="Technician">
-    Field staff. Works in the mobile app: picks up assigned jobs, fills in records, gets them signed. Technicians do not get the web dashboard's admin pages.
+    Field staff. Works mainly in the mobile app: picks up assigned jobs, fills in records, gets them signed. Filling in a record is a mobile action — there is no screen for it in the web dashboard. A technician can also sign in to the web dashboard, where they see most areas but not Billing, the Inbox, Record Templates or Projects.
   </Accordion>
 
-  <Accordion title="Call centre">
-    Takes emergency calls and raises dispatches. Sees the dispatch console, not the rest of the dashboard.
-  </Accordion>
-
-  <Accordion title="Workspace">
-    The same thing as your Tenant — your company's space in LiftAuth. Some screens say "workspace", some say "tenant".
+  <Accordion title="Call Center">
+    Takes emergency calls and raises dispatches. The sidebar shows them the dispatch console and little else. Spelled "Call Center" on screen, which is the spelling these guides use in permission tables.
   </Accordion>
 </AccordionGroup>
 
@@ -70,6 +70,14 @@ Permission tables throughout these guides use these role names. You can see your
     A job does not itself have a type. Whether the visit is maintenance, a breakdown call-out or a repair comes from the record template attached to it.
   </Accordion>
 
+  <Accordion title="Form">
+    The everyday word for a record template once it is attached to a job — the thing a technician actually fills in. A job holds one or more. Fill one in and submit it and it becomes a **record**.
+  </Accordion>
+
+  <Accordion title="Coverage group">
+    One record template paired with the lifts it covers. A maintenance contract is built out of these: each group says which lifts get which form, and how often. The contract builder labels them "Record 1", "Record 2" on screen — they are **not** the signed reports a technician submits.
+  </Accordion>
+
   <Accordion title="Record Template">
     The form design that decides what a technician is asked on site — the items to check, the readings to take, the photos to attach. Your company sets these up once and reuses them. You may also use an official form from the built-in library.
   </Accordion>
@@ -80,10 +88,14 @@ Permission tables throughout these guides use these role names. You can see your
 
   <Accordion title="Record">
     The report produced when a technician fills in a form and submits it. It holds the item results, photos, notes, and signatures, and can be downloaded as a PDF.
+
+    A record cannot be corrected. Once it exists, nobody can edit it — there is no amend and no resubmit. A signed record cannot even be deleted; an unsigned one can be deleted by an owner or admin, but not changed.
   </Accordion>
 
   <Accordion title="Signature">
     The sign-off confirming work was completed. Normally both the technician and the building manager sign. A technician who cannot get a signature on site can **skip signing**, which finishes the job without a building-manager signature on the PDF.
+
+    Skipping is final: the record can never be sent for signature afterwards, and any signing link already issued stops working. Note that the dashboard shows a skipped record as **Signed**, the same as one the building manager really signed — only the PDF shows the difference, by leaving the building-manager signature out.
   </Accordion>
 
   <Accordion title="Signing link">
@@ -95,11 +107,15 @@ Permission tables throughout these guides use these role names. You can see your
   </Accordion>
 
   <Accordion title="Dispatch">
-    An emergency call-out. A dispatcher raises one when a lift has stopped working or someone is trapped. Several technicians' phones ring at once, and the first to accept owns the call-out.
+    How LiftAuth finds a technician for a **call-out**. A dispatcher picks which phones to ring; they all ring at once, and the first to accept owns it. A dispatch creates no job, record or invoice of its own.
+  </Accordion>
+
+  <Accordion title="Call-out">
+    One emergency attendance: the thing that happens when a lift has stopped working or someone is trapped. A dispatcher raises a **dispatch** to find a technician for it. A call-out is not a job — if it turns into recorded work, that is a separate breakdown job.
   </Accordion>
 
   <Accordion title="On call">
-    Marked as available for emergency call-outs outside normal hours. When a dispatcher raises a call-out, the on-call rota decides who is offered it first.
+    Marked as available for emergency call-outs outside normal hours. The on-call rota ranks the technician list so the dispatcher can see who is on standby — it does not ring anyone by itself, and it never limits who can be rung. An operator always picks the phones.
   </Accordion>
 
   <Accordion title="Entrapment">
@@ -131,7 +147,7 @@ Permission tables throughout these guides use these role names. You can see your
 
 <AccordionGroup>
   <Accordion title="Maintenance Contract">
-    Your servicing agreement with a building: which lifts are covered, how often they are visited, which forms are used, and how the work is billed. Once set up, LiftAuth creates the visits and the invoices for each cycle.
+    Your servicing agreement with a building: which lifts are covered, how often they are visited, which forms are used, and how the work is billed. Once set up, LiftAuth creates the visits for you. Whether it also drafts the invoices depends on the contract's billing cadence — per job, annually, or not at all.
 
     Contracts are set per **building**, not per lift. Older guidance called this a "maintenance plan".
   </Accordion>
@@ -141,7 +157,7 @@ Permission tables throughout these guides use these role names. You can see your
   </Accordion>
 
   <Accordion title="Stage">
-    One step of a project, such as quoting or installation. A stage can be completed or skipped, and the project moves on when its stages do.
+    One step of a project. Every project has the same six, in order: Supplier quote, Customer quote, Procurement, Work, Invoice, Closed. They cannot be added to, renamed or reordered. A stage can be completed or skipped, and the project moves on when its stages do.
   </Accordion>
 </AccordionGroup>
 
@@ -177,7 +193,7 @@ Permission tables throughout these guides use these role names. You can see your
   </Accordion>
 
   <Accordion title="Ageing">
-    How long an unpaid amount has been outstanding, grouped into bands such as 30, 60 and 90 days.
+    How long an unpaid amount has been outstanding, grouped into four bands: **Current**, **31–60 days**, **61–90 days** and **90+ days**. Careful — Current means not yet due _or_ up to 30 days overdue, so an invoice a fortnight late sits in Current with no badge, even though the ledger marks it Overdue.
   </Accordion>
 
   <Accordion title="Standard billing item">
@@ -189,7 +205,7 @@ Permission tables throughout these guides use these role names. You can see your
   </Accordion>
 
   <Accordion title="Ledger">
-    The single list in Billing holding every quote, invoice, payment and credit note together, so you can see one customer's whole financial history in one place.
+    The single list in Billing holding issued quotes, invoices, payments and credit notes together. It is a page, not a complete history: it loads at most 500 of each kind, and the totals at the top describe only what is on the page. Filter to one customer to narrow it, and use a **Statement of account** when you need everything that customer owes. Drafts are not on the ledger.
   </Accordion>
 
   <Accordion title="Deposit (billing)">
@@ -209,7 +225,7 @@ Permission tables throughout these guides use these role names. You can see your
 
 <AccordionGroup>
   <Accordion title="Drive">
-    Where LiftAuth keeps your documents. Records land here automatically when a technician submits them, filed under the building they belong to. There is also a folder per customer holding their quotes, invoices and payments.
+    Where LiftAuth keeps your documents. Records land here automatically when a technician submits them, filed under the building they belong to. Past visits you type in by hand land here too. There is also a folder per customer holding their quotes, invoices and credit notes — a payment has no document of its own.
   </Accordion>
 
   <Accordion title="PDF">
@@ -237,7 +253,9 @@ Permission tables throughout these guides use these role names. You can see your
   </Accordion>
 
   <Accordion title="Part No. and part code">
-    Two different numbers. **Part No.** is your own catalogue reference, and it is what search looks at. The **part code** is the manufacturer's printed code, which search does **not** match.
+    Two different numbers. **Part No.** is LiftAuth's own reference, like `PRT-2026-A1B2C3`. It is assigned for you, cannot be edited, and — along with the part's name — is what the search box matches. The **part code** is the manufacturer's code stamped on the physical part. You type it in or let a photo read it, you can edit it, and the search box does **not** match it.
+
+    There is no field for your firm's own existing internal part numbers.
   </Accordion>
 
   <Accordion title="Library form">

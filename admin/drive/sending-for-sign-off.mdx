@@ -4,12 +4,13 @@ description: "Chase a missing building manager signature without leaving the bui
 icon: "signature"
 ---
 
-A record is only finished once the building manager has signed it. If the
-technician could not get a signature on site, you can send the request straight
-from Drive.
+Most records are finished by the building manager signing them. If the technician could not get a signature on site, you can send the request straight from Drive.
 
-Records still waiting are easy to spot: the **Sign-off** column shows an amber
-**Pending signature** badge.
+Records still waiting are easy to spot: the **Sign-off** column shows an amber **Pending signature** badge.
+
+<Warning>
+  This page is for records that are still unsigned. A record where the technician **skipped signing** has already left the unsigned state and can never be sent for signature again — see [If the technician skipped signing](#if-the-technician-skipped-signing) below.
+</Warning>
 
 ## Open the record
 
@@ -17,10 +18,8 @@ Records still waiting are easy to spot: the **Sign-off** column shows an amber
   <Step title="Open the building folder">
     Click **Drive** in the sidebar, then the building.
   </Step>
-
   <Step title="Click the record's row">
-    The preview window opens with the PDF on the left and the sign-off panel on
-    the right. If the record is unsigned, the panel offers the two options below.
+    The preview window opens with the PDF on the left and the sign-off panel on the right. If the record is unsigned, the panel offers the two options below.
   </Step>
 </Steps>
 
@@ -32,9 +31,9 @@ There are three routes to a signature. Two of them are here in the sign-off pane
 
 LiftAuth emails the sign-off link to every member the building manager's own firm has assigned to that building — they are assigned by that firm, not by you. Click the **Send to building manager** card in the panel once; nothing else is needed.
 
-<Warning>
-  If that firm has assigned nobody to the building, the send still reports success but no email goes anywhere — the request only appears in the firm's own inbox. If a customer says they never received it, ask them who is assigned to the building on their side, or share a signing link yourself instead.
-</Warning>
+<Note>
+  Because the recipients are whoever that firm has assigned to the building, who gets the email is not something you control. If a customer says they never received it, ask them who is assigned to the building on their side, or share a signing link yourself instead — a link you send reaches anybody.
+</Note>
 
 **Generate a signing link**
 
@@ -52,22 +51,26 @@ Once they sign, the record's status changes to **Signed** on its own and the job
   </Accordion>
 
   <Accordion title="Generating again does not cancel the old link" icon="link-slash">
-    Each time you generate or send, you create an **additional** link. Every link
-    already out there stays valid until it is used or expires.
+    Each time you generate or send, you create an **additional** link. Every link already out there stays valid until it is used or expires.
   </Accordion>
 
   <Accordion title="A link can only be used once" icon="check">
-    As soon as someone signs with it, the link is spent. The record is signed and
-    cannot be changed afterwards.
+    As soon as someone signs with it, the link is spent. The signature is the last thing that can be written to a record: a record cannot be edited once it exists, by anyone, and a signed one cannot even be deleted.
   </Accordion>
 </AccordionGroup>
 
+## If the technician skipped signing {#if-the-technician-skipped-signing}
+
+A technician who cannot get a signature on site can **skip signing**, which ends the record without a building-manager signature. Three things follow, and the last is the one to plan around.
+
+- **You will not chase it by mistake.** A skipped record leaves the unsigned state, so it never sits in your list wearing **Pending signature** as though a customer still owed you a signature.
+- **But you cannot tell it apart from a record the customer really signed.** In the dashboard both read **Signed** and then **Complete**, in exactly the same way; no screen distinguishes them. The PDF is the honest record — it drops the building-manager signature row altogether — so open the document when you need to know which of the two happened.
+- **Skipping is final.** A skipped record can never be sent for signature again, from Drive or anywhere else. **Send to building manager** and **Generate new signing link** are both hidden on it, and any signing links still outstanding for that record stop working the moment the technician skips.
+
 <Note>
-  Sending the email request is an owner or admin action. Technicians can still generate and copy a signing link, and can get a signature on site from the mobile app — see [How to get the job signed off](/technician/signing-off-a-job).
+  Technicians get Drive too. A technician can open a building folder, read the records in it, download a record's PDF and generate a signing link, and can collect a signature on site in the mobile app — see [How to get the job signed off](/technician/signing-off-a-job).
 </Note>
 
 <Warning>
-  A past visit you typed in by hand cannot be signed — there was no technician
-  on site and no signature to collect. The sign-off options do not appear on
-  those records.
+  A **past visit** added by hand has no signature to collect: no technician was on site and no form was filled in. It is metadata plus an optional legacy PDF, so sign-off does not apply to it.
 </Warning>

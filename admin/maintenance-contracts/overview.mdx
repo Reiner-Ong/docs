@@ -4,7 +4,7 @@ description: "What a maintenance contract is, what it runs for you automatically
 icon: "file-signature"
 ---
 
-A **maintenance contract** is the servicing agreement you hold with a building. It says which lifts you service, how often, who does the work, how the building is billed, and when the agreement runs out. Once it is set up, LiftAuth creates the maintenance [jobs](/admin/jobs/overview) — the service visits your technicians attend — and, when the contract is billed automatically, the draft invoices on that schedule for you.
+A **maintenance contract** is the servicing agreement you hold with a building. It says which lifts you service, how often, who does the work, how the building is billed, and when the agreement runs out. Once it is set up, LiftAuth plans all of the contract's **visits** — turning each one into a real [job](/admin/jobs/overview) fourteen days before it is due — and, when the contract is billed automatically, drafts the invoices on that schedule too.
 
 You will find them under **Maintenance Contracts** in the left-hand navigation.
 
@@ -27,7 +27,7 @@ A contract holds four things, and each one drives something downstream:
 
 <CardGroup cols={2}>
   <Card title="Coverage" icon="elevator" href="/admin/maintenance-contracts/create-a-contract">
-    Which lifts are serviced, sorted into **coverage groups** — the builder labels these "records" on screen. Each group is one set of lifts, one record template, and one frequency (monthly or quarterly).
+    Which lifts are serviced, sorted into [**coverage groups**](/start/glossary) — the builder labels these "Record 1", "Record 2" on screen. Each group is one set of lifts, one [record template](/start/glossary), and its own frequency (Monthly or Quarterly). A contract whose groups differ reads **Mixed**.
   </Card>
 
   <Card title="Schedule" icon="calendar" href="/admin/maintenance-contracts/reference#how-the-automation-is-timed">
@@ -44,6 +44,8 @@ A contract holds four things, and each one drives something downstream:
 </CardGroup>
 
 From those, LiftAuth works out every visit for the whole term ahead and lists them on the contract as **upcoming visits**. Fourteen days before each one, it turns that visit into a real [job](/admin/jobs/overview) with the technician and time already filled in.
+
+The calendar calls the same thing a [**planned job**](/start/glossary): a planned job on the calendar is exactly one row on the contract's **Upcoming Visits** tab, and it cannot be dragged there — the calendar refuses with "This job hasn't been generated yet — it'll be scheduled automatically closer to the date." Move it from the contract instead, as [How to reschedule and backfill visits](/admin/maintenance-contracts/manage-visits) describes.
 
 <Note>
   Everything after that follows the normal job flow: the technician completes the visit, the building manager signs the [record](/admin/records), and you close the job. Nothing about a contract changes how a job is worked.
@@ -69,16 +71,14 @@ From those, LiftAuth works out every visit for the whole term ahead and lists th
   </Card>
 </CardGroup>
 
-### Starting each job
+### Where all of this starts
 
-- **Setting one up** — open **Maintenance Contracts**, click **+ New Contract**, and choose the building. The builder opens on the coverage step. Full walkthrough: [How to set up a maintenance contract](/admin/maintenance-contracts/create-a-contract).
-- **Moving a visit** — open the contract, go to the **Upcoming Visits** tab, and click **Reschedule** on the row. Full walkthrough: [How to reschedule and backfill visits](/admin/maintenance-contracts/manage-visits).
-- **Changing one** — open the contract and click **Edit** in the header. Only active contracts can be edited. Full walkthrough: [How to change or end a maintenance contract](/admin/maintenance-contracts/edit-or-end-a-contract).
+All four begin in the same place: **Maintenance Contracts** in the left-hand navigation. **\+ New Contract** opens the builder; clicking a row opens the contract, where **Edit**, **Archive contract** and the **Upcoming Visits** tab live. Only **Active** contracts can be edited. The pages above carry the steps.
 
 ## Before you start
 
 A contract needs its building already set up, so make sure you have:
 
 - [Added the lifts](/admin/lifts) and put them in the right building.
-- [Added the building manager](/admin/building-managers) and assigned them to the building. If your organisation bills building managers, LiftAuth will not let you create a contract for a building that has none.
-- At least one maintenance record template, so you can pick the checklist each coverage group is inspected against.
+- [Added the building manager](/admin/building-managers) and assigned them to the building. If your organisation bills [building managers](/start/glossary), LiftAuth will not let you create a contract for a building that has none.
+- At least one maintenance [record template](/start/glossary), so you can pick the checklist each coverage group is inspected against. Nothing picks one for you.

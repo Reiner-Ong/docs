@@ -1,5 +1,5 @@
 ---
-title: "Moving Stock"
+title: "How to move stock"
 description: "How to record a delivery, take units off the shelf, or shift stock between warehouses."
 icon: "right-left"
 ---
@@ -13,6 +13,10 @@ There are three kinds:
 | **Deposit** | Stock came in — a supplier delivery, a return, a stocktake correction upwards | Adds to one warehouse |
 | **Withdraw** | Stock went out — used on a job, scrapped, a correction downwards | Subtracts from one warehouse |
 | **Transfer** | Stock moved from one of your warehouses to another | Subtracts from one, adds to the other. Your total stays the same |
+
+<Note>
+  A stock **Deposit** is not a billing deposit. Here it means units arriving into a warehouse; in [Billing](/admin/billing/overview) a deposit is an up-front part-payment from a customer. The two are unrelated, and recording one never affects the other.
+</Note>
 
 ## Record a movement
 
@@ -42,7 +46,7 @@ There are three kinds:
   </Step>
 
   <Step title="Add a note (optional but worth it)">
-    A short line saying why, for example *received PO-2231* or *used on REP-2026-4F1A*. The note is the only place that reason is kept.
+    A short line saying why, for example _received purchase order PO-2231_ or _used on REP-2026-4F1A_. The note is the only place that reason is kept — and the only place a purchase order number appears in Inventory, since purchase orders themselves are a stage on a [project](/admin/projects/overview).
   </Step>
 
   <Step title="Click Record">
@@ -88,5 +92,5 @@ Technicians record movements the same way in the mobile app: **Profile → Tools
 
 ## Related
 
-* [Using parts on a job](/admin/inventory/using-parts-on-a-job) — the parts a repair job needs, and why they are not withdrawn for you.
-* [Reference](/admin/inventory/reference#movement-types) — every field and rule on a movement.
+* [How to use a part on a job](/admin/inventory/using-parts-on-a-job) — the parts a repair job needs, and why they are not withdrawn for you.
+* [Inventory reference](/admin/inventory/reference#movement-types) — every field and rule on a movement.
