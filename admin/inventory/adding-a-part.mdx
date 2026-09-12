@@ -1,0 +1,94 @@
+---
+title: "Adding a Part"
+description: "How to create a catalogue entry for a spare part, with photos, prices, and opening stock."
+icon: "plus"
+---
+
+A **part** is one kind of spare component in your catalogue — "Door Operator Motor", not the four of them sitting on a shelf. You create it once, and from then on you record stock against it.
+
+<Note>
+  Add your [warehouses](/admin/inventory/setting-up-warehouses) before your parts. The **Initial warehouse** field below is greyed out until at least one warehouse exists, and without it the new part starts at zero on hand.
+</Note>
+
+## Create the part
+
+<Steps>
+  <Step title="Go to Inventory">
+    Click **Inventory** in the left sidebar, then open the **Parts** tab.
+  </Step>
+
+  <Step title="Click + Add Part">
+    The **Add Part** dialog opens.
+  </Step>
+
+  <Step title="Enter the name">
+    A plain description of the component, for example *Door Operator Motor*. This is what your team will search for later, so use the words they actually say.
+  </Step>
+
+  <Step title="Choose a Family and a Brand">
+    **Family** is the category — Doors, Safety gear, Electrical & control, and so on. **Brand** is the manufacturer, or **Generic** if it fits anything. Both are required, and both become filters on the Parts list. The full lists are in the [reference](/admin/inventory/reference#part-families).
+  </Step>
+
+  <Step title="Enter the prices (optional)">
+    **Cost price** is what the part costs you to buy. **Unit price** is your catalogue list price — the figure that fills in automatically when you add this part to a quote or an invoice. Leave either blank to mark it unpriced; you can set them later.
+  </Step>
+
+  <Step title="Enter the part code (optional)">
+    The manufacturer's code printed on the part itself, for example *DOA-200*. Up to 64 characters. This is not the same as the Part No. that LiftAuth assigns — see [Two numbers](#two-numbers-and-why) below.
+  </Step>
+
+  <Step title="Set the opening stock (optional)">
+    Pick an **Initial warehouse**, then type the **Initial quantity** you already hold there. The quantity box stays disabled until you have chosen a warehouse. LiftAuth records this as the part's first stock movement.
+  </Step>
+
+  <Step title="Add at least one photo">
+    Photos are required — you cannot save without one. Add up to 5 images, JPEG, PNG or WebP, each up to 10 MB.
+  </Step>
+
+  <Step title="Click Add Part">
+    The part is created and appears at the top of the Parts list.
+  </Step>
+</Steps>
+
+<Tip>
+  The photo is the fastest way for a technician to confirm they have the right component in their hand on site, so take it in good light and get the whole part in frame.
+</Tip>
+
+<h2 id="two-numbers-and-why">
+  Two numbers, and why
+</h2>
+
+Each part carries two identifiers, and they are not interchangeable.
+
+| Field | Who sets it | Looks like | What it is for |
+| --- | --- | --- | --- |
+| **Part No.** | LiftAuth, automatically | `PRT-2026-A1B2C3` | LiftAuth's own reference for the part. You cannot edit it. Use it when talking to colleagues about a catalogue entry. |
+| **Part code** | You, optionally | `DOA-200` | The code the manufacturer printed on the component. Use it when ordering from a supplier. |
+
+The search box on the Parts list matches the **name** and the **Part No.** — it does not match the part code, so search for a part by its name.
+
+## Changing a part later
+
+Open the part from the Parts list and click **Edit details**. You can change the **name**, **family**, **brand**, **cost price**, and **unit price**.
+
+The **Part No.** cannot be changed, and stock levels are not edited here — those only ever change through a [stock movement](/admin/inventory/moving-stock).
+
+## Archiving a part you no longer stock
+
+Archiving hides a part from the everyday list without deleting its history. Nothing is lost — the movements it accumulated stay on record.
+
+<Steps>
+  <Step title="Open the part">
+    From **Inventory → Parts**, click the part.
+  </Step>
+
+  <Step title="Click Archive">
+    Confirm in the **Archive part?** dialog by clicking **Archive part**.
+  </Step>
+</Steps>
+
+An archived part shows an **Archived** badge, disappears from the default Parts list, and loses its **Move stock** button, so its counts stop changing. To see archived parts again, click **Show archived** on the Parts list. To bring one back, open it and click **Unarchive** — that takes effect immediately, with no confirmation step.
+
+<Warning>
+  Parts cannot be deleted, only archived. If a part was created by mistake, archive it.
+</Warning>

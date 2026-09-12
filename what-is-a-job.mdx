@@ -2,38 +2,53 @@
 title: "What is a Job"
 ---
 
-# Jobs
+A job is one visit's worth of work at one building. Every time a technician goes out — for routine service, a breakdown, or a repair — that visit is a job.
 
-A job is one piece of work on one lift. Every time a technician goes out to a lift — for routine service, a breakdown, or a repair — that visit is a job.
+## What a job is made of
 
-## What you'll do
+A job is a container. It holds four things:
 
-Most of the time, your day looks like this:
+| Part | What it means |
+| --- | --- |
+| **Building** | Where the visit happens. One job covers one building. |
+| **Lifts** | Which lifts are being worked on. A job can cover several lifts at that building, not just one. |
+| **Forms** | What the technician is asked to fill in on site. These come from your <Tooltip cta="record template" href="/start/glossary">record templates</Tooltip>. |
+| **Assignee** | Who is doing it — one technician, or one team of them. |
 
-- Create jobs and send technicians to lifts.
-- Watch jobs come in as technicians finish them.
-- Check the work and close the job once the customer has signed.
+The job itself does not have a type. Whether a visit counts as maintenance, a breakdown or a repair comes from the form attached to it. That is why you pick forms rather than a job type when you schedule work.
 
-That's the whole flow. The rest of this page explains how each part works.
+<Note>
+  If you have used LiftAuth for a while, this is a change worth knowing about. Jobs used to be one lift and one fixed type. They are now a building plus whichever lifts and forms that visit needs.
+</Note>
 
 ## The life of a job
 
-Every job goes through the same four stages. You'll see these words on the screen, so it helps to know what each one means.
+Every job moves through the same statuses. You will see these words on screen.
 
-| # | Stage | What it means |
+| Status | What it means | What moves it on |
 | --- | --- | --- |
-| 1 | **Scheduled** | A Technician is assigned and a date is set. |
-| 2 | **Work Done** | The Technician has finished on-site. The Job is now waiting for the Building Manager to sign. |
-| 3 | **Signed** | The Building Manager has signed the record on the technician's phone. |
-| 4 | **Closed** | You've checked the job and closed it. It's now saved to the lift's history. |
+| **Open** | The job exists, but nobody is assigned and no time is set. | An admin schedules it. |
+| **Scheduled** | A technician or team is assigned and a date and time window are set. It now shows in the technician's app. | The technician does the work and submits it. |
+| **Work Done** | The work is submitted. The record exists but is not signed off. | The building manager signs — or the technician skips signing. |
+| **Signed** | Sign-off is complete. Waiting for an admin to check it. | An admin closes it. |
+| **Closed** | An admin has reviewed and closed it. Saved to the lift's history. | Nothing. Closed jobs cannot be changed. |
+| **Cancelled** | The visit will not happen. The reason is stored on the job. | Nothing. Create a new job if it still needs doing. |
 
-## The three kinds of job
+**Closed** and **Cancelled** are the two end states, and neither can be undone.
 
-There are three kinds of job. They all follow the same stages above. The difference is what the Technician does and what kind of Record is produced.
+<Tip>
+  Most jobs never sit in **Open** for long — the **Schedule a Job** button creates and schedules in one step, so those jobs start at **Scheduled**. You see **Open** when a job arrived some other way and still has nobody on it.
+</Tip>
 
-## Maintenance Job
+For the full list of columns, filters, actions and who is allowed to do what, see the [jobs reference](/admin/jobs/jobs-reference).
 
-Routine service visits — the regular check-ups you do on every lift. This is often scheduled by a Maintenance Plan. A Maintenance Record is created.
+## The three kinds of visit
+
+The stages above are the same whichever kind of work it is. What changes is what the technician does and which record comes out of it.
+
+### Maintenance
+
+Routine service — the regular check-ups on every lift. Usually created for you by a [maintenance contract](/admin/maintenance-contracts/overview).
 
 <img
   src="/images/01_maintenance_job_flow.png"
@@ -42,84 +57,17 @@ Routine service visits — the regular check-ups you do on every lift. This is o
   className="mr-auto"
 />
 
-<Steps>
-  <Step>
-    <Card title="Maintenance Plan Schedules a Job" icon="calendar">
-    </Card>
-  </Step>
-</Steps>
+### Breakdown
 
-## Breakdown Job
-
-The Building Manager reports a breakdown. A Technician is dispatched immediately, diagnoses the issue, and creates the breakdown job on-site. A Breakdown Record is created.
+The building manager reports a lift out of service. A technician is sent straight away, diagnoses the problem, and records the call-out on site.
 
 <Frame>
   ![02 Breakdown Job Flow](/images/02_breakdown_job_flow.png)
 </Frame>
 
-## Repair Job
+### Repair
 
-Once parts are procured, admin schedules a repair job. The technician visits the site, does the repair, and resolves any outstanding issues. a Repair Job is created.
-
-<Frame>
-  ![03 Repair Job Flow](/images/03_repair_job_flow.png)
-</Frame>
-
-A job is one piece of work on one lift. Every time a technician goes out to a lift — for routine service, a breakdown, or a repair — that visit is a job.
-
-## What you'll do
-
-Most of the time, your day looks like this:
-
-- Create jobs and send technicians to lifts.
-- Watch jobs come in as technicians finish them.
-- Check the work and close the job once the customer has signed.
-
-That's the whole flow. The rest of this page explains how each part works.
-
-## The life of a job
-
-Every job goes through the same four stages. You'll see these words on the screen, so it helps to know what each one means.
-
-| # | Stage | What it means |
-| --- | --- | --- |
-| 1 | **Scheduled** | A Technician is assigned and a date is set. |
-| 2 | **Work Done** | The Technician has finished on-site. The Job is now waiting for the Building Manager to sign. |
-| 3 | **Signed** | The Building Manager has signed the jobsheet on the technician's phone. |
-| 4 | **Closed** | You've checked the job and closed it. It's now saved to the lift's history. |
-
-## The three kinds of job
-
-There are three kinds of job. They all follow the same stages above. The difference is what the Technician does and what kind of Record is produced.
-
-## Maintenance Job
-
-Routine service visits — the regular check-ups you do on every lift. This is often scheduled by a Maintenance Plan. A Maintenance Record is created.
-
-<img
-  src="/images/01_maintenance_job_flow.png"
-  alt="01 Maintenance Job Flow"
-  title="01 Maintenance Job Flow"
-  className="mr-auto"
-/>
-
-## Breakdown Job
-
-The Building Manager reports a breakdown. A Technician is dispatched immediately, diagnoses the issue, and creates the breakdown job on-site. A Breakdown Record is created.
-
-<Frame>
-  ![02 Breakdown Job Flow](/images/02_breakdown_job_flow.png)
-</Frame>
-
-## Repair Job
-
-## A few important things
-
-**Only the Building Manager can sign for themselves.** You can't sign for them from the dashboard. The signature has to be done on the technician's phone, on-site, or signed remotely by them.
-
-**Closed jobs become part of the lift's history.** Once you close a job, it's saved against that lift forever. A cancelled job isn't saved.
-
-Once parts are procured, admin schedules a repair job. The technician visits the site, does the repair, and resolves any outstanding issues. a Repair Job is created.
+Once any parts are in hand, the office schedules a repair visit. The technician does the work and resolves the issues it was raised against.
 
 <Frame>
   ![03 Repair Job Flow](/images/03_repair_job_flow.png)
@@ -127,6 +75,10 @@ Once parts are procured, admin schedules a repair job. The technician visits the
 
 ## A few important things
 
-**Only the Building Manager can sign for themselves.** You can't sign for them from the dashboard. The signature has to be done on the technician's phone, on-site, or signed remotely by them.
+**The building manager signs for themselves.** You cannot sign on their behalf from the dashboard. They sign on the technician's phone on site, or through a signing link sent to them afterwards.
 
-**Closed jobs become part of the lift's history.** Once you close a job, it's saved against that lift forever. A cancelled job isn't saved.
+**A technician can finish without a signature.** If nobody is available to sign, the technician can skip signing. The job still reaches **Signed**, but the PDF carries no building-manager signature.
+
+**Closed jobs become part of the lift's history.** Once closed, a job is saved against that lift permanently. A cancelled job is not.
+
+**A crew can split the work.** When a job is assigned to a team, each member can submit their own part. If two people record the same lift, an admin is asked which record counts — and the other one is deleted.

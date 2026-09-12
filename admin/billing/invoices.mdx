@@ -1,0 +1,131 @@
+---
+title: "How to raise and issue an invoice"
+description: "Write a draft invoice, check it, and issue it so it counts as money owed."
+icon: "file-invoice"
+---
+
+An **invoice** is the bill you send a building manager for work done. Every invoice starts as a **draft** — an unfinished document that has no number, is not on the ledger, and does not count as money owed. **Issuing** it is the moment it becomes real.
+
+## Where drafts come from
+
+<CardGroup cols={3}>
+  <Card title="A maintenance contract" icon="newspaper">
+    When a plan's cycle closes, LiftAuth drafts the invoice for it automatically. It waits in your [Inbox](/admin/inbox).
+  </Card>
+
+  <Card title="A completed job" icon="wrench">
+    A repair job raised from an accepted quote seeds a draft from the quote's line items when the job is completed.
+  </Card>
+
+  <Card title="You" icon="plus">
+    **Billing → + New billing → Invoice**, or **Create invoice** on an accepted quote.
+  </Card>
+</CardGroup>
+
+## Write the draft
+
+<Steps>
+  <Step title="Open Billing and click + New billing → Invoice">
+    Choose **Invoice** — "Bill for work done".
+  </Step>
+
+  <Step title="Choose the customer">
+    Pick the building manager being billed. If the ledger was filtered to one customer, that customer is filled in for you.
+  </Step>
+
+  <Step title="Set the invoice date and the due date">
+    Both are required when you raise an invoice from the Billing hub — the due date is what puts the invoice into an ageing bucket and decides when it is overdue, so LiftAuth will not guess it for you.
+  </Step>
+
+  <Step title="Add the line items">
+    A line is a description, a quantity and a unit price. Lines can be pulled from an inventory part, from your [standard billing items](/admin/billing/standard-items), or typed in by hand.
+  </Step>
+
+  <Step title="Set tax, payment terms and notes">
+    The tax rate is a single percentage applied to the whole invoice — there is no per-line tax. Payment terms are required before you can issue.
+  </Step>
+
+  <Step title="Save">
+    The invoice is saved as a **Draft**.
+  </Step>
+</Steps>
+
+<Tip>
+  A draft can be edited as many times as you like. Once it is issued, the document body — the customer, the lines, the dates, the terms — is frozen for good.
+</Tip>
+
+## Check and issue it
+
+<Steps>
+  <Step title="Open the draft">
+    From your [Inbox](/admin/inbox), or from the customer's account. Drafts are not on the ledger.
+  </Step>
+
+  <Step title="Review it as the customer will see it">
+    Check the building manager, the line items, the total, the tax and the due date.
+  </Step>
+
+  <Step title="Click Issue invoice">
+    The confirmation shows the number the invoice is about to take from your [invoice series](/admin/billing/reference-numbers). You can type a different one — a number you type is used as-is and does not move the counter.
+  </Step>
+
+  <Step title="Confirm">
+    The invoice becomes **Issued**, takes its number, gets its PDF, and appears on the ledger and in the customer's Outstanding balance.
+  </Step>
+</Steps>
+
+<Warning>
+  Issuing does not email the invoice. If the building manager is connected to you in LiftAuth, the invoice appears in their app straight away. If they are not, nothing has reached them yet — [email it](/admin/billing/emailing-documents) as a separate step. The Issue card tells you which case you are in.
+</Warning>
+
+An invoice cannot be issued without at least one line item and payment terms filled in.
+
+## What happens next
+
+Once an invoice is issued, its status follows the money by itself. You never set it by hand.
+
+| Status | What it means |
+| --- | --- |
+| **Issued** | Billed, nothing received yet |
+| **Part paid** | Some of the balance has been settled |
+| **Paid** | The balance has reached zero |
+
+The balance is the invoice total, less every settled payment allocated to it, less every credit note applied to it.
+
+**Overdue** is not a status. It is worked out live: an issued or part-paid invoice with money still owed, past its due date. LiftAuth shows it as a red **Overdue** badge in place of the ordinary status badge, and counts it under [Outstanding](/admin/billing/reference#the-figures-above-the-ledger).
+
+## Getting paid
+
+<CardGroup cols={2}>
+  <Card title="Record a payment yourself" icon="hand-holding-dollar" href="/admin/billing/payments">
+    Bank transfer, cheque, cash — log what you received against the invoice.
+  </Card>
+
+  <Card title="Let them pay online" icon="credit-card" href="/admin/billing/online-payments">
+    A connected building manager can pay by card or PayNow from their app, and the payment reconciles itself.
+  </Card>
+</CardGroup>
+
+<Note>
+  A building manager can also tap **I've made payment** in their app. That is a signal, not money — it puts the invoice in your Inbox so you can check your bank and record the real payment. The invoice stays unpaid until you do.
+</Note>
+
+## Correcting an invoice
+
+<AccordionGroup>
+  <Accordion title="The draft is wrong">
+    Open it and click **Edit draft**. Everything is editable while it is a draft.
+  </Accordion>
+
+  <Accordion title="The draft should never have existed">
+    Click **Discard draft**. Nothing was sent, so nothing is lost. The invoice is filed away and leaves your Inbox.
+  </Accordion>
+
+  <Accordion title="An issued invoice is wrong">
+    An issued invoice cannot be edited, deleted or hidden — the customer is holding it and your accounts count it. [Raise a credit note](/admin/billing/credit-notes) against it instead, which is the one supported reversal, and issue a corrected invoice if you still need to bill.
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  Invoices are never deleted. Once issued, an invoice stays on record permanently so your billing history is complete for compliance and audit.
+</Warning>

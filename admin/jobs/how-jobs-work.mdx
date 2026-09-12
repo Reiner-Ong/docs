@@ -1,0 +1,133 @@
+---
+title: "How jobs work"
+description: "What a job is, what it is made of, the six statuses it moves through, and who moves it."
+icon: "diagram-project"
+---
+
+A <Tooltip cta="job" href="/start/glossary">job</Tooltip> is one visit to one
+building. Every time a technician goes on-site, a job records it — and when the
+job is closed, what the technician wrote becomes the permanent history of those
+lifts.
+
+This page explains how a job is put together and how it moves. If you just want
+to do something, see [Schedule a job](/admin/jobs/how-to-schedule-a-job) or
+[Close a job](/admin/jobs/how-to-close-a-job).
+
+## What a job is made of
+
+A job is not "one lift and one job type." It is a container:
+
+* **One building.** Every lift on the job is in the same building.
+* **One or more lifts.** A visit that services four lifts in one tower is one job, not four.
+* **One or more records.** A record pairs a form (a record template) with the lifts that form covers. One form covering three lifts produces one record; a form that only covers one lift produces one record per lift.
+* **Exactly one assignee** — one technician, or one team. Never both, never two people.
+* **One or more time windows.** A visit too long for a working day is split across consecutive days, and stays a single job.
+
+```mermaid
+flowchart LR
+    Job["One job"] -->|at| B["One building"]
+    Job -->|assigned to| A["One technician or one team"]
+    Job -->|runs| F1["Form: Monthly Service — lifts 1 and 2"]
+    Job -->|runs| F2["Form: Fire Lift Check — lift 3"]
+    F1 -->|produces| R1["1 record"]
+    F2 -->|produces| R2["1 record"]
+```
+
+<Note>
+  Older parts of LiftAuth talk about a job having a **type** — maintenance,
+  breakdown, or repair. That is no longer true of the job itself. The *forms*
+  carry the type. A single job can run a maintenance form and a breakdown form in
+  the same visit, and the technician's app shows no job-type label because there
+  is none.
+</Note>
+
+## The six statuses
+
+<Steps>
+  <Step title="Open">
+    The job exists, but nobody is assigned and no time is set. Most jobs skip
+    straight past this — the **Schedule Job** button creates and schedules in one
+    action. You mostly see **Open** on jobs that arrived another way, such as a
+    converted quote.
+  </Step>
+
+  <Step title="Scheduled">
+    A technician or a team is assigned, and the date and time window are set. The
+    job now appears in the technician's app, and the building manager's firm is
+    notified.
+  </Step>
+
+  <Step title="Work Done">
+    The technician has finished on-site and submitted the work. The
+    <Tooltip cta="records" href="/start/glossary">records</Tooltip> exist, each
+    signed by the technician who did that lift. The job is now waiting for the
+    building side to sign off.
+  </Step>
+
+  <Step title="Signed">
+    Sign-off is complete. Either the building manager signed — on the technician's
+    phone, or through their own signing link — or the technician explicitly
+    skipped signing. The job is waiting for the office.
+  </Step>
+
+  <Step title="Closed">
+    An admin has reviewed and closed it. The PDFs are generated, linked issues are
+    closed, and a draft invoice is raised. This is the end of the line.
+  </Step>
+</Steps>
+
+The sixth status is **Cancelled**. A job can be cancelled from any of the four
+statuses above **Closed** — including after it has been signed, for the rare case
+where the office needs to void a visit. Cancelling asks for a reason, produces no
+record, and cannot be undone.
+
+**Closed** and **Cancelled** are the only end states, and nothing moves out of
+them. Nothing moves backwards either: there is no way to push a **Signed** job
+back to **Work Done**.
+
+## Who moves it
+
+| Move | Who does it | Where |
+| --- | --- | --- |
+| Open → Scheduled | Admin, owner, or a maintenance contract | Dashboard |
+| Scheduled → Scheduled (reschedule) | Admin or owner; a technician only on their own job | Dashboard or team calendar |
+| Scheduled → Work Done | Technician | Mobile app |
+| Work Done → Signed | Building manager signing, or the technician skipping signing | Phone, signing link, or app |
+| Signed → Closed | Admin or owner | Dashboard |
+| Anything → Cancelled | Admin, owner, or technician | Dashboard |
+
+Nobody in the office can sign on the building manager's behalf. There is no sign
+button in the dashboard, on purpose.
+
+## Where jobs come from
+
+<CardGroup cols={2}>
+  <Card title="A maintenance contract" icon="calendar-check" href="/admin/maintenance-contracts/overview">
+    The plan generates and schedules its visits on its own cadence. You do nothing.
+  </Card>
+
+  <Card title="An admin scheduling one" icon="calendar-plus" href="/admin/jobs/how-to-schedule-a-job">
+    For a breakdown call-out, a repair, or any one-off visit.
+  </Card>
+
+  <Card title="A technician on-site" icon="mobile-screen" href="/technician/create-a-job">
+    An unplanned visit, logged from the phone as it happens.
+  </Card>
+
+  <Card title="A converted quote" icon="file-invoice" href="/admin/invoices-and-payments">
+    Arrives as an **Open** job with its required parts already listed.
+  </Card>
+</CardGroup>
+
+## Two things that trip people up
+
+**A crew can split a big visit between them.** On a multi-lift job, each
+technician uploads their lifts as they finish. The job stays **Scheduled** until
+every lift is in and somebody taps **Submit job**. If two of them recorded the
+same lift, the app makes the crew choose which version counts before it will let
+them submit — nothing is thrown away behind anyone's back.
+
+**Signing can be skipped.** If the building manager is not around and will not
+sign remotely, the technician can confirm **Skip signing**. The job still reaches
+**Signed**, but the record's PDF carries no building-manager sign-off, and
+LiftAuth stores which technician skipped and when.

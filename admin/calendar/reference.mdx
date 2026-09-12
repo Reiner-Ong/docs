@@ -1,0 +1,124 @@
+---
+title: "Calendar reference"
+description: "Items, colours, views, drag rules, limits and permissions for the Calendar and the on-call schedule."
+icon: "table-list"
+---
+
+Everything the Calendar page and the on-call rota can show or do, in one place.
+For how to use them, start at [The Calendar](/admin/calendar/overview).
+
+## Where each surface lives
+
+| Surface | How to reach it | Who can open it |
+| --- | --- | --- |
+| Calendar | **Calendar** in the sidebar, under *Operations* | Anyone signed in to the dashboard |
+| On-call schedule | **Dispatch** in the sidebar → **On call** tab | Anyone signed in to the dashboard |
+
+The older `/on-call` link still works and lands on the On call tab.
+
+## Items on the Calendar
+
+| Item | Badge on its card | Colour | Editable here |
+| --- | --- | --- | --- |
+| Job | Its job status — Open, Scheduled, Work Done, Signed, Closed, Cancelled | The owner's colour | Drag to reschedule only |
+| Planned job | **Planned** | The owner's colour, dimmed | No |
+| Event | **Event** | The owner's colour | Create, edit, delete, drag |
+
+Colour identifies the **person**, not the status. It matches that person's tick
+box in the People list. When more than eight people are ticked, colours start
+again from the beginning of the palette.
+
+## What is fetched for each ticked person
+
+- Their **calendar events**, expanded into every date a repeating event lands on
+  inside the period shown.
+- **Jobs** scheduled to them in that period — including jobs assigned to a team
+  they belong to, which appear on every member's calendar.
+- **Planned jobs** projected from Maintenance Contracts where they are the contract's
+  main technician.
+
+A job with no schedule, or with nobody assigned, is on nobody's calendar.
+
+## Views
+
+| View | Shows | Notes |
+| --- | --- | --- |
+| Day | One day, 24-hour time grid | Arrows step one day |
+| Week | Monday–Sunday, 24-hour time grid | All-day items sit in a strip above the hours |
+| Month | Monday-first month grid | Up to 2 items per day, then **+N more**. Click a day for its full list |
+| Agenda | The period as one list, grouped by day | Names whose calendar each row came from |
+
+The small month picker on the left jumps the main view to **Day** for the date
+you click. Its arrows page the picker only.
+
+## Drag-and-drop rules
+
+| Item | Draggable? |
+| --- | --- |
+| Event | Always. Dragging one date of a repeating event moves only that date |
+| Job, status Scheduled, one person, single day | Yes |
+| Job in any other status | No |
+| Job whose visit spans several working days | No — reschedule from the job page |
+| Job assigned to a team | No — reschedule from the job page |
+| Planned job | No |
+| On-call shift | No |
+
+A drop always asks for confirmation before anything changes, and the item keeps
+its original length and its technician. In Week and Day view the drop snaps to
+15 minutes; in Month view the time of day is kept.
+
+## The event dialog
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| Calendar | — | Only shown to owners and admins, and only when more than one person is ticked |
+| Title | Yes | "Title is required." if left blank |
+| Notes | No | Shown on the item's card |
+| All day | No | Hides the time fields |
+| Start date / Start time | Yes | |
+| End date / End time | Yes | "End must be after start." if it is not |
+| Repeat | No | Does not repeat, Daily, Weekly, Monthly |
+| Every | Repeat only | The interval — "Weekly, every 2" is fortnightly |
+| On days | Weekly only | Which weekdays it lands on |
+| Ends | Repeat only | Never, On *date*, or After *N* occurrences |
+
+Times are recorded in Singapore time.
+
+## The on-call shift dialog
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| Technician | Yes | Active technicians only |
+| Starts | Yes | Defaults to 18:00 |
+| Ends | Yes | Defaults to 08:00 the next day. A shift may cross midnight, up to 7 days long |
+| Repeat | No | Does not repeat, Daily, Weekly, Monthly |
+| Until | Repeat only | The last date the series may produce a shift |
+
+A monthly series repeats on the same day number and skips a month without that
+day.
+
+## Who can do what
+
+| Action | Owner | Admin | Technician | Call centre |
+| --- | --- | --- | --- | --- |
+| See their own calendar | Yes | Yes | Yes | — |
+| See a colleague's calendar | Yes | Yes | No | — |
+| Add, edit, delete their own events | Yes | Yes | Yes | — |
+| Add, edit, delete someone else's events | Yes | Yes | No | — |
+| Drag a scheduled job to a new date | Yes | Yes | Yes — but only their own jobs are on their calendar | — |
+| Read the on-call rota | Yes | Yes | Yes | Yes |
+| Add or delete an on-call shift | Yes | Yes | No | No |
+| Turn their own on-call toggle on or off | Yes | Yes | Yes | — |
+
+<Warning>
+  If you hold only the technician role, ticking a colleague in the People list
+  shows an error rather than their events. Untick them to return to your own
+  calendar.
+</Warning>
+
+## Limits
+
+- A repeating event is drawn up to **2 years** ahead, and a single series is
+  capped at **1,000** occurrences.
+- The calendar loads at most **500** jobs per person per period.
+- An on-call shift may not be longer than **7 days**.

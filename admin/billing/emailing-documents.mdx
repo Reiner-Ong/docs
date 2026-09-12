@@ -1,0 +1,72 @@
+---
+title: "How to email a quote or invoice"
+description: "Attach the PDF to an email and send it to the building manager's contact address."
+icon: "envelope"
+---
+
+Emailing is a **separate act** from sending a quotation or issuing an invoice. Those two number the document and publish it to a connected building manager's app; emailing puts the PDF in that customer's inbox. Use it when the customer is not on LiftAuth, or when they simply want it by email.
+
+<Note>
+  Emailing never changes a document's status. A quote stays **Sent**; an invoice stays **Issued** or **Part paid**.
+</Note>
+
+## Send the email
+
+<Steps>
+  <Step title="Open the document from the ledger">
+    Click the row in **Billing → Ledger**. The document opens in an overlay.
+  </Step>
+
+  <Step title="Click Email quotation or Email invoice">
+    If the document has gone out before, the button reads **Email again** instead.
+  </Step>
+
+  <Step title="Check the address">
+    The **To** line is the contact email on the customer's [building manager record](/admin/building-managers). If it is wrong or missing, click the pencil, type the correct address and click **Save** — the corrected address is written back to the customer record when the email sends, so you never have to fix it twice.
+  </Step>
+
+  <Step title="Add a message (optional)">
+    Type into the paragraph between the greeting and the fixed body text. Up to 2,000 characters. Leave it blank and the paragraph is simply omitted.
+  </Step>
+
+  <Step title="Click Send email">
+    LiftAuth confirms who it went to.
+  </Step>
+</Steps>
+
+## What the customer receives
+
+The dialog is the email: what you see is what is sent.
+
+| Part | Who writes it |
+| --- | --- |
+| **From** | LiftAuth's sending address — fixed |
+| **To** | The customer record's contact email. **One address only — there is no CC.** |
+| **Subject** | Composed by LiftAuth from the document and your firm |
+| **Greeting, body, sign-off** | Composed by LiftAuth |
+| **Your message** | Yours, optional, sits between the greeting and the body |
+| **Attachment** | The document's PDF, named after its reference number |
+
+## When you can email
+
+<AccordionGroup>
+  <Accordion title="Quotes">
+    Only while the quote is **Sent**. A draft has no PDF and no number yet, and a **Declined**, **Expired**, **Superseded** or **Accepted** quotation is not the document the customer should be holding.
+  </Accordion>
+
+  <Accordion title="Invoices">
+    Only while the invoice is **Issued** or **Part paid**, and only once its PDF exists. Not on a draft — nothing has been billed. Not on a **Paid** invoice — there is nothing left to chase.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  LiftAuth flags the case that actually needs your attention: when a document has reached nobody — never emailed **and** the customer is not connected in the app — the email action becomes the document's primary button.
+</Tip>
+
+## Keeping track
+
+LiftAuth records the **most recent** send only: the date and the address it went to. There is no full send history, so if you need an audit trail of every reminder, keep it outside LiftAuth.
+
+<Warning>
+  If the email cannot be delivered, LiftAuth shows the reason in the dialog and keeps everything you typed so you can correct the address and try again. Nothing about the document changes on a failed send.
+</Warning>

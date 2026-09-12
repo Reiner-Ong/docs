@@ -1,0 +1,111 @@
+---
+title: "Inventory Reference"
+description: "Every field, filter, movement type, badge, and permission in Inventory."
+icon: "table-list"
+---
+
+Look-up page for Inventory. For the how-to steps, start at the [Inventory overview](/admin/inventory/overview).
+
+## Part fields
+
+| Field | Required | Editable later | Notes |
+| --- | --- | --- | --- |
+| **Name** | Yes | Yes | What your team searches for. |
+| **Family** | Yes | Yes | The category. See [Part families](#part-families). |
+| **Brand** | Yes | Yes | Manufacturer, or **Generic**. Defaults to Generic. |
+| **Cost price** | No | Yes | What the part costs you to buy, in S$. `0` means unpriced. |
+| **Unit price** | No | Yes | Your catalogue list price, in S$. Fills in quote and invoice **Part** lines. `0` means unpriced. |
+| **Part code** | No | Yes | The manufacturer's printed code, up to 64 characters. Not matched by the search box. |
+| **Photos** | Yes — at least one | Yes | JPEG, PNG or WebP. Up to 5 files, each up to 10 MB. |
+| **Initial warehouse** | No | n/a | Only offered when creating the part, and only when a warehouse exists. |
+| **Initial quantity** | No | n/a | Disabled until an initial warehouse is chosen. Recorded as the part's first movement. |
+| **Part No.** | Assigned by LiftAuth | No | Format `PRT-<year>-<six characters>`. Matched by the search box. |
+| **Total on hand** | Calculated | No | The sum of the part's stock across every warehouse. |
+
+<h2 id="part-families">
+  Part families
+</h2>
+
+Buttons, panels & displays · Cabin & interior · Doors · Drive & machine · Electrical & control · Escalators & walkways · Generic electrical parts · Generic mechanical parts · Guide rails & frame · Ropes & compensation · Safety gear · Smart & IoT · Tools & test equipment · Whole lifts
+
+In the mobile app this field is labelled **Category**. It is the same list.
+
+## Brands
+
+Generic · Otis · Mitsubishi · KONE · Hitachi · Toshiba · ThyssenKrupp · Schindler · LG · Yungtay · Fujitec · Fuji · Hyundai · Sigma · Shenlong · Xizi · Guangri · BLT · SJEC · Canny · IFE
+
+## Warehouse fields
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| **Name** | Yes | For example *Tuas Central Store*, *Van 2*. |
+| **Address** | No | Type to search, then pick a suggestion. |
+| **Location** | No | Map coordinates. Click the map or drag the pin to set them; the address updates to match. A warehouse with no location shows *No location on file*. |
+
+<h2 id="movement-types">
+  Movement types
+</h2>
+
+| Type | Warehouse fields | Effect | Shown in history as |
+| --- | --- | --- | --- |
+| **Deposit** | One warehouse | Adds to that warehouse | `+n`, in green |
+| **Withdraw** | One warehouse | Subtracts from that warehouse | `−n`, in red |
+| **Transfer** | **From** and **To**, which must differ | Subtracts from *From*, adds to *To* | `n`, with `From → To` |
+
+Rules that apply to all three:
+
+* Quantity must be a whole number of 1 or more. The type decides the direction; you never enter a negative number.
+* A withdrawal or a transfer that would take a warehouse below zero is rejected, and nothing is recorded.
+* An optional **Note** is stored with the movement.
+* Movements cannot be edited or deleted. Correct a mistake with an opposing movement.
+
+## Parts list — filters and controls
+
+| Control | What it does |
+| --- | --- |
+| **Search parts…** | Matches the part **name** and **Part No.** |
+| **Family** | Filters to one family. Click the ✕ on the pill to clear. |
+| **Brand** | Filters to one brand. |
+| **Clear all** | Appears once a family or brand filter is set; clears both. |
+| **Show archived / Hide archived** | Includes or excludes archived parts. Excluded by default. |
+| **List view / Grid view** | Table, or photo cards. Your choice is remembered. |
+| Count, for example *42 parts* | How many parts match the current search and filters. |
+
+## Badges
+
+| Badge | Where | Meaning |
+| --- | --- | --- |
+| **Active** | Part, warehouse | Normal, in use. |
+| **Archived** | Part | Hidden from the default list. Stock can no longer be moved. Reversible with **Unarchive**. |
+| **Located** | Warehouse row | The warehouse has map coordinates. |
+| **Pending** | A job's **Parts required** row | The job needs this part. It is *not* a claim that stock has been deducted. |
+| **Drawn down** | A job's **Parts required** row | Only appears on older records. Current jobs do not set it — withdrawals are recorded manually in Inventory. |
+
+## Who can do what
+
+| Action | Account Owner | Admin | Technician |
+| --- | --- | --- | --- |
+| View parts, stock, and warehouses | Yes | Yes | Yes |
+| Add or edit a part | Yes | Yes | Yes |
+| Record a stock movement | Yes | Yes | Yes |
+| Add or edit a warehouse | Yes | Yes | Yes |
+| Archive or unarchive a part | Yes | Yes | No |
+
+<Note>
+  Technicians do this work in the mobile app, at **Profile → Tools → Inventory**. The Inventory pages in the web dashboard are for office staff; a member whose only role is Technician is sent to their Jobs list instead.
+</Note>
+
+## Limits and things that cannot be undone
+
+| | |
+| --- | --- |
+| Photos per part | 5, each up to 10 MB, JPEG / PNG / WebP |
+| Part code length | 64 characters |
+| Deleting a part | Not possible — archive it instead |
+| Deleting or archiving a warehouse | Not possible from the dashboard — rename it and transfer its stock away |
+| Editing or deleting a movement | Not possible — record an opposing movement |
+| Editing a Part No. | Not possible — it is assigned by LiftAuth |
+
+## When Inventory is switched off
+
+Inventory is an optional feature. If it is not enabled for your company, the Inventory pages show *"Inventory isn't enabled for this workspace"* and no parts or warehouses can be created. Contact your account team to have it turned on. On the mobile app the message reads *"Inventory isn't enabled for your company yet."*

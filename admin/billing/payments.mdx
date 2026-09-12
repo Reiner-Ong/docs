@@ -1,0 +1,102 @@
+---
+title: "How to record a payment"
+description: "Log money you have received and settle it against the right invoice."
+icon: "hand-holding-dollar"
+---
+
+A **payment** is money you have received. Recording it in LiftAuth is what reduces the customer's balance and moves the invoice to **Part paid** or **Paid**. Payments made online by card or PayNow record themselves — this page is for money that arrived any other way.
+
+## Record it
+
+There are three routes to the same form. Pick whichever is nearest.
+
+<CardGroup cols={3}>
+  <Card title="From the invoice" icon="file-invoice">
+    Open the invoice from the ledger and click **Record payment**.
+  </Card>
+
+  <Card title="From the ledger row" icon="list">
+    Use the row's **⋯** menu → **Record payment**. Offered on any invoice with money still owed.
+  </Card>
+
+  <Card title="From scratch" icon="plus">
+    **+ New billing → Payment** — "Record money received".
+  </Card>
+</CardGroup>
+
+<Steps>
+  <Step title="Choose the customer">
+    Already filled in when you started from an invoice.
+  </Step>
+
+  <Step title="Choose the invoice">
+    **Against invoice** lists that customer's open invoices. A payment is recorded against one invoice.
+  </Step>
+
+  <Step title="Enter the amount">
+    Must be greater than zero, and cannot exceed the invoice's outstanding balance. To settle a balance exactly, enter the outstanding figure shown.
+  </Step>
+
+  <Step title="Enter the date received">
+    **Received on** is the date the money actually landed, which may not be today.
+  </Step>
+
+  <Step title="Choose the method">
+    **Manual** or **Bank transfer**. Card and PayNow payments are not recorded here — they arrive on their own through [online payments](/admin/billing/online-payments).
+  </Step>
+
+  <Step title="Add a reference (optional)">
+    Your bank's transaction reference, for example. It shows on the ledger row.
+  </Step>
+
+  <Step title="Save">
+    The payment lands on the ledger as a negative amount, and the invoice's status and balance update immediately.
+  </Step>
+</Steps>
+
+<Warning>
+  LiftAuth refuses an amount larger than the outstanding balance. If a customer genuinely overpaid, record the payment up to the balance and raise a [credit note](/admin/billing/credit-notes) for the difference.
+</Warning>
+
+## Payment statuses
+
+A payment you record by hand is settled the moment you save it — it shows as **Recorded** or **Succeeded**. The other statuses only appear on payments that came through the online payment gateway.
+
+| Status | Meaning |
+| --- | --- |
+| **Recorded** | Entered by hand. Settled. |
+| **Succeeded** | Cleared through the gateway. Settled. |
+| **Processing** | Started online, not yet cleared. Does not reduce the balance. |
+| **Failed** | The online payment did not go through. Settles nothing. |
+| **Refunded** | The whole amount was handed back. |
+| **Part refunded** | Some of it was handed back. |
+
+Only settled money counts. A **Processing** or **Failed** payment leaves the invoice exactly as it was, and the **Collected · 30d** figure ignores both.
+
+## Deposits
+
+A deposit collected against a quote — before any invoice exists — appears on the ledger as a **Deposit** row rather than a Payment. It has no invoice to open, because there is not one yet.
+
+## Correcting a payment
+
+<Steps>
+  <Step title="Open the payment from the ledger">
+    Click the row.
+  </Step>
+
+  <Step title="Click Delete payment">
+    Confirm. The payment leaves the ledger and the invoice's balance goes back up.
+  </Step>
+</Steps>
+
+<Warning>
+  Delete is for correcting a mistake in your own record-keeping — an amount typed wrong, a payment logged against the wrong invoice. It is not a refund. To hand money back to a customer, raise a [credit note](/admin/billing/credit-notes) or refund the original card payment.
+</Warning>
+
+Delete is not offered on a **Failed** payment (it moved no money), on one already deleted, or on one that has been refunded — the refund's credit note points at it, and removing it would orphan that document.
+
+## Refunding an online payment
+
+There is no Refund button in the LiftAuth dashboard. Card and PayNow refunds are made in your Stripe dashboard — open it from **Billing → Payments setup → Open payments dashboard**.
+
+When a refund goes through, LiftAuth keeps up on its own: the payment becomes **Refunded** or **Part refunded**, and a **credit note** of kind *Refund* is raised against the invoice automatically, so the customer's balance matches the money that actually moved.

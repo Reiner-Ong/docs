@@ -1,0 +1,90 @@
+---
+title: "How to accept online payments"
+description: "Set up Stripe so building managers can pay your invoices by card or PayNow, and the payment reconciles itself."
+icon: "credit-card"
+---
+
+With online payments switched on, a building manager can pay an issued invoice from their own LiftAuth app — by card or PayNow — and the payment lands against that invoice automatically. No bank statement to check, no payment to type in.
+
+The money goes to **your** bank account. LiftAuth uses Stripe to move it, so you complete Stripe's verification once and Stripe pays out to you from then on.
+
+<Note>
+  Online payments are set up by an owner or admin, and only on a servicing firm's workspace. If you do not see **Payments setup** as a tab in Billing, the feature is not enabled for your workspace — ask LiftAuth support to turn it on.
+</Note>
+
+## Set it up
+
+<Steps>
+  <Step title="Open Billing → Payments setup">
+    You can also reach it from **Account → Billing setup → Payment settings**.
+  </Step>
+
+  <Step title="Click Set up payments">
+    Stripe opens in a new tab. If your browser blocks the tab, allow pop-ups for LiftAuth and click again.
+  </Step>
+
+  <Step title="Complete Stripe's verification">
+    Stripe asks for your business details, identity documents and a bank account to pay out to. This is Stripe's own form, not LiftAuth's.
+  </Step>
+
+  <Step title="Come back to LiftAuth">
+    The page updates itself. There is nothing to save.
+  </Step>
+</Steps>
+
+## The four states
+
+The Payments setup page always tells you exactly where you are.
+
+| State | What you see | What to do |
+| --- | --- | --- |
+| **Not started** | "Accept online payments" | Click **Set up payments** |
+| **In progress** | "Finish setting up", badge **In progress** | Click **Continue setup** — Stripe still needs a few details |
+| **Under review** | "Under review", badge **Verifying** | Wait. Stripe is checking your details — usually minutes. LiftAuth updates itself. |
+| **Complete** | "Accepting online payments", badge **Active** | Nothing. You are live. |
+
+## Once you are live
+
+The page becomes your payment-account home and shows:
+
+- **Methods** — Card and PayNow
+- **Payouts** — whether Stripe has a bank account to pay you into. If it says *Add a bank account in Stripe*, payments will still be taken but nothing can be paid out to you until you add one.
+- **Currency** — SGD
+- **Stripe account** — your connected account's id
+
+**Open payments dashboard** mints a one-time login into your own Stripe dashboard, where you manage your balance, payouts, transactions, disputes and refunds.
+
+<Warning>
+  The dashboard link is single-use. Click the button again each time rather than bookmarking the page it opens.
+</Warning>
+
+## What the building manager does
+
+They open the invoice in their LiftAuth app and pay it. For them to see it at all, two things must be true:
+
+1. They are **connected** to your firm in LiftAuth.
+2. The invoice is **Issued** — a draft is invisible to them.
+
+## What you see when they pay
+
+The payment appears on your [ledger](/admin/billing/overview#finding-a-document) on its own. You do not record anything.
+
+<Steps>
+  <Step title="Processing">
+    The payment has been started but has not cleared. It reduces nothing yet, and shows a **Processing** badge.
+  </Step>
+
+  <Step title="Succeeded">
+    The money has cleared. The invoice's balance drops and its status moves to **Part paid** or **Paid**.
+  </Step>
+</Steps>
+
+A payment that does not go through shows as **Failed** and settles nothing — the invoice is exactly as it was.
+
+<Note>
+  A building manager who pays you by bank transfer instead may tap **I've made payment** in their app. That is only a nudge: it puts the invoice in your [Inbox](/admin/inbox) so you can check your bank and [record the payment](/admin/billing/payments) yourself.
+</Note>
+
+## Refunds
+
+Refunds are made in your Stripe dashboard, not in LiftAuth. When one goes through, LiftAuth marks the payment **Refunded** or **Part refunded** and raises a [credit note](/admin/billing/credit-notes) of kind *Refund* against the invoice automatically.

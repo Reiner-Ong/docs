@@ -1,0 +1,112 @@
+---
+title: "Drive reference"
+description: "Folders, columns, badges, actions, and who can see what."
+icon: "table-list"
+---
+
+Everything Drive shows, in one place. For the tasks themselves, start at the
+[Drive overview](/admin/drive/overview).
+
+## Folder types
+
+| Folder | One per | Holds | Subtitle on the folder card |
+| --- | --- | --- | --- |
+| **Building** | Building | Service records | Number of lifts, or number of records for a building you own no lift in |
+| **Unassigned** | — (one only) | Records for lifts not attached to any building | Number of lifts |
+| **Customer** | Building manager | Quotes, invoices, payments, credit notes | `Quotes · Invoices · Payments` |
+
+Building folders appear on their own, for every building your firm has a lift in
+and every building your firm holds a record for. Customer folders appear for every
+building manager on your account.
+
+<h2 id="what-ends-up-in-drive">
+  What ends up in Drive
+</h2>
+
+There is no upload button in Drive. Documents arrive in one of three ways.
+
+| Document | How it gets there |
+| --- | --- |
+| Service record | Created automatically when a technician submits a completed [job](/admin/jobs/overview) |
+| Past visit typed in by hand | Added with **Record past visits** on a building page or a maintenance contract page, optionally with a legacy PDF attached |
+| Quote, invoice, payment, credit note | Created on the [Invoices & Payments](/admin/invoices-and-payments) pages, then filed under the customer |
+
+A record that is not linked to a building has no folder to sit in and does not
+appear in Drive.
+
+## Building folder columns
+
+| Column | Shows |
+| --- | --- |
+| Checkbox | Ticks the row for **Download selected** |
+| **Name** | The record's reference |
+| **Lift** | The equipment ID of every lift the visit covered, or `—` |
+| **Kind** | The type of file. Hidden while records are the only kind of file in the folder |
+| **Sign-off** | Whether the building manager has signed |
+| **Date** | The date the visit was carried out. Click the heading to reverse the order |
+| (last column) | Download arrow, or `— no document` |
+
+### Sign-off badges
+
+| Badge | Meaning |
+| --- | --- |
+| **Pending signature** (amber) | The building manager has not signed yet |
+| **Signed** (green) | The building manager has signed |
+
+### Status in the preview window
+
+The panel beside the PDF shows a fuller status than the list does.
+
+| Status | Meaning |
+| --- | --- |
+| **Unsigned** | Waiting on the building manager. The sign-off options are offered |
+| **Signed** | Signed, and the final PDF is still being produced |
+| **Complete** | Signed, with the final PDF stored |
+
+<h2 id="when-a-record-has-no-pdf">
+  When a record has no PDF
+</h2>
+
+Two situations leave a row with nothing to open. Neither can be repaired from
+Drive, and both are skipped when you download a folder.
+
+| What you see | Why |
+| --- | --- |
+| `— no document` in place of the download arrow, and the row cannot be opened or ticked | A past visit typed in by hand with no report attached |
+| **Signature image unreadable** or **Photo unreadable** when you open the record | The PDF could not be produced from what was captured on site |
+
+## Actions
+
+| Action | Where it is |
+| --- | --- |
+| Search buildings and customers | Search box at the top of Drive |
+| Search records | Search box inside a building folder, matching reference and lift |
+| Sort by date | The **Date** column heading |
+| Preview a record | Click the row |
+| Download one record | Download arrow on the row |
+| **Download selected (n)** | Appears once a row is ticked; covers the current page only |
+| **Download all** | Top right of the folder; the whole folder as one zip |
+| **Send to building manager** | Preview window, unsigned records only |
+| **Generate new signing link** | Preview window, unsigned records only |
+| Download a quote, invoice or credit note | PDF icon on the row in a customer folder |
+
+## Who can see what
+
+Drive only ever shows your own firm's documents.
+
+| | Owner | Admin | Technician | Call centre |
+| --- | --- | --- | --- | --- |
+| **Drive** in the sidebar | Yes | Yes | Yes | No |
+| Building folders and records | Yes | Yes | Yes | — |
+| Download records | Yes | Yes | Yes | — |
+| Generate a signing link | Yes | Yes | Yes | — |
+| Send the sign-off email | Yes | Yes | No | — |
+| Customer folders: quotes, invoices, payments | Yes | Yes | Yes | — |
+| Customer folders: credit notes | Yes | Yes | No | — |
+| Open a quote or invoice's own page | Yes | Yes | No | — |
+
+<Note>
+  A record cannot be edited once it exists, by anyone. Drive is a place to read
+  and download, never to correct. If something is wrong on a record, raise it as
+  an [issue](/admin/issues) or contact support.
+</Note>

@@ -1,0 +1,163 @@
+---
+title: "How to move a project through its stages"
+description: "Attach documents, link jobs, mark a stage complete, skip one you do not need, and ask a colleague to check your work."
+icon: "list-check"
+---
+
+The project page is one column of six stage rows. Settled rows fold down to a
+single line; the row the project is on, and anything you have filled in early, stay
+open. The band above them names the one next thing to do.
+
+Everything on this page happens on a stage row. What each stage needs before it
+counts as done is listed in the [stage reference](/admin/projects/stage-reference).
+
+## Attach a document to a stage
+
+Supplier quote, Customer quote, Procurement, Work and Invoice all take uploaded
+documents. **Closed** takes none.
+
+<Steps>
+  <Step title="Open the stage row">
+    Click the row to expand it.
+  </Step>
+
+  <Step title="Add the file">
+    Click the paperclip, or drag the file onto the row — a folded row accepts a drop
+    too, and opens when it lands. The row you are over lights up; rows that would
+    refuse the file fade.
+  </Step>
+</Steps>
+
+Files must be **PDF, PNG or JPEG**, up to **10 MB** each. If you drop a batch, the
+good files still upload and LiftAuth names the ones it refused. An upload in
+progress can be cancelled.
+
+Click a document to read it in the preview drawer. To take one off again, remove it
+from the row — but only while the stage is unlocked.
+
+<Note>
+  Attaching is not completing. On **Supplier quote**, **Customer quote** and
+  **Procurement**, a document moves the stage to **In progress** and no further.
+  Somebody still has to say it is done.
+</Note>
+
+## Mark a stage complete
+
+<Steps>
+  <Step title="Check the row has what it needs">
+    **Mark complete** stays greyed out until it does. The information icon beside it
+    says exactly what is missing — *Attach a document first*, *Every linked job has
+    to be signed first*, and so on.
+  </Step>
+
+  <Step title="Click Mark complete">
+    The stage turns **Done** and shows a padlock. Your name and the date go on the row
+    and into the activity log.
+  </Step>
+</Steps>
+
+A completed stage is **locked**: no attaching, no removing, no re-completing. Click
+**Mark incomplete** to unlock it.
+
+<Warning>
+  **Invoice** and **Closed** have no Mark complete button, and that is deliberate.
+  The Invoice stage settles when the invoice is actually issued, and Closed settles
+  when somebody closes the project. See
+  [quoting and invoicing](/admin/projects/quoting-and-invoicing-from-a-project).
+</Warning>
+
+## Record the work
+
+The **Work** stage holds two kinds of thing, and you can mix them:
+
+<CardGroup cols={2}>
+  <Card title="Your own jobs" icon="wrench">
+    Click **+ Schedule job** to raise a new [job](/admin/jobs) and link it in one go,
+    or **Link existing job** to attach one you already have. Each linked job shows its
+    status and, once signed, its record.
+  </Card>
+
+  <Card title="A subcontractor's work" icon="file-lines">
+    Attach the supplier's service record to the stage as a PDF or photo.
+  </Card>
+</CardGroup>
+
+**Link existing job** searches your jobs by building, lift, technician or reference.
+It offers jobs at the project's building first, then the customer's other
+buildings, then everything — a job belonging to a different customer is badged as
+such, so you can see what you are about to link.
+
+How Work settles:
+
+* Every linked job must be **Signed** or **Closed**.
+* If nothing is attached to the stage, it turns **Done** on its own the moment the
+  last job is signed.
+* If there is an attached record as well, click **Mark complete** once the jobs are
+  signed.
+
+<Warning>
+  A cancelled job never counts as finished and will hold the stage open forever.
+  Detach it from the Work row instead.
+</Warning>
+
+## Skip a stage you do not need
+
+Not every project has a supplier or a purchase order.
+
+<Steps>
+  <Step title="Click Skip on the stage row">
+    **Skip** only appears on a stage that is empty and unlocked.
+  </Step>
+
+  <Step title="Give a reason (optional)">
+    The reason is shown on the row afterwards, so the next person knows why the stage
+    was passed over.
+  </Step>
+</Steps>
+
+A skipped stage reads **Skipped** and counts as settled — the project can close over
+it. Click **Unskip** to bring it back. A skipped stage stays skipped even if a
+document later lands on it.
+
+**Closed** cannot be skipped. **Invoice** can — skip it for a warranty callback or a
+goodwill repair you are not billing for.
+
+## Ask a colleague to review a stage
+
+<Steps>
+  <Step title="Pick a reviewer on the stage row">
+    Use the review picker. You can ask several people at once; you cannot ask yourself.
+  </Step>
+
+  <Step title="They answer on the same row">
+    The reviewer sees the request on the stage and clicks **Approve**, or
+    **Request changes** with a comment explaining what is wrong.
+  </Step>
+</Steps>
+
+The stage badge shows *Review requested*, *Changes requested* or *Approved*, and the
+same items appear in the reviewer's [Inbox](/admin/inbox).
+
+<Note>
+  Reviews advise, they do not gate. Requesting changes does not unlock a completed
+  stage and does not stop the project moving. A stage with changes requested stays
+  open on the page until it is dealt with, so it cannot be folded away and forgotten.
+</Note>
+
+## Leave a note
+
+Click **+ Add note** on a stage row for anything the team needs to read — a phone
+call with the supplier, why the price changed. Notes sit on the stage they were
+written on and appear in the activity log.
+
+## Watch what has happened
+
+The pane on the right of the project has two tabs:
+
+* **Activity** — every event on the project, newest first: documents attached, stages
+  completed and skipped, jobs linked, reviews, reopens.
+* **Chat** — the project's own conversation thread. You can drag a stage document
+  straight into it to share it with the team.
+
+Drag the divider to resize the pane, or collapse it entirely; LiftAuth remembers
+your choice.

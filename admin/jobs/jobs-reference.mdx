@@ -1,0 +1,196 @@
+---
+title: "Jobs Reference"
+description: "Every job status, filter, column and action on the Jobs page, and who is allowed to do what."
+icon: "table-list"
+---
+
+Look things up here. If you want to *learn* how jobs work, read
+[How jobs work](/admin/jobs/how-jobs-work) instead.
+
+## Job statuses
+
+A job is always in exactly one of six statuses. These are the words you see on
+the status badge, in the Kanban columns, and in the status filter chips.
+
+| Status | What it means | What happens next |
+| --- | --- | --- |
+| **Open** | The job exists, but nobody is assigned and no time is set. | An admin schedules it. |
+| **Scheduled** | One technician **or** one team is assigned, and a date and time window are set. The job now appears in the technician's app. | The technician does the work and submits it. |
+| **Work Done** | The technician has submitted the work on-site. The <Tooltip cta="record" href="/start/glossary">record</Tooltip> exists but is not signed off yet. | The building manager signs — or the technician skips signing. |
+| **Signed** | Sign-off is complete. The job is waiting for an admin to check it. | An admin closes it. |
+| **Closed** | An admin has reviewed and closed the job. Final. | Nothing. Closed jobs cannot be changed. |
+| **Cancelled** | The job will not happen. Final, and the reason is stored on the job. | Nothing. Create a new job if the visit still needs to happen. |
+
+**Closed** and **Cancelled** are the two end states. Neither can be undone, and
+neither can be moved back.
+
+<Note>
+  Most jobs never sit in **Open** for long. A job created by the **Schedule Job**
+  button is created and scheduled in one step, so it starts life at
+  **Scheduled**. **Open** is what you see when a job was created some other way —
+  for example by converting a quote — and still has nobody assigned.
+</Note>
+
+## The Jobs page
+
+**Jobs** in the left sidebar. Two views of the same data, switched with the two
+small icon buttons at the top right.
+
+### Kanban view (the default)
+
+One column per status: **Scheduled**, **Work Done**, **Signed**, **Closed**, and
+**Cancelled**. The Cancelled column is hidden when there is nothing in it. Each
+column shows a count and loads 20 jobs at a time as you scroll.
+
+Cards are read-only. You cannot drag a card from one column to another — a job
+moves status only when somebody performs the matching action.
+
+### List view
+
+A table with these columns:
+
+| Column | What it shows |
+| --- | --- |
+| **Job ID** | The job's short reference, for example `JOB-0142`. |
+| **Lift** | The building name of the job's first lift. A job covering more than one lift reads `Marina Tower +2 more`. |
+| **Technician** | The assigned technician. A dash means nobody is assigned. |
+| **Scheduled Window** | Date and time window. A visit that spans several days reads `(+2 more days)`. |
+| **Status** | The status badge. |
+| **Plan / Created by** | The <Tooltip cta="maintenance contract" href="/start/glossary">maintenance contract</Tooltip> that generated the job, or the name of the person who created it. |
+
+Click any row to open the job.
+
+### Filters
+
+| Control | What it does |
+| --- | --- |
+| **Date range button** (reads `All dates` when empty) | Limits the board and the table to jobs scheduled inside the range. Defaults to the current month. Pick a month, use **Next 30 days**, or click two days to make a custom range. A dot under a day means that day has scheduled jobs. |
+| **Clear** | Removes the date range. |
+| **Search box** | Matches on job ID, building, lift, or technician name. Applies to both views. |
+| **Status chips** (List view only) | All, Scheduled, Work Done, Signed, Closed, Cancelled. |
+
+## Actions on a job
+
+Open a job from the Jobs page to see its actions in the top-right corner. Which
+buttons appear depends on the status.
+
+| Action | Available when the job is | What it does |
+| --- | --- | --- |
+| **Schedule** | Open | Assigns a technician or team and sets the date and time slot. Moves the job to **Scheduled**. |
+| **Reschedule** | Scheduled | Changes the assignee, the date, or the time slot. The job stays **Scheduled**. |
+| **Close Job** | Signed | Moves the job to **Closed**. |
+| **Cancel** | Any status except Closed and Cancelled | Asks for a reason (required), then moves the job to **Cancelled**. |
+
+There is no admin action for **Work Done** or **Signed**. Those two transitions
+happen in the technician's app, or when the building manager opens their signing
+link.
+
+<Warning>
+  Cancelling is permanent. A cancelled job cannot be reopened and produces no
+  record. If the visit still needs to happen, schedule a new job.
+</Warning>
+
+You can also reschedule by dragging a job on the team calendar, but only when the
+job is **Scheduled**, assigned to one technician, and fits in a single day.
+Everything else has to be rescheduled from the job page, and the calendar tells
+you so when you try.
+
+## What is on a job page
+
+<AccordionGroup>
+  <Accordion title="Job Details">
+    * **Forms** — the records this visit produces.
+    * **Lift** or **Lifts (N)** — every lift the job covers. All of them are in the same building.
+    * **Technician** or **Team** — the assignee. A job has exactly one, never both.
+    * **Building Manager** — who signs off and is billed.
+    * **Scheduled Window** — date and time.
+    * **Created**, **Created by**, **Last Updated**.
+    * **Building Plan** — a link to the maintenance plan, on jobs a plan generated.
+  </Accordion>
+
+  <Accordion title="Lift records">
+    Only on a **Scheduled** job that a crew has started recording. It lists each
+    form with **Recorded** or **Pending**, and who recorded it, so you can see how
+    far a multi-lift visit has got before it is submitted.
+  </Accordion>
+
+  <Accordion title="Parts required">
+    Only on jobs that came from a converted quote. Read-only: it lists the part,
+    the quantity, and its status. Nothing is drawn from stock automatically.
+  </Accordion>
+
+  <Accordion title="Linked Issues">
+    The <Tooltip cta="issues" href="/start/glossary">issues</Tooltip> this job is
+    meant to address, each with Open or Closed. See
+    [Issues](/admin/issues).
+  </Accordion>
+
+  <Accordion title="Related">
+    The record or records the job produced, and the invoice, once there is one.
+  </Accordion>
+
+  <Accordion title="Timeline">
+    Every status the job has entered, with who did it and when. A cancelled job
+    also shows its reason here and in a **Cancellation** section.
+  </Accordion>
+</AccordionGroup>
+
+## Who can do what
+
+| Person | Sees the Jobs page | Creates jobs | Schedules / reschedules | Closes | Cancels | Can be assigned work |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Owner** | Yes | Yes | Any job | Yes | Yes | Yes |
+| **Admin** | Yes | Yes | Any job | Yes | Yes | Yes |
+| **Technician** | No — they work in the mobile app | Yes, from the app | Only a job they are already on | Not in the app | Not in the app | Yes |
+| **Call centre** | No — they land on Dispatch | No | No | No | No | No |
+
+Two rules are worth spelling out, because they surprise people:
+
+* A **technician can reschedule only a job they are already assigned to** — either as its technician, or as a member of the assigned team. Once they are on it they may hand it to anyone else. Owners and admins can reschedule any job.
+* A **call centre operator is read-only** everywhere in the portfolio. They can look a job up; they cannot change one.
+
+A person can only be offered as a job's assignee when their account is **active**
+and they hold the technician, admin, or owner role. Suspended and pending team
+members never appear in the assignee list. An office admin picking up a visit is
+normal and fully supported.
+
+Building managers do not log in to LiftAuth at all. They receive a signing link.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I move a job backwards, from Signed to Work Done?">
+    No. Statuses only move forwards. The only way out of a status other than
+    forwards is **Cancel**, and that is permanent.
+  </Accordion>
+
+  <Accordion title="Can I sign on the building manager's behalf?">
+    No. There is no sign action in the dashboard. The building manager signs on the
+    technician's phone or through their own signing link. The technician can skip
+    signing entirely, and the record then says so.
+  </Accordion>
+
+  <Accordion title="Why does a job cover several lifts?">
+    Because they are serviced together in one visit. All the lifts on a job are in
+    the same building, and the job produces one record per form, not one per lift —
+    a form covering several lifts produces a single record.
+  </Accordion>
+
+  <Accordion title="Why is my technician not in the assignee list?">
+    Their account is not **active**, or they do not hold the technician, admin, or
+    owner role. Check [Manage your team](/admin/managing-your-team).
+  </Accordion>
+
+  <Accordion title="What happens when I close a job?">
+    Three things: the PDF of every record on the job is generated, any issues
+    linked to the job are closed, and — if the job belongs to a maintenance plan
+    or has a building manager — a draft invoice is generated. See
+    [Invoices & Payments](/admin/invoices-and-payments).
+  </Accordion>
+
+  <Accordion title="Two of my technicians recorded the same lift. What happens?">
+    Nothing is lost. Both versions are kept, the lift is marked as contested in
+    the app, and the crew has to pick which one counts before the job can be
+    submitted. The office sees the job stay at **Scheduled** until they do.
+  </Accordion>
+</AccordionGroup>

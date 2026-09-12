@@ -1,0 +1,169 @@
+---
+title: "Projects reference"
+description: "Every stage, status, badge, filter and permission on the Projects board and project page."
+icon: "table-list"
+---
+
+## The six stages
+
+The stages are the same for every project and every workspace. They cannot be added
+to, removed, renamed or reordered.
+
+| Stage | Whose paperwork | Internal | Takes uploads | Settled by |
+| --- | --- | --- | --- | --- |
+| **Supplier quote** | From your supplier | Yes | Yes | Mark complete |
+| **Customer quote** | To your customer | No | Yes | An accepted quote, or Mark complete |
+| **Procurement** | To your supplier | Yes | Yes | Mark complete |
+| **Work** | — | No | Yes | Every linked job signed (plus Mark complete if records are attached) |
+| **Invoice** | To your customer | No | Yes | An issued invoice — never a click |
+| **Closed** | — | No | No | Closing the project |
+
+**Internal** stages are never included in an emailed package.
+
+## Stage states
+
+| State | Meaning |
+| --- | --- |
+| **Empty** | Nothing on the stage yet |
+| **In progress** | Something is on it, but it is not settled |
+| **Done** | Settled |
+| **Skipped** | Deliberately passed over, with an optional reason |
+
+Done and Skipped both count as *settled*: the project can close over either.
+
+### How each stage reaches Done
+
+<AccordionGroup>
+  <Accordion title="Supplier quote and Procurement">
+    Attach a document, then click **Mark complete**. Attaching alone only moves the
+    stage to In progress.
+  </Accordion>
+
+  <Accordion title="Customer quote">
+    Automatic when a quote on the project is **accepted** or **converted**. Otherwise,
+    attach a signed copy and click **Mark complete** — which is refused while the
+    only quote is a draft or is still out with the customer. A requote raised after a
+    hand confirmation sends the stage back to In progress.
+  </Accordion>
+
+  <Accordion title="Work">
+    Every linked job must be **Signed** or **Closed**. With no uploaded records on the
+    stage, it turns Done on its own when the last job signs; with records, click
+    **Mark complete** once the jobs are signed. A stage with no jobs and no records
+    stays Empty. A cancelled job never counts — detach it.
+  </Accordion>
+
+  <Accordion title="Invoice">
+    Automatic. A draft invoice makes it In progress; **issued**, **part paid** or
+    **paid** makes it Done. Void and rejected invoices are ignored entirely. There is
+    no Mark complete on this stage.
+  </Accordion>
+
+  <Accordion title="Closed">
+    Done only once somebody closes the project. It cannot be skipped, and it accepts
+    no documents.
+  </Accordion>
+</AccordionGroup>
+
+## Readiness
+
+A stage becomes **Ready** when its turn arrives. Ready is a prompt, not a lock — you
+can always fill a stage early or out of order.
+
+| Stage | Ready when |
+| --- | --- |
+| Supplier quote | Always — it is the entry point |
+| Customer quote | Supplier quote is done or skipped |
+| Procurement | Customer quote is **done** (skipped does not count) |
+| Work | Customer quote is done or skipped |
+| Invoice | Work is **done** |
+| Closed | Every other stage is done or skipped |
+
+When a stage turns ready, LiftAuth puts an item in the [Inbox](/admin/inbox) of that
+stage's assignees; if it has none, everyone assigned anywhere on the project; if
+nobody is assigned, every owner and admin. Each stage prompts once, and prompts again
+only if readiness goes away and comes back.
+
+## Locking and freezing
+
+* A **completed** stage is locked: no attaching, removing or re-completing until
+  **Mark incomplete**.
+* A **closed** project is frozen: every stage loses its buttons until the project is
+  reopened.
+
+## Card badges
+
+A project card carries at most one badge.
+
+| Badge | Meaning |
+| --- | --- |
+| **Review requested** | Somebody has been asked to review a stage |
+| **Changes requested** | A reviewer sent a stage back with a comment |
+| **Approved** | A reviewer approved the stage |
+| **Ready** / **Ready · name** | The card's stage is waiting on somebody |
+
+A review badge always outranks Ready.
+
+## Board and list
+
+* The board column a project sits in is the **leftmost stage that is not done or
+  skipped**. A closed project always sits in **Closed**; the Closed column also holds
+  open projects that are fully invoiced and waiting for somebody to close them.
+* **List** shows every stage at once, with project, customer, building, stage,
+  assignees and last update.
+* Typing in the search box switches you to the list. Clearing it leaves you there.
+
+### Filters
+
+| Control | What it does |
+| --- | --- |
+| Search | Matches across all stages; switches the page to the list |
+| Customer | One building manager, or all |
+| People | Anyone, **Assigned to me**, or one named colleague |
+| **Show closed** | On by default; turn it off to hide closed projects |
+
+Filters and the chosen view are held in the page address, so a copied link opens the
+same thing for a colleague.
+
+## Reviews
+
+* Anyone who can see the project can ask any other owner or admin to review a stage.
+* You cannot ask yourself.
+* Several reviewers can be pending on one stage at once.
+* **Request changes** requires a comment; **Approve** does not.
+* Reviews never block: changes requested does not unlock a completed stage or stop
+  the project moving.
+* Asking the same person again after changes is just another request.
+
+## Limits
+
+| Thing | Limit |
+| --- | --- |
+| Project title | 200 characters, required |
+| Project description | 1,000 characters, optional |
+| Reopen reason | 1–200 characters, required |
+| Assignees per stage | 20 |
+| Uploaded file | 10 MB, PDF / PNG / JPEG |
+
+## Who can do what
+
+| | Owner | Admin | Technician, and every other role |
+| --- | --- | --- | --- |
+| See Projects | Yes | Yes | No |
+| Create, edit, close, reopen | Yes | Yes | No |
+| Attach, complete, skip, assign | Yes | Yes | No |
+| Be assigned to a stage or asked to review | Yes | Yes | No |
+
+Projects is an office feature: the whole area is owner and admin only, and it appears
+only when **Projects** is switched on under **Account → Features**. LiftAuth support
+staff acting on your workspace have the same access an admin does.
+
+## What is fixed after creation
+
+| Field | Changeable |
+| --- | --- |
+| Title | Yes, via **Edit** |
+| Description | No |
+| Customer | No |
+| Building | No |
+| Project reference (`PRJ-2026-XXXXXX`) | No |

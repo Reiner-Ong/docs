@@ -1,0 +1,107 @@
+---
+title: "Dispatch Reference"
+description: "Every dispatch status, field, timer and permission in one place."
+icon: "table-list"
+---
+
+Look-up detail for the [Dispatch](/admin/dispatch/overview) area. For how to actually do things, see [Raise an emergency dispatch](/admin/dispatch/raise-a-dispatch) and [Follow a live dispatch](/admin/dispatch/follow-a-live-dispatch).
+
+## Dispatch statuses
+
+| Status | Colour | Meaning | How it is reached |
+| --- | --- | --- | --- |
+| **Ringing** | Red | Phones are ringing; nobody has accepted. | The dispatch was raised, or the technician who had accepted released it. |
+| **Unanswered** | Amber | Still ringing more than three minutes after the last phone started. | Reached on its own with time. It is a warning, not a change — the phones keep ringing. |
+| **On the way** | Blue | A technician accepted and is travelling. | The first technician tapped **Accept dispatch**. |
+| **Arrived** | Green | The technician is on site. | They tapped **I've arrived**. |
+| **Stood down** | Grey | Cancelled by an operator. | An operator clicked **Stand down**. |
+| **Closed** | Grey | Handled and closed by an operator. | An operator clicked **Close dispatch**. |
+
+**Stood down** and **Closed** are final. Nothing reopens a finished dispatch.
+
+## Per-technician ring states
+
+Shown against each name in the **Technicians** section of the detail panel.
+
+| State | Meaning |
+| --- | --- |
+| **Sent · no ack yet** | The ring was sent but the phone has not confirmed it is playing. |
+| **Ringing on phone** | The phone confirmed the siren is playing. |
+| **Accepted** | This technician owns the call-out. |
+| **Declined** | They declined, with their reason if they gave one. |
+| **Stood down** | Their ring was stopped — someone else accepted, or the whole dispatch was stood down. |
+
+## Timers
+
+| Where | What it counts |
+| --- | --- |
+| Ringing row, red | Time since the current ring began. Adding technicians restarts it. |
+| Accepted row | Time since the technician accepted. |
+| Arrived row, green | Total response time — from raising the call-out to arrival on site. Frozen. |
+
+## Fields on the new-dispatch form
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| **Building** | Yes | Searchable. A dispatch is raised against a building, never a single lift. |
+| **People trapped inside?** | Yes | **Yes — entrapment** or **No one trapped**. Entrapment adds a count of people inside. |
+| **Caller name** | No | Free text. |
+| **Caller phone** | No | Becomes a tap-to-call link in the console and on the technician's phone. |
+| **Situation** | No | The caller's own description. The technician reads it before setting off. |
+| **Ring technicians** | Yes | At least one. Only active technicians are listed; nothing is pre-selected. |
+
+## Operator actions and when they are available
+
+| Action | Available when |
+| --- | --- |
+| **＋ New emergency dispatch** | Always, on the Dispatch tab. |
+| **Add technician** | While the dispatch is **Ringing** or **Unanswered**. |
+| **Stand down** | Any time before the dispatch is stood down or closed. |
+| **Close dispatch** | Once a technician has accepted (including after they arrive). |
+
+## Technician actions and when they are available
+
+| Action | Available when |
+| --- | --- |
+| **Accept dispatch** / **Decline** | While it is ringing and they are one of the people being rung. |
+| **Call** | Once accepted, if the operator recorded a caller phone number. |
+| **Navigate to building** | Once accepted. Starts the live location share. |
+| **I've arrived** | Once accepted, to the technician who accepted. |
+| **Can't make it — release this dispatch** | Once accepted, to the technician who accepted. Re-rings everyone else. |
+
+## Who can do what
+
+| | Owner | Admin | Call Centre | Technician |
+| --- | --- | --- | --- | --- |
+| See the Dispatch queue | Yes | Yes | Yes | On their phone only |
+| Raise a dispatch | Yes | Yes | Yes | No |
+| Add technicians, stand down, close | Yes | Yes | Yes | No |
+| Be rung by a dispatch | No | No | No | Yes |
+| Accept, decline, arrive, release | No | No | No | Yes, if rung |
+| Read the on-call rota | Yes | Yes | Yes | Yes |
+| Add or delete on-call shifts | Yes | Yes | No | No |
+| Switch their own on-call state | — | — | — | Yes, in the app |
+
+A **Call Centre** operator is a read-only persona: they see only Portfolio and Dispatch, and cannot create or change anything elsewhere in the dashboard. Assign the role from [Manage your team](/admin/managing-your-team).
+
+<Note>
+  Dispatch is optional per workspace. If **Dispatch** is missing from the sidebar it has not been switched on for your team, and the **On call** tab is hidden with it.
+</Note>
+
+## Live location and ETA
+
+| What you see | What it means |
+| --- | --- |
+| **LIVE** with an ETA and a distance | The technician is sharing their position; the estimate is a driving estimate to the building. |
+| **No ETA** | No driving estimate could be worked out — most often the building has no map location saved. |
+| **updated N min ago** | When their position last moved. |
+| **signal quiet** | Their phone has not reported a position for a while. |
+| **Not sharing** | The technician is not broadcasting a location. Normal — the share is optional, and it ends when they arrive. |
+
+Live sharing stops automatically when the technician marks themselves arrived or releases the call-out.
+
+## Things a dispatch does not do
+
+* It does not create a [job](/start/glossary), a [record](/admin/records) or an [invoice](/admin/invoices-and-payments). Raise a **Breakdown** job separately if there is billable work — see [Creating a job](/admin/jobs).
+* It is not attached to a specific lift, only to a building.
+* It does not ring anyone automatically from the rota. An operator always picks the phones.

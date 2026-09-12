@@ -1,0 +1,88 @@
+---
+title: "How to archive or restore a record template"
+description: "Retire a template you no longer use, without losing the records that were made from it."
+icon: "archive"
+---
+
+Record templates are never deleted. Every job and record points back at the
+template it came from, so LiftAuth retires a template by **archiving** it — it
+disappears from the pickers, but stays resolvable forever.
+
+You need to be an **Owner** or an **Admin**.
+
+***
+
+## Archive a template
+
+<Steps>
+  <Step title="Open the template">
+    Go to **Record Templates** and click the template you want to retire.
+  </Step>
+
+  <Step title="Click Archive">
+    The red **Archive** button is at the top right.
+  </Step>
+
+  <Step title="Read what it will do, then confirm">
+    The dialog is headed **Archive maintenance template** (or repair, or
+    breakdown) and explains that archiving hides the template from new
+    record-template pickers, that existing jobs and records are unaffected, and
+    that you can restore it at any time.
+
+    Click **Archive record template**.
+  </Step>
+</Steps>
+
+***
+
+## If a contract still uses it
+
+You cannot archive a template that a maintenance contract still schedules. The
+dialog shows:
+
+> A building plan still schedules this record template. Re-point those plans
+> before archiving.
+
+To clear it:
+
+1. Find the maintenance contracts that use the template. Open **Maintenance
+   Contracts** and check each contract's records.
+2. On each one, click **Edit**, change the **Record** dropdown to a different
+   template, and save. See
+   [How to assign a record template to lifts](/admin/record-templates/assigning-a-record-template).
+3. Come back and archive.
+
+***
+
+## Where archived templates go
+
+They move to an **Archived** section at the bottom of the Record Templates page,
+each with a grey **Archived** badge. Nothing is lost — you can still open one and
+read it.
+
+***
+
+## Restore a template
+
+1. Open **Record Templates** and scroll to **Archived**.
+2. Click the template.
+3. Click **Restore**.
+
+Restoring can fail if the slot has been taken while it was archived — either an
+active template of the same name in the same job type, or, for Repair and
+Breakdown, a second template of that job type. Rename or archive the conflicting
+template first.
+
+<Tip>
+  This is the way to swap your single Repair or Breakdown template for a new one:
+  archive the old one, which frees the slot, then create the replacement.
+</Tip>
+
+***
+
+## Removing a library form instead
+
+A form added from the library is not archived — it is removed. The button reads
+**Remove from workspace** and the form goes back to being available in the
+library. See
+[How to add a form from the library](/admin/record-templates/adding-a-library-form#remove-a-form-you-no-longer-need).

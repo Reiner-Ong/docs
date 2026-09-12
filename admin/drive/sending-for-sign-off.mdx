@@ -1,0 +1,73 @@
+---
+title: "How to send a record for sign-off from Drive"
+description: "Chase a missing building manager signature without leaving the building folder."
+icon: "signature"
+---
+
+A record is only finished once the building manager has signed it. If the
+technician could not get a signature on site, you can send the request straight
+from Drive.
+
+Records still waiting are easy to spot: the **Sign-off** column shows an amber
+**Pending signature** badge.
+
+## Open the record
+
+<Steps>
+  <Step title="Open the building folder">
+    Click **Drive** in the sidebar, then the building.
+  </Step>
+
+  <Step title="Click the record's row">
+    The preview window opens with the PDF on the left and the sign-off panel on
+    the right. If the record is unsigned, the panel offers the two options below.
+  </Step>
+</Steps>
+
+## Choose how to send it
+
+<CardGroup cols={2}>
+  <Card title="Send to building manager" icon="envelope">
+    LiftAuth emails the sign-off request to the person assigned to this building
+    in the building manager app. Click the card once — nothing else is needed.
+  </Card>
+
+  <Card title="Generate a signing link" icon="link">
+    LiftAuth creates a link you can share yourself, by WhatsApp, SMS or any other
+    means. Click **Generate new signing link**, then **Copy link**.
+  </Card>
+</CardGroup>
+
+Either way, the building manager does not need a LiftAuth account to sign. Once
+they sign, the record's status changes to **Signed** on its own and the job turns
+up in your [Inbox](/admin/inbox) ready to close.
+
+## What to know about signing links
+
+<AccordionGroup>
+  <Accordion title="A link is valid for 7 days" icon="clock">
+    After that it stops working and you generate a fresh one.
+  </Accordion>
+
+  <Accordion title="Generating again does not cancel the old link" icon="link-slash">
+    Each time you generate or send, you create an **additional** link. Every link
+    already out there stays valid until it is used or expires.
+  </Accordion>
+
+  <Accordion title="A link can only be used once" icon="check">
+    As soon as someone signs with it, the link is spent. The record is signed and
+    cannot be changed afterwards.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Sending the email request is an owner or admin action. Technicians can still
+  generate and copy a signing link, and can get a signature on site from the
+  mobile app — see [Getting a Signature](/technician/getting-a-signature).
+</Note>
+
+<Warning>
+  A past visit you typed in by hand cannot be signed — there was no technician
+  on site and no signature to collect. The sign-off options do not appear on
+  those records.
+</Warning>

@@ -1,0 +1,110 @@
+---
+title: "How to set your own document numbers"
+description: "Choose the prefix and format LiftAuth uses to number your quotes, invoices and credit notes."
+icon: "hashtag"
+---
+
+Every quote, invoice and credit note carries a **reference number** — the number your customer quotes back at you, and the one your accountant looks for. LiftAuth allocates it from a numbering **series** you control, one series per document type.
+
+Numbering is always on. There is nothing to switch on; there is only the shape to choose.
+
+<Note>
+  Reference numbers are owner and admin only.
+</Note>
+
+## Open the settings
+
+Go to **Account → Billing setup → Billing reference numbers**. All three series — Quotes, Invoices, Credit notes — are edited on one page and saved together.
+
+## Set up a series
+
+<Steps>
+  <Step title="Set the prefix">
+    Up to 12 characters, letters A–Z, digits and hyphens. It is uppercased for you. The defaults are `QT-` for quotes, `INV-` for invoices and `CN-` for credit notes.
+  </Step>
+
+  <Step title="Choose the shape">
+    Pick one of the ready-made shapes, or build your own from the tokens below.
+  </Step>
+
+  <Step title="Set the starting number (optional)">
+    Leave it blank to start at 1. Set it if you are migrating from another system and need to continue an existing sequence.
+  </Step>
+
+  <Step title="Click Save">
+    The page shows the next number each series would assign today, so you can check the shape before anything uses it.
+  </Step>
+</Steps>
+
+## The ready-made shapes
+
+| Shape | Format | Example |
+| --- | --- | --- |
+| Year · month · counter | `{PREFIX}-{YYYY}-{MM}-{0000}` | `INV-2026-09-0043` |
+| Year · counter | `{PREFIX}-{YYYY}-{0000}` | `INV-2026-0043` |
+| Year · quarter · counter | `{PREFIX}-{YYYY}-{Q}-{000}` | `INV-2026-Q3-043` |
+| Short year · counter | `{PREFIX}/{YY}/{000}` | `INV/26/043` |
+| Counter only | `{PREFIX}-{0000}` | `INV-0043` |
+| Custom | whatever you type | — |
+
+## Building a custom format
+
+A format is up to 40 characters of tokens and plain text.
+
+| Token | Prints |
+| --- | --- |
+| `{PREFIX}` | Your prefix |
+| `{YYYY}` | Four-digit year |
+| `{YY}` | Two-digit year |
+| `{Q}` | Quarter, as `Q1`–`Q4` |
+| `{MM}` | Two-digit month |
+| `{DD}` | Two-digit day |
+| `{0}` … `{000000}` | The counter, padded to that many digits |
+
+The rules LiftAuth enforces:
+
+- **Exactly one counter token.** No format is valid without one, and two is an error.
+- **At most one `{PREFIX}`.**
+- **Date tokens read largest to smallest, with no gaps.** `{MM}` and `{Q}` need a year before them; `{DD}` needs a `{MM}` before it.
+
+If a count outgrows its padding, the number simply gets wider — `{000}` goes to `1000` rather than wrapping.
+
+## When the counter resets
+
+You do not choose this. It follows from the finest date token in your format:
+
+| Finest date token | Counter resets |
+| --- | --- |
+| none | Never |
+| `{YYYY}` or `{YY}` | Yearly |
+| `{Q}` | Quarterly |
+| `{MM}` | Monthly |
+| `{DD}` | Daily |
+
+The page states the reset period beneath each series so you never have to work it out.
+
+## When a document takes its number
+
+A number is allocated at the moment a document becomes real, never before:
+
+| Document | Numbered when |
+| --- | --- |
+| Quote | You **Send** it |
+| Invoice | You **Issue** it |
+| Credit note | You create it |
+
+That is why a draft has no reference. Until then, LiftAuth shows the document's internal handle — something like `INV-2026-ABCDEF` — which never changes and is not the number your customer sees.
+
+## Overriding a number on one document
+
+The Send and Issue confirmations show the number about to be allocated, and let you type a different one. A number you type is stamped exactly as typed and **does not move the counter** — so overriding one document does not create a gap in the series.
+
+<Warning>
+  Two documents of the same type cannot share a reference. If you type one that is already used, LiftAuth refuses the send or issue, says so under the field, and writes nothing — the document is still a draft and you can try another number.
+</Warning>
+
+## Changing a series later
+
+You can change the prefix and format at any time; the change applies to documents numbered from then on and never rewrites ones already issued.
+
+The one thing LiftAuth refuses is **lowering the starting number below the count already used** in the current period. That would guarantee a collision. Raise it, or leave it alone.

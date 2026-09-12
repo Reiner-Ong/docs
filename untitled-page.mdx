@@ -1,53 +1,59 @@
 ---
-title: "What is a Maintenance Plan"
-description: "What a Maintenance Plan is, what it does automatically, and what you still need to do."
+title: "What is a Maintenance Contract"
+description: "What a maintenance contract is, what it does automatically, and what you still need to do."
 ---
 
-# Maintenance Plans
+A maintenance contract is your servicing agreement with a building, written down in a form LiftAuth can act on. Once it is set up, LiftAuth creates the visits and drafts the invoices for you, every cycle.
 
-A maintenance plan is a recurring schedule for one lift. Once you set it up, LiftAuth creates the Maintenance Jobs and drafts the invoices for you, every cycle.
+<Note>
+  Older guidance called this a "maintenance plan" and set it up per lift. It is now one contract per **building**, covering the lifts in it.
+</Note>
 
-## What you'll do
+## What a contract decides
 
-Most of the time, your day looks like this:
+You set these once, and LiftAuth uses them every cycle:
 
-- Set up a plan once per lift, when you take on a new contract.
-- Review and close each Maintenance Job after the Technician has finished and the Building Manager has signed.
-- Approve the draft invoice LiftAuth creates at the end of each cycle.
-
-That's the whole flow. The rest of this page explains how each part works.
-
-## The three parts of a plan
-
-A maintenance plan is just three things. You set these once, and LiftAuth uses them every cycle.
-
-| # | Part | What it means |
-| --- | --- | --- |
-| 1 | **Primary Technician** | The Technician who usually services this lift. LiftAuth assigns them to every Maintenance Job the plan creates. |
-| 2 | **Preferred Schedule** | How often you visit — monthly, quarterly |
-| 3 | **Invoicing Template** | What you'll bill the Building Manager each cycle — the amount, the line items, and the payment terms. |
+| Part | What it means |
+| --- | --- |
+| **Which lifts are covered** | The lifts at that building the agreement includes. |
+| **Which forms are used** | The record templates the technician fills in on each visit. |
+| **How often you visit** | The servicing frequency — monthly, quarterly, and so on. |
+| **How it is billed** | The billing cadence and the amounts to invoice. |
+| **The contract term** | When the agreement starts and ends. |
 
 ## What happens each cycle
 
-Once a plan is active, this is what LiftAuth does for you on every cycle, with no input from your team:
+Once a contract is active, this happens with no input from your team:
 
-1. **Schedules a Maintenance Job** **14 days before**, with the Primary Technician already assigned and the scheduled date set from the preferred schedule.
-2. **Surfaces the Job in the Technician's app** so they can pick it up on the day.
-3. **Drafts an invoice** when the cycle closes, built from the invoicing template.
-4. **Lands the draft in your Inbox** for review and approval.
+1. **A job is created 14 days before the visit date**, already assigned and time-slotted.
+2. **It appears in the technician's app** so they can pick it up on the day.
+3. **A draft invoice is generated** according to the billing cadence — per job when you close each job, or per period for a recurring fee.
+4. **The draft waits in Billing** for someone to check and issue it.
 
 ## What you still do
 
-LiftAuth handles the repetition. You handle the judgment.
+LiftAuth handles the repetition. You handle the judgement.
 
-- **Set up the plan**, once per lift.
-- **Review the completed record** before closing the Job — make sure the Technician's checklist and photos look right.
-- **Review and approve the draft invoice** before it goes to the Building Manager.
+- **Set the contract up**, once per building.
+- **Review the record** before closing each job — check the technician's answers and photos look right.
+- **Check and issue the draft invoice** before it reaches the building manager.
 
 ## A few important things
 
-**One active plan per lift.** A lift can only have one Maintenance Plan running at a time. To change the frequency or the fee, edit the plan — don't create a second one.
+**Nothing is billed until you issue it.** A draft invoice is not a real document. It sits in Billing until somebody issues it, and issuing is separate again from emailing it to the customer.
 
-**Draft invoices wait for you.** LiftAuth creates the draft and parks it in your Inbox. Nothing is sent to the Building Manager until you approve it.
+**Backdating does not create history.** If you start a contract in the past, scheduling runs from the current month forward. Months already gone never generate jobs. To record visits that happened before you were on LiftAuth, use **Record past visits** instead.
 
-**The Building Manager doesn't see the plan.** Plans are internal to your team. From the Building Manager's side, all they see is the regular Maintenance Jobs and the invoices once you've approved them.
+**The building manager does not see the contract.** It is internal to your team. They see the visits, the records, and the invoices you issue.
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="Set up a contract" icon="plus" href="/admin/maintenance-contracts/create-a-contract">
+    The five-step builder, start to finish.
+  </Card>
+
+  <Card title="Maintenance contracts reference" icon="table-list" href="/admin/maintenance-contracts/reference">
+    Statuses, billing cadences, automation timings and permissions.
+  </Card>
+</CardGroup>

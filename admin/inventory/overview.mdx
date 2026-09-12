@@ -1,0 +1,85 @@
+---
+title: "Inventory"
+description: "Keep track of the spare parts your company holds and where each one is stored."
+icon: "boxes-stacked"
+---
+
+Inventory is where you keep the list of spare parts your company works with, and the count of how many of each one you actually have in each storage location.
+
+Open it by clicking **Inventory** in the left sidebar. The page has two tabs — **Parts** and **Warehouses**.
+
+## The three things Inventory keeps track of
+
+These three are easy to mix up, so it is worth separating them before you start.
+
+<CardGroup cols={3}>
+  <Card title="The parts catalogue" icon="list">
+    The list of *kinds* of part you deal with — "Door Operator Motor", "Landing Interlock Contact". One entry per kind of part, with a photo, a category, a brand, and prices. It does not say how many you have.
+  </Card>
+
+  <Card title="Warehouses" icon="warehouse">
+    The places you store parts — a central store, a depot, or a service van. A warehouse does not have to have a fixed address.
+  </Card>
+
+  <Card title="Stock on hand" icon="hashtag">
+    The number of units of one part sitting in one warehouse. LiftAuth works this number out for you from the stock movements you record — you never type the number in directly after the first time.
+  </Card>
+</CardGroup>
+
+So a part called *Door Operator Motor* might have **4 on hand** in total: 3 in the Tuas Central Store and 1 in Van 2. Those two numbers are its stock levels, and every change to them is written down as a **movement**.
+
+<Note>
+  Inventory is an optional feature. If you see "Inventory isn't enabled for this workspace", contact your account team to turn it on.
+</Note>
+
+## What do you want to do?
+
+<CardGroup cols={2}>
+  <Card title="Add a part to the catalogue" icon="plus" href="/admin/inventory/adding-a-part">
+    Create a new catalogue entry with a photo, a category, a brand, and optional prices — and give it opening stock.
+  </Card>
+
+  <Card title="Find a part" icon="magnifying-glass" href="/admin/inventory/finding-a-part">
+    Search the catalogue by name or part number, or narrow it down by family and brand.
+  </Card>
+
+  <Card title="Set up your warehouses" icon="warehouse" href="/admin/inventory/setting-up-warehouses">
+    Add the stores, depots, and vans you keep stock in, and see what is held at each one.
+  </Card>
+
+  <Card title="Move stock in, out, or between stores" icon="right-left" href="/admin/inventory/moving-stock">
+    Record a delivery, take units off the shelf, or shift stock from one warehouse to another.
+  </Card>
+
+  <Card title="Use a part on a job" icon="wrench" href="/admin/inventory/using-parts-on-a-job">
+    See which parts a repair job needs, take them out of stock, and bill them.
+  </Card>
+
+  <Card title="Look up a field, a filter, or a permission" icon="table-list" href="/admin/inventory/reference">
+    Every field on a part, every movement type, and who is allowed to change what.
+  </Card>
+</CardGroup>
+
+## Getting started, in order
+
+If Inventory is new to your company, do it in this order — a part cannot hold stock until there is a warehouse to hold it in.
+
+<Steps>
+  <Step title="Add your warehouses first">
+    **Inventory → Warehouses → + Add Warehouse**. Even one, called something like "Main Store", is enough to begin. See [Setting up warehouses](/admin/inventory/setting-up-warehouses).
+  </Step>
+
+  <Step title="Add your parts">
+    **Inventory → Parts → + Add Part**. You can set each part's opening stock while you create it. See [Adding a part](/admin/inventory/adding-a-part).
+  </Step>
+
+  <Step title="Keep the counts honest from then on">
+    Every time parts arrive, get used, or get shifted, record a movement. See [Moving stock](/admin/inventory/moving-stock).
+  </Step>
+</Steps>
+
+## How Inventory connects to the rest of LiftAuth
+
+* **Quotes and invoices.** A part's **unit price** is its catalogue list price. When you add a *Part* line to a quote or an invoice, LiftAuth fills in the description and the price from the catalogue, so you are not retyping them. See [Invoices & Payments](/admin/invoices-and-payments).
+* **Jobs.** When an accepted quote that contains part lines is converted into a repair <Tooltip tip="A service visit to a lift." cta="Glossary" href="/start/glossary">job</Tooltip>, the job carries a **Parts required** list. That list is a reminder, not a deduction — see [Using parts on a job](/admin/inventory/using-parts-on-a-job).
+* **The technician mobile app.** Technicians reach the same catalogue from **Profile → Tools → Inventory** on their phone, where they can search parts, add a part, and record a stock movement.

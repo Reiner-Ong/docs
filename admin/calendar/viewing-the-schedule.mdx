@@ -1,0 +1,98 @@
+---
+title: "How to see who is working when"
+description: "Put people on the calendar, switch views, and open an item to see the job behind it."
+icon: "users"
+---
+
+Use this when you need to answer "who is free on Thursday?", "what is Daniel
+doing next week?", or "is that visit still on?".
+
+## Put people on the calendar
+
+The **People** list runs down the left side of the page. It lists every active
+team member who can be given work — owners, admins and technicians. You are at
+the top, marked **(you)**.
+
+<Steps>
+  <Step title="Tick the people you want to see">
+    Each person you tick is added to the grid in their own colour. The tick box
+    is that colour, so you can read the grid without a separate legend.
+  </Step>
+
+  <Step title="Untick anyone you don't need">
+    The count at the bottom of the list — "3 selected" — tells you how many
+    calendars are currently drawn.
+  </Step>
+</Steps>
+
+Your selection is remembered in the browser you are using, per organisation. It
+is back the next time you open the page. If someone is later removed from the
+team, they quietly drop out of your selection.
+
+<Warning>
+  Only owners and admins can look at other people's calendars. If you hold only
+  the technician role and you tick a colleague, the page shows an error instead
+  of their events. Untick them to get your own calendar back.
+</Warning>
+
+## Choose a view
+
+Four views sit at the top of the page, next to the date. They all show the same
+items — only the shape changes.
+
+<AccordionGroup>
+  <Accordion title="Day">
+    One column, midnight to midnight, on a 24-hour time grid. Best for checking
+    a single busy day hour by hour.
+  </Accordion>
+
+  <Accordion title="Week">
+    Monday to Sunday on the same time grid. All-day items sit in a strip above
+    the hours. This is the view for spotting a free afternoon.
+  </Accordion>
+
+  <Accordion title="Month">
+    A Monday-first month grid. Each day shows up to two items and then a
+    **+N more** link. Click any day to open a panel on the right listing
+    everything on that day.
+  </Accordion>
+
+  <Accordion title="Agenda">
+    The whole period as one list, grouped by day and ordered by time. When you
+    have several people ticked, each row also names whose calendar it came from.
+  </Accordion>
+</AccordionGroup>
+
+Move through time with the **‹** and **›** arrows beside the date. They step by
+one day, one week or one month, depending on the view you are in.
+
+The small month picker above the People list is a shortcut: click any date in it
+and the calendar jumps to the **Day** view for that date. Its own arrows page
+the picker forward and back without moving the main view, so you can look ahead
+before you commit.
+
+## Open an item to see what it is
+
+Click any item — a job block, a planned visit, an event — and a small card opens
+next to it. Depending on what you clicked, it shows:
+
+- the date and time,
+- **Day 2 of 3** when a job's visit spans several working days,
+- the building and the lifts involved,
+- the technician the work belongs to,
+- for an event: whether it repeats, whose calendar it is on, and any notes.
+
+The buttons at the bottom of the card take you to the real thing:
+
+| Item | Button | Where it goes |
+| --- | --- | --- |
+| Job | **Open job** | The job page, where you can reschedule, cancel or close it |
+| Planned job | **View plan** | The Maintenance Contract that will create the visit |
+| Event | **Edit** / **Delete** | The event dialog, or the delete confirmation |
+
+<Tip>
+  A planned job is deliberately greyed out and cannot be dragged. LiftAuth
+  creates the real job automatically closer to the date. If you need it to
+  happen sooner or on a different day, change the
+  [Maintenance Contract](/admin/maintenance-contracts/overview) instead.
+</Tip>

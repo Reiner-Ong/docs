@@ -1,0 +1,92 @@
+---
+title: "How to schedule a job"
+description: "Create a job for a building, pick the records it should produce, and assign a technician or team and a time."
+icon: "calendar-plus"
+---
+
+Use this when a visit needs to happen and no <Tooltip cta="maintenance contract" href="/start/glossary">maintenance contract</Tooltip> has already created the job for you — a breakdown call-out, a repair, or a one-off service.
+
+## Before you start
+
+You need all three of these, or the dialog will not let you finish:
+
+* A **building** with at least one lift assigned to it, and a **building manager** assigned to that building. See [Adding Lifts](/admin/lifts) and [Adding Building Managers](/admin/building-managers).
+* At least one **record template** — the form the technician fills in on-site. If you have none, the dialog tells you: *"No records yet — create one under Record Templates before scheduling a job."*
+* At least one **active** technician, admin, or owner to assign the work to. See [Manage your team](/admin/managing-your-team).
+
+<Warning>
+  If the building has no building manager, the dialog shows an amber warning
+  saying you can still schedule the job — but for a lift servicing company the
+  job will be rejected when you click **Schedule**. Assign the building manager
+  first. See [Adding Building Managers](/admin/building-managers).
+</Warning>
+
+## Schedule the job
+
+Go to **Jobs** in the sidebar and click **Schedule Job**. The dialog has three
+steps.
+
+<Steps>
+  <Step title="Step 1 — Build your job">
+    Search for the **building** by name or address and select it. Everything on
+    this job happens at one building.
+
+    Then add the **records** the visit should produce. Each record is a pair:
+    one form (a record template), and the lifts it covers.
+
+    * Choose the record template.
+    * Tick the lifts it applies to.
+    * Add another record if the visit runs more than one form.
+
+    A lift can only be in one record on the job. Some templates cover one lift
+    only — if you tick two, the dialog says so and you cannot continue.
+
+    Click **Next**.
+  </Step>
+
+  <Step title="Step 2 — When & who?">
+    Pick **one technician or one team**. A job has exactly one assignee — never
+    both, and never two people.
+
+    Set the **date**, the **start time** (Singapore time, between 06:00 and
+    20:00), and the **duration**.
+
+    When you pick a technician, their existing bookings appear on a calendar
+    beside the picker so you can see clashes. A clash does not block you: the
+    dialog says *"Pick another time, or schedule it anyway,"* and you can choose
+    **Continue anyway**.
+
+    A team job skips the clash check, because a team has more than one calendar.
+
+    Click **Next**.
+  </Step>
+
+  <Step title="Step 3 — Review & schedule">
+    Check the building, the records and their lifts, the date and duration, and
+    the assignee. Use the step numbers at the top to go back and change anything.
+
+    Click **Schedule**. The job is created directly at **Scheduled** and opens.
+  </Step>
+</Steps>
+
+The technician sees it in their app straight away.
+
+## Long visits that span more than one day
+
+If the duration you set does not fit in one working day, LiftAuth splits the
+visit across consecutive working days automatically. The dialog tells you how
+many days it will take, and the job page shows the schedule as
+`Mon 3 Feb · 9:00 AM–5:00 PM (+2 more days)`.
+
+A multi-day visit is still one job, with one set of records and one sign-off.
+
+## Change the plan afterwards
+
+* **Different person, day, or time** — open the job and click **Reschedule**. Available while the job is **Scheduled**.
+* **Not happening at all** — open the job and click **Cancel**. You must give a reason, and it cannot be undone.
+
+Details of both are in the [Jobs reference](/admin/jobs/jobs-reference#actions-on-a-job).
+
+## If a maintenance plan already covers this building
+
+You do not need to schedule anything. The contract creates and assigns each visit on its own schedule. See [Maintenance Contracts](/admin/maintenance-contracts/overview).

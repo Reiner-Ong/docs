@@ -1,0 +1,88 @@
+---
+title: "Jobs"
+description: "Schedule service visits, track them while technicians are on-site, and close them once the customer has signed."
+icon: "clipboard-list"
+---
+
+Jobs are how LiftAuth tracks service visits. One job is one visit, to one
+building, by one technician or one team.
+
+## The shape of it
+
+A job carries a building, its lifts, the forms the technician fills in, and one
+assignee. It moves through six statuses, and each status belongs to somebody:
+
+**Open → Scheduled → Work Done → Signed → Closed**, with **Cancelled** as the way
+out at any point before Closed.
+
+You schedule it. The technician moves it to **Work Done**. The building manager's
+signature moves it to **Signed**. You close it. Nobody skips a step, and nothing
+moves backwards.
+
+[Read how jobs work →](/admin/jobs/how-jobs-work)
+
+## What do you want to do?
+
+<CardGroup cols={2}>
+  <Card title="Schedule a job" icon="calendar-plus" href="/admin/jobs/how-to-schedule-a-job">
+    Book a visit that no maintenance contract covers — a call-out, a repair, a one-off.
+  </Card>
+
+  <Card title="Close a signed job" icon="circle-check" href="/admin/jobs/how-to-close-a-job">
+    Review the record and finish the job, so the invoice draft is raised.
+  </Card>
+
+  <Card title="Look something up" icon="table-list" href="/admin/jobs/jobs-reference">
+    Statuses, filters, columns, actions, and who is allowed to do what.
+  </Card>
+
+  <Card title="Understand the lifecycle" icon="diagram-project" href="/admin/jobs/how-jobs-work">
+    What a job is made of and how it moves.
+  </Card>
+</CardGroup>
+
+### On your phone
+
+<CardGroup cols={2}>
+  <Card title="Do a job" icon="mobile-screen" href="/technician/doing-a-job">
+    Find it, fill in the record, submit it — solo or with a crew.
+  </Card>
+
+  <Card title="Get it signed off" icon="signature" href="/technician/signing-off-a-job">
+    On your phone, by a link, or skipped.
+  </Card>
+
+  <Card title="Create a job on-site" icon="circle-plus" href="/technician/create-a-job">
+    Log an unscheduled visit from where you are standing.
+  </Card>
+</CardGroup>
+
+## Getting started
+
+<Steps>
+  <Step title="Check you have what a job needs">
+    A building with lifts and a building manager, at least one record template, and
+    an active technician. Missing any of these and the scheduling dialog will stop
+    you.
+  </Step>
+
+  <Step title="Schedule the visit">
+    **Jobs** in the sidebar, then **Schedule Job**. Pick the building and the
+    records, then the person and the time.
+    [Full steps →](/admin/jobs/how-to-schedule-a-job)
+  </Step>
+
+  <Step title="Watch it come back">
+    The board's **Work Done** and **Signed** columns fill up as technicians finish.
+    Your Inbox lists everything waiting on you.
+  </Step>
+
+  <Step title="Close it">
+    Review the record and click **Close job**.
+    [Full steps →](/admin/jobs/how-to-close-a-job)
+  </Step>
+</Steps>
+
+<Tip>
+  If the same building needs servicing on a regular cycle, do not schedule each visit by hand. Set up a [Maintenance Contract](/admin/maintenance-contracts/overview) and LiftAuth creates and assigns the jobs for you.
+</Tip>

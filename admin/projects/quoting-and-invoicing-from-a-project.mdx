@@ -1,0 +1,113 @@
+---
+title: "How to quote and invoice from a project"
+description: "Raise the customer quote and the invoice on the project itself, so the project moves with the money."
+icon: "receipt"
+---
+
+Billing a project works the same way as billing anything else in LiftAuth — the same
+quote and invoice builders, the same numbering, the same
+[Invoices](/admin/invoices-and-payments) list. What is different is *where* you start
+it and *what it does to the project*: a document raised from a stage row belongs to
+the project, and the project's stages move as that document moves.
+
+## Raise the customer quote
+
+<Steps>
+  <Step title="Open the Customer quote stage">
+    Click the stage row on the project page.
+  </Step>
+
+  <Step title="Click Create quote">
+    The quote builder opens over the project. The customer and building are already
+    filled in from the project and cannot be changed here.
+  </Step>
+
+  <Step title="Add the line items and save">
+    The saved draft opens straight away, so you can send it without leaving the
+    project.
+  </Step>
+
+  <Step title="Send it to the customer">
+    Send, and then record their answer — accepted or declined — as you normally
+    would. A draft carries no number yet; the quote reference is drawn when you send.
+  </Step>
+</Steps>
+
+The stage follows the quote by itself:
+
+| The quote is | The Customer quote stage reads |
+| --- | --- |
+| Draft, or sent and unanswered | In progress |
+| **Accepted** (or converted) | **Done** |
+| Declined, expired or superseded | In progress — nothing is settled |
+
+<Note>
+  **Mark complete** on this stage will not settle a quote the customer has not
+  answered. If you try, LiftAuth tells you what it is waiting for: *The customer has
+  to accept the quote first — or attach a signed copy*.
+</Note>
+
+### If you quote on your own letterhead
+
+Firms that write quotes outside LiftAuth can still use the stage. Attach the signed
+copy as a PDF and click **Mark complete** — the hand confirmation settles the stage
+exactly as an accepted quote would.
+
+<Warning>
+  If you then **requote** — raise a revision, or a second quote after you confirmed
+  by hand — the stage drops back to **In progress** and the project's board card
+  moves back to Customer quote. That is intentional: a negotiation has reopened. The
+  first quote raised after a hand confirmation does not do this.
+</Warning>
+
+## Raise the invoice
+
+The **Invoice** stage sits below Work. When the work is settled, the band at the top
+of the project offers **Create invoice**.
+
+<Steps>
+  <Step title="Choose what to bill from">
+    On the Invoice row, the button names the quote it will copy from —
+    **Create invoice from QUO-…**. Use the caret beside it to pick a different quote
+    on the project, or **Start empty**.
+  </Step>
+
+  <Step title="Check the lines">
+    The line items are copied from the quote you chose. The quote itself is untouched.
+  </Step>
+
+  <Step title="Save the draft, then issue it">
+    Every invoice is created as a draft. Issuing it renders the PDF, assigns the
+    invoice number and notifies the customer — do that from the document itself.
+  </Step>
+</Steps>
+
+The stage follows the invoice:
+
+| The invoice is | The Invoice stage reads |
+| --- | --- |
+| Draft | In progress |
+| **Issued**, part paid or paid | **Done** |
+| Void or rejected | Ignored — as if it were not there |
+
+<Note>
+  There is no **Mark complete** on the Invoice stage. The stage settles when the
+  invoice is genuinely issued, so the project and your billing records can never
+  disagree. Payment does not hold a project open: an issued invoice is enough to
+  close the project, and the money is tracked in
+  [Invoices & Payments](/admin/invoices-and-payments).
+</Note>
+
+## Work on a document without leaving the project
+
+Click **Open** on any quote or invoice row and it opens over the project. From there
+you can do everything you would do on its own page — send, email, edit a draft,
+revise, record the customer's decision, convert, download, archive, record a payment,
+raise a credit note. When you close it, you are back on the project, and the stage
+has already caught up.
+
+<Tip>
+  Quotes and invoices raised from a project also appear under **Billing** in the
+  sidebar, alongside everything else you have billed. A project is a view onto them,
+  not a separate set of books.
+</Tip>

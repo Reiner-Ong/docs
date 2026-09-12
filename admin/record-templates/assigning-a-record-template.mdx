@@ -1,0 +1,133 @@
+---
+title: "How to assign a record template to lifts"
+description: "Choose which maintenance template each lift is serviced against, using the building's maintenance contract."
+icon: "link"
+---
+
+A maintenance template does nothing until you say which lifts it covers. You do
+that on the building's **maintenance contract** — the plan that generates the
+recurring maintenance jobs.
+
+You need to be an **Owner** or an **Admin**.
+
+<Note>
+  Repair and Breakdown templates are **not** assigned. Because your workspace has
+  exactly one of each, every repair job and every breakdown job uses it
+  automatically. This guide is only about maintenance.
+</Note>
+
+***
+
+## Before you start
+
+- The template exists and is not archived. Archived templates are not offered.
+- The building and its lifts are already in LiftAuth. See
+  [Adding Lifts](/admin/lifts).
+
+***
+
+## Assign a template on a new contract
+
+<Steps>
+  <Step title="Open Maintenance Contracts">
+    Click **Maintenance Contracts** in the left sidebar.
+  </Step>
+
+  <Step title="Click + New Contract">
+    Pick the building in the **New maintenance contract** dialog, then click
+    **Continue**. The setup wizard opens on the **Records** step, headed **Build
+    your contract**.
+  </Step>
+
+  <Step title="Choose the record">
+    The first card is headed **Record 1**. In the **Record** dropdown
+    (*Select a record…*) pick your maintenance template. The help line under it
+    reads *What the technician fills in for this record*.
+  </Step>
+
+  <Step title="Set the frequency">
+    Choose **Monthly** or **Quarterly**. This is how often LiftAuth generates a
+    maintenance record for each lift covered by this card.
+  </Step>
+
+  <Step title="Choose the lifts it covers">
+    The lift list appears once a template is picked — before that you see
+    *Pick a record above, then choose which lifts it covers*.
+
+    - A **Single lift** template shows **Which lift?** and lets you pick one.
+    - A **Multi-lift** template shows **Lifts in this record** and lets you tick
+      several — one record covers them all.
+
+    A lift already claimed by another card is greyed out and marked **In another
+    record**.
+
+    <Note>
+      Templates you build yourself are always single-lift. Multi-lift only
+      applies to certain forms added from the library, such as the BCA annual
+      testing forms that list every lift in one table.
+    </Note>
+  </Step>
+
+  <Step title="Add more cards if the building needs them">
+    Click **+ Add record** when different lifts in the same building need
+    different templates or different frequencies — for example a monthly
+    traction template for the passenger lifts and a quarterly escalator template
+    for the escalators.
+  </Step>
+
+  <Step title="Finish the wizard">
+    Continue through **Recurring billing**, **Annual inspection**, **Schedule** and **Review**, then save. See [Maintenance Contracts](/admin/maintenance-contracts/overview) for the rest of the contract.
+  </Step>
+</Steps>
+
+***
+
+## Change the template on an existing contract
+
+1. Open **Maintenance Contracts** and click the contract.
+2. Click **Edit**.
+3. On the **Records** step, change the **Record** dropdown on the card you want.
+4. Save.
+
+Changes apply to jobs generated from now on. Jobs that already exist keep the
+template they were created with.
+
+***
+
+## What LiftAuth checks before it lets you save
+
+| Problem | What you see |
+| --- | --- |
+| No cards at all | *Add at least one record.* |
+| A card with no template chosen | *Record 2: choose a record.* |
+| A card with no lifts ticked | *Record 2: assign at least one lift.* |
+| No maintenance templates exist yet | *No records to choose from yet. Create one under Record Templates first.* |
+
+A lift left off every card is **allowed** — LiftAuth just tells you so:
+*Not in any record: Lift 3. That's fine if it's serviced under another contract —
+otherwise assign it to a record above.*
+
+<Warning>
+  A lift with no template on the contract still gets a maintenance job, but the
+  technician receives a plain notes-only jobsheet instead of your form. If you
+  expected a proper form, check the lift is ticked on one of the cards.
+</Warning>
+
+***
+
+## How the template affects the visit length
+
+Each template carries an **Estimated time per form**. On the **Schedule** step,
+LiftAuth adds it up — one form per lift for a single-lift template, one form per
+card for a multi-lift template — and rounds up to the nearest 15 minutes to
+pre-fill **Estimated visit duration**.
+
+You can override that figure on the contract. The hint **How the visit duration
+works** shows the breakdown behind the auto-estimate, and explains that a visit
+longer than the working day is split across consecutive working days.
+
+<Tip>
+  If your visits are consistently over- or under-booked, fix the template's
+  estimate rather than overriding every contract — the template feeds all of
+  them.
+</Tip>

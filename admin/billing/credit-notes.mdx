@@ -1,0 +1,98 @@
+---
+title: "How to credit, refund or write off an invoice"
+description: "Reverse part or all of an invoice you have already issued, using a credit note."
+icon: "rotate-left"
+---
+
+An issued invoice can never be edited or deleted — the customer holds it, and your accounts count it. A **credit note** is the one supported way to reverse it. It is a document in its own right, with its own number and PDF, and it reduces what the customer owes.
+
+## Raise a credit note
+
+<Steps>
+  <Step title="Open the invoice from the ledger">
+    Click the invoice row in **Billing → Ledger**.
+  </Step>
+
+  <Step title="Click Raise credit note">
+    The form opens with the customer and invoice already filled in.
+  </Step>
+
+  <Step title="Choose the kind">
+    - **Adjustment (correct an over-bill)** — you billed too much.
+    - **Refund (money returned)** — you are handing money back.
+    - **Write-off (bad debt)** — you have given up on collecting it.
+
+    The kind is a label for your own records. All three reduce the balance the same way.
+  </Step>
+
+  <Step title="Enter the amount and currency">
+    Credit part of the invoice or all of it.
+  </Step>
+
+  <Step title="Give a reason">
+    A short line explaining why — for example, "Goodwill — delayed call-out". It prints on the credit note.
+  </Step>
+
+  <Step title="Save">
+    The credit note lands on the ledger as a negative amount and the invoice's balance drops immediately.
+  </Step>
+</Steps>
+
+<Tip>
+  You can also start from **+ New billing → Credit note** — "Reduce what a customer owes". Do this when the credit is not tied to one particular invoice.
+</Tip>
+
+## Credit against an invoice, or against the account
+
+| You raised it | Status it starts in | What happens |
+| --- | --- | --- |
+| **Against an invoice** | **Applied** | The whole amount is applied to that invoice straight away, capped at what the invoice still owes. |
+| **Against the customer, with no invoice** | **Open** | The credit sits on the account until you apply it. It shows in **Credit outstanding**. |
+
+## Apply an open credit note
+
+<Steps>
+  <Step title="Open the credit note from the ledger">
+    Click the row. Open notes carry an **Open** badge.
+  </Step>
+
+  <Step title="Click Apply to invoice">
+    Choose which of the customer's open invoices to draw the credit down against, and how much.
+  </Step>
+
+  <Step title="Save">
+    The invoice balance drops. Once the whole credit note has been drawn down it becomes **Applied**.
+  </Step>
+</Steps>
+
+The **Apply to invoice** action disappears once nothing is left to apply.
+
+## Cancelling a credit note
+
+<Steps>
+  <Step title="Open the credit note and click Void credit note">
+    Confirm.
+  </Step>
+</Steps>
+
+Voiding cancels the credit the note carries. Any invoice it was applied to goes back up by that amount. Voiding is one-way.
+
+<Note>
+  A voided credit note stays visible on the ledger with a **Void** badge, and its PDF is still downloadable. It is a document the customer may be holding, so LiftAuth keeps it on record — it simply stops moving money.
+</Note>
+
+## Automatic refund credit notes
+
+When a card or PayNow payment is refunded, LiftAuth raises the credit note for you — kind **Refund**, already applied, linked back to the payment it reverses. You do not need to raise one by hand, and you should not delete the original payment afterwards: the credit note points at it.
+
+## Credit note statuses
+
+| Status | Meaning |
+| --- | --- |
+| **Open** | Credit the customer holds, not yet applied to any invoice |
+| **Applied** | Fully drawn down against one or more invoices |
+| **Void** | Cancelled. Credits nothing. |
+
+<Note>
+  Credit notes are owner and admin only, including simply reading the list.
+</Note>
