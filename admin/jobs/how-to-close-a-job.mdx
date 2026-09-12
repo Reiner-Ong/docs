@@ -52,11 +52,11 @@ This is the quickest way, and it is where signed jobs queue up for you.
 
 ## What closing does
 
-Three things happen at once:
+Two things always happen, and a third sometimes does:
 
 * **The records are finalised.** The PDF of every record on the job is generated and attached. The record is now part of the lift's permanent history.
-* **Linked issues are closed.** Any <Tooltip cta="issue" href="/start/glossary">issue</Tooltip> attached to the job is closed. See [Issues](/admin/issues).
-* **A draft invoice is raised.** If the job belongs to a maintenance contract, or has a building manager, a draft invoice is generated. Nothing goes to the customer until you issue it — see [Billing](/admin/billing/overview).
+* **Linked issues are closed.** Any <Tooltip tip="A problem found on a lift, given a severity — Critical, Major or Minor — and tracked until it is resolved." cta="issue" href="/start/glossary">issue</Tooltip> attached to the job is closed. See [Issues](/admin/issues).
+* **A draft invoice is sometimes raised.** Closing a job raises a draft invoice only when the job belongs to an active maintenance contract billed per job, or — with no contract — was created by converting a quote. Contracts billed annually are invoiced on their own schedule instead, and a contract set to bill nothing never drafts. Nothing goes to the customer until you issue it — see [Billing](/admin/billing/overview).
 
 <Warning>
   Closing is final. A closed job cannot be reopened, rescheduled, or cancelled.

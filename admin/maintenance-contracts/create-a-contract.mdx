@@ -4,7 +4,7 @@ description: "Create a servicing agreement for a building so LiftAuth schedules 
 icon: "plus"
 ---
 
-Setting up a contract is a five-step builder. At the end, LiftAuth writes out every visit for the whole contract term and starts turning them into [jobs](/admin/jobs) as each one comes due.
+Setting up a contract is a five-step builder. At the end, LiftAuth writes out every visit for the whole contract term and starts turning them into [jobs](/admin/jobs/overview) as each one comes due.
 
 <Note>
   Before you start, the building needs its [lifts](/admin/lifts) added and — if your organisation bills building managers — a [building manager](/admin/building-managers) assigned. Without a building manager, LiftAuth will refuse to create the contract.
@@ -34,22 +34,22 @@ Setting up a contract is a five-step builder. At the end, LiftAuth writes out ev
 
 This step decides **which lifts are serviced and how often**.
 
-A contract is built from **records**. One record is a set of lifts, serviced together, against one record template, at one frequency. Most contracts need only one; you add more when different lifts need a different checklist or a different frequency.
+A contract is built from **coverage groups** — the builder labels these "records" on screen, but they are not the signed report a technician submits. One coverage group is a set of lifts, serviced together, against one record template, at one frequency. Most contracts need only one; you add more when different lifts need a different checklist or a different frequency.
 
 <Steps>
   <Step title="Pick the record template">
-    Under **Record**, choose the maintenance checklist this group of lifts is inspected against.
+    Choose the maintenance checklist this group of lifts is inspected against. Nothing picks it for you — a job has no type that a template is resolved from.
   </Step>
 
   <Step title="Choose Monthly or Quarterly">
-    This is how often the lifts in this record are serviced.
+    This is how often the lifts in this group are serviced.
   </Step>
 
-  <Step title="Tick the lifts this record covers">
-    The building's lifts are listed underneath. A lift can belong to only one record on the contract.
+  <Step title="Tick the lifts this group covers">
+    The building's lifts are listed underneath. A lift can belong to only one coverage group on the contract.
   </Step>
 
-  <Step title="Add another record if you need one">
+  <Step title="Add another group if you need one">
     Click **+ Add record** and repeat. Any lift you leave out is flagged, which is fine if it is serviced under a different contract.
   </Step>
 </Steps>
@@ -132,5 +132,5 @@ The last step lays out everything you have chosen — coverage, billing, term, s
 
 - The contract appears in **Maintenance Contracts** with the status **Active** and a reference like `BP-2026-4F91C2`.
 - Its **Upcoming Visits** tab lists every visit for the whole term.
-- Fourteen days before each visit, LiftAuth creates the [job](/admin/jobs), assigns it, and books the time slot.
-- Depending on the cadence you chose, draft [invoices](/admin/invoices-and-payments) appear for you to review and send.
+- Fourteen days before each visit, LiftAuth creates the [job](/admin/jobs/overview), assigns it, and books the time slot.
+- Depending on the cadence you chose, draft [invoices](/admin/billing/overview) appear for you to review and send. A contract billed **Per-job** drafts one when you close each job; an **Annual** contract is invoiced on its own yearly schedule instead; **None** never drafts anything.

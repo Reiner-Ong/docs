@@ -9,15 +9,15 @@ An **invoice** is the bill you send a building manager for work done. Every invo
 ## Where drafts come from
 
 <CardGroup cols={3}>
-  <Card title="A maintenance contract" icon="newspaper">
+  <Card title="A maintenance contract" icon="newspaper" href="/admin/maintenance-contracts/overview">
     When a plan's cycle closes, LiftAuth drafts the invoice for it automatically. It waits in your [Inbox](/admin/inbox).
   </Card>
 
-  <Card title="A completed job" icon="wrench">
-    A repair job raised from an accepted quote seeds a draft from the quote's line items when the job is completed.
+  <Card title="A closed job" icon="wrench" href="/admin/jobs/how-to-close-a-job">
+    A job raised from an accepted quote seeds a draft from the quote's line items when the job is closed.
   </Card>
 
-  <Card title="You" icon="plus">
+  <Card title="You" icon="plus" href="#write-the-draft">
     **Billing → + New billing → Invoice**, or **Create invoice** on an accepted quote.
   </Card>
 </CardGroup>
@@ -82,13 +82,16 @@ An invoice cannot be issued without at least one line item and payment terms fil
 
 ## What happens next
 
-Once an invoice is issued, its status follows the money by itself. You never set it by hand.
+Once an invoice is issued, the first three statuses below follow the money by themselves. You never set those by hand.
 
 | Status | What it means |
 | --- | --- |
 | **Issued** | Billed, nothing received yet |
 | **Part paid** | Some of the balance has been settled |
 | **Paid** | The balance has reached zero |
+| **Rejected** | A draft that was discarded. You set this by discarding. |
+| **Void** | Cancelled. Nothing in LiftAuth sets this status, so you will not see it in practice — reverse an issued invoice with a credit note instead. |
+| **Archived** | Filed away. Only a draft or rejected invoice can be archived. |
 
 The balance is the invoice total, less every settled payment allocated to it, less every credit note applied to it.
 

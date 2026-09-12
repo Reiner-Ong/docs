@@ -4,7 +4,7 @@ description: "Retire a template you no longer use, without losing the records th
 icon: "archive"
 ---
 
-Record templates are never deleted. Every job and record points back at the
+Record templates are never deleted. Every form on a job, and every record it produced, points back at the
 template it came from, so LiftAuth retires a template by **archiving** it — it
 disappears from the pickers, but stays resolvable forever.
 
@@ -68,14 +68,10 @@ read it.
 2. Click the template.
 3. Click **Restore**.
 
-Restoring can fail if the slot has been taken while it was archived — either an
-active template of the same name in the same job type, or, for Repair and
-Breakdown, a second template of that job type. Rename or archive the conflicting
-template first.
+Restoring fails only on a name clash: if an active template of the **same name** and the **same job type** was created while this one was archived, LiftAuth refuses the restore. Rename one of them and try again.
 
 <Tip>
-  This is the way to swap your single Repair or Breakdown template for a new one:
-  archive the old one, which frees the slot, then create the replacement.
+  This is how you swap your Repair or Breakdown template for a new one: archive the old one, then create the replacement. The dialog stops offering "Repair" or "Breakdown" once you have an active template of that type, so archiving the old one first is what makes the option reappear.
 </Tip>
 
 ***

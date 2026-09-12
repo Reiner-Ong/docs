@@ -55,7 +55,7 @@ There are three routes to the same form. Pick whichever is nearest.
 </Steps>
 
 <Warning>
-  LiftAuth refuses an amount larger than the outstanding balance. If a customer genuinely overpaid, record the payment up to the balance and raise a [credit note](/admin/billing/credit-notes) for the difference.
+  You cannot allocate more to an invoice than it has outstanding — a manual over-allocation is refused, so record the payment up to the balance. A card payment that overshoots settles the invoice and leaves the surplus as unallocated customer credit, which you can apply to another invoice. A genuine refund is issued from the payment itself, which raises a refund [credit note](/admin/billing/credit-notes) automatically — you do not write one by hand.
 </Warning>
 
 ## Payment statuses
@@ -90,7 +90,7 @@ A deposit collected against a quote — before any invoice exists — appears on
 </Steps>
 
 <Warning>
-  Delete is for correcting a mistake in your own record-keeping — an amount typed wrong, a payment logged against the wrong invoice. It is not a refund. To hand money back to a customer, raise a [credit note](/admin/billing/credit-notes) or refund the original card payment.
+  Delete is for correcting a mistake in your own record-keeping — an amount typed wrong, a payment logged against the wrong invoice. It is not a refund. To hand money back, refund the original payment — that raises a refund [credit note](/admin/billing/credit-notes) automatically.
 </Warning>
 
 Delete is not offered on a **Failed** payment (it moved no money), on one already deleted, or on one that has been refunded — the refund's credit note points at it, and removing it would orphan that document.

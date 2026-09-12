@@ -15,7 +15,7 @@ editor. If you are building your first template, start with
 | Field | Where you set it | Rules |
 | --- | --- | --- |
 | **Name** | The **New record template** dialog, or the name box in the page header | Required. Must be unique among active templates of the same job type. |
-| **Job type** | The **New record template** dialog only | Required. **Maintenance**, **Repair** or **Breakdown**. Cannot be changed after the template is created. |
+| **Job type** | The **New record template** dialog only | Required. The dialog offers **Maintenance**, **Repair** and **Breakdown**; a custom type is also possible. It is the type of the template, not of any job. Cannot be changed after the template is created. |
 | **Estimated time per form** | **Settings → Estimated time**, below the form | Required, and must be greater than zero. Minutes it takes one technician to fill in one record from this template. |
 | **Form** | The **Content** tab | Sections of items. A template can be saved with no items, but then it produces an empty record. |
 | **PDF output** | The **PDF** tab | Either the auto-generated layout or a flat PDF form you upload. |
@@ -29,18 +29,18 @@ editor. If you are building your first template, start with
 
 ## Job types
 
-The job type decides which jobs a template can be used for, and how many
-templates of that type you may have.
+The job type says what kind of visit a template is for — it is the template, not the job, that carries a kind — and it decides how many templates of that type the **New record template** dialog lets you create.
 
 | Job type | How many you can have | How a job gets it |
 | --- | --- | --- |
-| **Maintenance** | As many as you like | You pick one per record entry on the building's plan |
-| **Repair** | Exactly one active template | Used automatically for every repair job |
-| **Breakdown** | Exactly one active template | Used automatically for every breakdown job |
+| **Maintenance** | As many as you like | You pick one per form group on the building's **maintenance contract** — the contract builder labels those groups **Record 1**, **Record 2** on screen |
+| **Repair** | The dialog offers the type only while you have no active repair template | Chosen by hand, on each form of the job |
+| **Breakdown** | Same as Repair | Chosen by hand, on each form of the job |
+| A custom type | — | Chosen by hand, on each form of the job |
 
-Because Repair and Breakdown allow only one active template each, those options
-disappear from the **New record template** dialog once you already have one.
-Archiving the existing one frees the slot again.
+The **New record template** dialog stops offering **Repair** and **Breakdown** once you have an active template of that type, and archiving the existing one frees the slot again. That is a restriction in the dialog, not a limit the system enforces underneath.
+
+Nothing in LiftAuth resolves a template from a job type, so **no template is ever applied to a job automatically**. Whoever schedules the job names the template on every form it carries, and each submitted form becomes its own record.
 
 ***
 
@@ -235,6 +235,8 @@ pre-printed choice instead of writing text.
 ***
 
 ## Who can do what
+
+Roles are [Owner, Admin, Technician and Call centre](/start/glossary#who-does-what).
 
 | Action | Owner | Admin | Technician | Call centre |
 | --- | --- | --- | --- | --- |

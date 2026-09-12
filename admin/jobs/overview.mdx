@@ -15,9 +15,7 @@ assignee. It moves through six statuses, and each status belongs to somebody:
 **Open → Scheduled → Work Done → Signed → Closed**, with **Cancelled** as the way
 out at any point before Closed.
 
-You schedule it. The technician moves it to **Work Done**. The building manager's
-signature moves it to **Signed**. You close it. Nobody skips a step, and nothing
-moves backwards.
+You schedule it. The technician moves it to **Work Done**. The building manager's signature moves it to **Signed**. You close it. Nothing ever moves backwards — but a job can skip **Open** entirely: the **Schedule Job** button creates a job that is already **Scheduled**.
 
 [Read how jobs work →](/admin/jobs/how-jobs-work)
 
@@ -29,7 +27,7 @@ moves backwards.
   </Card>
 
   <Card title="Close a signed job" icon="circle-check" href="/admin/jobs/how-to-close-a-job">
-    Review the record and finish the job, so the invoice draft is raised.
+    Review the record and finish the job — which may also raise a draft invoice.
   </Card>
 
   <Card title="Look something up" icon="table-list" href="/admin/jobs/jobs-reference">
@@ -78,8 +76,7 @@ moves backwards.
   </Step>
 
   <Step title="Close it">
-    Review the record and click **Close job**.
-    [Full steps →](/admin/jobs/how-to-close-a-job)
+    Review the record and click **Close job**. Closing a job raises a draft invoice only when the job belongs to an active maintenance contract billed per job, or — with no contract — was created by converting a quote. [Full steps →](/admin/jobs/how-to-close-a-job)
   </Step>
 </Steps>
 

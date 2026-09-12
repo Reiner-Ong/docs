@@ -4,7 +4,7 @@ description: "Price a job before it is agreed, send the quotation, and record wh
 icon: "file-lines"
 ---
 
-A **quote** is a price you offer a building manager before the work is agreed. It commits nothing until they accept it. Once they do, you can turn it into a repair job, an invoice, or both.
+A **quote** is a price you offer a building manager before the work is agreed. It commits nothing until they accept it. Once they do, you can turn it into a job, an invoice, or both.
 
 ## Raise the quote
 
@@ -90,15 +90,17 @@ If the building manager accepts or declines in their own app, LiftAuth records i
 
 An accepted quote offers two next steps, and you can use either or both.
 
-<CardGroup cols={2}>
-  <Card title="Convert to repair job" icon="wrench">
-    Creates one [repair job](/admin/jobs/overview) from the quote, with the quoted parts already listed against it. You must name a technician or team to convert. A draft invoice is seeded from the quote when the job is completed — no invoice is created at conversion.
-  </Card>
+**Convert to repair job**
 
-  <Card title="Create invoice" icon="file-invoice">
-    Opens the invoice builder with the quote's line items already copied across. Use this when you want to bill now rather than on completion.
-  </Card>
-</CardGroup>
+Creates one [job](/admin/jobs/overview) from the quote, with the quoted parts already listed against it. You must name exactly one technician **or** one team and a scheduled window, so the job is scheduled in the same operation and arrives **Scheduled**.
+
+It is a repair job because of the record template you put on it; the job itself carries no type. A job converted from a quote starts with no record template, so add the form the technician needs before the visit.
+
+A draft invoice is seeded from the quote when the job is closed — no invoice is created at conversion.
+
+**Create invoice**
+
+Opens the invoice builder with the quote's line items already copied across. Use this when you want to bill now rather than when the job is closed.
 
 ## Changing a quote after it has gone out
 
@@ -133,5 +135,6 @@ Revise is available on a quote that is **Sent**, **Declined** or **Expired**. On
 | **Expired** | The **Valid until** date passed with no decision. |
 | **Superseded** | A later revision replaced it. |
 | **Converted** | A job was raised from it. |
+| **Archived** | Filed away. Shown on the ledger only when **Show archived** is on. |
 
 Full detail, including who can perform each action, is in [Billing reference](/admin/billing/reference#quotes).

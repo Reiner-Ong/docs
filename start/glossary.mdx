@@ -30,6 +30,32 @@ Use this page as a reference whenever you come across an unfamiliar word in Lift
   </Accordion>
 </AccordionGroup>
 
+## Who does what
+
+Permission tables throughout these guides use these role names. You can see your own under **Manage Your Team**.
+
+<AccordionGroup>
+  <Accordion title="Owner">
+    Runs the workspace. Can do everything, including billing settings, features, and adding or removing people.
+  </Accordion>
+
+  <Accordion title="Admin">
+    Office staff. Runs the day-to-day work — buildings, contracts, jobs, records and billing — but not workspace-level settings.
+  </Accordion>
+
+  <Accordion title="Technician">
+    Field staff. Works in the mobile app: picks up assigned jobs, fills in records, gets them signed. Technicians do not get the web dashboard's admin pages.
+  </Accordion>
+
+  <Accordion title="Call centre">
+    Takes emergency calls and raises dispatches. Sees the dispatch console, not the rest of the dashboard.
+  </Accordion>
+
+  <Accordion title="Workspace">
+    The same thing as your Tenant — your company's space in LiftAuth. Some screens say "workspace", some say "tenant".
+  </Accordion>
+</AccordionGroup>
+
 ## Work on site
 
 <AccordionGroup>
@@ -61,7 +87,7 @@ Use this page as a reference whenever you come across an unfamiliar word in Lift
   </Accordion>
 
   <Accordion title="Signing link">
-    A one-time web link a technician can share so a building manager can sign a record on their own phone. Each link works once and expires after 7 days. Generating a new link does not cancel earlier ones.
+    A one-time web link that lets a building manager sign a record on their own device. A technician can generate and share one, or an owner or admin can email it from the record. Each link works once and expires after 7 days, and generating a new one does not cancel earlier ones. Whoever opens the link can sign without a LiftAuth account.
   </Accordion>
 
   <Accordion title="Issue / Fault">
@@ -69,15 +95,31 @@ Use this page as a reference whenever you come across an unfamiliar word in Lift
   </Accordion>
 
   <Accordion title="Dispatch">
-    An emergency call-out. A dispatcher raises one when a lift has stopped working or someone is trapped, then rings round technicians until one accepts it.
+    An emergency call-out. A dispatcher raises one when a lift has stopped working or someone is trapped. Several technicians' phones ring at once, and the first to accept owns the call-out.
   </Accordion>
 
   <Accordion title="On call">
-    Marked as available for emergency call-outs outside normal hours. The on-call rota decides who a dispatcher is offered first.
+    Marked as available for emergency call-outs outside normal hours. When a dispatcher raises a call-out, the on-call rota decides who is offered it first.
+  </Accordion>
+
+  <Accordion title="Entrapment">
+    Someone is trapped inside a lift. The most urgent kind of dispatch.
+  </Accordion>
+
+  <Accordion title="Stand down">
+    Calling off a dispatch that is no longer needed — the lift freed itself, or somebody else has dealt with it. The technicians' phones stop ringing.
   </Accordion>
 
   <Accordion title="Event">
     Anything other than a job that takes up someone's time on the calendar — leave, training, a meeting. Events can repeat.
+  </Accordion>
+
+  <Accordion title="Planned job">
+    A visit a maintenance contract is going to create but has not created yet. It shows on the calendar so you can see what is coming, but it is not a real job you can open until 14 days before the visit.
+  </Accordion>
+
+  <Accordion title="Operating certificate">
+    The permit a lift needs to stay in service in Singapore. It is renewed yearly after a statutory inspection, and a maintenance contract can track when it is due.
   </Accordion>
 
   <Accordion title="BCA Equipment ID">
@@ -145,6 +187,22 @@ Use this page as a reference whenever you come across an unfamiliar word in Lift
   <Accordion title="Reference number">
     The identifier printed on a quote, invoice or credit note. You can set the format your firm uses.
   </Accordion>
+
+  <Accordion title="Ledger">
+    The single list in Billing holding every quote, invoice, payment and credit note together, so you can see one customer's whole financial history in one place.
+  </Accordion>
+
+  <Accordion title="Deposit (billing)">
+    An up-front part-payment taken before the work is done. Not to be confused with a stock **deposit**, which means putting parts into a warehouse.
+  </Accordion>
+
+  <Accordion title="Supplier">
+    A company you buy parts or subcontracted work from. Projects track what your supplier quotes you separately from what you quote the customer.
+  </Accordion>
+
+  <Accordion title="Purchase order">
+    The order you place with a supplier. On a project this is its own stage, and it is internal — the building manager never sees it.
+  </Accordion>
 </AccordionGroup>
 
 ## Documents and stock
@@ -168,5 +226,25 @@ Use this page as a reference whenever you come across an unfamiliar word in Lift
 
   <Accordion title="Stock on hand">
     How many of a part you currently hold, counted per warehouse. LiftAuth does not deduct stock by itself when a part is used on a job — withdrawals are recorded by hand.
+  </Accordion>
+
+  <Accordion title="Stock movement">
+    Any change to stock, recorded so the count stays honest. There are three kinds:
+
+    - **Deposit** — stock arriving into a warehouse.
+    - **Withdraw** — stock leaving it, typically to be fitted on a job.
+    - **Transfer** — stock moving from one warehouse to another, such as store to van.
+  </Accordion>
+
+  <Accordion title="Part No. and part code">
+    Two different numbers. **Part No.** is your own catalogue reference, and it is what search looks at. The **part code** is the manufacturer's printed code, which search does **not** match.
+  </Accordion>
+
+  <Accordion title="Library form">
+    An official form — for example a BCA inspection form — that LiftAuth supplies ready-made, so you do not have to build the record template yourself.
+  </Accordion>
+
+  <Accordion title="Unassigned">
+    The folder in Drive holding records for lifts that are not attached to any building. It is listed after the real building folders.
   </Accordion>
 </AccordionGroup>

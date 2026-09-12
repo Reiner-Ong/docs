@@ -25,12 +25,10 @@ use. You need to be an **Owner** or an **Admin**.
     The name must be unique among your active templates of the same job type.
   </Step>
 
-  <Step title="Choose the job type">
-    Pick **Maintenance**, **Repair** or **Breakdown**.
+  <Step title="Choose this template's job type">
+    Pick **Maintenance**, **Repair** or **Breakdown**. This sets the job type of **this template**, and nothing else — it does not put a type on any job. A job has no type of its own: what makes a visit maintenance, a repair or a breakdown is the template behind each form on it, so a job whose forms mix templates has no single kind.
 
-    You can have as many Maintenance templates as you like. You can have only one
-    Repair and one Breakdown template — if you already have one, that option is
-    not offered.
+    You can have as many Maintenance templates as you like. The dialog stops offering **Repair** or **Breakdown** once you have an active template of that type, which is why a workspace normally has one of each. A template's job type can also be a custom type of its own, which this dialog does not offer.
 
     <Warning>
       The job type **cannot be changed later**. If you pick the wrong one you
@@ -161,10 +159,9 @@ Duplicate copies the **last saved** version, so save your edits first.
 
 ## What happens next
 
-Nothing yet — a template does no work until a job uses it.
+Nothing yet — a template does no work until a form on a job uses it, and LiftAuth never picks a template for you.
 
 - A **Maintenance** template needs to be put onto lifts through a maintenance
-  contract. See
+  contract, which is what makes the recurring visits use it. See
   [How to assign a record template to lifts](/admin/record-templates/assigning-a-record-template).
-- A **Repair** or **Breakdown** template is used automatically by jobs of that
-  type. There is nothing to assign.
+- A **Repair** or **Breakdown** template is not assigned anywhere in advance. Whoever schedules the job chooses it on each form, so the template only gets used if they pick it.

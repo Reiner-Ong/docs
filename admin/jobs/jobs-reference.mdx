@@ -16,7 +16,7 @@ the status badge, in the Kanban columns, and in the status filter chips.
 | --- | --- | --- |
 | **Open** | The job exists, but nobody is assigned and no time is set. | An admin schedules it. |
 | **Scheduled** | One technician **or** one team is assigned, and a date and time window are set. The job now appears in the technician's app. | The technician does the work and submits it. |
-| **Work Done** | The technician has submitted the work on-site. The <Tooltip cta="record" href="/start/glossary">record</Tooltip> exists but is not signed off yet. | The building manager signs — or the technician skips signing. |
+| **Work Done** | The technician has submitted the work on-site. The <Tooltip tip="The report produced when a technician fills in a form and submits it — the item results, photos, notes and signatures." cta="record" href="/start/glossary">record</Tooltip> exists but is not signed off yet. | The building manager signs — or the technician skips signing. |
 | **Signed** | Sign-off is complete. The job is waiting for an admin to check it. | An admin closes it. |
 | **Closed** | An admin has reviewed and closed the job. Final. | Nothing. Closed jobs cannot be changed. |
 | **Cancelled** | The job will not happen. Final, and the reason is stored on the job. | Nothing. Create a new job if the visit still needs to happen. |
@@ -25,10 +25,9 @@ the status badge, in the Kanban columns, and in the status filter chips.
 neither can be moved back.
 
 <Note>
-  Most jobs never sit in **Open** for long. A job created by the **Schedule Job**
-  button is created and scheduled in one step, so it starts life at
-  **Scheduled**. **Open** is what you see when a job was created some other way —
-  for example by converting a quote — and still has nobody assigned.
+  Most jobs never sit in **Open** for long. A job created by the **Schedule Job** button is created and scheduled in one step, so it starts life at **Scheduled**, and so does a job created by converting a quote.
+
+  An Open job does not appear on the Jobs board or in the list view. It is reachable only from its building's maintenance contract page, or by its direct job link.
 </Note>
 
 ## The Jobs page
@@ -52,11 +51,11 @@ A table with these columns:
 | Column | What it shows |
 | --- | --- |
 | **Job ID** | The job's short reference, for example `JOB-0142`. |
-| **Lift** | The building name of the job's first lift. A job covering more than one lift reads `Marina Tower +2 more`. |
+| **Lift** | Despite the heading, this shows the **building** name of the job's first lift, not the lift's own name. A job covering more than one lift reads `Marina Tower +2 more`. |
 | **Technician** | The assigned technician. A dash means nobody is assigned. |
 | **Scheduled Window** | Date and time window. A visit that spans several days reads `(+2 more days)`. |
 | **Status** | The status badge. |
-| **Plan / Created by** | The <Tooltip cta="maintenance contract" href="/start/glossary">maintenance contract</Tooltip> that generated the job, or the name of the person who created it. |
+| **Plan / Created by** | The <Tooltip tip="Your servicing agreement with a building: which lifts are covered, how often they are visited, which forms are used, and how the work is billed." cta="maintenance contract" href="/start/glossary">maintenance contract</Tooltip> that generated the job, or the name of the person who created it. |
 
 Click any row to open the job.
 
@@ -120,9 +119,7 @@ you so when you try.
   </Accordion>
 
   <Accordion title="Linked Issues">
-    The <Tooltip cta="issues" href="/start/glossary">issues</Tooltip> this job is
-    meant to address, each with Open or Closed. See
-    [Issues](/admin/issues).
+    The <Tooltip tip="A problem found on a lift, given a severity — Critical, Major or Minor — and tracked until it is resolved." cta="issues" href="/start/glossary">issues</Tooltip> this job is meant to address, each with Open or Closed. See [Issues](/admin/issues).
   </Accordion>
 
   <Accordion title="Related">
@@ -141,7 +138,7 @@ you so when you try.
 | --- | --- | --- | --- | --- | --- | --- |
 | **Owner** | Yes | Yes | Any job | Yes | Yes | Yes |
 | **Admin** | Yes | Yes | Any job | Yes | Yes | Yes |
-| **Technician** | No — they work in the mobile app | Yes, from the app | Only a job they are already on | Not in the app | Not in the app | Yes |
+| **Technician** | No — they work in the mobile app | Yes, from the app | Only a job they are already on | No | Yes, but only through the admin web app or the API — the mobile app has no cancel action | Yes |
 | **Call centre** | No — they land on Dispatch | No | No | No | No | No |
 
 Two rules are worth spelling out, because they surprise people:
@@ -182,7 +179,7 @@ Building managers do not log in to LiftAuth at all. They receive a signing link.
   </Accordion>
 
   <Accordion title="What happens when I close a job?">
-    Three things: the PDF of every record on the job is generated, any issues linked to the job are closed, and — if the job belongs to a maintenance contract or has a building manager — a draft invoice is generated. See [Billing](/admin/billing/overview).
+    The PDF of every record on the job is generated, and any issues linked to the job are closed. Closing a job raises a draft invoice only when the job belongs to an active maintenance contract billed per job, or — with no contract — was created by converting a quote. Contracts billed annually are invoiced on their own schedule instead, and a contract set to bill nothing never drafts. See [Billing](/admin/billing/overview).
   </Accordion>
 
   <Accordion title="Two of my technicians recorded the same lift. What happens?">

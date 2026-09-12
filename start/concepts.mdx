@@ -57,7 +57,7 @@ The job itself has no type. The kind of work is decided by the **form** attached
     Sign-off is complete — either the Building Manager signed, or the technician skipped signing because nobody was available. The job is ready for an admin to review and close.
   </Step>
   <Step title="Closed">
-    The admin has reviewed and closed the job. If the building has an active maintenance contract, a draft invoice is generated for the billing cycle.
+    The admin has reviewed and closed the job. A draft invoice is raised only if the job belongs to an active contract billed per job, or came from a converted quote — contracts billed annually invoice on their own schedule instead.
   </Step>
 </Steps>
 
@@ -81,10 +81,13 @@ Records are permanent — they cannot be edited after signing. Every record is f
 
 ## How sign-off reaches the Building Manager
 
-The Building Manager signs for themselves; nobody can sign on their behalf from the dashboard. There are two ways it happens:
+The Building Manager signs for themselves; nobody can sign on their behalf from the dashboard. There are three ways it happens:
 
 - **On site** — they sign on the technician's phone before the technician leaves.
-- **By link** — the technician generates a one-time signing link and shares it, so they can sign on their own device. Each link works once and expires after 7 days.
+- **By link** — the technician generates a one-time signing link and shares it, so they can sign on their own device.
+- **By email** — an owner or admin sends the request from the record in Drive. It goes to everyone the building manager's own firm has assigned to that building.
+
+Every link is a single-use token that expires after 7 days, and generating a new one does **not** cancel the earlier ones. Whoever opens the link can sign without a LiftAuth account — an account is only needed to _receive_ the email.
 
 If neither is possible, the technician can **skip signing**. The job still reaches Signed, but the PDF carries no Building Manager signature.
 

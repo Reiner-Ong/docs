@@ -23,9 +23,7 @@ You find them under **Record Templates** in the left sidebar, in the
   </Step>
 
   <Step title="A job uses the template">
-    A maintenance job uses the template you chose for that lift on the
-    building's maintenance contract. A repair or breakdown job uses your single
-    repair or breakdown template automatically.
+    LiftAuth never picks a template for you. Whoever schedules the job chooses which template each form on it uses. On a maintenance visit that choice comes from the records set up on the building's maintenance contract; on any other job the person creating it names the template on each form. A job converted from an accepted quote starts with no template at all — the technician gets a plain notes-only jobsheet until someone puts a form on it.
   </Step>
 
   <Step title="The technician fills it in">
@@ -34,12 +32,11 @@ You find them under **Record Templates** in the left sidebar, in the
   </Step>
 
   <Step title="LiftAuth produces the record">
-    The answers become a [record](/admin/records), which the building manager
-    signs and which can be downloaded as a PDF.
+    Each submitted form becomes its own [record](/admin/records) — a job carrying three forms produces three records — which the building manager signs and which can be downloaded as a PDF.
   </Step>
 </Steps>
 
-A template is a *mould*, not a copy. Every job stamps out a fresh record from
+A template is a *mould*, not a copy. Every form on a job stamps out a fresh record from
 it, and each record keeps its own answers forever — even if you later change the
 template.
 
@@ -49,7 +46,7 @@ template.
 
 <CardGroup cols={2}>
   <Card title="Build a template from scratch" icon="pencil" href="/admin/record-templates/creating-a-record-template">
-    Create a maintenance, repair or breakdown template and add the items your
+    Create a maintenance template — or a repair or breakdown one, if the dialog still offers it — and add the items your
     technicians answer.
   </Card>
 
@@ -81,12 +78,16 @@ template.
     to which lifts when you set up the building's maintenance contract.
   </Card>
 
-  <Card title="Repair — exactly one" icon="badge-alert">
-    Every repair job in your workspace uses the same template.
+  <Card title="Repair — one, in practice" icon="badge-alert">
+    The **New record template** dialog stops offering **Repair** once you have an active repair template, so a workspace normally has exactly one. It is still chosen by hand: whoever creates a repair job picks the template for each form on it.
   </Card>
 
-  <Card title="Breakdown — exactly one" icon="badge-x">
-    Every breakdown call-out uses the same template.
+  <Card title="Breakdown — one, in practice" icon="badge-x">
+    The dialog stops offering **Breakdown** the same way. Again, nothing selects it for you — the person raising the call-out picks it on the job.
+  </Card>
+
+  <Card title="Custom job types" icon="tag">
+    A record template's job type is not limited to the three above — a custom type is also possible. What the **New record template** dialog offers you is the standard three.
   </Card>
 </CardGroup>
 

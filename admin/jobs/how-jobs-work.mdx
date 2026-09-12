@@ -4,10 +4,7 @@ description: "What a job is, what it is made of, the six statuses it moves throu
 icon: "diagram-project"
 ---
 
-A <Tooltip cta="job" href="/start/glossary">job</Tooltip> is one visit to one
-building. Every time a technician goes on-site, a job records it — and when the
-job is closed, what the technician wrote becomes the permanent history of those
-lifts.
+A <Tooltip tip="One visit's worth of work at one building, which can cover several lifts." cta="job" href="/start/glossary">job</Tooltip> is one visit to one building. Every time a technician goes on-site, a job records it — and when the job is closed, what the technician wrote becomes the permanent history of those lifts.
 
 This page explains how a job is put together and how it moves. If you just want
 to do something, see [Schedule a job](/admin/jobs/how-to-schedule-a-job) or
@@ -45,10 +42,9 @@ flowchart LR
 
 <Steps>
   <Step title="Open">
-    The job exists, but nobody is assigned and no time is set. Most jobs skip
-    straight past this — the **Schedule Job** button creates and schedules in one
-    action. You mostly see **Open** on jobs that arrived another way, such as a
-    converted quote.
+    The job exists, but nobody is assigned and no time is set. Most jobs skip straight past this — the **Schedule Job** button creates and schedules in one action, and converting a quote also schedules in the same operation.
+
+    An Open job does not appear on the Jobs board or in the list view. It is reachable only from its building's maintenance contract page, or by its direct job link.
   </Step>
 
   <Step title="Scheduled">
@@ -58,10 +54,7 @@ flowchart LR
   </Step>
 
   <Step title="Work Done">
-    The technician has finished on-site and submitted the work. The
-    <Tooltip cta="records" href="/start/glossary">records</Tooltip> exist, each
-    signed by the technician who did that lift. The job is now waiting for the
-    building side to sign off.
+    The technician has finished on-site and submitted the work. The <Tooltip tip="The report produced when a technician fills in a form and submits it — the item results, photos, notes and signatures." cta="records" href="/start/glossary">records</Tooltip> exist, each signed by the technician who did that lift. The job is now waiting for the building side to sign off.
   </Step>
 
   <Step title="Signed">
@@ -71,8 +64,7 @@ flowchart LR
   </Step>
 
   <Step title="Closed">
-    An admin has reviewed and closed it. The PDFs are generated, linked issues are
-    closed, and a draft invoice is raised. This is the end of the line.
+    An admin has reviewed and closed it. The PDFs are generated and linked issues are closed. Closing a job raises a draft invoice only when the job belongs to an active maintenance contract billed per job, or — with no contract — was created by converting a quote. Contracts billed annually are invoiced on their own schedule instead, and a contract set to bill nothing never drafts. This is the end of the line.
   </Step>
 </Steps>
 
@@ -94,7 +86,9 @@ back to **Work Done**.
 | Scheduled → Work Done | Technician | Mobile app |
 | Work Done → Signed | Building manager signing, or the technician skipping signing | Phone, signing link, or app |
 | Signed → Closed | Admin or owner | Dashboard |
-| Anything → Cancelled | Admin, owner, or technician | Dashboard |
+| Anything → Cancelled | Admin, owner, or technician | Dashboard or API — the technician app has no cancel action |
+
+A technician-role user is permitted to cancel a job, but only through the admin web app or the API. There is no cancel action anywhere in the technician mobile app.
 
 Nobody in the office can sign on the building manager's behalf. There is no sign
 button in the dashboard, on purpose.
@@ -114,8 +108,8 @@ button in the dashboard, on purpose.
     An unplanned visit, logged from the phone as it happens.
   </Card>
 
-  <Card title="A converted quote" icon="file-invoice" href="/admin/billing/overview">
-    Arrives as an **Open** job with its required parts already listed.
+  <Card title="A converted quote" icon="file-invoice" href="/admin/billing/quotes">
+    Arrives already **Scheduled**, with its required parts listed. Converting asks for exactly one technician or team and a scheduled window, and schedules the job in the same operation.
   </Card>
 </CardGroup>
 

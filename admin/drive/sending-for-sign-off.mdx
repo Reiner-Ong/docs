@@ -26,21 +26,23 @@ Records still waiting are easy to spot: the **Sign-off** column shows an amber
 
 ## Choose how to send it
 
-<CardGroup cols={2}>
-  <Card title="Send to building manager" icon="envelope">
-    LiftAuth emails the sign-off request to the person assigned to this building
-    in the building manager app. Click the card once — nothing else is needed.
-  </Card>
+There are three routes to a signature. Two of them are here in the sign-off panel; the third is the technician collecting it on site in the mobile app, which happens before the record ever reaches this page.
 
-  <Card title="Generate a signing link" icon="link">
-    LiftAuth creates a link you can share yourself, by WhatsApp, SMS or any other
-    means. Click **Generate new signing link**, then **Copy link**.
-  </Card>
-</CardGroup>
+**Send to building manager**
 
-Either way, the building manager does not need a LiftAuth account to sign. Once
-they sign, the record's status changes to **Signed** on its own and the job turns
-up in your [Inbox](/admin/inbox) ready to close.
+LiftAuth emails the sign-off link to every member the building manager's own firm has assigned to that building — they are assigned by that firm, not by you. Click the **Send to building manager** card in the panel once; nothing else is needed.
+
+<Warning>
+  If that firm has assigned nobody to the building, the send still reports success but no email goes anywhere — the request only appears in the firm's own inbox. If a customer says they never received it, ask them who is assigned to the building on their side, or share a signing link yourself instead.
+</Warning>
+
+**Generate a signing link**
+
+LiftAuth creates a link you can share yourself, by WhatsApp, SMS or any other means. On the **Generate a signing link** card, click **Generate new signing link**, then **Copy link**.
+
+Either way, the link itself is a single-use token, so whoever opens it can sign without a LiftAuth account. An account is only needed to _receive_ the email — which is why a link you share yourself reaches anybody, while the email route depends on someone being assigned at the customer's firm.
+
+Once they sign, the record's status changes to **Signed** on its own and the job turns up in your [Inbox](/admin/inbox) ready to close.
 
 ## What to know about signing links
 
