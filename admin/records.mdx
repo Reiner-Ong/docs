@@ -3,32 +3,38 @@ title: "Records"
 description: "How to find, read, and manage completed Records.  "
 ---
 
-A maintenance record is the report generated when a technician completes a job. It documents what was done and serves as the report the Building Manager receives once the job is finished.
+Records live in **Drive**. This page is a signpost to the guide you need.
 
-<Warning>
-  Once a record has been made, it cannot be changed.
-</Warning>
+For what a record is, what it contains and how sign-off reaches the building manager, see [Records](/start/concepts#records) in How LiftAuth Works.
 
-## How to Sign a Record {#sending-a-signing-link}
+## Where records live
 
-If the building manager was not on-site to sign, there are two ways to get them the signing link as an admin off-site.
+Every record is filed in Drive, under the building it belongs to, the moment the technician submits it. There is no separate Records list in the dashboard.
 
-<Frame>
-  ![B0e2356f 19d8 4d65 9e12 E40ae7ed148f](/images/b0e2356f-19d8-4d65-9e12-e40ae7ed148f.jpg)
-</Frame>
+<Card title="Go to the Drive guide" icon="folder-open" href="/admin/drive/overview">
+  How folders map to buildings and customers, and how to find any record.
+</Card>
+
+## What you will want to do
 
 <CardGroup cols={2}>
-  <Card icon="wallet-cards">
-    ## Send directly
-
-    LiftAuth emails the link automatically to the building manager's contact. Open the record and click **Send signing link** — no further input needed.
+  <Card title="Find a record" icon="magnifying-glass" href="/admin/drive/finding-files">
+    Locate the report for a building, a lift, or a particular visit.
   </Card>
 
-  <Card icon="link">
-    ## Copy the link
+  <Card title="Download records" icon="download" href="/admin/drive/downloading-files">
+    Save one record, a selection, or a whole folder.
+  </Card>
 
-    LiftAuth generates the link and copies it to your clipboard. You can then share it yourself via WhatsApp, SMS, or any other method.
+  <Card title="Chase a signature" icon="signature" href="/admin/drive/sending-for-sign-off">
+    Send the building manager a signing link when they have not signed yet.
+  </Card>
+
+  <Card title="Close the job" icon="circle-check" href="/admin/jobs/how-to-close-a-job">
+    Review the record and close the job it belongs to.
   </Card>
 </CardGroup>
 
-Once the building manager clicks the link and signs, the record status updates to **Signed** automatically and the job appears in your Inbox ready to close. No LiftAuth account is needed on their end.
+## One thing worth knowing before you start
+
+**A record cannot be corrected.** It cannot be edited once it exists, by anyone. A signed record cannot even be deleted; an unsigned one can be deleted by an owner or admin, but never amended — and nothing can re-create it afterwards. If something is wrong, the visit has to be recorded again.

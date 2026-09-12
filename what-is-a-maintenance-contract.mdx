@@ -1,0 +1,65 @@
+---
+title: "What is a Maintenance Contract"
+description: "What a maintenance contract is, what it does automatically, and what you still need to do."
+---
+
+A maintenance contract is your servicing agreement with a building, written down in a form LiftAuth can act on. Once it is set up, LiftAuth plans every visit for the whole contract term and turns each one into a job as it comes due — and, if you chose an automatic billing cadence, drafts the invoices too.
+
+<Note>
+  Older guidance called this a "maintenance plan" and set it up per lift. It is now one contract per **building**, covering the lifts in it.
+</Note>
+
+## A contract is built out of coverage groups
+
+A contract is not one flat list of lifts with one setting each. It is built out of one or more [**coverage groups**](/start/glossary): a group is one [record template](/start/glossary) paired with the lifts it covers, at its own servicing frequency. The contract builder labels them **Record 1**, **Record 2** on screen — they are not the signed reports a technician submits.
+
+Most contracts need only one group. You add a second when some of the building's lifts need a different form, or a different frequency, from the rest. Because frequency belongs to the group rather than to the contract, a contract whose groups do not all share one frequency reads **Mixed** in the contracts list.
+
+## What a contract decides
+
+You set these once, and LiftAuth uses them every cycle:
+
+| Part | What it means |
+| --- | --- |
+| **Which lifts are covered** | The lifts at that building the agreement includes, sorted into coverage groups. |
+| **Which forms are used** | Each coverage group names one [record template](/start/glossary) — the form a technician fills in for those lifts. Nothing picks it for you. |
+| **How often you visit** | **Monthly** or **Quarterly**, set per coverage group. The contract reads **Mixed** when its groups differ. |
+| **How it is billed** | The [billing cadence](/admin/maintenance-contracts/reference#billing-cadences) — **Per-job**, **Annual** or **None** — and the amounts to invoice. |
+| **The contract term** | When the agreement starts and ends. |
+
+## What happens each cycle
+
+Once a contract is active, this happens with no input from your team:
+
+1. **A planned visit becomes a real job 14 days before the visit date**, already assigned and time-slotted. Until then it is a [planned job](/start/glossary) on the calendar and a row on the contract's **Upcoming Visits** tab — one object, two names.
+2. **It appears in the technician's app** so they can pick it up on the day. Scheduling it also notifies the building manager's firm — every active user of that firm — by push and email.
+3. **A draft invoice is generated, if the cadence calls for one.** **Per-job** drafts one each time you close a job the contract generated. **Annual** drafts one a year, when the anniversary passes. **None** never drafts anything.
+4. **Any draft waits in Billing** for someone to check and issue it. On cadence **None** you raise the invoice by hand instead.
+
+## What you still do
+
+LiftAuth handles the repetition. You handle the judgement.
+
+- **Set the contract up**, once per building.
+- **Review the record** before closing each job — check the technician's answers and photos look right.
+- **Check and issue the draft invoice** before it reaches the building manager.
+
+## A few important things
+
+**Nothing is billed until you issue it.** A draft invoice is not a real document. It sits in Billing until somebody issues it, and issuing is separate again from emailing it to the customer.
+
+**Backdating does not create history.** If you start a contract in the past, scheduling runs from the current month forward. Months already gone never generate jobs. To record visits that happened before you were on LiftAuth, use [**Record past visits**](/admin/maintenance-contracts/manage-visits) instead.
+
+**The [building manager](/start/glossary) does not see the contract.** It is internal to your team. They see the visits, the records, and the invoices you issue.
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="Set up a contract" icon="plus" href="/admin/maintenance-contracts/create-a-contract">
+    The five-step builder, start to finish.
+  </Card>
+
+  <Card title="Maintenance contracts reference" icon="table-list" href="/admin/maintenance-contracts/reference">
+    Statuses, billing cadences, automation timings and permissions.
+  </Card>
+</CardGroup>

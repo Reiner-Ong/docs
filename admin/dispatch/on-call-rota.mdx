@@ -1,0 +1,97 @@
+---
+title: "How to Set Up the On-Call Rota"
+description: "Roster technicians for standby so an operator knows who to ring out of hours."
+icon: "calendar-days"
+---
+
+The **on-call rota** is the standby schedule: who is expected to answer an emergency at 2am on a Tuesday. It does not change anyone's permissions and it does not ring anyone by itself. Its job is to rank the technician list when an operator [raises a dispatch](/admin/dispatch/raise-a-dispatch), so the right people are the obvious ones to tick.
+
+Open it with **Dispatch** in the left sidebar, then the **On call** tab. It opens on the month view — the view that answers "is next month covered?". The rota also appears on the [Calendar reference](/admin/calendar/reference), because it uses the same calendar shell as the Calendar page, but standby shifts are only ever created and deleted here.
+
+## Who can do what
+
+* **Owners and admins** add and delete shifts.
+* **Technicians and Call Center operators** can read the rota in the browser but not change it. Every role that can sign in to the dashboard — owner, admin, technician and **Call Center** — can read it.
+* **Technicians** can also switch themselves on call from their own phone, whatever the rota says. See [Answering a dispatch on your phone](/technician/answering-a-dispatch).
+
+## Add a shift
+
+<Steps>
+  <Step title="Click ＋ Add on-call shift">
+    The button is at the top right of the rota. You can also click an hour slot in the day or week view, or a day in the month view, to start with that time already filled in.
+  </Step>
+
+  <Step title="Pick the technician">
+    Choose who is on standby. Only active technicians are listed.
+  </Step>
+
+  <Step title="Set Starts and Ends">
+    Each has its own date and time. A new shift defaults to **18:00 today → 08:00 tomorrow**, the usual overnight cover. A shift may cross midnight, and may run up to **7 days**; anything longer is rejected.
+  </Step>
+
+  <Step title="Choose whether it repeats">
+    **Repeat** offers *Does not repeat*, *Daily*, *Weekly* or *Monthly*. If you pick one, an **Until** date appears — the rota is built ahead to that date and no further. One entry then covers a standing rota such as "every Monday night".
+  </Step>
+
+  <Step title="Click Add shift">
+    The shift appears as a red bar on the calendar straight away.
+  </Step>
+</Steps>
+
+<Note>
+  A monthly repeat lands on the same day number each month, and skips any month that does not have that day — a shift on the 31st simply does not occur in February.
+</Note>
+
+## Read the rota
+
+Shifts show as red bars labelled with the technician's name, across the **Day**, **Week**, **Month** and **Agenda** views. Use **‹** and **›** to move a period at a time, **Today** to come back, and the view switch to change how much you see at once.
+
+- **Month** is the coverage view: the gaps are the empty days.
+- **Agenda** lists the period's shifts in order. Where nothing is scheduled you will see "No standby cover".
+- The **Technicians** list on the left filters the rota. Untick anyone you do not want to see; the count underneath reads "4 of 6 shown". Your choice is remembered in this browser, and a technician who joins later starts out visible.
+
+Click any bar to see the shift's date, time and — if it repeats — its repeat rule.
+
+<Warning>
+  LiftAuth does not warn you about gaps. Nothing flags an uncovered night, so check the month before it starts.
+</Warning>
+
+## Change or remove a shift
+
+There is no edit — to change a shift, delete it and add the replacement. Shifts cannot be dragged, and one occurrence of a repeating shift cannot be retimed.
+
+<Steps>
+  <Step title="Click the shift bar">
+    Its details open in a small popover.
+  </Step>
+
+  <Step title="Click Delete">
+    A confirmation appears.
+  </Step>
+
+  <Step title="Choose how much to remove">
+    A one-off shift offers a single **Delete**. A repeating shift gives you two choices: remove only the occurrence you clicked, which leaves the rest of the series standing, or remove the whole repeating series.
+  </Step>
+</Steps>
+
+<Warning>
+  Deleting cannot be undone, and removing the whole series removes **every** occurrence of it, past and future — not just the ones still to come.
+</Warning>
+
+## How the rota reaches the dispatcher
+
+When an operator opens the new-dispatch form, LiftAuth works out who is on call at that exact moment and puts them in an **On call** group at the top of the technician list, with the span they are covering — for example _from Mon 18:00 to Tue 08:00_. Everyone else is folded into **Not on call** below. If nobody is rostered for that moment the form says **No one is on call right now**, and the operator rings from the **Not on call** group instead.
+
+The most recent thing that happened wins. If a technician's shift has started they are on call; if they then switch themselves off in their app, they read as off for the rest of that shift; if a later shift begins, they are on again. A technician who switched themselves on outside any shift shows as *self-toggled*.
+
+The grouping is a hint, never a lock — the operator can ring anyone, on call or not.
+
+## What the technician sees
+
+The rota is read-only in the technician app:
+
+- **Profile → ON CALL** shows an **On call** toggle and a link to the **On-call schedule**, with a line telling them either that they are on call now and until when, or when their next shift starts.
+- The schedule screen shows the whole team's month, with the technician's own nights marked **You**.
+- While they are on call, a blue **On call** banner sits at the bottom of the app.
+
+The toggle is a manual override, for the real world: a technician who is not scheduled can put themselves on call, and one who is scheduled can take themselves off.

@@ -1,0 +1,166 @@
+---
+title: "How to create a record template"
+description: "Build the form your technicians fill in, from a blank template to a saved one."
+icon: "pencil"
+---
+
+This guide takes you from an empty template to a saved one your technicians can
+use. You need to be an **Owner** or an **Admin**.
+
+***
+
+## 1. Create the template
+
+<Steps>
+  <Step title="Open Record Templates">
+    Click **Record Templates** in the left sidebar, under **Operations**.
+  </Step>
+
+  <Step title="Click New record template">
+    The button is at the top right of the page.
+  </Step>
+
+  <Step title="Give it a name">
+    Type something your team will recognise — for example *High-rise traction*.
+    The name must be unique among your active templates of the same job type.
+  </Step>
+
+  <Step title="Choose this template's job type">
+    Pick **Maintenance**, **Repair** or **Breakdown**. This sets the job type of **this template**, and nothing else — it does not put a type on any job. A job has no type of its own: what makes a visit maintenance, a repair or a breakdown is the template behind each form on it, so a job whose forms mix templates has no single kind.
+
+    You can have as many Maintenance templates as you like. The dialog stops offering **Repair** or **Breakdown** once you have an active template of that type, which is why a workspace normally has one of each — a restriction in this dialog, not one the system enforces underneath.
+
+    <Warning>
+      The job type **cannot be changed later**. If you pick the wrong one you
+      have to create a new template.
+    </Warning>
+  </Step>
+
+  <Step title="Set the estimated time per form">
+    How many minutes one technician needs to fill in one of these records.
+    LiftAuth adds this up across all the lifts on a maintenance contract to work
+    out how long the site visit should be, so a rough-but-honest number is
+    better than a guess of 30.
+  </Step>
+
+  <Step title="Click Create">
+    The template opens in the editor, on the **Content** tab.
+  </Step>
+</Steps>
+
+***
+
+## 2. Add your sections and items
+
+The **Content** tab shows the template as it will look on a real record — letterhead at the top, then the **Form**, which is the part you edit. Each line the technician answers is an [item](/start/glossary#work-on-site).
+
+<Steps>
+  <Step title="Name the first section">
+    Type a heading into **Section title** — for example *Machine room*. The first
+    section's title is optional; leave it blank for a flat list with no heading.
+  </Step>
+
+  <Step title="Add an item">
+    At the bottom of the section there is a row of coloured chips. Click the one
+    matching the kind of answer you want:
+
+    | Chip | Use it for |
+    | --- | --- |
+    | **+ Pass/Fail/NA** | Anything you inspect and judge |
+    | **+ Text** | A description or free-form note |
+    | **+ Select** | A choice from a list you define |
+    | **+ Number** | A measurement or reading |
+    | **+ Date** | A calendar date |
+    | **+ Photo** | Photos taken on site |
+
+    Full detail on each type is in the
+    [reference](/admin/record-templates/reference#item-types).
+  </Step>
+
+  <Step title="Write the item title">
+    Type into **Item title** — this is exactly what the technician reads on their
+    phone, so write it as an instruction: *Check brake pads for wear*, not
+    *Brakes*.
+
+    Every item must have a title. A blank one is a saving error, not an
+    ignored row.
+  </Step>
+
+  <Step title="Fill in the options, for a Select item">
+    A **Select** item shows an **Options (at least two)** list. Type each choice,
+    and use **+ Add option** for more. Fewer than two filled options blocks
+    saving.
+  </Step>
+
+  <Step title="Add more sections">
+    Click **Add section** at the bottom of the form for the next group of items.
+  </Step>
+</Steps>
+
+<Tip>
+  Drag the handle at the left of an item row to reorder it within its section.
+</Tip>
+
+***
+
+## 3. Mark items as required, or show their history
+
+Each item row has a small sliders button on the right (its tooltip reads
+**History & required**). Click it to turn on either modifier:
+
+- **Required** — *Block submit until answered*. The technician cannot submit the
+  record while it is blank. Use it sparingly: too many required items and
+  technicians get stuck on site.
+- **Show history** — *Show last value + date on the form*. The technician sees
+  what was recorded for this item at the previous visit, and when. Ideal for
+  readings you compare over time. Not available on Photo items.
+
+Both modifiers appear as small tags under the item title once they are on.
+
+***
+
+## 4. Set the estimated time
+
+Scroll to **Settings** below the form and check **Estimated time**. It must be
+greater than zero — LiftAuth will not save the template otherwise.
+
+***
+
+## 5. Save
+
+Click **Save changes** at the top right. An **Unsaved** badge sits in the header
+until you do.
+
+If something is wrong, the page tells you at the top — for example *2 fields need
+attention before you can save — they're highlighted below* — and scrolls to the
+first problem. Fix the highlighted fields and save again.
+
+***
+
+## Copying an existing template instead
+
+If a new template is mostly the same as one you already have:
+
+1. Open the existing template, or find it in the list.
+2. Click **Duplicate**.
+3. LiftAuth creates *Copy of …* with the same items and job type, and opens it.
+4. Rename it and adjust.
+
+Duplicate copies the **last saved** version, so save your edits first.
+
+<Note>
+  **Duplicate** is only offered on Maintenance templates and on templates you
+  authored. Repair and Breakdown are limited to one each, and library forms
+  cannot be duplicated.
+</Note>
+
+***
+
+## What happens next
+
+Nothing yet — a template does no work until a form on a job uses it, and LiftAuth never picks a template for you.
+
+- A **Maintenance** template needs to be put onto lifts through a maintenance
+  contract, which is what makes the recurring visits use it. See
+  [How to assign a record template to lifts](/admin/record-templates/assigning-a-record-template).
+- A **Repair** or **Breakdown** template is not assigned anywhere in advance. Whoever schedules the job chooses it on each form, so the template only gets used if they pick it.

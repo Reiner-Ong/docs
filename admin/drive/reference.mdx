@@ -1,0 +1,116 @@
+---
+title: "Drive reference"
+description: "Folders, columns, badges, actions, and who can see what."
+icon: "table-list"
+---
+
+Everything Drive shows, in one place. For the tasks themselves, start at the
+[Drive overview](/admin/drive/overview).
+
+## Folder types
+
+| Folder | One per | Holds | Subtitle on the folder card |
+| --- | --- | --- | --- |
+| **Building** | Building | Service records | Number of lifts, or number of records for a building you own no lift in |
+| **Unassigned** | — (one only) | Records for lifts not attached to any building | Number of lifts |
+| **Customer** | Building manager | Quotes, invoices, payments, credit notes | `Quotes · Invoices · Payments` |
+
+Building folders appear on their own, for every building your firm has a lift in
+and every building your firm holds a record for. Customer folders appear for every
+building manager on your account.
+
+The customer folder's subtitle names three document kinds, but the folder itself opens on **four** tabs — Quotes, Invoices, Payments and Credit notes. Credit notes are not in the subtitle; they are still in the folder.
+
+<h2 id="what-ends-up-in-drive">
+  What ends up in Drive
+</h2>
+
+There is no upload button in Drive. Documents arrive in one of three ways.
+
+| Document | How it gets there |
+| --- | --- |
+| Service record | Created automatically when a technician submits a completed form on a [job](/admin/jobs/overview) — a job carrying several forms files several records |
+| Past visit added by hand | Added with **Record past visits** on a building page or a maintenance contract page. This is the one manual path into Drive. It creates a **record only — no job** — and the record is metadata plus an optional legacy PDF: date, lifts, technician and notes, with no item results and no signature |
+| Quote, invoice, payment, credit note | Created on the [Billing](/admin/billing/overview) pages, then filed under the customer |
+
+A lift with no building is grouped in Drive under a folder named **Unassigned**, listed after the real building folders. Its records are in there, not missing.
+
+## Building folder columns
+
+| Column | Shows |
+| --- | --- |
+| Checkbox | Ticks the row for **Download selected** |
+| **Name** | The record's reference |
+| **Lift** | The equipment ID of every lift the visit covered, or `—` |
+| **Kind** | Appears only if a building folder ever holds more than one kind of file. Building folders hold service records, so in practice this column stays hidden |
+| **Sign-off** | Whether the record is still waiting on a signature — see the badges below |
+| **Date** | The date the visit was carried out. Click the heading to reverse the order |
+| (last column) | Download arrow, or `— no document` |
+
+### Sign-off badges
+
+| Badge | Meaning |
+| --- | --- |
+| **Pending signature** (amber) | Nobody has signed yet |
+| **Signed** (green) | The record has left the unsigned state — **either** the building manager signed it, **or** the technician skipped signing. The badge does not tell the two apart |
+
+### Status in the preview window
+
+The panel beside the PDF shows a fuller status than the list does.
+
+| Status | Meaning |
+| --- | --- |
+| **Unsigned** | Nobody has signed yet. The sign-off options are offered, and the document on screen is a live preview generated on demand |
+| **Signed** | Signed by the building manager, or closed out by the technician skipping signing. A customer-signed record has its stored PDF from the moment of signing; a skipped one has no stored PDF until the job is closed |
+| **Complete** | Signed, with the stored PDF in place |
+
+A skipped record and a genuinely customer-signed one are indistinguishable here: both read **Signed** and then **Complete**. The generated PDF is the only place the difference shows — it drops the building-manager signature row when the signature was skipped.
+
+**Download PDF has no status gate at all.** It is offered whenever the document has loaded, so an **Unsigned** record downloads just as readily as a **Signed** or **Complete** one; for an unsigned record what you get is the live preview of the document the building manager will see. What closing the job guarantees is that _every_ record ends up with a stored PDF.
+
+<h2 id="when-a-record-has-no-pdf">
+  When a record has no PDF
+</h2>
+
+Two situations leave a row with nothing to open. Neither can be repaired from
+Drive, and both are skipped when you download a folder.
+
+| What you see | Why |
+| --- | --- |
+| `— no document` in place of the download arrow, and the row cannot be opened or ticked | A past visit typed in by hand with no report attached |
+| **Signature image unreadable** or **Photo unreadable** when you open the record | The PDF could not be produced from what was captured on site |
+
+## Actions
+
+| Action | Where it is |
+| --- | --- |
+| Search buildings and customers | Search box at the top of Drive |
+| Search records | Search box inside a building folder, matching reference and lift |
+| Sort by date | The **Date** column heading |
+| Preview a record | Click the row |
+| Download one record | Download arrow on the row |
+| **Download selected (n)** | Appears once a row is ticked; covers the current page only |
+| **Download all** | Top right of the folder; the whole folder as one zip |
+| **Send to building manager** | Preview window, unsigned records only — hidden once a record is signed or the signature was skipped |
+| **Generate new signing link** | Preview window, unsigned records only — hidden once a record is signed or the signature was skipped |
+| Download a quote, invoice or credit note | PDF icon on the row in a customer folder |
+
+## Who can see what
+
+Drive only ever shows your own firm's documents. Roles are [Owner, Admin, Technician and Call Center](/start/glossary#who-does-what) — **Call Center** is the role's name on screen.
+
+|  | Owner | Admin | Technician | Call Center |
+| --- | --- | --- | --- | --- |
+| **Drive** in the sidebar | Yes | Yes | Yes | No — the nav item is hidden |
+| Open a building folder and list its records | Yes | Yes | Yes | Yes, by typing the URL |
+| Download a record's PDF | Yes | Yes | Yes | No |
+| Generate a record signing link | Yes | Yes | Yes | No |
+| Credit notes | Yes | Yes | No | No |
+
+A technician has a working Drive: they sign in, **Drive** is in their sidebar, and they can open a building folder, read its records, download a record's PDF and generate a signing link.
+
+Inside a customer folder, following a row through to the quote's or invoice's own page needs access to the billing pages. A technician who tries is redirected to their **Jobs** page rather than shown an error.
+
+<Note>
+  **A record cannot be corrected.** It cannot be edited once it exists, by anyone — there is no amend, no resubmit and no edit screen in either app. A signed record cannot even be deleted; an unsigned one can be deleted by an owner or admin, but never amended, and nothing can re-create it afterwards. Drive is a place to read and download. If something is wrong on a record, raise it as an [issue](/admin/issues) or contact support.
+</Note>

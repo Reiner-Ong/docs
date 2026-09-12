@@ -1,0 +1,291 @@
+---
+title: "Billing reference"
+description: "Every status, action, filter, figure and permission in the Billing area, in one place."
+icon: "book"
+---
+
+A lookup page. For how to do things, start at the [Billing overview](/admin/billing/overview).
+
+## The Billing tabs
+
+| Tab | What it holds | Who sees it |
+| --- | --- | --- |
+| **Ledger** | Every issued quote, invoice, payment and credit note, newest first | Everyone who can open Billing |
+| **Statements** | Per-customer statements of account and the ageing report | Everyone who can open Billing |
+| **Standard items** | Your catalogue of repeat charges | Everyone who can open Billing |
+| **Payments setup** | Stripe onboarding and payout status | Everyone who can open Billing — and only when online payments is enabled for your workspace |
+
+Two more billing settings live on **Account → Billing setup**: *Payment settings* (the same Stripe page) and *[Billing reference numbers](/admin/billing/reference-numbers)*.
+
+## The ledger
+
+### Columns
+
+| Column | Notes |
+| --- | --- |
+| **Reference** | Your own document number. Falls back to the internal handle on documents raised before numbering. |
+| **Type** | Quote, Invoice, Payment, Credit note — or **Deposit** for a payment taken against a quote |
+| **Status** | See the tables below. An invoice past its due date with money still owed shows **Overdue** in place of its status, from the first day it is late. |
+| **Customer** | The building manager |
+| **Date** | Quote: sent date. Invoice: invoice date. Payment: date received. Credit note: date raised. |
+| **Amount** | Signed — payments and credit notes are negative, because they reduce what is owed |
+
+### Filters
+
+| Control | Effect |
+| --- | --- |
+| **Type** segments | All / Quotes / Invoices / Payments / Credit notes, each with a count |
+| **Show archived** | Off by default. It affects quotes — see below. |
+| **Customer** | One building manager, or **All customers** |
+
+Rows are paged 20 at a time.
+
+<Note>
+  **A Deposit row is a payment.** A payment taken against a quote is labelled **Deposit**, but its underlying type is still Payment, so the **Payments** segment (and **All**) returns it. The only oddity is the wording: the segment says Payments, the row says Deposit.
+</Note>
+
+<Note>
+  **Show archived and invoices.** Only a **draft** or **rejected** invoice can be archived, and the ledger leaves out drafts and rejected invoices to begin with — so an archived invoice never appears on the ledger, with the toggle on or off. In practice the toggle is about quotes.
+</Note>
+
+### Row actions
+
+| Action | Offered on |
+| --- | --- |
+| **View** | Every row |
+| **Download PDF** | Quotes, invoices and credit notes. Payments have no PDF — a payment is an event, not a document your firm issues. |
+| **Record payment** | Invoices with money still owed |
+
+<Note>
+  **Drafts are not on the ledger.** A draft quote or invoice is unfinished paperwork, not a transaction. Find drafts in your [Inbox](/admin/inbox).
+</Note>
+
+### The ledger is not a complete history
+
+The ledger loads at most **500 documents of each type** — 500 per type, not 500 in total. Past that, a line above the table says how many of how many you are looking at, and **every count, total and figure on the page describes only the rows that are loaded**. The screen says so itself: "Counts, totals and filters below describe this page — narrow by customer to see the rest."
+
+For a customer's complete account history, read their [statement of account](/admin/billing/statements) instead. The statement covers the whole active set rather than one loaded page.
+
+## The figures above the ledger
+
+They are computed over the rows currently loaded, for the customer filtered to, and they always exclude archived documents. They are not whole-account totals.
+
+| Figure | Counts | Excludes |
+| --- | --- | --- |
+| **Open pipeline** | Quotes with status **Sent** | Drafts (not offered yet) and accepted quotes (already becoming invoices) |
+| **Outstanding** | The unpaid balance of every issued invoice, plus a count of how many are overdue | Drafts, rejected, and void invoices |
+| **Collected · 30d** | Settled payments received in the last 30 days | Payments that are processing or failed |
+| **Credit outstanding** | Credit-note value not yet applied to an invoice | Void credit notes |
+
+If the loaded documents are in more than one currency, the money figures show **—** rather than adding unlike currencies together.
+
+## Quotes
+
+### Statuses
+
+| Status | Meaning |
+| --- | --- |
+| **Draft** | Being written. No number, no PDF, not on the ledger. |
+| **Sent** | Issued, numbered, signed, and with the customer. Stays **Sent** after the **Valid until** date passes. |
+| **Accepted** | The customer committed to the price. |
+| **Declined** | The customer said no. |
+| **Expired** | Written only when somebody tries to **accept** the quote after **Valid until** has passed, and is refused. The date passing does not set it. |
+| **Superseded** | Replaced by a later revision. |
+| **Converted** | A repair job was raised from it. |
+| **Archived** | Filed away. Shown only when **Show archived** is on. |
+
+### Validity lapsed
+
+**Validity lapsed** is a badge, not a status. When a quote's **Valid until** date passes, nothing sweeps the quote: its status stays **Sent** and the UI adds an amber **Validity lapsed** badge. A quote can carry that badge forever without ever reaching **Expired** — the two are different things and both are real.
+
+### Actions by status
+
+| Action | Available on |
+| --- | --- |
+| Edit draft | Draft |
+| Discard draft | Draft |
+| Send quotation | Draft |
+| Record acceptance / Record decline | Sent, and only before **Valid until** passes |
+| Email quotation / Email again | Sent |
+| Revise | Sent, Declined, Expired |
+| Convert to repair job | Accepted |
+| Create invoice | Accepted, Converted |
+| Download PDF | Any, archived included |
+| Archive | Declined, Expired, Superseded |
+
+Sending requires the sender to have a saved signature — LiftAuth prompts for one if there is none. Converting requires a technician or team to assign the job to.
+
+An archived quote offers **Download PDF** and nothing else.
+
+## Invoices
+
+### Statuses
+
+| Status | Meaning | Set by |
+| --- | --- | --- |
+| **Draft** | Being written. No number, not on the ledger, not owed. | You |
+| **Issued** | Billed. Numbered, sealed, counted as owed. | You, by issuing |
+| **Part paid** | Some of the balance settled | LiftAuth, from the ledger |
+| **Paid** | Balance is zero | LiftAuth, from the ledger |
+| **Rejected** | A draft that was discarded | You |
+| **Archived** | Filed away. Only a draft or rejected invoice can be archived, so an archived invoice never shows on the ledger. | You |
+
+**Void** is a legal value that nothing in the product ever writes, so it is not a status you will see on an invoice. It appears here only because the exclusion lists above and the ageing report have to name it. To reverse an issued invoice, raise a credit note.
+
+**Overdue** is not a status either. It is derived: an **Issued** or **Part paid** invoice with a balance above zero, past its due date. Every invoice has a due date — it is required, and automatic drafts default to 30 days — so there is no invoice that can never fall overdue.
+
+**Balance** = invoice total − settled payments allocated to it − credit notes applied to it.
+
+### Actions by status
+
+| Action | Available on |
+| --- | --- |
+| Edit draft | Draft |
+| Issue invoice | Draft |
+| Discard draft | Draft, Rejected |
+| Email invoice / Email again | Issued, Part paid (once the PDF exists) |
+| Record payment | Issued, Part paid |
+| Raise credit note | Issued, Part paid, Paid |
+| Download PDF | Any invoice with a PDF |
+
+An invoice cannot be issued without at least one line item and payment terms. Once issued, the customer, lines, dates and terms are frozen permanently.
+
+### Where a draft invoice comes from
+
+| Trigger | When | Lines from |
+| --- | --- | --- |
+| Job closed on an **active contract billed per job** | At job close | The contract's invoice template |
+| Job closed with **no contract**, raised from a converted quote | At job close | The originating quote's line items |
+| Contract billed **annually** | The daily cron, after the anniversary passes | The contract |
+| You, by hand | Whenever | Whatever you enter |
+
+A non-contract job with no originating quote drafts nothing, and a contract whose cadence is **None** never drafts anything.
+
+## Payments
+
+### Statuses
+
+| Status | Settles the invoice? |
+| --- | --- |
+| **Succeeded** | Yes. What a hand-recorded payment is stored as, and what a cleared card or PayNow payment becomes. |
+| **Recorded** | Yes — a fallback label for legacy rows that carry no status at all. Not what a payment you record today gets. |
+| **Processing** | No — started online, not yet cleared. This is how the online rails' _initiated_ state is shown; the word "Initiated" never appears. |
+| **Failed** | No |
+| **Refunded** | The full amount was handed back |
+| **Part refunded** | Some of it was handed back |
+
+### Methods
+
+| Method | Where it comes from |
+| --- | --- |
+| **Manual** | Recorded by hand |
+| **Bank transfer** | Recorded by hand |
+| **Card** / **PayNow** | Taken through [online payments](/admin/billing/online-payments); recorded automatically |
+
+### Actions
+
+| Action | Available when |
+| --- | --- |
+| Open invoice | The payment settles one |
+| Delete payment | Not already deleted, not failed, not refunded |
+
+Deleting is a correction of your own record, not a refund. The invoice's balance goes back up.
+
+**There is no refund action in the dashboard.** Card and PayNow refunds are made in the Stripe dashboard, and a Stripe-side refund is not picked up by LiftAuth: no credit note is raised, the payment's status does not change, and the balance does not move. Record the reversal yourself with a credit note of kind **Refund**, or your LiftAuth figures will not reconcile with your bank.
+
+## Credit notes
+
+### Kinds
+
+| Kind | Use it for |
+| --- | --- |
+| **Adjustment** | Correcting an over-bill |
+| **Refund** | Money returned. You raise it by hand — nothing raises one for you, including a refund made in Stripe. |
+| **Write-off** | Bad debt |
+
+All three reduce the balance identically; the kind is for your records.
+
+### Statuses
+
+| Status | Meaning |
+| --- | --- |
+| **Open** | Credit on the account, not yet applied to any invoice |
+| **Applied** | Fully drawn down against one or more invoices |
+| **Void** | Cancelled. Still visible and downloadable; credits nothing. |
+
+A credit note raised against a specific invoice starts **Applied** — the full amount goes onto that invoice at once, capped at what it still owes. One raised against the customer with no invoice starts **Open**.
+
+### Actions
+
+| Action | Available when |
+| --- | --- |
+| Apply to invoice | Not void, and credit is left to apply |
+| Download PDF | Always |
+| Void credit note | Not already void |
+
+## Quote and invoice templates
+
+A **template** is a saved set of lines, tax rate, terms and notes that can be applied to a new quote or invoice. A maintenance contract names one, and its per-job drafts are built from it.
+
+Templates have **no list page**. They are created and managed only from inside the quote builder, the invoice builder and the maintenance-contract wizard, through **Save as template** and **Manage templates**.
+
+<Warning>
+  Do not look for these under Record Templates. [Record templates](/admin/record-templates/overview) are the forms technicians fill in on site — an unrelated feature that happens to share the word.
+</Warning>
+
+## Ageing buckets
+
+Used by the Statements tab to sort and badge accounts. There are four, and **Current** is not badged.
+
+| Bucket | Meaning |
+| --- | --- |
+| **Current** | Not yet due, or up to 30 days past due. No badge. |
+| **31–60 days** | 31 to 60 days past due |
+| **61–90 days** | 61 to 90 days past due |
+| **90+ days** | More than 90 days past due |
+
+An account is badged by its **oldest** bucket holding money. Invoices with a zero balance are excluded, as are void invoices.
+
+<Note>
+  **The ledger badge and the ageing bucket disagree for the first 30 days, by design.** An invoice one day past due already shows a red **Overdue** badge on the ledger, while the ageing report still counts it as **Current** with no badge. The same invoice reading **Overdue** in one place and **Current** in the other is expected, not a bug.
+</Note>
+
+## Who can do what
+
+Owner and admin have **identical** access to everything in Billing; they differ only at workspace level, outside Billing. So the only gate that matters inside Billing is the technician one.
+
+| Role | Billing access |
+| --- | --- |
+| **Owner** | Everything |
+| **Admin** | Everything |
+| **Technician** | Does not get the Billing area. Following a billing link redirects them to Jobs. |
+
+**What a technician can still do with a quote.** The quote builder is also mounted on the **Issue** detail page and the **building manager** detail page, and neither is role-gated — so a technician can _create_ a quote from the web app there. Everything else about a quote (editing, sending, emailing, downloading) is permitted by the API but has no web screen outside Billing, so from the dashboard it is out of reach.
+
+## Things LiftAuth deliberately will not do
+
+<AccordionGroup>
+  <Accordion title="Delete an invoice">
+    Never. Once issued, an invoice is on record permanently so your billing history stays complete for compliance and audit. Reverse it with a credit note.
+  </Accordion>
+
+  <Accordion title="Edit an issued invoice or a sent quote">
+    Never. The customer holds that document. Revise the quote, or credit the invoice and raise a corrected one.
+  </Accordion>
+
+  <Accordion title="Refund a payment">
+    There is no refund action anywhere in the dashboard. Card and PayNow refunds are made in the Stripe dashboard, and LiftAuth does not pick them up — raise a credit note of kind **Refund** yourself so the account matches the money that actually moved.
+  </Accordion>
+
+  <Accordion title="Allocate more to an invoice than it has outstanding">
+    A manual over-allocation is refused. A card payment that overshoots settles the invoice and leaves the surplus showing as **Unallocated credit** on the customer's statement — and there it stays: no action applies a payment surplus to another invoice. Only a credit note can be applied.
+  </Accordion>
+
+  <Accordion title="Email a statement">
+    Not supported. Download the PDF and send it yourself.
+  </Accordion>
+
+  <Accordion title="Send an automatic overdue reminder">
+    Not supported. Chase from the Statements tab and email the invoice again by hand.
+  </Accordion>
+</AccordionGroup>

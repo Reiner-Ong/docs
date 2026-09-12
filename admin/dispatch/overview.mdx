@@ -1,0 +1,85 @@
+---
+title: "Dispatch"
+description: "How LiftAuth handles emergency call-outs — ringing technicians until one accepts."
+icon: "siren"
+---
+
+**Dispatch** is where you handle an emergency call-out: someone phones to say a lift has failed or that people are trapped, and you ring your technicians' phones until one of them accepts the job of going.
+
+It is a separate area from [Jobs](/admin/jobs/overview) because it works differently. A job is planned work you schedule for a date. A dispatch is happening right now, so instead of assigning one person and hoping they see it, LiftAuth makes several phones ring at once with a siren, and the first technician to tap **Accept dispatch** owns the call-out.
+
+## The shape of a dispatch
+
+<Steps>
+  <Step title="A call comes in">
+    An operator takes the phone call and raises the dispatch against the building the caller is at.
+  </Step>
+
+  <Step title="Phones ring">
+    Every technician the operator picked gets a loud ring on their phone. It keeps ringing until someone responds.
+  </Step>
+
+  <Step title="One technician accepts">
+    The first tap wins. Everyone else's phone stops ringing and shows that the call-out has been taken.
+  </Step>
+
+  <Step title="They travel and arrive">
+    The technician can share their live location on the way, then taps **I've arrived** when they are on site.
+  </Step>
+
+  <Step title="An operator closes it">
+    Once the situation is handled, the operator closes the dispatch. That is the end of the record.
+  </Step>
+</Steps>
+
+<Note>
+  A **call-out** is one emergency attendance; a **dispatch** is how LiftAuth finds a technician for it. A call-out is not a [job](/start/glossary), and the dispatch itself creates no job, no [record](/admin/records) and no invoice. If the attendance turns into billable work, someone raises a **separate breakdown job** for it in the normal way — the call-out and that job stay two different things. A dispatch is also raised against a **building**, never against a specific lift.
+</Note>
+
+Dispatch has two tabs:
+
+* **Dispatch** — the live queue of call-outs, newest first, with the detail of whichever one you select.
+* **On call** — the standby rota: who is rostered to take emergency calls, and when.
+
+<Note>
+  Dispatch is an optional area. If you do not see **Dispatch** in the left sidebar, it has not been switched on for your team — ask your workspace owner.
+</Note>
+
+## What do you want to do?
+
+<CardGroup cols={2}>
+  <Card title="Raise an emergency dispatch" icon="phone-arrow-down-left" href="/admin/dispatch/raise-a-dispatch">
+    Take the call, pick the building and the technicians, and start the phones ringing.
+  </Card>
+
+  <Card title="Follow a live dispatch" icon="signal-stream" href="/admin/dispatch/follow-a-live-dispatch">
+    Watch who has answered, ring more people if nobody has, track the technician on the way, and close it at the end.
+  </Card>
+
+  <Card title="Set up the on-call rota" icon="calendar-days" href="/admin/dispatch/on-call-rota">
+    Roster your technicians for standby so the operator knows who to ring at 3am.
+  </Card>
+
+  <Card title="Answer a dispatch on your phone" icon="mobile-screen" href="/technician/answering-a-dispatch">
+    For technicians: what the ring looks like, and how to accept, travel, and arrive.
+  </Card>
+
+  <Card title="Look up a status or a permission" icon="table-list" href="/admin/dispatch/reference">
+    Every status badge, every field on the form, and who is allowed to do what.
+  </Card>
+</CardGroup>
+
+## Reading the queue at a glance
+
+Each row in the queue carries a coloured status badge and a timer, so you can see the state of every call-out without opening it.
+
+| Badge | What it means |
+| --- | --- |
+| **Ringing** | Phones are ringing and nobody has accepted yet. A call-out also comes back to this badge if the technician who accepted releases it. |
+| **Unanswered** | Still ringing after three minutes. Nobody has picked it up. |
+| **On the way** | A technician accepted and is travelling. |
+| **Arrived** | The technician has marked themselves on site. |
+| **Stood down** | An operator cancelled the call-out. |
+| **Closed** | An operator closed it after it was handled. |
+
+The full list of statuses, timers and fields is on the [Dispatch reference](/admin/dispatch/reference) page.

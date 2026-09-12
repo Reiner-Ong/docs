@@ -1,0 +1,90 @@
+---
+title: "How to Follow a Live Dispatch"
+description: "Track who answered, ring more people, follow the technician on the way, and close the call-out."
+icon: "signal-stream"
+---
+
+Once a dispatch is ringing, the **Dispatch** tab is where you watch it play out. This page covers everything from the first ring to closing the record.
+
+Select any call-out in the queue on the left to see its detail on the right. The queue refreshes on its own every few seconds — you never need to reload the page — and it plays a short confirmation when a technician accepts.
+
+## Watch the ring
+
+The **Technicians** section of the detail panel lists everyone being rung and what each of their phones has done:
+
+| Line | What it means |
+| --- | --- |
+| **Sent · no ack yet** | LiftAuth sent the ring but the phone has not confirmed it is playing. Usually a moment's delay; a long wait can mean the phone is off or has no signal. |
+| **Ringing on phone** | The phone confirmed the siren is playing. |
+| **Accepted** | This is the technician who took the call-out. |
+| **Declined** | They said no. If they gave a reason, it is shown after the dash. |
+| **Stood down** | Their ring was stopped — either someone else accepted, or you stood the whole dispatch down. |
+
+A red timer at the top counts up from the moment the ring started. Adding more technicians restarts that count, because a fresh set of phones has just begun ringing.
+
+## Nobody is answering
+
+After three minutes with no answer, the badge turns amber and reads **Unanswered**, and a banner appears: *Nobody has answered. Add a technician to keep ringing, or stand the dispatch down.*
+
+<Steps>
+  <Step title="Click Add technician">
+    The button sits at the bottom of the detail panel. It is available while the dispatch is **Ringing** or **Unanswered**.
+  </Step>
+
+  <Step title="Tick more people">
+    You see every active technician who is not already being rung.
+  </Step>
+
+  <Step title="Click Ring">
+    Their phones start immediately and they join the **Technicians** list.
+  </Step>
+</Steps>
+
+<Tip>
+  Nothing about "unanswered" cancels the call-out. The original phones carry on ringing — adding people widens the net rather than replacing it.
+</Tip>
+
+## Someone accepted
+
+The badge turns blue and reads **On the way**, the panel names who took it, and the timer switches to counting time since they accepted.
+
+If the technician taps **Navigate to building** on their phone, an **En route** card appears with a **LIVE** marker showing:
+
+* their estimated arrival time and how many minutes away they are,
+* how far away they are in kilometres,
+* how long ago their position last updated — and **signal quiet** if their phone has gone silent for a while,
+* a small map with their position, the building, and the driving route.
+
+Some of this can legitimately be missing. **No ETA** means LiftAuth could not work out a driving estimate — most often because the building has no map location saved. **Not sharing — the technician isn't broadcasting a live location right now** means they simply have not started (or have already finished) the share; it is not an error, and it does not mean they aren't coming. Live location is optional for the technician, so a dispatch can run perfectly well without it.
+
+When they tap **I've arrived**, the badge turns green and the timer freezes on the total response time — from the moment you raised the call-out to the moment they were on site.
+
+### An accepted call-out can go back to ringing
+
+A blue **On the way** is not a guarantee. The technician who accepted can release the call-out, and releasing it **re-rings everyone else** — the status returns to **Ringing** and the red timer starts again. So a badge flipping from blue back to red means the person who had it has dropped out, not that anything has gone wrong with the system. Watch the **Technicians** list to see who is ringing now, and add more people if the new ring goes unanswered.
+
+## Close it, or stand it down
+
+Two different endings, and they are not interchangeable:
+
+<AccordionGroup>
+  <Accordion title="Close dispatch — the situation was handled">
+    Available once a technician has accepted. Click **Close dispatch** when the call-out is over. The status becomes **Closed** and the record stops changing.
+  </Accordion>
+
+  <Accordion title="Stand down — the call-out is off">
+    Available at any point before it ends. Click **Stand down** when the emergency has resolved itself, the caller rang back, or it was a false alarm. Every ringing phone stops, and a technician who had accepted sees "Callout stood down — nothing more to do." on their phone. The status becomes **Stood down**.
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  Closing and standing down are both final. A finished dispatch cannot be reopened — raise a new one if the problem comes back.
+</Warning>
+
+## The timeline
+
+Every detail panel ends with a timeline of what happened and when: who raised it, whether it was an entrapment, who accepted, when live sharing started, when they arrived, and when it was stood down or closed. This is the record of the call-out, so it is worth making sure the **Situation** and caller details were filled in properly at the start.
+
+## Turning a call-out into work
+
+A call-out is one emergency attendance, and it is not a job. A dispatch never creates a [job](/start/glossary), a record or an invoice, and closing one raises nothing. If the technician did billable work, the attendance is recorded afterwards as a **separate breakdown job**, created in the normal way — see [Jobs](/admin/jobs/overview) — with a breakdown record template on it. The call-out and that job remain two different records of the same night.

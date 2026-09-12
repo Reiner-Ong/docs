@@ -1,0 +1,108 @@
+---
+title: "Record Templates"
+description: "Design the form your technicians fill in on site, and the record it produces."
+icon: "clipboard-list"
+---
+
+A **record template** is the form a technician fills in on their phone during a
+job. It decides what they are asked, in what order, and what ends up on the
+[record](/admin/records) the building manager signs.
+
+You find them under **Record Templates** in the left sidebar, in the
+**Operations** group.
+
+***
+
+## How a template becomes a record
+
+<Steps>
+  <Step title="You build the template">
+    You add sections and [items](/start/glossary#work-on-site) — things like _Machine room clean_, _Door operation_, _Rope tension reading_. Each item has a type that decides how the technician answers it.
+  </Step>
+
+  <Step title="A job uses the template">
+    LiftAuth never picks a template for you — a person always names it, but not always on the job itself.
+
+    - On **recurring maintenance**, someone names the template once per [coverage group](/start/glossary#work-on-site) in the maintenance contract builder. Each visit the contract generates inherits that choice as a snapshot stamped when the job is generated, so editing the contract afterwards does not re-point jobs that already exist.
+    - On **any other job**, whoever creates or schedules it names the template on each form the job carries.
+
+    A form with no template named for it is a notes-only form — free text and photos, with no items.
+  </Step>
+
+  <Step title="The technician fills it in">
+    In the mobile app the technician works through your items, adds remarks and
+    photos where needed, and signs.
+  </Step>
+
+  <Step title="LiftAuth produces the record">
+    Each submitted form becomes its own [record](/admin/records) — a job carrying three forms produces three records — which the building manager signs and which can be downloaded as a PDF.
+  </Step>
+</Steps>
+
+A template is a *mould*, not a copy. Every form on a job stamps out a fresh record from
+it, and each record keeps its own answers forever — even if you later change the
+template.
+
+***
+
+## What do you want to do?
+
+<CardGroup cols={2}>
+  <Card title="Build a template from scratch" icon="pencil" href="/admin/record-templates/creating-a-record-template">
+    Create a maintenance, repair or breakdown template and add the items your
+    technicians answer.
+  </Card>
+
+  <Card title="Use a ready-made regulator form" icon="landmark" href="/admin/record-templates/adding-a-library-form">
+    Add an official BCA form from the LiftAuth library instead of typing it out.
+  </Card>
+
+  <Card title="Decide which lifts use which template" icon="link" href="/admin/record-templates/assigning-a-record-template">
+    Put a maintenance template onto lifts through a maintenance contract.
+  </Card>
+
+  <Card title="Retire a template you no longer use" icon="archive" href="/admin/record-templates/archiving-a-record-template">
+    Archive it so it stops appearing, without losing the records that used it.
+  </Card>
+
+  <Card title="Look up an item type or a rule" icon="table-properties" href="/admin/record-templates/reference">
+    Every item type, modifier, permission and saving rule in one place.
+  </Card>
+</CardGroup>
+
+***
+
+## How many templates you need
+
+<CardGroup cols={1}>
+  <Card title="Maintenance — as many as you like" icon="calendar-check">
+    Different lifts need different checks. Have one template for traction lifts,
+    another for hydraulics, another for escalators. You choose which one applies
+    to which lifts when you set up the building's maintenance contract.
+  </Card>
+
+  <Card title="Repair — one, in practice" icon="badge-alert">
+    The **New record template** dialog stops offering **Repair** once you have an active repair template, so a workspace normally has exactly one. It is still chosen by hand: whoever creates a repair job picks the template for each form on it.
+  </Card>
+
+  <Card title="Breakdown — one, in practice" icon="badge-x">
+    The dialog stops offering **Breakdown** the same way. Again, nothing selects it for you — the person raising the call-out picks it on the job.
+  </Card>
+</CardGroup>
+
+The one-per-type limit lives in the **New record template** dialog only, and only for Repair and Breakdown. Nothing underneath enforces it, so a restore can leave you with two active templates of the same type. See [How to archive or restore a record template](/admin/record-templates/archiving-a-record-template).
+
+When your workspace was created, LiftAuth gave you a starter set — a Singapore maintenance template plus a blank repair and a blank breakdown template. They are yours: edit them freely.
+
+***
+
+## Getting started quickly
+
+If you have never opened this page before, start from the maintenance template your workspace was given: open **Record Templates**, click into it, and rename and adjust it to match how you actually service a lift.
+
+[How to create a record template](/admin/record-templates/creating-a-record-template) walks through every field, including the job type — which **cannot be changed once the template is created** — and the estimated time per form, which is what LiftAuth uses to work out how long a site visit should be.
+
+<Note>
+  Only **Owners** and **Admins** can create or change record templates.
+  Record Templates is one of the areas hidden from a technician-only account: technicians fill the forms in from the mobile app instead.
+</Note>

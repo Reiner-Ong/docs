@@ -7,97 +7,122 @@ This page explains the key building blocks of LiftAuth and how they connect. Rea
 
 ---
 
-## Your Organisation
+## Your organisation
 
-Your organisation works with **Building Managers** and maintains **Lifts**. A Building Manager is responsible for the building that a lift is installed in.
+Your organisation works with **Building Managers** and maintains **Lifts**. A Building Manager is responsible for the building a lift is installed in. Some screens call them the customer — it means the same thing.
 
 ---
 
 ## What is a Job?
 
-A job represents a single service visit to a lift. Every time a technician goes on-site, a job must exist for that visit.
+A job is one visit's worth of work at one building. Every time a technician goes on site, a job must exist for that visit.
 
-There are three types of jobs:
+A job holds the building, the lifts being worked on, the forms the technician fills in, and one assignee — a technician or a team.
 
-| Type | When to use |
+The job itself has no type. The kind of work is decided by the **form** attached to it, which comes from one of your record templates:
+
+| Kind of visit | When |
 | --- | --- |
-| **Maintenance** | A planned, routine inspection — monthly, quarterly, etc. |
-| **Breakdown** | An emergency call-out when the lift has stopped working or is unsafe. |
+| **Maintenance** | A planned, routine inspection — monthly, quarterly, and so on. |
+| **Breakdown** | A visit to a lift that has stopped working or is unsafe. It often follows an emergency call-out raised in Dispatch — the call-out itself is not a job, but the work you record for it is. |
 | **Repair** | A visit to fix a specific, previously reported fault. |
+
+<Note>
+  Jobs used to be one lift with one fixed type. They are now a building plus whichever lifts and forms that visit needs. See [What is a Job](/what-is-a-job) for the detail.
+</Note>
 
 ---
 
 ## How is a Job created?
 
-Jobs can be created in two ways:
-
-- **Manually** — an Admin creates a job from the dashboard, assigns it to a technician, and sets a date and time.
-- **Automatically** — if a lift has a [Maintenance Plan](/start/concepts#maintenance-plans), jobs are created on a recurring schedule without any manual input.
+- **Manually** — an admin schedules a job from the dashboard, choosing the building, the lifts, the forms, and who does it.
+- **Automatically** — a building with a [maintenance contract](/admin/maintenance-contracts/overview) gets its visits created on a recurring schedule with no manual input.
+- **On site** — a technician can create a job for an unplanned visit from the app.
 
 ---
 
 ## The Job lifecycle
-
-Every job moves through the following stages:
 
 <Steps>
   <Step title="Open">
     The job exists but has not been scheduled or assigned yet.
   </Step>
   <Step title="Scheduled">
-    A technician and a date/time window have been assigned. The technician can see it in their mobile app.
+    A technician or team and a date/time window have been assigned. It appears in the technician's mobile app.
   </Step>
   <Step title="Work Done">
-    The technician has completed the on-site work and submitted their checklist or report. A record is automatically created. The Building Manager receives a signing request by email and SMS.
+    The technician has completed the on-site work and submitted it. A record is created automatically, waiting for sign-off.
   </Step>
   <Step title="Signed">
-    The Building Manager has signed the [Record](/start/concepts#records). The job is ready to be reviewed and closed by an Admin.
+    Sign-off is complete — either the Building Manager signed, or the technician skipped signing because nobody was available. The job is ready for an admin to review and close.
   </Step>
   <Step title="Closed">
-    The Admin has reviewed and closed the job. If a [Maintenance Plan](/start/concepts#maintenance-plans) is active, an invoice draft is generated automatically.
+    The admin has reviewed and closed the job. A draft invoice is raised only if the job belongs to an active contract billed per job, or came from a converted quote — contracts billed annually invoice on their own schedule instead.
   </Step>
 </Steps>
+
+A job can also be **Cancelled** at any point before it closes. Closed and Cancelled are both final.
 
 ---
 
 ## Records {#records}
 
-A record is the written report of what happened during a job. It is created automatically when the technician submits their work. It contains:
+A record is the written report of what happened during a job. It is created when the technician submits their work, and contains:
 
-- The checklist results (pass/fail for each item)
-- Any notes the technician added
-- Photos attached on-site
-- The technician's signature
-- The Building Manager's signature
+- the result of each item on the form (pass/fail, readings, notes)
+- any notes the technician added
+- photos attached on site
+- the technician's signature
+- the Building Manager's signature, if one was given
 
-Records are permanent — they cannot be edited after signing.
+Records are permanent. Once a record exists nobody can edit it — there is no amend and no resubmit, before or after signing. A signed record cannot even be deleted; an unsigned one can be deleted by an owner or admin, but not corrected. Every record is filed automatically in [Drive](/admin/drive/overview) under the building it belongs to.
+
+---
+
+## How sign-off reaches the Building Manager
+
+The Building Manager signs for themselves; nobody can sign on their behalf from the dashboard. There are three ways it happens:
+
+- **On site** — they sign on the technician's phone before the technician leaves.
+- **By link** — the technician generates a one-time signing link and shares it, so they can sign on their own device.
+- **By email** — an owner or admin sends the request from the record in Drive. It goes to everyone the building manager's own firm has assigned to that building.
+
+Every link is a single-use token that expires after 7 days, and generating a new one does **not** cancel the earlier ones. Whoever opens the link can sign without a LiftAuth account — an account is only needed to _receive_ the email.
+
+If none of those three is possible, the technician can **skip signing**. That is not a fourth way of signing — it is an ending without a signature. The job still reaches Signed, but the PDF carries no Building Manager signature.
 
 ---
 
 ## Issues
 
-Issues are faults found on a lift. They can be reported by a technician during a job, or logged by an Admin. A repair job can be raised to address an issue. When the technician marks it as fixed, the issue is automatically closed.
-
-A Repair job can be linked to one or more issues. When the technician marks an issue as fixed, it is automatically closed.
+Issues are faults found on a lift. A technician can report one during a job, or an admin can log one. A repair job can be raised to address one or more issues, and when the technician marks an issue as fixed it closes automatically.
 
 ---
 
-## Invoices
+## Money
 
-Invoices are sent to the Building Manager after work is completed. If a [Maintenance Plan](/start/concepts#maintenance-plans) is active, an invoice draft is generated automatically at the end of each cycle. An Admin must approve the draft before it becomes a real invoice.
+Work becomes money in three steps, all of which live in [Billing](/admin/billing/overview):
+
+- A **quote** prices work before you do it.
+- An **invoice** bills for work done. Contracts generate draft invoices each cycle; you can also write one by hand or raise one from a project.
+- A **payment** records money received against an invoice.
+
+A draft invoice is not yet real. An admin must **issue** it to finalise it and give it its reference number. Issuing is a separate act from emailing it to the customer.
 
 ---
 
-## Maintenance Plans {#maintenance-plans}
+## Maintenance Contracts {#maintenance-contracts}
 
-A Maintenance Plan ties everything together. Once set up, it automatically creates jobs on a recurring schedule and generates invoice drafts at the end of each cycle — without any manual input from an Admin.
+A maintenance contract ties everything together. Set one up for a building and LiftAuth creates the visits on a recurring schedule with no manual input. Whether it also drafts the invoices depends on the contract's billing cadence — per job, annually, or not at all, in which case you raise them by hand.
+
+Contracts are set per **building**, and cover the lifts in it. Older guidance called this a "maintenance plan".
 
 ```mermaid
 flowchart LR
-    Plan["Maintenance Plan"]
-    Plan -->|set up for| Lift["Lift"]
-    Plan -->|linked to| BM["Building Manager"]                                                                                                                                                            
-    Plan -->|assigns| Tech["Technician"]
-    Plan -->|auto-creates| Job["Job"]                                                                                                                                                                     
-    Plan -->|auto-generates| Draft["Invoice Draft"]
+    Plan["Maintenance Contract"]
+    Plan -->|set up for| Building["Building"]
+    Building -->|contains| Lift["Lifts"]
+    Plan -->|billed to| BM["Building Manager"]
+    Plan -->|auto-creates| Job["Jobs"]
+    Plan -->|auto-generates| Draft["Draft Invoices"]
 ```

@@ -1,0 +1,71 @@
+---
+title: "How to use a part on a job"
+description: "How parts get attached to a repair job, how to take them out of stock, and how they get billed."
+icon: "wrench"
+---
+
+This page follows one part from your catalogue onto a repair job and through to the bill.
+
+## How a part gets onto a job
+
+A part reaches a job through a quote.
+
+<Steps>
+  <Step title="You quote the work">
+    When you build a quote, you can add a **Part** line. Pick the part from your catalogue and LiftAuth fills in the description and the **unit price** you set on it. Change the quantity and price on the line if this job is different.
+  </Step>
+
+  <Step title="The quote is accepted and converted">
+    Converting an accepted quote creates the repair <Tooltip tip="One visit's worth of work at one building, which can cover several lifts." cta="Glossary" href="/start/glossary">job</Tooltip>.
+  </Step>
+
+  <Step title="The job carries a Parts required list">
+    Every part line on the quote becomes a row in a **Parts required** section on the job, showing the description, **Qty**, and a **Pending** badge. Click a row to open that part in Inventory.
+  </Step>
+</Steps>
+
+The wording and quantity on the job are a snapshot of the quote at the moment it was converted. Renaming the part in the catalogue afterwards does not change what the job says it needs — the job keeps the wording the customer was quoted on.
+
+## Taking the parts out of stock
+
+<Warning>
+  LiftAuth does **not** deduct stock automatically. A part sitting on a job's **Parts required** list stays **Pending** for the life of the job. Nothing comes off your shelf count until somebody records a withdrawal.
+</Warning>
+
+So the physical step and the bookkeeping step are separate, and both need doing:
+
+<Steps>
+  <Step title="Open the job and read the Parts required list">
+    Note the part and the quantity.
+  </Step>
+
+  <Step title="Take the part off the shelf">
+    Or hand it to the technician, or load it into the van.
+  </Step>
+
+  <Step title="Record a Withdraw movement">
+    Open the part — clicking its row on the job takes you straight there — click **Move stock**, choose **Withdraw (remove stock)**, pick the warehouse it came out of, enter the quantity, and put the job's reference in the note. Full steps are in [how to move stock](/admin/inventory/moving-stock).
+  </Step>
+</Steps>
+
+<Tip>
+  Always name the job in the movement note, for example *REP-2026-4F1A — door motor*. That note is the only link between the withdrawal and the visit it was for.
+</Tip>
+
+If the technician takes the part from a van, record the withdrawal against **that van**, not the main store. If it was moved to the van earlier in the week, that earlier move should have been recorded as a [transfer](/admin/inventory/moving-stock#transfer-move-stock-between-warehouses).
+
+## Getting the part onto the bill
+
+The quote's part lines are what the customer is charged for. When the job completes and the invoice is drafted from the quote, those lines carry across — you do not re-enter them.
+
+For work that was **not** quoted — a part fitted on the day — add the part as a line on the invoice itself. Open the invoice, add a **Part** line, and pick the part; the description and unit price come from the catalogue. Then record the withdrawal in Inventory as above. See [Billing](/admin/billing/overview).
+
+<Note>
+  Billing and stock are two separate records. Adding a part line to an invoice does not change your stock, and recording a withdrawal does not bill anybody. Do both.
+</Note>
+
+## Quick check before you close a job
+
+* Is every part on the **Parts required** list actually fitted?
+* Has a **Withdraw** movement been recorded for each one, from the right warehouse?
+* Do the quantities on the invoice match what was fitted?

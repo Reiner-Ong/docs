@@ -1,0 +1,90 @@
+---
+title: "How to schedule a job"
+description: "Create a job for a building, pick the forms it should run and the lifts each one covers, and assign a technician or team and a time."
+icon: "calendar-plus"
+---
+
+Use this when a visit needs to happen and no <Tooltip tip="Your servicing agreement with a building: which lifts are covered, how often they are visited, which forms are used, and how the work is billed." cta="maintenance contract" href="/start/glossary">maintenance contract</Tooltip> has already created the job for you — a breakdown call-out, a repair, or a one-off service.
+
+## Before you start
+
+You need all three of these, or the dialog will not let you finish:
+
+* A **building** with at least one lift assigned to it, and a **building manager** assigned to that building. See [Adding Lifts](/admin/lifts) and [Adding Building Managers](/admin/building-managers).
+* At least one **record template** — the form the technician fills in on-site. If you have none, the dialog tells you: _"No records yet — create one under Record Templates before scheduling a job."_ See [Record Templates](/admin/record-templates/overview).
+* At least one **active** technician, admin, or owner to assign the work to. See [Manage your team](/admin/managing-your-team).
+
+<Warning>
+  Assign a building manager to the building **before** you start: a building with no building manager cannot have jobs scheduled against it. Pick such a building in the dialog and step 1 is blocked — **Next** is disabled, and an amber **Building manager required** notice appears with an **Assign a building manager** link that takes you to the building. See [Adding Building Managers](/admin/building-managers).
+</Warning>
+
+## Schedule the job
+
+Go to **Jobs** in the sidebar and click **Schedule Job**. The dialog has three
+steps.
+
+<Steps>
+  <Step title="Step 1 — Build your job">
+    Search for the **building** by name or address and select it. Everything on
+    this job happens at one building.
+
+    Then set up the <Tooltip tip="One record template paired with the lifts it covers." cta="coverage groups" href="/start/glossary">coverage groups</Tooltip> for the visit — the dialog labels this section **Records**, and its step **Records**, but what you are building here is the instruction for the technician, not the report. Each group is a pair: one <Tooltip tip="The everyday word for a record template once it is attached to a job — the thing a technician actually fills in." cta="form" href="/start/glossary">form</Tooltip> (a record template), and the lifts it covers. The records themselves only exist once the technician submits the work.
+
+    * Choose the record template.
+    * Tick the lifts it applies to.
+    * Add another group if the visit runs more than one form.
+
+    A lift can only be in one group on the job. Some templates cover one lift
+    only — if you tick two, the dialog says so and you cannot continue.
+
+    Click **Next**.
+  </Step>
+
+  <Step title="Step 2 — When & who?">
+    Pick **one technician or one team**. A job has exactly one assignee — never
+    both, and never two people.
+
+    Set the **date**, the **start time** (Singapore time, between 06:00 and
+    20:00), and the **duration**.
+
+    When you pick a technician, their existing bookings appear on a calendar
+    beside the picker so you can see clashes. A clash does not block you: the
+    dialog says *"Pick another time, or schedule it anyway,"* and you can choose
+    **Continue anyway**.
+
+    A team job skips the clash check, because a team has more than one calendar.
+
+    Click **Next**.
+  </Step>
+
+  <Step title="Step 3 — Review & schedule">
+    Check the building, the forms and their lifts, the date and duration, and
+    the assignee. Use the step numbers at the top to go back and change anything.
+
+    Click **Schedule**. The job is created directly at **Scheduled** and opens.
+  </Step>
+</Steps>
+
+The technician sees it in their app straight away, and gets a push notification for the assignment.
+
+Scheduling also notifies the **building manager's firm** — every user of that firm, by push and by email. It is firm-wide, not a single named contact. You are not notified yourself. Rescheduling later sends the same firm-wide push and email again, still worded as "scheduled".
+
+## Long visits that span more than one day
+
+If the duration you set does not fit in one working day, LiftAuth splits the
+visit across consecutive working days automatically. The dialog tells you how
+many days it will take, and the job page shows the schedule as
+`Mon 3 Feb · 9:00 AM–5:00 PM (+2 more days)`.
+
+A multi-day visit is still one job, with one set of records and one sign-off.
+
+## Change the plan afterwards
+
+* **Different person, day, or time** — open the job and click **Reschedule**. Available while the job is **Scheduled**.
+* **Not happening at all** — open the job and click **Cancel**. You must give a reason, and it cannot be undone.
+
+Details of both are in the [Jobs reference](/admin/jobs/jobs-reference#actions-on-a-job).
+
+## If a maintenance plan already covers this building
+
+You do not need to schedule anything. The contract creates and assigns each visit on its own schedule. See [Maintenance Contracts](/admin/maintenance-contracts/overview).

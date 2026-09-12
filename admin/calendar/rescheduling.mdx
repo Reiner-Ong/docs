@@ -1,0 +1,67 @@
+---
+title: "How to move a job or event by dragging"
+description: "Drag an item to a new day or time slot on the calendar and confirm the move."
+icon: "arrows-up-down-left-right"
+---
+
+The quickest way to move a visit is to drag it. Dragging a job runs the same reschedule as the **Reschedule** action on the job page, so the outcome is identical either way.
+
+## Drag it
+
+<Steps>
+  <Step title="Find the item in the view that suits the move">
+    Use **Month** to move something to a different day; the time of day is kept
+    as it was. Use **Week** or **Day** to change the time as well — the drop
+    snaps to the nearest 15 minutes.
+  </Step>
+
+  <Step title="Drag the block onto the new day or slot">
+    Nothing has changed yet.
+  </Step>
+
+  <Step title="Check the confirmation">
+    A dialog opens headed **Reschedule job?** or **Reschedule event?**. It shows
+    the new date and time, and the old one underneath so you can compare. If you
+    dragged one date of a repeating event, it also tells you that only that
+    occurrence will move.
+  </Step>
+
+  <Step title="Click Confirm">
+    LiftAuth confirms with "Rescheduled. Relevant parties will be notified." The
+    length of the visit is preserved — a two-hour job stays two hours long.
+  </Step>
+</Steps>
+
+Click **Cancel** at any point and nothing is changed.
+
+## Who is notified
+
+The same confirmation appears whichever kind of item you moved, but only a job move notifies anybody:
+
+- **You moved a job.** Everyone at the building manager's firm is notified, by push and by email — it is firm-wide, not a single named contact. A reschedule goes out through the same path as first scheduling, so the wording the firm receives still reads "scheduled" rather than saying the visit moved. The assigned technician is notified separately; the person doing the rescheduling is not notified.
+- **You moved an event.** Nobody is notified. Events are personal calendar entries and moving one sends no push and no email, despite what the confirmation says.
+
+## When a job will not move
+
+Events always move. A job only moves while it is still **Scheduled**. A job with no schedule never reaches the calendar in the first place — schedule it from the job page — so every refusal below is about an item that is already on the grid. Where a job
+cannot be moved, LiftAuth says why as soon as you drop it, and the job stays
+where it was:
+
+| What you dragged | What LiftAuth tells you |
+| --- | --- |
+| A job the technician has already finished | Work is already done on this job, so it can't be rescheduled. |
+| A job the building manager has signed | This job is signed off, so it can't be rescheduled. |
+| A closed job | This job is closed, so it can't be rescheduled. |
+| A cancelled job | This job is cancelled, so it can't be rescheduled. |
+| One day of a visit that spans several days | This visit spans several days — reschedule it from the job page. |
+| A job assigned to a team rather than one person | This job is assigned to a team — reschedule it from the job page. |
+| A planned job from a Maintenance Contract | This job hasn't been generated yet — it'll be scheduled automatically closer to the date. |
+
+<Tip>
+  Where dragging is refused, the job page can still do the job. Click the item, click **Open job**, and use **Reschedule** there — that is also where you change the technician, which dragging never does. See [Jobs reference](/admin/jobs/jobs-reference).
+</Tip>
+
+<Warning>
+  Dragging keeps the same technician. To hand the visit to someone else, open
+  the job and reschedule it there.
+</Warning>

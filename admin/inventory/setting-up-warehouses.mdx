@@ -1,0 +1,67 @@
+---
+title: "How to set up warehouses"
+description: "How to add the stores, depots, and vans you keep parts in, and see what is held at each."
+icon: "warehouse"
+---
+
+A **warehouse** in LiftAuth is any place you keep stock. That includes a proper store, but also a depot, a cage in a carpark, or a technician's service van. Every stock figure in Inventory belongs to one warehouse, so you need at least one before any part can hold stock.
+
+## Add a warehouse
+
+<Steps>
+  <Step title="Go to Inventory → Warehouses">
+    Click **Inventory** in the left sidebar, then open the **Warehouses** tab.
+  </Step>
+
+  <Step title="Click + Add Warehouse">
+    The **Add warehouse** dialog opens.
+  </Step>
+
+  <Step title="Give it a name">
+    Required. Use the name your team already says out loud — *Tuas Central Store*, *Van 2*.
+  </Step>
+
+  <Step title="Set the address (optional)">
+    Start typing in the **Address** box and pick the matching place from the suggestions. Choosing a suggestion also drops the map pin for you.
+  </Step>
+
+  <Step title="Adjust the pin (optional)">
+    Click anywhere on the map, or drag the pin, to move it. LiftAuth looks up the nearest address and fills the address box to match. Leave the map alone for somewhere with no fixed location, like a van.
+  </Step>
+
+  <Step title="Click Add Warehouse">
+    The warehouse is created and its page opens.
+  </Step>
+</Steps>
+
+<Note>
+  Address and location are both optional. A van with no address is a perfectly normal warehouse — it just will not show a map pin.
+</Note>
+
+## Find a warehouse
+
+The **Warehouses** tab lists every warehouse as a full-width row showing its name, an **Active** badge, its address, and a **Located** marker when it has map coordinates. Type in the **Search warehouses…** box to filter by name or address.
+
+Every warehouse is Active, always — there is no way to make one inactive, so the **Active** badge tells you nothing you did not already know. Treat it as decoration.
+
+## See what is stored at one
+
+Click a warehouse row to open it. The page shows:
+
+* **Parts** — how many different parts are stored here.
+* **Units on hand** — the total number of individual units across all of those parts.
+* **Warehouse Details** — the address and the date it was created.
+* **Location** — the coordinates and a map, or *No location on file*.
+* **Parts in this warehouse** — a table of every part held here, with the **Qty here** for each. Click a row to open that part.
+
+## Change a warehouse
+
+Open the warehouse and click **Edit**. You can change the name, the address, and the map location. Save with **Save**.
+
+<Warning>
+  Warehouses cannot be deleted or archived — there is no such action anywhere in LiftAuth. If a location closes, rename it so nobody sends stock there by mistake, and transfer its stock to a warehouse that is still in use — see [how to move stock](/admin/inventory/moving-stock#transfer-move-stock-between-warehouses).
+</Warning>
+
+## What to do next
+
+With at least one warehouse in place you can [add parts](/admin/inventory/adding-a-part) and give them opening stock, or [move stock](/admin/inventory/moving-stock) against parts you already have.

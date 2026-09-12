@@ -1,0 +1,80 @@
+---
+title: "Projects"
+description: "What a project is, when to use one instead of a plain job, and where to start."
+icon: "diagram-project"
+---
+
+A **project** is a larger piece of work that runs over several visits and documents — a modernisation, an installation, a major repair. It holds the supplier's quote, your quote to the customer, the
+purchase order, the jobs, the invoice, and every document in between, in one place.
+
+## When to use a project instead of a job
+
+A [job](/admin/jobs/overview) is a single visit to a building. That is all it is meant to be, and for routine maintenance it is enough.
+
+**Use a project when one job is not enough to hold the work.** The work runs over several visits, or several jobs, or is partly done by a subcontractor, and the paperwork piles up around it:
+
+* You have to get a price from a supplier before you can quote the customer.
+* The customer has to accept a quote before anything is scheduled.
+* You raise a purchase order to your supplier.
+* You want one bundle of paperwork to send the customer at the end.
+
+A door operator replacement across several visits is a project. A monthly service is not — and neither is a single-visit repair you happen to quote for first, which is a job with a quote against it.
+
+<Note>
+  Projects is switched on per workspace. If you cannot see **Projects** in the
+  sidebar, an owner can turn it on under **Account → Features → Projects**. Only
+  owners and admins can see projects at all — technicians never do.
+</Note>
+
+## The mental model: six stages
+
+Every project has the same six stages, in the same order, for every customer. They cannot be added to, renamed or reordered.
+
+| Stage | What it holds |
+| --- | --- |
+| **Supplier quote** | What your supplier is charging you. Internal. |
+| **Customer quote** | What you are charging the customer. |
+| **Procurement** | The order you place with your supplier. Internal. |
+| **Work** | The jobs and their records. |
+| **Invoice** | The bill to the customer. |
+| **Closed** | The project is finished and frozen. |
+
+Two of them — **Supplier quote** and **Procurement** — are marked **Internal** in
+the app. Nothing on an internal stage is ever sent to the building manager.
+
+<Note>
+  The stage the app calls **Procurement** is the purchase order you place with your supplier. The [glossary](/start/glossary) lists it under **Purchase order**; they are the same stage.
+</Note>
+
+LiftAuth works out how far a project has got by itself, from the documents on it.
+You do not drag a card between columns: accept a quote, sign a job, issue an
+invoice, and the project moves. Where you *do* have to say so — a supplier quote
+that only exists as a PDF, for example — the stage has a **Mark complete** button.
+
+## What do you want to do?
+
+<CardGroup cols={2}>
+  <Card title="Start a project" icon="plus" href="/admin/projects/creating-a-project">
+    Create a project for a customer, link the jobs, and choose who is on each stage.
+  </Card>
+
+  <Card title="Move it forward" icon="list-check" href="/admin/projects/moving-a-project-through-its-stages">
+    Attach documents, mark a stage complete, skip a stage you do not need, ask a colleague to review.
+  </Card>
+
+  <Card title="Quote and invoice" icon="receipt" href="/admin/projects/quoting-and-invoicing-from-a-project">
+    Raise the customer quote and the invoice from the project, so both land back on it.
+  </Card>
+
+  <Card title="Finish and hand over" icon="box" href="/admin/projects/closing-and-sending-the-paperwork">
+    Close the project, send the customer one package of documents, reopen it if you must.
+  </Card>
+
+  <Card title="Look something up" icon="table-list" href="/admin/projects/stage-reference">
+    Every stage, every status, every filter, and who is allowed to do what.
+  </Card>
+</CardGroup>
+
+## Finding your projects
+
+Click **Projects** in the sidebar. The board, the list, the filters and the card badges are all set out in the [Projects reference](/admin/projects/stage-reference).

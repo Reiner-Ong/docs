@@ -1,0 +1,90 @@
+---
+title: "How to reschedule and backfill visits"
+description: "Move a single upcoming visit to a different date, or log visits that happened before the contract existed."
+icon: "calendar-day"
+---
+
+A contract writes out every visit for its whole term in advance. Those visits live on the contract's **Upcoming Visits** tab until LiftAuth turns each one into a [job](/admin/jobs/overview), fourteen days before it is due.
+
+The calendar shows the same rows under a different name — a [**planned job**](/start/glossary) on the calendar is one upcoming visit on this tab. You cannot drag a planned job to a new date: the calendar refuses with "This job hasn't been generated yet — it'll be scheduled automatically closer to the date." Move it from the contract, as below.
+
+Two things you will want to do with them: move one that lands badly, and fill in history that predates the contract.
+
+## Move an upcoming visit
+
+Use this when a single visit clashes with something — a public holiday, a site closure, a technician's leave. The rest of the schedule is untouched.
+
+<Steps>
+  <Step title="Open the contract">
+    Go to **Maintenance Contracts** and click the row.
+  </Step>
+
+  <Step title="Go to the Upcoming Visits tab">
+    Every future visit is listed with its date and how many lifts it covers.
+  </Step>
+
+  <Step title="Click Reschedule on the visit you want to move">
+    A dialog opens with the visit's current date and start time.
+  </Step>
+
+  <Step title="Set the new date and, if you need to, a new start time">
+    Times are Singapore time.
+  </Step>
+
+  <Step title="Click Apply">
+    The visit moves. Nothing else on the contract changes.
+  </Step>
+</Steps>
+
+<Warning>
+  A reschedule here survives only until the next edit of the contract. Saving an edit recomputes **every future visit**, which puts any visit you had moved by hand back on its computed date — see [Saving an edit rewrites future visits](/admin/maintenance-contracts/edit-or-end-a-contract#change-a-live-contract). Do your edits first, then re-apply the one-off moves.
+</Warning>
+
+<Warning>
+  Reschedule only works on a visit that has not become a job yet. Once LiftAuth has created the job — roughly two weeks out — the **Reschedule** button is gone, and you move the **job** instead, from the job itself. Moving a job goes through the same path as scheduling it in the first place, so the building manager's whole firm is notified again by push and email, and the message still reads "scheduled" rather than saying it moved. You also cannot move a visit into the past, or on or after the contract's expiry date.
+</Warning>
+
+Rescheduling is available on **Active** contracts only. An expired or archived contract has no future visits left to move.
+
+<Tip>
+  If a visit is long enough to spill over into the next workday, each day of it can be moved on its own — the dialog is titled **Reschedule day 2**, and so on.
+</Tip>
+
+## Log visits that happened before the contract
+
+Use this when you are moving an existing customer onto LiftAuth and want their service history in the system, or when the contract was backdated and those earlier months never generated jobs.
+
+<Steps>
+  <Step title="Open the contract and stay on the Overview tab">
+    The service-activity panel shows a year grid: solid marks are visits already recorded, dashed marks are visits planned under this contract.
+  </Step>
+
+  <Step title="Click Record past visits">
+    You will only see this button if your role allows it — see [permissions](/admin/maintenance-contracts/reference#who-can-do-what).
+  </Step>
+
+  <Step title="Add a draft for each visit">
+    Tick a month in the grid on the left to start a draft, or upload the signed PDFs and let LiftAuth read the service date, lifts and technician out of each one.
+  </Step>
+
+  <Step title="Check every draft">
+    Set the date, the lifts covered and the technician. If the technician is not on LiftAuth, choose **Not on platform — enter a name** and type it.
+  </Step>
+
+  <Step title="Create the visits">
+    They are added as completed [records](/admin/records) for the building, and the service-activity grid fills in. A backfilled visit creates a record only — there is no job behind it, no item results and no signature, just the details you entered and any PDF you attached.
+  </Step>
+</Steps>
+
+<Note>
+  A month that already has a visit recorded is locked in the grid, so you cannot double-log the same month by accident.
+</Note>
+
+<Warning>
+  Details read out of a PDF are a draft, not a fact. Read each one before you create it — the panel says so too.
+</Warning>
+
+## Where the rest of the history lives
+
+- **Visit History** tab — every [record](/admin/records) held for this contract's **building**, whichever contract or job produced it, and including the ones you backfilled here. It is a building-level history rather than a list of this contract's jobs, so visits you logged by hand do appear on it.
+- **Invoices** tab — every invoice raised off this contract. See [Billing](/admin/billing/overview) for what to do with them.

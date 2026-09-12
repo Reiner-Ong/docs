@@ -1,0 +1,258 @@
+---
+title: "Record Template Reference"
+description: "Every item type, modifier, field and rule in a record template."
+icon: "table-properties"
+---
+
+Look here when you need the exact behaviour of something in the record template
+editor. If you are building your first template, start with
+[How to create a record template](/admin/record-templates/creating-a-record-template).
+
+***
+
+## Template fields
+
+| Field | Where you set it | Rules |
+| --- | --- | --- |
+| **Name** | The **New record template** dialog, or the name box in the page header | Required. Must be unique among active templates of the same job type. |
+| **Job type** | The **New record template** dialog only | Required. The dialog offers **Maintenance**, **Repair** and **Breakdown**. It is the type of the template, not of any job. Cannot be changed after the template is created. |
+| **Estimated time per form** | **Settings → Estimated time**, below the form | Required, and must be greater than zero. Minutes it takes one technician to fill in one record from this template. |
+| **Form** | The **Content** tab | Sections of items. A template can be saved with no items, but then it produces an empty record. |
+| **PDF output** | The **PDF** tab | Either the auto-generated layout or a flat PDF form you upload. |
+
+<Note>
+  A template also has an internal code (shown as `TPL-2026-…` in the archive
+  dialog). You never type it — LiftAuth generates it.
+</Note>
+
+***
+
+## Job types
+
+A job type belongs to the **template**, and **a job has no type of its own**. Both halves matter: what makes a visit maintenance, a repair or a breakdown is the template behind each form on it, so a job whose forms mix templates has no single kind.
+
+A template gets its job type in the **New record template** dialog, once, and it cannot be changed afterwards. The type also decides how many templates of that type the dialog lets you create.
+
+| Job type | How many the dialog lets you create | How a template of this type reaches a job |
+| --- | --- | --- |
+| **Maintenance** | As many as you like — never limited | A person names one per coverage group in the building's **maintenance contract** builder (the builder labels those groups **Record 1**, **Record 2** on screen); each generated visit inherits that choice as a snapshot stamped at generation time |
+| **Repair** | The dialog offers the type only while you have no active repair template | Named by hand, on each form of the job |
+| **Breakdown** | Same as Repair | Named by hand, on each form of the job |
+
+The **New record template** dialog stops offering **Repair** or **Breakdown** once you have an active template of that type; archive the existing one and the dialog offers the type again. **Maintenance** is never limited this way. And the limit lives in the dialog only — nothing in the backend or the database enforces one template per job type, so restoring an archived template can leave you with two active templates of the same type.
+
+Nothing in LiftAuth resolves a template from a job type, so **no template is ever applied to a job automatically** — a person always names it:
+
+- On recurring maintenance, a person names it once per coverage group in the maintenance contract builder, and the admin UI refuses to save a group without one. Jobs the contract generates inherit that choice as a snapshot stamped at generation time, so editing the contract afterwards does not re-point jobs that already exist.
+- On any other job, whoever creates or schedules the job names the template on each form it carries.
+
+Each submitted form becomes its own record. Note that form _items_ are a separate matter: compliance capture items are injected onto scheduled jobs automatically, even though the template never is.
+
+***
+
+## Item types
+
+Each item is one thing the technician fills in. You choose the type when you add
+the item, using the chips at the bottom of a section. **The type is fixed once
+the item is created** — to change it, remove the item and add a new one.
+
+<AccordionGroup>
+  <Accordion title="Pass/Fail/NA" icon="circle-check">
+    A three-way assessment. On the technician's phone it appears as three
+    buttons: **Pass**, **Fail** and **N/A**. Tapping the selected button again
+    clears the answer.
+
+    This is the type to use for anything you inspect and judge. It is also the
+    only type that offers the technician a **Raise Issue** button, so a failed
+    item can become a tracked [issue](/admin/issues) on the spot.
+
+    No extra configuration.
+  </Accordion>
+
+  <Accordion title="Text" icon="type">
+    A free-text box. The technician sees the hint **Enter a value…**. Use it for
+    descriptions, model numbers, or anything that is not a fixed choice.
+
+    No extra configuration.
+  </Accordion>
+
+  <Accordion title="Select" icon="list">
+    A single choice from a list you write. Add the choices under **Options (at
+    least two)**; use **+ Add option** for more.
+
+    **At least two non-empty options are required** — saving fails until you
+    have them. On the phone the technician taps the field and picks one option
+    from a sheet.
+  </Accordion>
+
+  <Accordion title="Number" icon="hash">
+    A numeric measurement. The technician gets a number keypad and the hint
+    **Enter a number…**.
+
+    No extra configuration in the editor.
+  </Accordion>
+
+  <Accordion title="Date" icon="calendar">
+    A calendar date. The technician taps the field, picks a date from the phone's
+    date picker, and it is shown and printed as DD/MM/YYYY.
+
+    No extra configuration.
+  </Accordion>
+
+  <Accordion title="Photo" icon="camera">
+    One or more photos taken on site. The technician gets a strip of thumbnails
+    with an add tile.
+
+    No extra configuration. This is the only type that cannot use the **Show
+    history** modifier.
+  </Accordion>
+</AccordionGroup>
+
+***
+
+## Item modifiers
+
+Both modifiers live behind the small sliders button at the right-hand end of an
+item row, labelled **History & required**. When a modifier is on, it also shows
+as a tag under the item title.
+
+| Modifier | Menu description | What the technician sees |
+| --- | --- | --- |
+| **Show history** | Show last value + date on the form | A grey line under the item title: **Never checked**, **Last checked 20 Mar**, or **Last checked 3 months ago** — with **· was Pass** appended when there is a previous answer. |
+| **Required** | Block submit until answered | A red asterisk after the item title. The technician cannot submit the record while any required item is unanswered; they get the warning **3 required items left**. |
+
+<Note>
+  **N/A counts as answered** for a required Pass/Fail/NA item. A required Photo
+  item needs at least one photo.
+</Note>
+
+**Show history** is not available on Photo items — there is no single value to
+carry forward.
+
+***
+
+## Sections
+
+Sections group items under a heading on the record.
+
+- The first section's title is optional (**Section title (optional)**). Leave it
+  blank for a flat list with no heading.
+- A template always keeps at least one section — the remove button is disabled
+  when only one is left.
+- Drag the handle at the left of an item row to reorder items within a section.
+
+***
+
+## What technicians see that you do not configure
+
+These appear on every record regardless of the template, so do not build items
+for them:
+
+- The company letterhead, record number and issue date.
+- Lift ID, building, manufacturer, service date, technician name.
+- A **Remarks for this item…** box and a photo strip on *every* item, reachable
+  from the item's expand chevron.
+- The technician's signature, and the building manager's signature.
+
+***
+
+## Saving rules
+
+Saving is blocked, with the fields highlighted, when:
+
+| Problem | Message |
+| --- | --- |
+| An item has no title | *Give this item a title, or remove it.* |
+| A Select item has fewer than two options | *Add at least two options.* |
+| Estimated time is zero or blank | *Set an estimated time under Settings, below the form, before you can save.* |
+| One or more of the above | *2 fields need attention before you can save — they're highlighted below.* |
+
+An **Unsaved** badge appears in the header as soon as you change anything.
+Leaving the page with **Cancel** discards unsaved edits.
+
+***
+
+## Editing a live template
+
+Record templates are **not versioned**. An edit takes effect immediately, for
+every job created from then on. Records already produced are untouched — each
+record keeps its own copy of the answers.
+
+Each item carries a stable internal code that links it to past records:
+
+- **Renaming** an item keeps the link, so history still lines up.
+- **Reordering** items keeps the link.
+- **Removing** an item stops it appearing on new jobs; past records keep it.
+- **Changing an item's type** is not possible — remove and re-add instead, which
+  starts a fresh history.
+
+***
+
+## Library forms
+
+A form added from the library is a **live reference**: its content is kept up to
+date centrally and it is read-only in your workspace. Library forms are listed
+in their own **Library forms** section on the Record Templates page and carry a
+blue **Library** badge.
+
+- You cannot edit the name, items or PDF mapping of a library form.
+- **Duplicate** is not offered on a library form, so there is no way to make an
+  editable variation of one. Build your own template instead.
+- The retire button reads **Remove from workspace**, not **Archive**. Removing a
+  library form takes it off your pickers; existing jobs and records are
+  unaffected, and you can re-add it at any time.
+
+- Some library forms are **multi-lift**: one record covers a whole set of lifts
+  rather than one each. They carry a **Multi-lift** badge in the editor header.
+  Templates you build yourself are always single-lift.
+
+The library is grouped into categories — today **Singapore · BCA** (the BCA EMEG
+permit, certificate, notification and annual-testing forms, plus inspection
+reports), **General**, and a demo category.
+
+<Note>
+  Adding from the library is only available if the template library is switched
+  on for your workspace. If you do not see the **Library forms** section at all,
+  it is off — ask LiftAuth support.
+</Note>
+
+***
+
+## PDF output
+
+The **PDF** tab decides what the finished record looks like as a document.
+
+| Mode | What it does |
+| --- | --- |
+| **Auto-generated layout** | LiftAuth builds the document from your sections and items. This is the default and needs no setup. |
+| **Overlay** | LiftAuth stamps the technician's answers onto a flat PDF form you upload — used for regulator forms that must keep their official layout. |
+
+In overlay mode you place a box on the uploaded page for each value. A box can
+stamp an item's answer, an item's remarks, or a record field (**Lift ID**,
+**Building name**, **Building address**, **Technician**, **Serviced at**). For a
+Select item you can switch a box to **Circle option** so it draws a ring around a
+pre-printed choice instead of writing text.
+
+<Warning>
+  You can only map items that have already been saved. Newly added items show
+  *Save the template to map newly added items.* — save first, then map.
+</Warning>
+
+***
+
+## Who can do what
+
+Roles are [Owner, Admin, Technician and Call Center](/start/glossary#who-does-what) — **Call Center** is the role name as the product spells it.
+
+| Action | Owner | Admin | Technician | Call Center |
+| --- | --- | --- | --- | --- |
+| See the Record Templates page | Yes | Yes | No | No |
+| Create, edit, duplicate a template | Yes | Yes | No | No |
+| Archive / restore a template | Yes | Yes | No | No |
+| Add or remove a library form | Yes | Yes | No | No |
+| Upload or remove an overlay PDF | Yes | Yes | No | No |
+| Fill in a record from a template | No web screen exists | No web screen exists | Mobile app | No |
+
+**Filling in a record happens in the mobile app.** There is no record-filling screen in the web dashboard for anybody, owners and admins included. What the web dashboard can do is create a _backdated_ record — date, lifts, technician, notes and an optional PDF, with no item entries and no signatures.
+
+Record Templates is one of the areas hidden from a technician-only account, so someone whose only role is Technician or Call Center does not get it in the web dashboard navigation. See [Manage your team](/admin/managing-your-team) for how roles are assigned.

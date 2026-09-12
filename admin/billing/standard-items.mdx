@@ -1,0 +1,81 @@
+---
+title: "How to set up standard billing items"
+description: "Keep your callout fee, hourly rate and other repeat charges in one place instead of retyping them on every document."
+icon: "list-check"
+---
+
+A **standard billing item** is a named charge your firm bills over and over — a callout fee, an hour of labour, a disposal charge. Set the price once here, and pick it onto a quote or invoice line instead of typing it out each time. That is what stops the same fee going out at three different prices.
+
+Standard items are **not** inventory parts. Parts live in Inventory and are stocked and counted; standard items are services and charges.
+
+<Note>
+  Standard-item rows carry your cost prices, so the tab is part of the Billing area and not visible to anyone without it — a team member whose only role is Technician never sees it.
+</Note>
+
+## Add an item
+
+<Steps>
+  <Step title="Open Billing → Standard items">
+    The tab sits beside Ledger and Statements.
+  </Step>
+
+  <Step title="Click the button to add an item">
+    An empty catalogue offers to add a starter set for you — Callout fee, After-hours callout, and Hourly labour. They arrive unpriced, so you decide what they cost.
+  </Step>
+
+  <Step title="Give it a name">
+    Up to 200 characters. Names must be unique — LiftAuth will not let two live items share one.
+  </Step>
+
+  <Step title="Add a description (optional)">
+    Up to 500 characters. This is what prints on the document line. Leave it blank and the name is used instead.
+  </Step>
+
+  <Step title="Set the unit price">
+    What you charge the customer for one of these.
+  </Step>
+
+  <Step title="Set the cost price (optional)">
+    What it costs you. **Internal only — it never appears on a customer's quote, invoice or PDF.** It is there so you can see your margin.
+  </Step>
+
+  <Step title="Save">
+    The item is immediately available in the quote and invoice builders.
+  </Step>
+</Steps>
+
+<Warning>
+  An item with **no unit price** is deliberately left out of the quote and invoice pickers. It is a real catalogue entry with no price decided yet. A price of **0.00** is a different thing — a deliberately free-of-charge item, which does appear in the pickers.
+</Warning>
+
+## Use an item on a document
+
+In the quote or invoice builder, add a line and pick the standard item. Its description, unit price and cost are copied onto the line. You can then change the quantity or override the price for that one document.
+
+<Tip>
+  The copy is a snapshot. Editing an item's price here changes what future lines are seeded with; it never rewrites a document you have already raised.
+</Tip>
+
+## Finding an item
+
+The list is sorted A–Z and has a search box that matches on name and description. Turn on **Show archived** to include items you have filed away.
+
+## Change or retire an item
+
+<AccordionGroup>
+  <Accordion title="Change a price">
+    Open the item's row menu and edit it. Existing quotes and invoices are untouched — only new lines pick up the new price.
+  </Accordion>
+
+  <Accordion title="Archive an item you no longer bill">
+    Archive it from the row menu. It disappears from the pickers and from the default list. If a quote or invoice template still uses it as a live line, LiftAuth warns you before archiving so you can fix the template.
+  </Accordion>
+
+  <Accordion title="Bring an archived item back">
+    Turn on **Show archived**, find it, and unarchive it. If another item has taken its name in the meantime, restoring it fails — rename one of the two and try again. Archived names are deliberately reusable.
+  </Accordion>
+</AccordionGroup>
+
+## What a standard item does not have
+
+There is no SKU or item code, no per-item tax rate, and no unit label. Tax is set once at document level, as a single percentage on the whole quote or invoice.

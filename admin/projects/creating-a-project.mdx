@@ -1,0 +1,93 @@
+---
+title: "How to create a project"
+description: "Create a project for a customer, name who is responsible, and open it at the right stage."
+icon: "plus"
+---
+
+A project belongs to one customer — the [Building Manager](/start/glossary), the
+company or owner responsible for the building, who you will bill. Everything else,
+including the jobs and the documents, is added afterwards.
+
+Before you start, make sure the customer already exists as a
+[Building Manager record](/admin/building-managers). You cannot create a project
+without choosing one.
+
+## Create the project
+
+<Steps>
+  <Step title="Go to Projects">
+    Click **Projects** in the sidebar.
+  </Step>
+
+  <Step title="Click New project">
+    Click **+ New project** at the top right. Every board column except **Closed**
+    also has its own way in — **New project** on the first column, **Start here** on
+    the rest. All of them open the same dialog and create the project the same way.
+  </Step>
+
+  <Step title="Give it a title">
+    The title is what everyone will read on the board, so make it say what the work
+    is: *Door operator replacement — Lift B*. Up to 200 characters.
+  </Step>
+
+  <Step title="Add a description (optional)">
+    A short brief, up to 1,000 characters. It is stored with the project but is not
+    shown on the project page, so put anything the team needs to read into a stage
+    note instead.
+  </Step>
+
+  <Step title="Choose the customer">
+    Search for the building manager being billed. This is required, and it cannot be
+    changed afterwards — every quote and invoice raised on the project is addressed
+    to them.
+  </Step>
+
+  <Step title="Choose the building (optional)">
+    The picker narrows to that customer's buildings. Leave it empty if the work spans
+    several of their buildings.
+  </Step>
+
+  <Step title="Click Create project">
+    LiftAuth gives the project a reference of its own — **PRJ-2026-XXXXXX** — and
+    opens it.
+  </Step>
+</Steps>
+
+<Warning>
+  The customer and the building are fixed at creation. **Edit** on the project page
+  changes the title only. If you picked the wrong customer, create the project
+  again against the right one.
+</Warning>
+
+## Say who is on each stage
+
+Each of the six stages has its own list of people, and it is worth setting them
+early: when a stage becomes the project's turn, LiftAuth puts a **Ready** item in
+those people's [Inbox](/admin/inbox).
+
+<Steps>
+  <Step title="Open the stage row">
+    Click the stage on the project page to expand it.
+  </Step>
+
+  <Step title="Pick the people">
+    Use the assignee picker on the right of the row. Up to 20 people per stage. Only
+    owners and admins can be assigned.
+  </Step>
+</Steps>
+
+<Tip>
+  If a stage has nobody on it, the readiness prompt goes to everyone assigned
+  anywhere on the project — and if nobody is assigned at all, to every owner and
+  admin in the workspace. Somebody is always told; assignees decide who.
+</Tip>
+
+## What happens next
+
+A new project starts with all six stages **Empty**, and **Supplier quote** is the entry point — it is the first stage to turn Ready, and the board shows the project in the leftmost stage that is not yet done or skipped. From here:
+
+* [Move it through its stages](/admin/projects/moving-a-project-through-its-stages) — attach documents, link jobs, mark stages complete or skipped.
+* [Quote and invoice from it](/admin/projects/quoting-and-invoicing-from-a-project) — so the money side lands back on the project.
+
+The band at the top of the project always names the single next thing to do, with
+the button that does it.

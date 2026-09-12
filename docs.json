@@ -47,14 +47,122 @@
                   "admin/building-managers",
                   "admin/lifts",
                   "admin/issues",
-                  "admin/jobs",
-                  "admin/records",
-                  "admin/invoices-and-payments",
-                  "admin/maintenance-plans"
+                  "admin/records"
                 ]
               },
               "admin/managing-your-team",
-              "admin/inbox"
+              "admin/inbox",
+              {
+                "group": "Jobs",
+                "icon": "wrench",
+                "pages": [
+                  "admin/jobs/overview",
+                  "admin/jobs/how-jobs-work",
+                  "admin/jobs/how-to-schedule-a-job",
+                  "admin/jobs/how-to-close-a-job",
+                  "admin/jobs/jobs-reference"
+                ]
+              },
+              {
+                "group": "Calendar",
+                "icon": "calendar",
+                "pages": [
+                  "admin/calendar/overview",
+                  "admin/calendar/viewing-the-schedule",
+                  "admin/calendar/adding-an-event",
+                  "admin/calendar/rescheduling",
+                  "admin/calendar/on-call-schedule",
+                  "admin/calendar/reference"
+                ]
+              },
+              {
+                "group": "Dispatch",
+                "icon": "siren",
+                "pages": [
+                  "admin/dispatch/overview",
+                  "admin/dispatch/raise-a-dispatch",
+                  "admin/dispatch/follow-a-live-dispatch",
+                  "admin/dispatch/on-call-rota",
+                  "admin/dispatch/reference"
+                ]
+              },
+              {
+                "group": "Maintenance Contracts",
+                "icon": "file-contract",
+                "pages": [
+                  "admin/maintenance-contracts/overview",
+                  "admin/maintenance-contracts/create-a-contract",
+                  "admin/maintenance-contracts/manage-visits",
+                  "admin/maintenance-contracts/edit-or-end-a-contract",
+                  "admin/maintenance-contracts/reference"
+                ]
+              },
+              {
+                "group": "Projects",
+                "icon": "diagram-project",
+                "pages": [
+                  "admin/projects/overview",
+                  "admin/projects/creating-a-project",
+                  "admin/projects/moving-a-project-through-its-stages",
+                  "admin/projects/quoting-and-invoicing-from-a-project",
+                  "admin/projects/closing-and-sending-the-paperwork",
+                  "admin/projects/stage-reference"
+                ]
+              },
+              {
+                "group": "Drive",
+                "icon": "folder-open",
+                "pages": [
+                  "admin/drive/overview",
+                  "admin/drive/finding-files",
+                  "admin/drive/downloading-files",
+                  "admin/drive/sending-for-sign-off",
+                  "admin/drive/customer-documents",
+                  "admin/drive/reference"
+                ]
+              },
+              {
+                "group": "Record Templates",
+                "icon": "clipboard-list",
+                "pages": [
+                  "admin/record-templates/overview",
+                  "admin/record-templates/creating-a-record-template",
+                  "admin/record-templates/adding-a-library-form",
+                  "admin/record-templates/assigning-a-record-template",
+                  "admin/record-templates/archiving-a-record-template",
+                  "admin/record-templates/reference"
+                ]
+              },
+              {
+                "group": "Inventory",
+                "icon": "boxes-stacked",
+                "pages": [
+                  "admin/inventory/overview",
+                  "admin/inventory/adding-a-part",
+                  "admin/inventory/finding-a-part",
+                  "admin/inventory/setting-up-warehouses",
+                  "admin/inventory/moving-stock",
+                  "admin/inventory/using-parts-on-a-job",
+                  "admin/inventory/reference"
+                ]
+              },
+              {
+                "group": "Billing",
+                "icon": "file-invoice-dollar",
+                "pages": [
+                  "admin/billing/overview",
+                  "admin/billing/quotes",
+                  "admin/billing/invoices",
+                  "admin/billing/emailing-documents",
+                  "admin/billing/payments",
+                  "admin/billing/credit-notes",
+                  "admin/billing/statements",
+                  "admin/billing/standard-items",
+                  "admin/billing/reference-numbers",
+                  "admin/billing/online-payments",
+                  "admin/billing/reference"
+                ]
+              }
             ]
           },
           {
@@ -63,14 +171,14 @@
             "pages": [
               "technician/download",
               {
-                "group": "Getting Starting",
+                "group": "Getting Started",
                 "icon": "workflow",
                 "pages": [
-                  "technician/starting-a-job",
-                  "technician/completing-a-job",
-                  "technician/reporting-a-fault",
-                  "technician/getting-a-signature",
-                  "technician/create-an-adhoc-job"
+                  "technician/doing-a-job",
+                  "technician/signing-off-a-job",
+                  "technician/create-a-job",
+                  "technician/answering-a-dispatch",
+                  "technician/reporting-a-fault"
                 ]
               }
             ]
@@ -85,7 +193,7 @@
             "pages": [
               "what-is-a-job",
               "what-is-an-issue",
-              "untitled-page"
+              "what-is-a-maintenance-contract"
             ]
           }
         ]
@@ -244,6 +352,46 @@
     {
       "source": "/",
       "destination": "/start/getting-started"
+    },
+    {
+      "source": "/admin/jobs",
+      "destination": "/admin/jobs/overview",
+      "permanent": true
+    },
+    {
+      "source": "/admin/invoices-and-payments",
+      "destination": "/admin/billing/overview",
+      "permanent": true
+    },
+    {
+      "source": "/admin/maintenance-plans",
+      "destination": "/admin/maintenance-contracts/overview",
+      "permanent": true
+    },
+    {
+      "source": "/technician/starting-a-job",
+      "destination": "/technician/doing-a-job",
+      "permanent": true
+    },
+    {
+      "source": "/technician/completing-a-job",
+      "destination": "/technician/doing-a-job",
+      "permanent": true
+    },
+    {
+      "source": "/technician/getting-a-signature",
+      "destination": "/technician/signing-off-a-job",
+      "permanent": true
+    },
+    {
+      "source": "/technician/create-an-adhoc-job",
+      "destination": "/technician/create-a-job",
+      "permanent": true
+    },
+    {
+      "source": "/untitled-page",
+      "destination": "/what-is-a-maintenance-contract",
+      "permanent": true
     }
   ]
 }

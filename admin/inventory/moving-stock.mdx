@@ -1,0 +1,96 @@
+---
+title: "How to move stock"
+description: "How to record a delivery, take units off the shelf, or shift stock between warehouses."
+icon: "right-left"
+---
+
+Stock levels in LiftAuth are never typed in directly. You record what happened — a delivery arrived, units were taken out, stock moved to a van — and LiftAuth adjusts the counts. Each of those entries is a **movement**, and the full list of them is the part's history.
+
+There are three kinds:
+
+| Movement | What it means | Effect on the count |
+| --- | --- | --- |
+| **Deposit** | Stock came in — a supplier delivery, a return, a stocktake correction upwards | Adds to one warehouse |
+| **Withdraw** | Stock went out — used on a job, scrapped, a correction downwards | Subtracts from one warehouse |
+| **Transfer** | Stock moved from one of your warehouses to another | Subtracts from one, adds to the other. Your total stays the same |
+
+<Note>
+  A stock **Deposit** is not a billing deposit. Here it means units arriving into a warehouse; in [Billing](/admin/billing/overview) a deposit is an up-front part-payment from a customer. The two are unrelated, and recording one never affects the other.
+</Note>
+
+## Record a movement
+
+<Steps>
+  <Step title="Open the part">
+    **Inventory → Parts**, then click the part.
+  </Step>
+
+  <Step title="Click Move stock">
+    The **Move stock** dialog opens.
+
+    <Tip>
+      **\+ Move stock** in the part's **Stock by location** section opens the same dialog, if that is the section you are already looking at.
+    </Tip>
+  </Step>
+
+  <Step title="Choose the Type">
+    **Deposit (add stock)**, **Withdraw (remove stock)**, or **Transfer (move between warehouses)**.
+  </Step>
+
+  <Step title="Choose the warehouse">
+    For a deposit or a withdrawal, pick the one **Warehouse** involved. For a transfer, pick **From** and **To** — LiftAuth will not let you pick the same one for both.
+  </Step>
+
+  <Step title="Enter the quantity">
+    A whole number, at least 1. It is always a positive number — the type you chose decides whether it is added or subtracted.
+  </Step>
+
+  <Step title="Add a note (optional but worth it)">
+    A short line saying why, for example _received purchase order PO-2231_ or _used on REP-2026-4F1A_. The note is the only place that reason is kept — and the only place a purchase order number appears in Inventory, since purchase orders themselves are a stage on a [project](/admin/projects/overview).
+  </Step>
+
+  <Step title="Click Record">
+    The counts update immediately, and the entry appears at the top of **Recent movements**.
+  </Step>
+</Steps>
+
+<Tip>
+  Get into the habit of writing a note every time. Six months later, a bare `−3` tells you nothing.
+</Tip>
+
+<h2 id="transfer-move-stock-between-warehouses">
+  Transfers between warehouses
+</h2>
+
+Use a transfer, not a withdrawal followed by a deposit. A transfer is one entry, it can never leave the two counts out of step, and the history shows it in one line as *Tuas Central Store → Van 2*.
+
+## Reading the movement history
+
+Open a part and scroll to **Recent movements**. Each row shows:
+
+* **Change** — `+4` in green for a deposit, `−4` in red for a withdrawal, or a plain number for a transfer, which does not change your total.
+* **Type** — Deposit, Withdraw, or Transfer.
+* **Location** — the warehouse, or `From → To` for a transfer.
+* **Note** — what you typed, or `—`.
+* **Date** — when it was recorded.
+
+Longer histories are paged; use the page controls beneath the table.
+
+<Note>
+  Movements cannot be edited or deleted — the history is a permanent record. If you recorded the wrong figure, record a correcting movement in the other direction and say so in the note.
+</Note>
+
+## When LiftAuth refuses a withdrawal
+
+You cannot take out more than a warehouse holds. If you try, the dialog shows an error saying there is insufficient stock and nothing is recorded. The same applies to the *From* side of a transfer.
+
+If the app says there is nothing on the shelf but there plainly is, the shelf is right and LiftAuth is behind — record a **Deposit** for the units that were never entered, note it as a stocktake correction, and then do the withdrawal.
+
+## Doing it from the phone
+
+Technicians record movements the same way in the mobile app: **Profile → Tools → Inventory**, open the part, tap **Move stock**. Inventory needs a connection — it does not work offline.
+
+## Related
+
+* [How to use a part on a job](/admin/inventory/using-parts-on-a-job) — the parts a repair job needs, and why they are not withdrawn for you.
+* [Inventory reference](/admin/inventory/reference#movement-types) — every field and rule on a movement.
