@@ -77,7 +77,8 @@
                   "admin/maintenance-contracts/overview",
                   "admin/maintenance-contracts/create-a-contract",
                   "admin/maintenance-contracts/manage-visits",
-                  "admin/maintenance-contracts/edit-or-end-a-contract"
+                  "admin/maintenance-contracts/edit-or-end-a-contract",
+                  "admin/maintenance-contracts/reference"
                 ]
               },
               {

@@ -1,0 +1,128 @@
+---
+title: "Maintenance contracts reference"
+description: "Statuses, filters, columns, tabs, automation timings and permissions for maintenance contracts."
+icon: "table-list"
+---
+
+Everything the Maintenance Contracts area holds, for looking up rather than reading through. For how to actually do things, start at the [overview](/admin/maintenance-contracts/overview).
+
+## Statuses
+
+| Status | Meaning | Can it be edited? |
+| --- | --- | --- |
+| **Active** | The contract is inside its term and producing visits, jobs and invoices. | Yes |
+| **Expired** | The contract has passed its expiry date. It produces nothing further. Existing jobs and invoices are unaffected. | No |
+| **Archived** | Someone ended the contract early. All future visits were deleted. | No |
+
+A contract becomes **Expired** on its own, on the nightly run, once the expiry date has passed. **Archived** is always a deliberate action.
+
+<Note>
+  **Expiring soon** is a filter, not a status. It picks out **Active** contracts that are more than 85% of the way through their term. Those show an amber expiry date in the list.
+</Note>
+
+## The contracts list
+
+### Columns
+
+| Column | What it shows |
+| --- | --- |
+| **Contract** | The contract reference, in the form `BP-2026-4F91C2`. |
+| **Building** | The building the contract covers. One contract, one building. |
+| **Frequency** | **Monthly**, **Quarterly**, or **Mixed** when its records do not all share a frequency. |
+| **Lifts** | How many lifts the contract covers in total, across all its records. |
+| **Assignee** | The technician or the team that works this contract's visits. |
+| **Billing** | **Per job**, **Annual**, or **No invoicing**. |
+| **Term** | A progress bar for the term, and the expiry month. Click the header to sort by expiry. |
+| **Status** | Active, Expired or Archived. |
+
+### Filters and search
+
+- **Status buttons** — All, Active, Expiring soon, Expired, Archived. Each carries a count.
+- **All frequencies** — narrow to Monthly, Quarterly or Mixed.
+- **All assignees** — narrow to one technician or team.
+- **Search contracts…** — matches the contract reference and the building name.
+
+## The contract page
+
+### Tabs
+
+| Tab | What is on it |
+| --- | --- |
+| **Overview** | The records, the schedule, the billing setup, certificate renewals, a year-by-year service-activity grid, and a short list of recent and upcoming visits. |
+| **Upcoming Visits** | Every future visit the contract will produce, with **Reschedule** on the ones that are not jobs yet. |
+| **Visit History** | Every [job](/admin/jobs) this contract has produced, with its status. |
+| **Invoices** | Every [invoice](/admin/invoices-and-payments) raised off this contract. |
+
+### The summary strip
+
+| Card | Notes |
+| --- | --- |
+| **Lifts covered** | Total lifts, and how many records the contract is built from. |
+| **Contract Period** | Start and expiry months, plus how many months of the term have elapsed. |
+| **Annual cost** / **Cost per invoice** | The total of the contract's invoice lines. Only shown when the contract invoices automatically. Reads **TBC** when the lines are priced from the catalogue at the time of invoicing rather than fixed now. |
+| **Next certificate expiry** | The earliest operating-certificate expiry among the covered lifts. Only shown when annual inspection is switched on. Turns amber inside the renewal window and red once lapsed. |
+| **Next invoice** | The month the next annual invoice will be drafted. Annual billing only. |
+
+## Billing cadences
+
+| Cadence | When a draft invoice appears |
+| --- | --- |
+| **Per-job** | When you close a job the contract generated. One draft per job. |
+| **Annual** | Once a year, at the end of the contract's start month. |
+| **None** | Never. You raise invoices by hand from Billing. |
+
+Invoices are always created as **drafts**. Someone still reviews, approves and sends them — see [Invoices & Payments](/admin/invoices-and-payments).
+
+<Note>
+  A contract only invoices while it is **Active**. Once it is expired or archived, closing one of its jobs raises nothing.
+</Note>
+
+## How the automation is timed
+
+All dates and times are **Singapore time**.
+
+| Rule | Detail |
+| --- | --- |
+| Visits are written up front | Every visit for the whole term is computed when the contract is created, and recomputed whenever you edit it. |
+| Monthly records | Due every month of the term. |
+| Quarterly records | Due every third month, counted from the contract's start month. |
+| Preferred day | The day of the month you chose. Weekends and public holidays shift to the nearest workday. |
+| Job creation | 14 days before the visit date. The job arrives already assigned and time-slotted. |
+| Long visits | A visit that does not fit one working day continues on the following workdays. Each day can be moved separately. |
+| Backdated contracts | Scheduling runs from the current month forward. Months before today never generate jobs. |
+| Certificate renewals | One grouped draft quote per building, raised 1–12 months (3 by default) before the earliest covered lift's certificate expiry. Needs annual inspection switched on, and a building manager on the contract. |
+| Expiry | Checked on the nightly run. Past the expiry date, the contract flips to Expired. |
+
+## Rules the builder enforces
+
+- A lift can belong to only one record on a contract.
+- Every record needs a record template and at least one lift.
+- A record template written for a single lift must be given exactly one lift.
+- Every lift on a record must belong to the contract's building.
+- The contract end must be after the contract start.
+- A contract needs exactly one assignee — one technician **or** one team, never both and never none.
+- If your organisation bills building managers, the building must have one before a contract can be created.
+
+## Who can do what
+
+| Action | Roles |
+| --- | --- |
+| View contracts, open a contract | Owner, Admin, Technician |
+| Create a contract | Owner, Admin, Technician |
+| Edit a contract | Owner, Admin, Technician |
+| Reschedule an upcoming visit | Owner, Admin, Technician |
+| Archive a contract | Owner, Admin, Technician |
+| Record past visits | Owner, Admin |
+
+<Note>
+  Someone whose only role is Technician, or only Call Center, does not get the web dashboard's admin pages at all — Maintenance Contracts included. The roles above apply to people who can already reach the dashboard.
+</Note>
+
+## Rescheduling limits
+
+A visit cannot be moved when:
+
+- It has already become a job. Move the job instead, from the job.
+- The new date is in the past.
+- The new date is on or after the contract's expiry.
+- The contract is not Active.
