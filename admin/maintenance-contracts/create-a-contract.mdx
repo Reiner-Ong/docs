@@ -1,0 +1,136 @@
+---
+title: "How to set up a maintenance contract"
+description: "Create a servicing agreement for a building so LiftAuth schedules its visits and drafts its invoices."
+icon: "plus"
+---
+
+Setting up a contract is a five-step builder. At the end, LiftAuth writes out every visit for the whole contract term and starts turning them into [jobs](/admin/jobs) as each one comes due.
+
+<Note>
+  Before you start, the building needs its [lifts](/admin/lifts) added and — if your organisation bills building managers — a [building manager](/admin/building-managers) assigned. Without a building manager, LiftAuth will refuse to create the contract.
+</Note>
+
+## Open the builder
+
+<Steps>
+  <Step title="Go to Maintenance Contracts">
+    Click **Maintenance Contracts** in the left-hand navigation.
+  </Step>
+
+  <Step title="Click + New Contract">
+    A small dialog asks which building the contract covers.
+  </Step>
+
+  <Step title="Choose the building and click Continue">
+    The builder opens on step 1. A progress bar at the top shows which step you are on.
+  </Step>
+</Steps>
+
+<Tip>
+  You can also start from the building itself: open the building, find the **Maintenance Contracts** section, and click **+ New Contract** there. It skips the building question.
+</Tip>
+
+## Step 1 — Records
+
+This step decides **which lifts are serviced and how often**.
+
+A contract is built from **records**. One record is a set of lifts, serviced together, against one record template, at one frequency. Most contracts need only one; you add more when different lifts need a different checklist or a different frequency.
+
+<Steps>
+  <Step title="Pick the record template">
+    Under **Record**, choose the maintenance checklist this group of lifts is inspected against.
+  </Step>
+
+  <Step title="Choose Monthly or Quarterly">
+    This is how often the lifts in this record are serviced.
+  </Step>
+
+  <Step title="Tick the lifts this record covers">
+    The building's lifts are listed underneath. A lift can belong to only one record on the contract.
+  </Step>
+
+  <Step title="Add another record if you need one">
+    Click **+ Add record** and repeat. Any lift you leave out is flagged, which is fine if it is serviced under a different contract.
+  </Step>
+</Steps>
+
+<Warning>
+  Some templates are written for a single lift and some for a whole set. If you assign several lifts to a single-lift template, the step will tell you and you cannot continue until you split them.
+</Warning>
+
+## Step 2 — Recurring billing
+
+This step decides **how the building is invoiced, and for how long the contract runs**.
+
+<Steps>
+  <Step title="Choose a billing cadence">
+    * **Per-job** — one draft invoice per visit, raised when you close the job.
+    * **Annual** — one draft invoice per year.
+    * **None** — no automatic invoicing at all; you raise invoices by hand from Billing.
+  </Step>
+
+  <Step title="Set the contract term">
+    **Contract start** can be any month, past or future. **Contract end** is the last service month, and must be after the start.
+  </Step>
+
+  <Step title="Build the invoice">
+    Unless you chose **None**, fill in the invoice lines every generated invoice will carry — the description, quantity and price — plus tax, payment terms and any notes. You can load one of your saved invoice templates from the picker instead of typing it out.
+  </Step>
+</Steps>
+
+<Warning>
+  If you backdate the start, LiftAuth warns you. It schedules from the current month forward — past months will not generate jobs. To log work that already happened, see [How to reschedule and backfill visits](/admin/maintenance-contracts/manage-visits).
+</Warning>
+
+<Note>
+  The billing cadence and the contract start cannot be changed later. Everything else on this step can.
+</Note>
+
+## Step 3 — Annual inspection
+
+This step is about the **operating certificate** each lift renews yearly after its statutory inspection. It is switched off by default — leave it off if this contract does not cover renewals.
+
+Turn on **Cover annual inspection & certificate renewal** and you get:
+
+- The list of covered lifts and their certificate expiry dates. Any lift missing a date is flagged — LiftAuth cannot schedule a renewal for it until you fill one in, and you can type it in right here.
+- **Start renewal** — how many months before expiry the renewal should be raised (1 to 12; 3 by default).
+- The **renewal quotation** — the total, tax, payment terms and notes for the quote LiftAuth will draft.
+
+When it is on, LiftAuth drafts **one grouped renewal quote for the building** as the earliest covered lift's certificate comes into that window. The quote is a draft only: someone still has to review and send it.
+
+<Note>
+  Renewal quotes bill the building manager. A contract with no building manager cannot raise them, and the contract page says so.
+</Note>
+
+## Step 4 — Schedule
+
+This step decides **who does the work and when the visits land**.
+
+<Steps>
+  <Step title="Set Assigned to">
+    Pick one technician, or one team. Whoever you pick is put on every job this contract generates.
+  </Step>
+
+  <Step title="Set the day of the month">
+    The preferred service day. Weekends and public holidays shift to the nearest workday automatically.
+  </Step>
+
+  <Step title="Set the preferred start time and the estimated visit duration">
+    Times are Singapore time. A visit longer than a working day is split across the following workdays.
+  </Step>
+
+  <Step title="Check the preview calendar">
+    The calendar shows every visit the contract will produce. If any of them clash with work already booked, the step tells you — click **Reschedule** on a clashing visit to move just that one, without disturbing the rest.
+  </Step>
+</Steps>
+
+## Step 5 — Review
+
+The last step lays out everything you have chosen — coverage, billing, term, schedule — for a final read. Check it, then create the contract.
+
+## What happens next
+
+- The contract appears in **Maintenance Contracts** with the status **Active** and a reference like `BP-2026-4F91C2`.
+- Its **Upcoming Visits** tab lists every visit for the whole term.
+- Fourteen days before each visit, LiftAuth creates the [job](/admin/jobs), assigns it, and books the time slot.
+- Depending on the cadence you chose, draft [invoices](/admin/invoices-and-payments) appear for you to review and send.

@@ -74,7 +74,9 @@
                 "group": "Maintenance Contracts",
                 "icon": "file-contract",
                 "pages": [
-                  "admin/maintenance-contracts/overview"
+                  "admin/maintenance-contracts/overview",
+                  "admin/maintenance-contracts/create-a-contract",
+                  "admin/maintenance-contracts/manage-visits"
                 ]
               },
               {
