@@ -4,11 +4,7 @@ description: "Raise the customer quote and the invoice on the project itself, so
 icon: "receipt"
 ---
 
-Billing a project works the same way as billing anything else in LiftAuth — the same
-quote and invoice builders, the same numbering, the same
-[Invoices](/admin/invoices-and-payments) list. What is different is *where* you start
-it and *what it does to the project*: a document raised from a stage row belongs to
-the project, and the project's stages move as that document moves.
+Billing a project works the same way as billing anything else in LiftAuth — the same quote and invoice builders, the same numbering, the same [Billing](/admin/billing/overview) list. What is different is _where_ you start it and _what it does to the project_: a document raised from a stage row belongs to the project, and the project's stages move as that document moves.
 
 ## Raise the customer quote
 
@@ -91,11 +87,7 @@ The stage follows the invoice:
 | Void or rejected | Ignored — as if it were not there |
 
 <Note>
-  There is no **Mark complete** on the Invoice stage. The stage settles when the
-  invoice is genuinely issued, so the project and your billing records can never
-  disagree. Payment does not hold a project open: an issued invoice is enough to
-  close the project, and the money is tracked in
-  [Invoices & Payments](/admin/invoices-and-payments).
+  There is no **Mark complete** on the Invoice stage. The stage settles when the invoice is genuinely issued, so the project and your billing records can never disagree. Payment does not hold a project open: an issued invoice is enough to close the project, and the money is tracked in [Billing](/admin/billing/overview).
 </Note>
 
 ## Work on a document without leaving the project
