@@ -54,7 +54,54 @@
                 ]
               },
               "admin/managing-your-team",
-              "admin/inbox"
+              "admin/inbox",
+              {
+                "group": "Jobs",
+                "icon": "wrench",
+                "pages": []
+              },
+              {
+                "group": "Calendar",
+                "icon": "calendar",
+                "pages": []
+              },
+              {
+                "group": "Dispatch",
+                "icon": "siren",
+                "pages": []
+              },
+              {
+                "group": "Maintenance Contracts",
+                "icon": "file-contract",
+                "pages": [
+                  "admin/maintenance-contracts/overview"
+                ]
+              },
+              {
+                "group": "Projects",
+                "icon": "diagram-project",
+                "pages": []
+              },
+              {
+                "group": "Drive",
+                "icon": "folder-open",
+                "pages": []
+              },
+              {
+                "group": "Record Templates",
+                "icon": "clipboard-list",
+                "pages": []
+              },
+              {
+                "group": "Inventory",
+                "icon": "boxes-stacked",
+                "pages": []
+              },
+              {
+                "group": "Billing",
+                "icon": "file-invoice-dollar",
+                "pages": []
+              }
             ]
           },
           {
