@@ -193,7 +193,7 @@
             "pages": [
               "what-is-a-job",
               "what-is-an-issue",
-              "untitled-page"
+              "what-is-a-maintenance-contract"
             ]
           }
         ]
@@ -386,6 +386,11 @@
     {
       "source": "/technician/create-an-adhoc-job",
       "destination": "/technician/create-a-job",
+      "permanent": true
+    },
+    {
+      "source": "/untitled-page",
+      "destination": "/what-is-a-maintenance-contract",
       "permanent": true
     }
   ]
