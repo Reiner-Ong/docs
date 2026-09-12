@@ -1,0 +1,90 @@
+---
+title: "How to change or end a maintenance contract"
+description: "Edit a live contract, extend its term, or archive it when the agreement is over."
+icon: "pen"
+---
+
+A contract is not fixed once created. You can change most of it while it is running, extend the term, or stop it altogether.
+
+## Change a live contract
+
+<Steps>
+  <Step title="Open the contract">
+    Go to **Maintenance Contracts** and click the row.
+  </Step>
+
+  <Step title="Click Edit in the header">
+    The edit screen opens. Fields that cannot be changed are marked **Locked**.
+  </Step>
+
+  <Step title="Make your changes and save">
+    Click **Save changes**. **Discard** leaves everything as it was.
+  </Step>
+</Steps>
+
+### What you can and cannot change
+
+| Can change | Locked for the life of the contract |
+| --- | --- |
+| The records — lifts, record template, frequency | The building |
+| The assigned technician or team | The building manager |
+| Day of the month, start time, visit duration | The billing cadence |
+| The expiry date | The contract start |
+| The invoice lines, tax, payment terms, notes | |
+| The annual inspection and renewal settings | |
+
+If something in the locked column is wrong, the fix is to archive this contract and set up a new one.
+
+<Warning>
+  Saving an edit rewrites **every future visit** on the contract from your new settings. Visits that have already become jobs are left alone, but any future visit you had rescheduled by hand goes back to the computed date. Do your edits first, then re-apply your one-off reschedules.
+</Warning>
+
+<Note>
+  Only **Active** contracts can be edited. An expired or archived contract is read-only — the **Edit** button is not shown.
+</Note>
+
+## Extend a contract that is running out
+
+A contract flags itself as expiring once it is past 85% of its term: its date turns amber in the list, and the **Expiring soon** filter picks it up.
+
+To extend it, open the contract, click **Edit**, and push the expiry date out. LiftAuth immediately writes visits for the new months. There is no separate "renew" action — extending the term is the renewal.
+
+<Tip>
+  Check the **Expiring soon** filter on the Maintenance Contracts list every month. Once a contract passes its expiry it flips to **Expired** on its own and stops producing work, with no warning beyond that filter.
+</Tip>
+
+## What happens when a contract expires
+
+Nothing you need to do, and nothing that can be undone from the dashboard:
+
+- The status becomes **Expired**.
+- No new jobs, invoices or renewal quotes are created.
+- Jobs and invoices that already exist are untouched — finish them as normal.
+
+An expired contract cannot be edited or restarted. To keep servicing the building, set up a new contract.
+
+## Archive a contract
+
+Archiving ends a contract before its term is up — the customer has left, or the agreement was replaced.
+
+<Steps>
+  <Step title="Open the contract and click Archive contract">
+    The red button in the header. It is only there on an **Active** contract.
+  </Step>
+
+  <Step title="Read what will happen">
+    The dialog spells it out: no new jobs will be created; any open or scheduled jobs will not raise invoices when they close; the building becomes free for a new contract.
+  </Step>
+
+  <Step title="Type the contract reference to confirm">
+    Type the reference shown — for example `BP-2026-4F91C2` — then click **Archive contract**. **Keep contract** backs out.
+  </Step>
+</Steps>
+
+<Warning>
+  Archiving cannot be undone. Every future visit is deleted and disappears from the calendar. Jobs already created stay, and you still work and close them as normal — they just will not generate invoices.
+</Warning>
+
+<Note>
+  You must archive a building's active contract before you can archive the building itself.
+</Note>
